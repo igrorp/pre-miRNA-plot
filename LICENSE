@@ -1,0 +1,39 @@
+PRE-MIRNA-PLOT
+Copyright (c) 2019 Federal University of Rio Grande do Sul
+
+Pre-miRNA-plot is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, Version 2,
+dated June 1991, as published by the Free Software Foundation.
+
+Pre-miRNA-plot is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+-------------------------------------------------------------------------------
+
+Pre-miRNA-plotter
+High throughput plotter of images from predicted secondary structures of precursor miRNAs
+Version: 1.0.0
+
+Developed in Federal University of Rio Grande do Sul, Department of Biophysics, Genomics and Plant Population Laboratory
+
+Current pre-miRNA-plot contributors:
+
+    Igor Paim,
+    Nureyev Ferreira Rodrigues,
+    Rogério Margis.
+
+
+Installation instructions and documentation can be found on the website:
+https://github.com/igrorp/pre-miRNA-plot
+
+Address for communication: igorpaim8@gmail.com
+
+References:
+
+<Future references>
