@@ -14,7 +14,7 @@
 <li><a href="#2-installation">Installation</a></li>
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
-3.2 <a href="#32">Exploring the parameters</a></li>
+3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
 </ol>
 <h1 id="configuration">1. Configuration</h1>
 <p>Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.</p>
@@ -64,7 +64,7 @@ sudo make install
 </code></pre>
 <h1 id="how-to-use">3. How to use</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot --help</code>.</p>
-<h2 id="file-inputs">3.1 File inputs</h2>
+<h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex1.png" alt="Example 1"></p>
 <blockquote>
@@ -73,7 +73,7 @@ sudo make install
 <p>If you have labels or some sort of annotation to your data, you can include them in the first column, like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex2.png" alt="Example 2"></p>
 <blockquote>
-<p>The created image files will be named accordingly to the informed label, so it is a more efficient way of organizing your data</p>
+<p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p>
 </blockquote>
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
 
