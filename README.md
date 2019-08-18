@@ -12,7 +12,7 @@
 1.3 <a href="#sec1.3">Ghostscript</a><br>
 1.4 <a href="#sec1.4">Vienna RNA package</a></li>
 <li><a href="#sec2">Installation</a></li>
-<li><a href="#sec3">How to use</a><br>
+<li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#sec3.1">Input files</a><br>
 3.2 <a href="#sec3.2">Exploring the parameters</a></li>
 </ol>
@@ -70,7 +70,7 @@ sudo make install
 </code></pre>
 <p><a></a></p>
 <h1 id="how-to-use">3. How to use</h1>
-<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more.<br>
+<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot --help</code>.<br>
 <a></a></p>
 <h2 id="file-inputs">3.1 File inputs</h2>
 
