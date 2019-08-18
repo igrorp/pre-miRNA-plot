@@ -6,8 +6,8 @@
 <h1 id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
 <p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/master/documentation.pdf">documentation</a> file.</p>
 <ol>
-<li><a href="#sec1.0">Configuration</a><br>
-1.1 <a href="#sec1.1">Python</a><br>
+<li><a href="#1-configuration">Configuration</a><br>
+1.1 <a href="#1.1-python">Python</a><br>
 1.2 <a href="#sec1.2">Matplotlib</a><br>
 1.3 <a href="#sec1.3">Ghostscript</a><br>
 1.4 <a href="#sec1.4">Vienna RNA package</a></li>
@@ -16,10 +16,8 @@
 3.1 <a href="#sec3.1">Input files</a><br>
 3.2 <a href="#sec3.2">Exploring the parameters</a></li>
 </ol>
-<p><a></a></p>
 <h1 id="configuration">1. Configuration</h1>
-<p>Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.<br>
-<a></a></p>
+<p>Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.</p>
 <h2 id="python">1.1 Python</h2>
 <p>Pre-miRNA-plot runs in Python3+. You can check which version of Python you have installed in your machine with the command bellow:</p>
 <pre><code>python --version
