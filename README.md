@@ -76,8 +76,12 @@ sudo make install
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p>
 </blockquote>
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
-You can choose whic
+You can choose which colors will be used to highlight the 5p and
+3p miRNAs, respectively. You can use predefined colors’ names or
+specify the RGB codes corresponding to the colors. There is no
+problem if you have just one color. By default, the sequences will
+be colored red (5p) and green (3p).
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNTI5NDAyNzVdfQ==
+eyJoaXN0b3J5IjpbLTE4ODc0NjQ2NjFdfQ==
 -->
