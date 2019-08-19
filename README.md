@@ -77,11 +77,11 @@ sudo make install
 </blockquote>
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
 You can choose which colors will be used to highlight the 5p and
-3p miRNAs, respectively. You can use predefined colors’ names or
-specify the RGB codes corresponding to the colors. There is no
+3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or
+specify the **RGB codes** corresponding to the colors. There is no
 problem if you have just one color. By default, the sequences will
 be colored red (5p) and green (3p).
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODc0NjQ2NjFdfQ==
+eyJoaXN0b3J5IjpbLTIyMjM4NzgwMF19
 -->
