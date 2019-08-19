@@ -84,6 +84,7 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is no
 problem if you inform just one color. By default, the sequences will
 be colored red (5p) and green (3p).
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDgwMzUwMjZdfQ==
+eyJoaXN0b3J5IjpbMTgyNjYyMzk2NF19
 -->
