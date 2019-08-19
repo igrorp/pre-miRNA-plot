@@ -129,7 +129,11 @@ If you wanted to set the colors to blue and red you would have to type:
  If you wanted to set the colors to purple and pink, you would have to type:
 
     premirnaplot your_file.txt -c 204 0 205 255 51 153
+ You can also choose the quality of the images, thedefault is 200 pixels. You can increase this value
+for better images for publications, for example,
+but be aware that this increases the program
+execution time.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzE3MzYwMTIzLDE1MDk1NzY3NDZdfQ==
+eyJoaXN0b3J5IjpbMzIxOTE1NDExLDE1MDk1NzY3NDZdfQ==
 -->
