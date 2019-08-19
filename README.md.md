@@ -119,7 +119,7 @@ If you have labels or some sort of annotation to your data, you can include them
 > The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data
 
 ## 3.2 Exploring the parameters
-You can choose which colors will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or specify the **RGB codes** corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will
+You can choose which **colors** will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or specify the **RGB codes** corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will
 be colored red (5p) and green (3p).
 >You can choose colors and get their RGB codes in this [website]([https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp))
 
@@ -129,11 +129,9 @@ If you wanted to set the colors to blue and red you would have to type:
  If you wanted to set the colors to purple and pink, you would have to type:
 
     premirnaplot your_file.txt -c 204 0 205 255 51 153
- You can also choose the quality of the images, thedefault is 200 pixels. You can increase this value
-for better images for publications, for example,
-but be aware that this increases the program
-execution time.
+
+You can also choose the **quality** of the images, the default is 200 pixels. You can increase this value for better images for publications, for example, but be aware that this increases the program execution time.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIxOTE1NDExLDE1MDk1NzY3NDZdfQ==
+eyJoaXN0b3J5IjpbMTQ4NzcxNDM3MSwxNTA5NTc2NzQ2XX0=
 -->
