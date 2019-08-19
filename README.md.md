@@ -135,7 +135,7 @@ If you wanted to set the colors to blue and red you would have to type:
 
     premirnaplot your_file.txt -c 204 0 205 255 51 153
 <p align="center">
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width=314 height=480/>
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width=314 height=480 />
 </p>
 
 ### Resolution
@@ -148,7 +148,7 @@ If you wanted to set the resolution of the images to 1200 pixels, you wold have 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMzQwNTMyNCwxNTA4MDgzNDQxLDE1Mj
+eyJoaXN0b3J5IjpbLTM1Nzk4MzkyMCwxNTA4MDgzNDQxLDE1Mj
 c2Mjk1MDcsMzYyMzY0NDAzLDE3MjE5ODQyNTgsMTQ4NzcxNDM3
 MSwxNTA5NTc2NzQ2XX0=
 -->
