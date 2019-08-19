@@ -132,7 +132,11 @@ If you wanted to set the colors to blue and red you would have to type:
 
 You can also choose the **resolution** of the images, the default is 200 pixels. You can increase this value for better images for publications or to be able to zoom in a particular area of the picture and not losing quality, for example, but be aware that this increases the program execution time.
 
+If you wanted to set the resolution of the images to 1200 pixels, you wold have to type:
+
+    premirnaplot your_file.txt -q 1200 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMjUzMDUzMCwxNDg3NzE0MzcxLDE1MD
+eyJoaXN0b3J5IjpbMTcyMTk4NDI1OCwxNDg3NzE0MzcxLDE1MD
 k1NzY3NDZdfQ==
 -->
