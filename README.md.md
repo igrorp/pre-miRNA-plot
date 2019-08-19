@@ -121,7 +121,7 @@ If you have labels or some sort of annotation to your data, you can include them
 ## 3.2 Exploring the parameters
 You can choose which colors will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names or specify the **RGB codes** corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will
 be colored red (5p) and green (3p).
->You can choose colors and get the
+>You can choose colors and get their RGB codes in this [website]([https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp))
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyMDQ3MDEzMl19
+eyJoaXN0b3J5IjpbMTUwOTU3Njc0Nl19
 -->
