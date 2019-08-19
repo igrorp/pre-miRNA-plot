@@ -76,4 +76,8 @@ sudo make install
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p>
 </blockquote>
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
+You can choose whic
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTExNTI5NDAyNzVdfQ==
+-->
