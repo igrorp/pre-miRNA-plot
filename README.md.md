@@ -135,8 +135,9 @@ You can also choose the **resolution** of the images, the default is 200 pixels.
 If you wanted to set the resolution of the images to 1200 pixels, you wold have to type:
 
     premirnaplot your_file.txt -q 1200 
+    
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyMTk4NDI1OCwxNDg3NzE0MzcxLDE1MD
-k1NzY3NDZdfQ==
+eyJoaXN0b3J5IjpbMTMzNzMxNzA0MCwxNzIxOTg0MjU4LDE0OD
+c3MTQzNzEsMTUwOTU3Njc0Nl19
 -->
