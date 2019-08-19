@@ -124,9 +124,8 @@ If you have labels or some sort of annotation to your data, you can include them
 
 
 ### Colors
-You can choose which **colors** will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or specify the **RGB codes** corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will
-be colored red (5p) and green (3p).
->You can choose colors and get their RGB codes in this [website]([https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp))
+You can choose which **colors** will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or specify the **RGB codes** corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will be colored red (5p) and green (3p).
+>You can choose colors and get their RGB codes in this [website](https://www.w3schools.com/colors/colors_picker.asp)
 
 If you wanted to set the colors to blue and red you would have to type:
 
@@ -148,7 +147,7 @@ If you wanted to set the resolution of the images to 1200 pixels, you wold have 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1Nzk4MzkyMCwxNTA4MDgzNDQxLDE1Mj
+eyJoaXN0b3J5IjpbLTUzMjA5MDUxOCwxNTA4MDgzNDQxLDE1Mj
 c2Mjk1MDcsMzYyMzY0NDAzLDE3MjE5ODQyNTgsMTQ4NzcxNDM3
 MSwxNTA5NTc2NzQ2XX0=
 -->
