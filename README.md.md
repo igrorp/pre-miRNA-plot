@@ -75,11 +75,11 @@ sudo make install
 # 2\. Installation
 
 To install pre-miRNA-plot you can download this repository as a zip file in the main page, or clone it in your machine:
-<p style="background-color: #c2c2a3">
+
 ```
 git clone https://github.com/igrorp/pre-miRNA-plot.git
 ```
-</p>
+
 After decompression or cloning, you have to enter the folder and run the [install.sh](http://install.sh) file to make the program executable and to move it to _/usr/local/bin/_ so you can access it from anywhere. You will need superuser permission for that.
 
 ```
@@ -139,7 +139,8 @@ If you wanted to set the resolution of the images to 1200 pixels, you wold have 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MjI2NDc3MiwtNjkzNzAzMDA4LC01Mz
-IwOTA1MTgsMTUwODA4MzQ0MSwxNTI3NjI5NTA3LDM2MjM2NDQw
-MywxNzIxOTg0MjU4LDE0ODc3MTQzNzEsMTUwOTU3Njc0Nl19
+eyJoaXN0b3J5IjpbLTE4ODQxOTM3MTQsLTY5MzcwMzAwOCwtNT
+MyMDkwNTE4LDE1MDgwODM0NDEsMTUyNzYyOTUwNywzNjIzNjQ0
+MDMsMTcyMTk4NDI1OCwxNDg3NzE0MzcxLDE1MDk1NzY3NDZdfQ
+==
 -->
