@@ -99,7 +99,7 @@ be colored red (5p) and green (3p).</p>
 <pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
 </code></pre>
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width="157" height="240">
-![Different colors](https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png =100x)
+<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" alt="Different colors" width="100"></p>
 <h3 id="resolution">Resolution</h3>
 <p>You can also choose the <strong>resolution</strong> of the images, the default is 200 pixels. You can increase this value for better images for publications or to be able to zoom in a particular area of the picture and not losing quality, for example, but be aware that this increases the program execution time.</p>
 <p>If you wanted to set the resolution of the images to 1200 pixels, you wold have to type:</p>
