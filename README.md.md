@@ -24,7 +24,6 @@ Pre-miRNA-plot runs in Python3+. You can check which version of Python you have 
 
 ```
 python --version
-
 ```
 
 Anything higher than 3.0 should work just fine. In case you have an older version, you can go to the [Python website](https://www.python.org/downloads/) and follow their tutorial to update the platform to a more recent release.
@@ -35,14 +34,12 @@ Matplotlib is a graphing package for Python; pre-miRNA-plot uses it to generate 
 
 ```
 python –m pip install –U matplotlib
-
 ```
 
 If you don’t have pip installed, you can use **apt** instead:
 
 ```
 sudo apt install python3-matplotlib
-
 ```
 
 If you are having trouble, please visit their [website](https://matplotlib.org/3.1.1/users/installing.html) for more details.
@@ -58,7 +55,6 @@ cd ghostscript-9.27/
 ./configure
 make
 sudo make install
-
 ```
 
 ## 1.4 Vienna RNA package
@@ -72,7 +68,6 @@ cd ViennaRNA-2.4.13/
 ./configure
 make
 sudo make install
-
 ```
 
 > If you are not familiar with command line, each one of the lines above has to be run separetly. Copy the command in each line, run it and wait to see if the process was successfull.
@@ -80,24 +75,21 @@ sudo make install
 # 2\. Installation
 
 To install pre-miRNA-plot you can download this repository as a zip file in the main page, or clone it in your machine:
-
+<span style="background-color:grey">
 ```
 git clone https://github.com/igrorp/pre-miRNA-plot.git
-
 ```
-
+</span>
 After decompression or cloning, you have to enter the folder and run the [install.sh](http://install.sh) file to make the program executable and to move it to _/usr/local/bin/_ so you can access it from anywhere. You will need superuser permission for that.
 
 ```
 ./install.sh
-
 ```
 
 You can check if the program has been successfully moved and installed by testing it with our test data.
 
 ```
 premirnaplot test_data/osativa.txt -a T -c x x x x x x
-
 ```
 
 # 3\. How to use
@@ -147,7 +139,7 @@ If you wanted to set the resolution of the images to 1200 pixels, you wold have 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzMjA5MDUxOCwxNTA4MDgzNDQxLDE1Mj
-c2Mjk1MDcsMzYyMzY0NDAzLDE3MjE5ODQyNTgsMTQ4NzcxNDM3
-MSwxNTA5NTc2NzQ2XX0=
+eyJoaXN0b3J5IjpbLTY5MzcwMzAwOCwtNTMyMDkwNTE4LDE1MD
+gwODM0NDEsMTUyNzYyOTUwNywzNjIzNjQ0MDMsMTcyMTk4NDI1
+OCwxNDg3NzE0MzcxLDE1MDk1NzY3NDZdfQ==
 -->
