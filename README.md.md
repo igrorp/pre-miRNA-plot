@@ -134,7 +134,7 @@ If you wanted to set the colors to blue and red you would have to type:
  If you wanted to set the colors to purple and pink, you would have to type:
 
     premirnaplot your_file.txt -c 204 0 205 255 51 153
-<img width=100></img>
+
 ![Different colors](https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png)
 
 ### Resolution
@@ -147,7 +147,7 @@ If you wanted to set the resolution of the images to 1200 pixels, you wold have 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAwMTY2MjE4LDE1Mjc2Mjk1MDcsMzYyMz
-Y0NDAzLDE3MjE5ODQyNTgsMTQ4NzcxNDM3MSwxNTA5NTc2NzQ2
-XX0=
+eyJoaXN0b3J5IjpbMTUwODA4MzQ0MSwxNTI3NjI5NTA3LDM2Mj
+M2NDQwMywxNzIxOTg0MjU4LDE0ODc3MTQzNzEsMTUwOTU3Njc0
+Nl19
 -->
