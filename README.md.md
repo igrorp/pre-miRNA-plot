@@ -123,11 +123,13 @@ You can choose which colors will be used to highlight the 5p and 3p miRNAs, resp
 be colored red (5p) and green (3p).
 >You can choose colors and get their RGB codes in this [website]([https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp))
 
-If you wanted to set the colors to blue and red you would type:
+If you wanted to set the colors to blue and red you would have to type:
 
     premirnaplot your_file.txt -c blue red
- If you wanted to set the colors to purple and pink, you 
+ If you wanted to set the colors to purple and pink, you would have to type:
+
+    premirnaplot your_file.txt -c 204 0 205 255 51 153
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTMzNTQyNzMsMTUwOTU3Njc0Nl19
+eyJoaXN0b3J5IjpbNzE3MzYwMTIzLDE1MDk1NzY3NDZdfQ==
 -->
