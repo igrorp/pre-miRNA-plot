@@ -90,7 +90,7 @@ sudo make install
 <p>You can choose which <strong>colors</strong> will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or specify the <strong>RGB codes</strong> corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will<br>
 be colored red (5p) and green (3p).</p>
 <blockquote>
-<p>You can choose colors and get their RGB codes in this <a href="%5Bhttps://www.w3schools.com/colors/colors_picker.asp%5D(https://www.w3schools.com/colors/colors_picker.asp)">website</a></p>
+<p>You can choose colors and get their RGB codes in this <a href="https://www.w3schools.com/colors/colors_picker.asp">website</a></p>
 </blockquote>
 <p>If you wanted to set the colors to blue and red you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c blue red
