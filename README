@@ -85,6 +85,8 @@ sudo make install
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p>
 </blockquote>
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
+<h3 id="labels">Labels</h3>
+<h3 id="colors">Colors</h3>
 <p>You can choose which <strong>colors</strong> will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or specify the <strong>RGB codes</strong> corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will<br>
 be colored red (5p) and green (3p).</p>
 <blockquote>
@@ -97,6 +99,7 @@ be colored red (5p) and green (3p).</p>
 <pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
 </code></pre>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" alt="Different colors"></p>
+<h3 id="resolution">Resolution</h3>
 <p>You can also choose the <strong>resolution</strong> of the images, the default is 200 pixels. You can increase this value for better images for publications or to be able to zoom in a particular area of the picture and not losing quality, for example, but be aware that this increases the program execution time.</p>
 <p>If you wanted to set the resolution of the images to 1200 pixels, you wold have to type:</p>
 <pre><code>premirnaplot your_file.txt -q 1200 
