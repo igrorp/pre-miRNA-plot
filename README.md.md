@@ -1,4 +1,3 @@
-\-\-\- \-\-\-
 
 # Welcome to pre-miRNA-plot manual!
 
