@@ -92,5 +92,4 @@ sudo make install
 <p>If you wanted to set the resolution of the images to 1200 pixels, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
-<!--stackedit_data:&amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;#10;-->
 </blockquote>
