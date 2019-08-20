@@ -3,6 +3,8 @@
 
 ---
 
+<hr>
+<hr>
 <h1 id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manuCARALHOOOOOal!</h1>
 <p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
 <ol>
@@ -72,14 +74,13 @@ sudo make install
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p></blockquote>
 <h2 id="exploring-the-parameter">3.2 Exploring the parameters</h2>
 <h3 id="labels">Labels</h3>
-<p>If you included labels/annotations in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
+<p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
 <p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (black, blue, red, white and green) or select a particular color tone informing its RGB code.
-
-<blockquote> You can get RGB codes from selected colors in this <a href="https://www.w3schools.com/colors/colors_picker.asp">website</blockquote>
-</p><p>If you wanted to set the colors to green and blue, for example, you would have to type:</p>
-<pre><code>premirnaplot your_file.txt -c green red
+</p><blockquote> You can get RGB codes from selected colors in this <a href="https://www.w3schools.com/colors/colors_picker.asp">website</a></blockquote>
+<p>If you wanted to set the colors to green and blue, for example, you would have to type:</p>
+<pre><code>premirnaplot your_file.txt -c green blue
 </code></pre>
 <p>If you wanted to set the colors to purple and pink, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
@@ -92,8 +93,5 @@ sudo make install
 <p>If you wanted to set the resolution of the images to 1200 pixels, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
-<!--stackedit_data:&amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;#10;-->
+<!--stackedit_data:&amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;#10;-->
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE5OTI5Nzg1LDIwMTI1OTk0MjZdfQ==
--->
