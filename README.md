@@ -77,9 +77,9 @@ sudo make install
 <h3 id="colors">Colors</h3>
 <p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (black, blue, red, white and green) or select a particular color tone informing its RGB code.
 
-<blockquote> You can get RGB codes from selected colors in this <a> href="[https://www.w3sch](https://www.w3schools.com/colors/colors_picker.asp)</blockquote>
-</p><p>If you wanted to set the colors to blue and red, for example, you would have to type:</p>
-<pre><code>premirnaplot your_file.txt -c blue red
+<blockquote> You can get RGB codes from selected colors in this <a href="https://www.w3schools.com/colors/colors_picker.asp">website</blockquote>
+</p><p>If you wanted to set the colors to green and blue, for example, you would have to type:</p>
+<pre><code>premirnaplot your_file.txt -c green red
 </code></pre>
 <p>If you wanted to set the colors to purple and pink, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
@@ -95,5 +95,5 @@ sudo make install
 <!--stackedit_data:&amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;#10;-->
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NzQ2OTY4OCwyMDEyNTk5NDI2XX0=
+eyJoaXN0b3J5IjpbMjE5OTI5Nzg1LDIwMTI1OTk0MjZdfQ==
 -->
