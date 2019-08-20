@@ -76,6 +76,8 @@ sudo make install
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
 <p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (black, blue, red, white and green) or select a particular color tone informing its RGB code.
+
+<blo
 </p><p>If you wanted to set the colors to blue and red, for example, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c blue red
 </code></pre>
@@ -93,5 +95,5 @@ sudo make install
 <!--stackedit_data:&amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;#10;-->
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMjU5OTQyNl19
+eyJoaXN0b3J5IjpbMTk3MTEwNzQwNywyMDEyNTk5NDI2XX0=
 -->
