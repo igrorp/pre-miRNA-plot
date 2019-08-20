@@ -82,7 +82,7 @@ git clone https://github.com/igrorp/pre-miRNA-plot.git
 After decompression or cloning, you have to enter the folder and run the [install.sh](http://install.sh) file to make the program executable and to move it to _/usr/local/bin/_ so you can access it from anywhere. You will need superuser permission for that.
 
 ```
-./install.sh
+sh install.sh
 ```
 
 You can check if the program has been successfully moved and installed by testing it with our test data.
@@ -120,7 +120,7 @@ If you added labels to your input files, as described above, you have to set the
 You can choose which **colors** will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or specify the **RGB codes** corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will be colored red (5p) and green (3p).
 >You can choose colors and get their RGB codes in this [website](https://www.w3schools.com/colors/colors_picker.asp)
 
-If you wanted to set the colors to blue and red you would have to type:
+If you wanted to set the colors to blue and red, for example, you would have to type:
 
     premirnaplot your_file.txt -c blue red
  If you wanted to set the colors to purple and pink, you would have to type:
@@ -134,11 +134,11 @@ If you wanted to set the colors to blue and red you would have to type:
 
 You can also choose the **resolution** of the images, the default is 200 pixels. You can increase this value for better images for publications or to be able to zoom in a particular area of the picture and not losing quality, for example, but be aware that this increases the program execution time.
 
-If you wanted to set the resolution of the images to 1200 pixels, you wold have to type:
+If you wanted to set the resolution of the images to 1200 pixels, you would have to type:
 
     premirnaplot your_file.txt -q 1200 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ1NDY1MzM5XX0=
+eyJoaXN0b3J5IjpbLTE0NTY2MTExMjcsMzQ1NDY1MzM5XX0=
 -->
