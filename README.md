@@ -30,14 +30,18 @@ Pre-miRNA-plot has some dependencies and you need to check whether you have to i
 
 <p>Matplotlib is a graphing package for Python; pre-miRNA-plot uses it to generate diferente plots. You can install it using the <strong>pip</strong> Python package manager.</p>
 
-<pre><code>python –m pip install –U matplotlib
-</code></pre>
+<pre><code>python –m pip install –U matplotlib</code></pre>
+
 <p>If you don’t have pip installed, you can use <strong>apt</strong> instead:</p>
-<pre><code>sudo a install python3-matplotlib
-</code></pre>
-<p>If you are having trouble, please visit their ehttps://matplotlib.org/3.1.1/users/installing.html">website</a> for more details.</p>
+
+<pre><code>sudo a install python3-matplotlib</code></pre>
+
+<p>If you are having trouble, please visit their <a href="https://matplotlib.org/3.1.1/users/installing.html">website</a> for more details.</p>
+
 <h2 id="ghostscript">1.3 Ghostscript</h2>
-<p>Ghostscript is used to convert the Postscript files (.ps) to Portable Network Graphics images (.png). If you do not have it installed, we have to download the tar ball file containing the program, decompress it and then compile it.</p>
+
+<p>Ghostscript is used to convert the Postscript files (.ps) to Portable Network Graphics images (.png). If you do not have it installed, you have to download the tar ball file containing the program, decompress it and then compile it.</p>
+
 <pre><code>wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs927/ghostscript-9.27.tar.gz
 tar xvzf ghostscript-9.27.tar.gz
 cd ghostscript-9.27/
@@ -108,6 +112,6 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is nop
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4MjcxNzEzOSwxMDY1NTk5MjcwLDg3Mj
-k0NDM0LDEwNzQ5MzA3NTBdfQ==
+eyJoaXN0b3J5IjpbNDQxOTE3MjMyLDEwNjU1OTkyNzAsODcyOT
+Q0MzQsMTA3NDkzMDc1MF19
 -->
