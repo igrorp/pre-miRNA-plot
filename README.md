@@ -4,7 +4,6 @@
 ---
 
 <hr>
-<hr>
 <h1 id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
 <p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/master/documentation.pdf">documentation</a> file.</p>
 <ol>
@@ -94,8 +93,8 @@ sudo make install
 <pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
 </code></pre>
 <p align="center">
-</p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width="314" height="480">
-
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width="314" height="480">
+</p>
 <h3 id="resolution">Resolution</h3>
 <p>You can also choose the <strong>resolution</strong> of the images, the default is 200 pixels. You can increase this value for better images for publications or to be able to zoom in a particular area of the picture and not losing quality, for example, but be aware that this increases the program execution time.</p>
 <p>If you wanted to set the resolution of the images to 1200 pixels, you would have to type:</p>
