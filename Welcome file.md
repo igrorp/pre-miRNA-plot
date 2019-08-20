@@ -1,7 +1,5 @@
 ---
 
----
-
 <h1 id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
 
 <p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/master/documentation.pdf">documentation</a> file.</p>
@@ -148,9 +146,7 @@ sudo make install
 </code></pre>
 
 <p align="center">
-
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width="314" height="480">
-
 </p>
 
 <h3 id="resolution">Resolution</h3>
@@ -162,5 +158,5 @@ sudo make install
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTIzMzI2NzQ5XX0=
+eyJoaXN0b3J5IjpbMTk1NzUxMTcwMl19
 -->
