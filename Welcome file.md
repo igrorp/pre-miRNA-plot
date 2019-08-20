@@ -37,7 +37,6 @@
 <p>Pre-miRNA-plot runs in Python3+. You can check which version of Python you have installed in your machine with the command bellow:</p>
 
 <pre><code>python --version
-
 </code></pre>
 
 <p>Anything higher than 3.0 should work just fine. In case you have an older version, you can go to the <a href="https://www.python.org/downloads/">Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
@@ -47,13 +46,11 @@
 <p>Matplotlib is a graphing package for Python; pre-miRNA-plot uses it to generate diferente plots. You can install it using the <strong>pip</strong> Python package manager.</p>
 
 <pre><code>python –m pip install –U matplotlib
-
 </code></pre>
 
 <p>If you don’t have pip installed, you can use <strong>apt</strong> instead:</p>
 
 <pre><code>sudo apt install python3-matplotlib
-
 </code></pre>
 
 <p>If you are having trouble, please visit their <a href="https://matplotlib.org/3.1.1/users/installing.html">website</a> for more details.</p>
@@ -63,17 +60,11 @@
 <p>Ghostscript is used to convert the Postscript files (.ps) to Portable Network Graphics images (.png). If you do not have it installed, we have to download the tar ball file containing the program, decompress it and then compile it.</p>
 
 <pre><code>wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs927/ghostscript-9.27.tar.gz
-
 tar xvzf ghostscript-9.27.tar.gz
-
 cd ghostscript-9.27/
-
 ./configure
-
 make
-
 sudo make install
-
 </code></pre>
 
 <h2 id="vienna-rna-package">1.4 Vienna RNA package</h2>
@@ -81,19 +72,12 @@ sudo make install
 <p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to “costumize” it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package.</p>
 
 <pre><code>wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
-
 tar xvzf ViennaRNA-2.4.13.tar.gz
-
 cd ViennaRNA-2.4.13/
-
 ./configure
-
 make
-
 sudo make install
-
 </code></pre>
-
 <blockquote>
 
 <p>If you are not familiar with command line, each one of the lines above has to be run separetly. Copy the command in each line, run it and wait to see if the process was successfull.</p>
@@ -105,19 +89,16 @@ sudo make install
 <p>To install pre-miRNA-plot you can download this repository as a zip file in the main page, or clone it in your machine:</p>
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git
-
 </code></pre>
 
 <p>After decompression or cloning, you have to enter the folder and run the <a href="http://install.sh">install.sh</a> file to make the program executable and to move it to <em>/usr/local/bin/</em> so you can access it from anywhere. You will need superuser permission for that.</p>
 
 <pre><code>sh install.sh
-
 </code></pre>
 
 <p>You can check if the program has been successfully moved and installed by testing it with our test data.</p>
 
 <pre><code>premirnaplot test_data/osativa.txt -a T -c x x x x x x
-
 </code></pre>
 
 <h1 id="how-to-use">3. How to use</h1>
@@ -153,7 +134,6 @@ sudo make install
 <p>If you added labels to your input files, as described above, you have to set the <code>-a</code> parameter to True, like this:</p>
 
 <pre><code>premirnaplot your_file.txt -a T
-
 </code></pre>
 
 <h3 id="colors">Colors</h3>
@@ -169,13 +149,11 @@ sudo make install
 <p>If you wanted to set the colors to blue and red, for example, you would have to type:</p>
 
 <pre><code>premirnaplot your_file.txt -c blue red
-
 </code></pre>
 
 <p>If you wanted to set the colors to purple and pink, you would have to type:</p>
 
 <pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
-
 </code></pre>
 
 <p align="center">
@@ -193,5 +171,5 @@ sudo make install
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTQ3MjcyOV19
+eyJoaXN0b3J5IjpbLTEzMzA4OTEwNjFdfQ==
 -->
