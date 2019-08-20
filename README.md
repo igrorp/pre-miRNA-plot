@@ -50,7 +50,7 @@ make
 sudo make install
 </code></pre>
 <h2 id="vienna-rna-package">1.4 Vienna RNA package</h2>
-<p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to “costumize” it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">websit to have more details and get to know more about this amazing package.</p>
+<p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to “costumize” it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package.</p>
 <pre><code>wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
 tar xvzf ViennaRNA-2.4.13.tar.gz
 cd ViennaRNA-2.4.13/
@@ -59,9 +59,11 @@ make
 sudo make install
 </code></pre>
 <blockquote>
-</blockquote><p>If you are not familiar with command line, each one of the lines above has to be run separetly. Copy the command in each line, run it and wait to see if the process was successfull.</p>
+<p>If you are not familiar with command line, each one of the lines above has to be run separetly. Copy the command in each line, run it and wait to see if the process was successfull.</p>
 </blockquote>
+
 <h1 id="installation">2. Installation</h1>
+
 <p>To install pre-miRNA-plot you can download this repository as a zip file in the main page, or clone it in your machine:</p>
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git
 </code></pre>
@@ -112,6 +114,6 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is nop
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQxOTE3MjMyLDEwNjU1OTkyNzAsODcyOT
-Q0MzQsMTA3NDkzMDc1MF19
+eyJoaXN0b3J5IjpbLTE2OTk2Mzg3OSwxMDY1NTk5MjcwLDg3Mj
+k0NDM0LDEwNzQ5MzA3NTBdfQ==
 -->
