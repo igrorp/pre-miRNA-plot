@@ -1,6 +1,7 @@
 <hr>
 <h1 id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
-Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfo anRNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
+Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfo anRNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.
+
 
 <ol>
 <li><a href="Configuration">Configuration</a><br>
@@ -117,5 +118,5 @@ eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT
 U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxODMzMzI0MF19
+eyJoaXN0b3J5IjpbLTc4NzM0MDEsMTcxODMzMzI0MF19
 -->
