@@ -77,8 +77,8 @@ sudo make install
 </blockquote><p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p>
 <h2 id="exploring-the-parameter">3.2 Exploring the parameters</h2>
 <h3 id="labels">Labels</h3>
-<p>If you included labels/annotations in you input files, as described above, make sure you set the <code>-a</code> parameter to True, like this</p>
-<pre><code>premirnaplot -
+<p>If you included labels/annotations in you input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
+<pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
 <p>If you wanted to set the colors to blue and red, for example, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c blue red
@@ -96,6 +96,6 @@ sudo make install
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIyMjQ3ODI3LDIwODk5NzgwODAsLTEwMT
-k3NDMzNTNdfQ==
+eyJoaXN0b3J5IjpbLTUwMDg2MTUxNiwyMDg5OTc4MDgwLC0xMD
+E5NzQzMzUzXX0=
 -->
