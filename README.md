@@ -1,5 +1,10 @@
+---
+
+
+---
+
 <hr>
-<p align="center"> <h1 id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1> </p>
+<h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
 <p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
@@ -61,8 +66,7 @@ sudo make install
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex1.png" alt="Example 1"></p>
 <blockquote>
-<p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p
-<p>If you have labels or some sort of  to your data, you can include them in the first column, like this:</p>
+<p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p>If you have labels or some sort of  to your data, you can include them in the first column, like this:
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex2.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p></blockquote>
@@ -72,7 +76,7 @@ sudo make install
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
 <p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (black, blue, red, white and green) or select a particular color tone informing its RGB code.
-<blockquote> You can get RGB codes from selected colors in this <a href="schools.com/colors/colors_picker.asp&quot;">website</a</blockquote>
+</p><blockquote> You can get RGB codes from selected colors in this <a href="schools.com/colors/colors_picker.asp&quot;">website</a>
 <p>If you wanted to set the colors to en and ee, for example, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c green blue
 </code></pre>
@@ -88,7 +92,4 @@ sudo make install
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
 </blockquote>
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2Mjk1MzEzNl19
--->
+<p></p></blockquote>
