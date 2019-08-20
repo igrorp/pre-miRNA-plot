@@ -5,8 +5,8 @@ Pre-miRNA-plot is a program for generating multiple images of miRNA precursors u
 <ol>
 <li><a href="Configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
-1.2 <a atplotlibMatplotlib</a><br>
-1.3 <a hrhostscriptGhostscript</a><br>
+1.2 <a href="Matplotlib">Matplotlib</a><br>
+1.3 <a href="Ghostscript">Ghostscript</a><br>
 1.4 <a href="#14-vienna-rna-packageVienna RNA package</a></li>
 <li><a nstallation">Installation</a></li>
 <li><a href="#3-how-to-use">How to use</a><br>
@@ -99,6 +99,6 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is nop
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTA3OTU0ODgsMTA2NTU5OTI3MCw4Nz
+eyJoaXN0b3J5IjpbLTE1ODk0MzA1NDgsMTA2NTU5OTI3MCw4Nz
 I5NDQzNCwxMDc0OTMwNzUwXX0=
 -->
