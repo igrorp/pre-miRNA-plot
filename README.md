@@ -67,7 +67,7 @@ sudo make install
 <p>To install pre-miRNA-plot you can download this repository as a zip file in the main page, or clone it in your machine:</p>
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git
 </code></pre>
-<p>After decompression or cloning, you have to enter the folder and run the <a hinstall.sh">install.sh file to make the program executable and to move it to /usr/local/bin/ so you can access it from anywhere. You will need superuser permission for that.</p>
+<p>After decompression or cloning, you have to enter the folder and run the <a href="install.sh">install.sh</a> file to make the program executable and to move it to /usr/local/bin/ so you can access it from anywhere. You will need superuser permission for that.</p>
 <pre><code>sh ./install.sh
 </code></pre>
 <p>You can check if the program has been successfully moved and installed by testing it with our test data.</p>
@@ -114,6 +114,6 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is nop
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTk2Mzg3OSwxMDY1NTk5MjcwLDg3Mj
-k0NDM0LDEwNzQ5MzA3NTBdfQ==
+eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT
+U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=
 -->
