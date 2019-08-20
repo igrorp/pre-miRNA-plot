@@ -1,23 +1,18 @@
----
-
-
----
-
-<hr>
 <h1 id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manuCARALHOOOOOal!</h1>
-Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.
+
+<p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
 
 
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
-1.2 <a href="M#12-matplotlib">Matplotlib</a><br>
-1.3 <a href="Ghostscript">Ghostscript</a><br>
+1.2 <a href="#12-matplotlib">Matplotlib</a><br>
+1.3 <a href="#13-ghostscript">Ghostscript</a><br>
 1.4 <a href="#14-vienna-rna-package">Vienna RNA package</a></li>
-<li><a href="Installation">Installation</a></li>
+<li><a href="#2-installation">Installation</a></li>
 <li><a href="#3-how-to-use">How to use</a><br>
-3.1 <a href="input-files">Input files</a><br>
-3.2 <a href="exploring-the-parameters">Exploring the parameters</a></li>
+3.1 <a href="#4-input-files">Input files</a><br>
+3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
 </ol>
 
 
@@ -94,5 +89,5 @@ sudo make install
 <!--stackedit_data:&amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;#10;-->
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTYyNTc2MjNdfQ==
+eyJoaXN0b3J5IjpbLTIwNzgyNDA2ODJdfQ==
 -->
