@@ -4,7 +4,7 @@ Pre-miRNA-plot is a program for generating multiple images of miRNA precursors u
 
 
 <ol>
-<li><a href="Configuration">Configuration</a><br>
+<li><a href="configuration">Configuration</a><br>
 1.1 <a href="python">Python</a><br>
 1.2 <a href="Matplotlib">Matplotlib</a><br>
 1.3 <a href="Ghostscript">Ghostscript</a><br>
@@ -118,5 +118,5 @@ eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT
 U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3NDQzNjYxMSwxNzE4MzMzMjQwXX0=
+eyJoaXN0b3J5IjpbMTQwMTYwMzM1NywxNzE4MzMzMjQwXX0=
 -->
