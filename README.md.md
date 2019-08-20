@@ -33,7 +33,7 @@ Pre-miRNA-plot has some dependencies and you need to check whether you have to i
 
 <p>If you don’t have pip installed, you can use <strong>apt</strong> instead:</p>
 
-<pre><code>sudo a install python3-matplotlib</code></pre>
+<pre><code>sudo apt install python3-matplotlib</code></pre>
 
 <p>If you are having trouble, please visit their <a href="https://matplotlib.org/3.1.1/users/installing.html">website</a> for more details.</p>
 
@@ -67,7 +67,7 @@ sudo make install
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git
 </code></pre>
 <p>After decompression or cloning, you have to enter the folder and run the <a href="install.sh">install.sh</a> file to make the program executable and to move it to /usr/local/bin/ so you can access it from anywhere. You will need superuser permission for that.</p>
-<pre><code>sh ./install.sh
+<pre><code>sh install.sh
 </code></pre>
 <p>You can check if the program has been successfully moved and installed by testing it with our test data.</p>
 <pre><code>premirnaplot test_data/osativa.txt -a T -c x x x x x x
@@ -117,5 +117,5 @@ eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT
 U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NzcyOTAyN119
+eyJoaXN0b3J5IjpbMTcxODMzMzI0MF19
 -->
