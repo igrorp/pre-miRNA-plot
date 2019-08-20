@@ -113,7 +113,7 @@ If you have labels or some sort of annotation to your data, you can include them
 
 ### Labels
 If you added labels to your input files, as described above, you have to set the `-a` parameter to True, like this:
-
+<
     premirnaplot your_file.txt -a T
 
 ### Colors
@@ -140,5 +140,5 @@ If you wanted to set the resolution of the images to 1200 pixels, you wold have 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ1NDY1MzM5XX0=
+eyJoaXN0b3J5IjpbMTMyOTkzODc5MV19
 -->
