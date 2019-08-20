@@ -1,8 +1,4 @@
----
-
-
----<hr>
-<h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
+<hr><h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
 <p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
@@ -76,7 +72,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <h3 id="colors">Colors</h3>
 <p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (black, blue, red, white and green) or select a particular color tone informing its RGB code.
 </p><blockquote> You can get RGB codes from selected colors in this <a href="schools.com/colors/colors_picker.asp&quot;">website</a>
-<p>If you wanted to set the colors to en and ee, for example, you would have to type:</p>
+<p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c green blue
 </code></pre>
 <p>If you wanted to set the colors to purple and pink, you would have to type:</p>
@@ -93,5 +89,5 @@ If you have labels or some sort of  to your data, you can include them in the fi
 </blockquote>
 <p></p></blockquote>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDA5NzM0OTBdfQ==
+eyJoaXN0b3J5IjpbMjc0NDUwMzgyXX0=
 -->
