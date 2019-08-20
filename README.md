@@ -1,9 +1,4 @@
----
-
-
----
-
-<hr><h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
+<hr>h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
 <p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
@@ -67,17 +62,18 @@ sudo make install
 <blockquote>
 <p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p></blockquote>
 If you have labels or some sort of  to your data, you can include them in the first column, like this:
+
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex2.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p></blockquote>
-<h2 id="exploring-the-parameter">3.2 Exploring the parameters</h2>
+<h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
 <h3 id="labels">Labels</h3>
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
 <p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (black, blue, red, white and green) or select a particular color tone informing its RGB code.
 </p><blockquote> You can get RGB codes from selected colors in this <a href="schools.com/colors/colors_picker.asp&quot;">website</a>
-<p></p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:
+<p></p></blockquote>If you wanted to set the colors to green and e, for example, you would have to type:
 <pre><code>premirnaplot your_file.txt -c green blue
 </code></pre>
 <p>If you wanted to set the colors to purple and pink, you would have to type:</p>
@@ -92,6 +88,10 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
 
-<p></p>
+<p></p><cktppock
+
 <!--stackedit_data:&amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;#10;-->
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTgyNTI5MTc5NV19
+-->
