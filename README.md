@@ -71,7 +71,7 @@ sudo make install
 <p>If you included labels/annotations in you input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
-<p>If you wanted to set the colors to blue and red, for example, you would have to type:</p>
+<p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can inform predefined colors (If you wanted to set the colors to blue and red, for example, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c blue red
 </code></pre>
 <p>If you wanted to set the colors to purple and pink, you would have to type:</p>
@@ -88,6 +88,6 @@ sudo make install
 <!--stackedit_data:&amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;#10;-->
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDMxNjM1MjMsLTIwOTE4OTY1ODQsLT
-ExMjA3NjI3MjhdfQ==
+eyJoaXN0b3J5IjpbMzE5NzE1MDYxLC0yMDAzMTYzNTIzLC0yMD
+kxODk2NTg0LC0xMTIwNzYyNzI4XX0=
 -->
