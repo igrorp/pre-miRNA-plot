@@ -114,7 +114,7 @@ If you have labels or some sort of annotation to your data, you can include them
 ### Labels
 If you added labels to your input files, as described above, you have to set the `-a` parameter to True, like this:
 
-    premirnaplot your_file.txt 
+    premirnaplot your_file.txt -a T
 
 ### Colors
 You can choose which **colors** will be used to highlight the 5p and 3p miRNAs, respectively. You can use predefined colors’ names (green, black, red, blue, white) or specify the **RGB codes** corresponding to the colors. There is no problem if you inform just one color. By default, the sequences will be colored red (5p) and green (3p).
@@ -140,5 +140,5 @@ If you wanted to set the resolution of the images to 1200 pixels, you wold have 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTc2NzQzODFdfQ==
+eyJoaXN0b3J5IjpbMzQ1NDY1MzM5XX0=
 -->
