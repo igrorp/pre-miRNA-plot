@@ -1,18 +1,20 @@
 -
 <hr>
 <h1 id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
-Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfo anRNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
+Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfo anRNAplot. It allows to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/master.pdf">documentation</a> file.</p>
+
 <ol>
 <li><a href="Configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
 1.2 <a href="Matplotlib">Matplotlib</a><br>
 1.3 <a href="Ghostscript">Ghostscript</a><br>
-1.4 <a href="#14-vienna-rna-packageVienna RNA package</a></li>
-<li><a nstallation">Installation</a></li>
+1.4 <a href="#14-vienna-rna-package">Vienna RNA package</a></li>
+<li><a href="Installation">Installation</a></li>
 <li><a href="#3-how-to-use">How to use</a><br>
-3.1 <a hrenput-iles"files</a><br>
+3.1 <a href="input-iles"files</a><br>
 3.2 <a hrexploring-he-arametersExploringtheparameters</a></li>
 </ol>
+
 <h1 id="configuration">1. Configuration</h1>Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.</p>
 <h2 id="python">1.1 Python</h2>
 <p>Pre-miRNA-plot runs in Python3+. You can check which version of Python you have installed in your machine with the command bellow:</p>
@@ -99,6 +101,6 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is nop
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODk0MzA1NDgsMTA2NTU5OTI3MCw4Nz
+eyJoaXN0b3J5IjpbLTIwMjQ0MDYyNzIsMTA2NTU5OTI3MCw4Nz
 I5NDQzNCwxMDc0OTMwNzUwXX0=
 -->
