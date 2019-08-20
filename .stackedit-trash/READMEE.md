@@ -76,6 +76,7 @@ sudo make install
 <blockquote>
 </blockquote><p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p>
 
+<h2 id
 <p>If you wanted to set the colors to blue and red, for example, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c blue red
 </code></pre>
@@ -92,5 +93,5 @@ sudo make install
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTk3NDMzNTNdfQ==
+eyJoaXN0b3J5IjpbMjA4OTk3ODA4MCwtMTAxOTc0MzM1M119
 -->
