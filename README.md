@@ -64,7 +64,8 @@ sudo make install
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex1.png" alt="Example 1"></p>
 <blockquote>
-<p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p>If you have labels or some sort of  to your data, you can include them in the first column, like this:
+<p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p></blockquote>
+If you have labels or some sort of  to your data, you can include them in the first column, like this:
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex2.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p></blockquote>
@@ -92,5 +93,5 @@ sudo make install
 </blockquote>
 <p></p></blockquote>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5Nzk5NTMzMl19
+eyJoaXN0b3J5IjpbNDA5NzM0OTBdfQ==
 -->
