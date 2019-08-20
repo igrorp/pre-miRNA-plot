@@ -56,7 +56,7 @@ sudo make install
 <pre><code>premirnaplot test_data/osativa.txt -a T -c x x x x x x
 </code></pre>
 <h1 id="how-to-use">3. How to use</h1>
-<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the che rs (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot --help</code>.</p>
+<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot --help</code>.</p>
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex1.png" alt="Example 1"></p>
@@ -71,7 +71,7 @@ sudo make install
 <p>If you included labels/annotations in you input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
-<p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can inform predefined colors (black, blue, red, white, green) or select a particular color tone informing its RGB code.
+<p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (black, blue, red, white, green) or select a particular color tone informing its RGB code.
 
 If you wanted to set the colors to blue and red, for example, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c blue red
@@ -90,6 +90,6 @@ If you wanted to set the colors to blue and red, for example, you would have to 
 <!--stackedit_data:&amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;#10;-->
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjY5Mjc4MTQzLC0yMDAzMTYzNTIzLC0yMD
-kxODk2NTg0LC0xMTIwNzYyNzI4XX0=
+eyJoaXN0b3J5IjpbMTI2ODg0MjUyNCwtMjAwMzE2MzUyMywtMj
+A5MTg5NjU4NCwtMTEyMDc2MjcyOF19
 -->
