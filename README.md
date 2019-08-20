@@ -93,7 +93,7 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is nop
 <pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
 </code></pre>
 <p align="center">
-</p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width="314" height="480">
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width="314" height="480">
 </p>
 <h3 id="resolution">Resolution</h3>
 <p>You can also choose the <strong>resolution</strong> of the images, the default is 200 pixels. You can increase this value for better images for publications or to be able to zoom in a particular area of the picture and not losing quality, for example, but be aware that this increases the program execution time.</p>
@@ -103,5 +103,6 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is nop
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODcyOTQ0MzQsMTA3NDkzMDc1MF19
+eyJoaXN0b3J5IjpbLTE5ODMwMzQxNzMsODcyOTQ0MzQsMTA3ND
+kzMDc1MF19
 -->
