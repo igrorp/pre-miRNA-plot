@@ -12,17 +12,24 @@ Pre-miRNA-plot is a program for generating multiple images of miRNA precursors u
 <li><a href="Installation">Installation</a></li>
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="input-files">Input files</a><br>
-3.2 <a href="exploring-the-parameters"Exploringtheparameters</a></li>
+3.2 <a href="exploring-the-parameters">Exploring the parameters</a></li>
 </ol>
 
-<h1 id="configuration">1. Configuration</h1>Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.</p>
+<h1 id="configuration">1. Configuration</h1>
+Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.</p>
+
 <h2 id="python">1.1 Python</h2>
+
 <p>Pre-miRNA-plot runs in Python3+. You can check which version of Python you have installed in your machine with the command bellow:</p>
-<pre><code>python --version
-</code></pre>
-<p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> e</a> and follow their tutorial to update the platform to a more recent release.</p>
+
+<pre><code>python --version</code></pre>
+
+<p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
+
 <h2 id="matplotlib">1.2 Matplotlib</h2>
+
 <p>Matplotlib is a graphing package for Python; pre-miRNA-plot uses it to generate diferente plots. You can install it using the <strong>pip</strong> Python package manager.</p>
+
 <pre><code>python –m pip install –U matplotlib
 </code></pre>
 <p>If you don’t have pip installed, you can use <strong>apt</strong> instead:</p>
@@ -101,6 +108,6 @@ specify the <strong>RGB codes</strong> corresponding to the colors. There is nop
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyODM2MTQ3NSwxMDY1NTk5MjcwLDg3Mj
+eyJoaXN0b3J5IjpbLTg4MjcxNzEzOSwxMDY1NTk5MjcwLDg3Mj
 k0NDM0LDEwNzQ5MzA3NTBdfQ==
 -->
