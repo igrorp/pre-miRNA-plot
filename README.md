@@ -66,6 +66,10 @@ sudo make install
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex2.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p></blockquote>
+<h2 id="exploring-the-parameter">3.2 Exploring the parameters</h2>
+<h3 id="labels">Labels</h3>
+<p>If you included labels/annotations in you input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
+<pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
 <p>If you wanted to set the colors to blue and red, for example, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -c blue red
@@ -84,6 +88,6 @@ sudo make install
 <!--stackedit_data:&amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;#10;-->
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI3MDc4OTY3LC0yMDkxODk2NTg0LC0xMT
-IwNzYyNzI4XX0=
+eyJoaXN0b3J5IjpbLTIwMDMxNjM1MjMsLTIwOTE4OTY1ODQsLT
+ExMjA3NjI3MjhdfQ==
 -->
