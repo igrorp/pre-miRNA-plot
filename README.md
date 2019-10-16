@@ -92,4 +92,8 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
 <p></p><!--stackedit_data:&amp;amp;amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;amp;amp;#10;-->
+**P**
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTA3MDEyNDc1N119
+-->
