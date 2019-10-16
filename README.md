@@ -92,8 +92,10 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
 <p></p><!--stackedit_data:&amp;amp;amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;amp;amp;#10;-->
-<h3 id="">Threading</h3>
+<h3 id="threading">Threading</h3>
+<p>You can set the number of allowed threads to run and speed up the general runtime of the program. </p>
+<pre><code>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5NTY2ODE5OF19
+eyJoaXN0b3J5IjpbMTA4NjY1MTA0Ml19
 -->
