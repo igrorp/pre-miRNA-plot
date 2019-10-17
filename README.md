@@ -16,7 +16,7 @@
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
-3.3<a href="#33-threading"> Threading</a>
+3.3 <a href="#33-threading"> Threading</a></li>
 </ol>
 <h1 id="configuration">1. Configuration</h1>
 Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.
@@ -101,6 +101,6 @@ If you have labels or some sort of  to your data, you can include them in the fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODIxNjM1NjgsMTY1OTg3MjM3NiwtMT
-U0NjcyODA3NywtOTEyNTA0NjM1XX0=
+eyJoaXN0b3J5IjpbLTQ0OTE4MjI0MCwxNjU5ODcyMzc2LC0xNT
+Q2NzI4MDc3LC05MTI1MDQ2MzVdfQ==
 -->
