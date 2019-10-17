@@ -77,7 +77,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
 <h3 id="colors">Colors</h3>
-<p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (black, blue, red, white and green) or select a particular color tone informing its RGB code.
+<p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
 </p><blockquote> You can get RGB codes from selected colors in this <a href="schools.com/colors/colors_picker.asp&quot;">website</a><p></p></blockquote>If you wanted to set the colors to green and e, for example, you would have to type:
 <pre><code>premirnaplot your_file.txt -c green blue
 </code></pre>
@@ -101,6 +101,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5NzI1NjQzMiwtNDQ5MTgyMjQwLDE2NT
-k4NzIzNzYsLTE1NDY3MjgwNzcsLTkxMjUwNDYzNV19
+eyJoaXN0b3J5IjpbLTE2MzU4NzcyNjEsLTc5NzI1NjQzMiwtND
+Q5MTgyMjQwLDE2NTk4NzIzNzYsLTE1NDY3MjgwNzcsLTkxMjUw
+NDYzNV19
 -->
