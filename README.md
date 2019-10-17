@@ -4,6 +4,8 @@
 ---
 
 <hr>
+<hr>
+<hr>
 <h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
 <p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
 <ol>
@@ -16,7 +18,7 @@
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
-3.3 <a href="#33-threading"> Threading</a></li>
+3.3 <a href="#33-threading"> Threading</a>
 </ol>
 <h1 id="configuration">1. Configuration</h1>
 Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.
@@ -92,16 +94,8 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <p>If you wanted to set the resolution of the images to 1200 pixels, you would have to type:</p>
 <pre><code>premirnaplot your_file.txt -q 1200
 </code></pre>
-<p></p><!--stackedit_data:&amp;amp;amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;amp;amp;#10;-->
-
+<p></p><!--stackedit_data:&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;-->
 <h3 id="threading">Threading</h3>
 <p>You can set the number of allowed threads to run and speed up the general runtime of the program, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzU4NzcyNjEsLTc5NzI1NjQzMiwtND
-Q5MTgyMjQwLDE2NTk4NzIzNzYsLTE1NDY3MjgwNzcsLTkxMjUw
-NDYzNV19
--->
