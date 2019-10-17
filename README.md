@@ -81,7 +81,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 </p><blockquote> You can get RGB codes from selected colors in this <a href="schools.com/colors/colors_picker.asp&quot;">website</a><p></p></blockquote>If you wanted to set the colors to green and e, for example, you would have to type:
 <pre><code>premirnaplot your_file.txt -c green blue
 </code></pre>
-<p>If you wanted to set the colors to purple and pink, you would have to type:
+<p>If you wanted to set the colors to a custom tone of purple and pink, you would have to type:
 </p><pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
 </code></pre>
 <p></p><p align="center">
@@ -101,6 +101,6 @@ If you have labels or some sort of  to your data, you can include them in the fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0OTE4MjI0MCwxNjU5ODcyMzc2LC0xNT
-Q2NzI4MDc3LC05MTI1MDQ2MzVdfQ==
+eyJoaXN0b3J5IjpbMTg4NzY0NDQ4OSwtNDQ5MTgyMjQwLDE2NT
+k4NzIzNzYsLTE1NDY3MjgwNzcsLTkxMjUwNDYzNV19
 -->
