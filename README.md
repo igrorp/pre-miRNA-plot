@@ -64,11 +64,11 @@ sudo make install
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot --help</code>.</p>
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
-<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex1.png" alt="Example 1"></p>
+<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex1.png" alt="Example 1"></p>
 <blockquote>
 <p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p></blockquote>
 If you have labels or some sort of  to your data, you can include them in the first column, like this:
-<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/ex2.png" alt="Example 2"></p>
+<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p></blockquote>
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
@@ -84,7 +84,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 </p><pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153
 </code></pre>
 <p></p><p align="center">
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/colors.png" width="314" height="480">
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/colors.png" width="314" height="480">
 </p>
 <h3 id="resolution">Resolution</h3>
 <p>You can also choose the <strong>resolution</strong> of the images, the default is 200 pixels. You can increase this value for better images for publications or to e abele to zoom in a particular area of the picture and not losing quality, for example, but be aware that this increases the program execution time.</p>
@@ -100,6 +100,6 @@ If you have labels or some sort of  to your data, you can include them in the fi
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1OTg3MjM3NiwtMTU0NjcyODA3NywtOT
-EyNTA0NjM1XX0=
+eyJoaXN0b3J5IjpbMTI3NDgzMTA3LDE2NTk4NzIzNzYsLTE1ND
+Y3MjgwNzcsLTkxMjUwNDYzNV19
 -->
