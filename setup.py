@@ -1,5 +1,6 @@
 
 from setuptools import setup, find_packages
+from help import desctxt
 
 setup(name='premiRNAplot',
       version=0.2,
@@ -19,5 +20,6 @@ setup(name='premiRNAplot',
           'matplotlib',
           'scikit-learn',
           'numpy'
-      ]
+      ],
+      long_description=desctxt
 )
