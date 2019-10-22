@@ -45,7 +45,7 @@ inputs = args.inputopt if args.input == [] else args.input
 
 colors = args.colors
 
-nthreads = args.threads[0]
+nthreads = args.threads
 
 qty = args.quality[0]
 
