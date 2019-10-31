@@ -1,158 +1,146 @@
 
 import xml.etree.ElementTree as et
 
+import statistics as st
+
+import math
+
 import svgwrite as sw
 
 class NoLocationAnnotations(Exception):
-    """This error is raise when we cannot find the part of the postscript which
-    specifies where to put the nucleotides.
-    """
-    pass
+	pass
 
 class NoPairsAnnotations(Exception):
-    """This error is raised when we cannot find the pairing information in the
-    psotscript.
-    """
-    pass
+	pass
 
 class NoSequenceAnnotation(Exception):
-    """This exception is raised if we cannot find the part of the postscript
-    that specifies the sequence.
-    """
-    pass
+	pass
 
 class UnimplementedParser(Exception):
-    """This is raised when we need a parser that we have not yet implemented to
-    parse the results of RNAplot.
-    """
-    pass
+	pass
 
 class UnparsableSVG(Exception):
-    """This is raised if we can't parse the SVG file for any reason.
-    """
-    pass
+	pass
 
-class Parser():
-    """This is the basic parser for all parsers produced by RNAplot.
-    """
-    #__metaclass__ = abc.ABCMeta
-
-    def __init__(self, stream):
-        sequence = None
-        self.locations = []
-        """The locations of coordinates to draw."""
-        self.box = ()
-        """The bounding box of the drawing."""
-
-        sequence, pairs = self.load_data(stream)
-
-        if not pairs:
-            raise NoPairsAnnotations("Did not find any pairs")
-
-        if sequence is None:
-            raise NoSequenceAnnotation("Did not find the sequence")
-
-        if not self.locations:
-            raise NoLocationAnnotations("Did not find drawing coordinates")
-
-        #super(Parser, self).__init__(pairs, sequence=sequence)
-
-    #@abc.abstractmethod
-    def load_data(self, stream):
-        """This method should load all data from the stream. It should return
-        the pairs and set self.sequence, self.locations, and self.box for this
-        object.
-
-        :stream: The data stream to read.
-        :returns: The pairs.
-        """
-        pass
 
 class SVGParser():
-    """This is a class to parse the svg files produced by RNAplot.
-    """
+
+	"""This is a class to parse the SVG files produced by RNAplot. """
+
+	def __init__(self, file):
+
+		sequence = None
+		locations = []
+		box = ()
+		pairs = []
+		transform = None
+		seqtransform = None
+
+		self.sequence, self.pairs = self.load_data(file)
+
+		if not self.pairs:
+			raise NoPairsAnnotations("Did not find any pairs")
+
+		if self.sequence is None:
+			raise NoSequenceAnnotation("Did not find the sequence")
+
+		if not self.locations:
+			raise NoLocationAnnotations("Did not find drawing coordinates")
+
+	
+	def load_data(self, file):
+		tree = et.parse(file)
+		root = tree.getroot()
+
+		for child in root:
+			self.transform = child.attrib.get('transform', None)
+
+		container = None
+		for child in root:
+			if child.tag == '{http://www.w3.org/2000/svg}g':
+				container = child
+				break
+
+		if container is None:
+			raise UnparsableSVG("Cannot find container")
+
+		self.box = self.__box__(root)
+		sequence, self.locations = self.__locations__(container)
+		
+		return sequence, self.__pairs__(container)
 
 
-    def __init__(self, stream):
+	def __pairs__(self, root):
+		
+		pair_node = None
+		size = None
 
-        sequence = None
-        locations = []
-        """The locations of coordinates to draw."""
-        box = ()
-        pairs = []
-        """The bounding box of the drawing."""
+		for child in root:
+			if child.attrib.get('id', None) == 'pairs':
+				pair_node = child
+			if child.attrib.get('id', None) == 'seq':
+				size = len(child)
 
-        self.sequence, self.pairs = self.load_data(stream)
+		if pair_node is None:
+			raise NoPairsAnnotations("Couldn't find the pairs")
 
-        if not self.pairs:
-            raise NoPairsAnnotations("Did not find any pairs")
+		if size is None:
+			raise NoSequenceAnnotation("Couldn't find the sequence")
 
-        if self.sequence is None:
-            raise NoSequenceAnnotation("Did not find the sequence")
+		pairs = [None] * size
+		
+		for pair in pair_node:
+			pair  = list(map(lambda i: int(i) - 1, pair.attrib['id'].split(',')))
+			pairs[pair[0]] = pair[1]
+			pairs[pair[1]] = pair[0]
 
-        if not self.locations:
-            raise NoLocationAnnotations("Did not find drawing coordinates")
+		return pairs
 
-    def load_data(self, stream):
-        tree = et.parse(stream)
-        root = tree.getroot()
-        container = None
-        for child in root:
-            if child.tag == '{http://www.w3.org/2000/svg}g':
-                container = child
-                break
 
-        if container is None:
-            raise UnparsableSVG("Cannot find container")
+	def __box__(self, root):
 
-        self.box = self.__box__(root)
-        sequence, self.locations = self.__locations__(container)
-        return sequence, self.__pairs__(container)
+		''' Returns the width and heigth of the SVG box'''
 
-    def __pairs__(self, root):
-        pair_node = None
-        size = None
-        for child in root:
-            if child.attrib.get('id', None) == 'pairs':
-                pair_node = child
-            if child.attrib.get('id', None) == 'seq':
-                size = len(child)
+		return (int(root.attrib['width']), int(root.attrib['height']))
 
-        if pair_node is None:
-            raise NoPairsAnnotations("Couldn't find the pairs")
+	
+	def __locations__(self, root):
+		
+		''' Returns the coordinates of the nucleotides text from the SVG
+		and the group transform value '''
 
-        if size is None:
-            raise NoSequenceAnnotation("Couldn't find the sequence")
+		seq_node = None
+		width, height = self.box
+		transform = self.transform
+		
+		for child in root:
+			if child.attrib.get('id', None) == 'seq':
+				seq_node = child
+				break
 
-        pairs = [None] * size
-        for pair in pair_node:
-            pair  = list(map(lambda i: int(i) - 1, pair.attrib['id'].split(',')))
-            pairs[pair[0]] = pair[1]
-            pairs[pair[1]] = pair[0]
+		if seq_node is None:
+			raise NoSequenceAnnotation("Could not find sequence")
 
-        return pairs
+		xyt = transform[transform.find('translate') + len('translate'):]
+		xt = round(float(xyt.split(',')[0][1:]), 5)
+		yt = round(float(xyt.split(',')[1][:-1]), 5)
 
-    def __box__(self, root):
-        return (int(root.attrib['width']), int(root.attrib['height']))
+		print(transform)
 
-    def __locations__(self, root):
-        # TODO: Deal with the required transforms
-        seq_node = None
-        for child in root:
-            if child.attrib.get('id', None) == 'seq':
-                seq_node = child
-                break
+		scale = transform[transform.find('scale') + len('scale'):transform.find(' translate')]
+		scalex = round(float(scale.split(',')[0][1:]), 5)
+		scaley = round(float(scale.split(',')[1][:-1]), 5)
 
-        if seq_node is None:
-            raise NoSequenceAnnotation("Could not find sequence")
+		sequence = ''
+		locations = []
+		
+		for node in seq_node:
+			sequence+=node.text
+			locations.append((round((float(node.attrib['x']) + xt) * scalex, 5),
+				              round((float(node.attrib['y']) + yt) * scaley, 5)))
+		
+		return sequence, locations
 
-        sequence = []
-        locations = []
-        for node in seq_node:
-            sequence.append(node.text)
-            locations.append((float(node.attrib['x']),
-                              float(node.attrib['y'])))
-        return ''.join(sequence), locations
 
 some = SVGParser(open('rna2.svg'))
 
@@ -160,16 +148,37 @@ print(some.box)
 print(some.sequence)
 print(some.pairs)
 print(some.locations)
+print(some.transform)
 
 width, height = some.box
 
-print(width, height)
 
-dwg = sw.Drawing('new.svg', size=some.box, viewBox= f'0 0 {width} {height}')
+dist = 0
+x = 0
+a = []
+
+while x < len(some.locations) - 1:
+	x1, y1 = some.locations[x]
+	x2, y2 = some.locations[x+1]
+	x+=1
+	a.append(math.sqrt(((y2 - y1) ** 2) + ((x2 - x1) ** 2)))
+
+n = 0
+
+for pair in some.pairs:
+	if pair: n+=1
+
+n = n / len(some.pairs)
+
+radius = (st.mean(a) + (st.stdev(a) * n)) / 2
+
+fs = radius * 0.725
+
+dwg = sw.Drawing('new.svg', viewBox=f"0, 0, {width}, {height}", preserveAspectRatio="xMidYMid meet")
 
 # Criando o grupo que vai conter todas as estruturas juntas
 
-precursor = dwg.add(dwg.g(id="precursor", transform="scale(0.7, 0.7) translate(206.680191,99.463547)"))
+precursor = dwg.add(dwg.g(id="precursor", transform='translate(0, 10) scale(0.95, 0.95)'))
 
 # Criando o grupo de pares entre nucleotideos conectados
 
@@ -193,14 +202,14 @@ circgroup = precursor.add(dwg.g(id='circles', fill="#9494b8"))
 mirpos = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
 mir2pos = [69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91]
 
-textgroup = precursor.add(dwg.g(id='nucleotides', transform='translate(-3.7,3.7)',font_size=11, fill='black', font_family='Helvetica', font_weight='bold'))
+textgroup = precursor.add(dwg.g(id='nucleotides', transform=f'translate({-1 * radius / 2 * 1.3},{radius / 2})',font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
 linha1 = []
 linha2 = []
 
 for index, xytuple in enumerate(some.locations):
 	
-	circ = circgroup.add(dwg.circle(center=xytuple, r=8, stroke='none', stroke_width='1.5'))
+	circ = circgroup.add(dwg.circle(center=xytuple, r=radius, stroke='none', stroke_width='1.5'))
 
 	textgroup.add(dwg.text(some.sequence[index], insert=some.locations[index]))
 	
