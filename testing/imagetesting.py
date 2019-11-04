@@ -164,7 +164,70 @@ class SVGParser():
 		return sequence, locations
 
 
-some = SVGParser(open('rna.svg'))
+
+class SVGconstructor(SVGParser):
+
+
+	def __init__(self, file):
+		
+		''' Precisa criar o elemento dwg e todos os grupos'''
+
+		dwg = None
+
+		precursor = None
+
+		super().__init__(file)
+
+		width, height = self.box
+
+		self.dwg = sw.Drawing('new.svg', viewBox=f"0, 0, {width}, {height}", preserveAspectRatio="xMidYMid meet")
+
+		self.precursor = self.dwg.add(self.dwg.g(id="precursor", transform='translate(0, 10) scale(0.95, 0.95)'))
+
+
+
+	def __properties__(self):
+
+		''' Setting up the properties of the image, such as width, height,
+		font size, stroke width, etc '''
+
+		pass
+
+	def circles(self, poslst, spclst, circhigh, circbg):
+
+		''' Creates circles for the given list of positions '''
+		
+		# circgroup = precursor.add(dwg.g(id='circles', fill="white", stroke='black'))
+
+		# for index, xytuple in enumerate(poslst):
+	
+		# 	circ = circgroup.add(dwg.circle(center=xytuple, r=radius))
+
+		# 	textgroup.add(dwg.text(some.sequence[index], insert=some.locations[index]))
+			
+		# 	if index in mirpos:
+		# 		circ.fill('red')
+		# 		#circ.stroke('none')
+		# 	elif index in mir2pos:
+		# 		circ.fill('orange')
+		# 		#circ.stroke('none')
+
+
+
+	def pairs():
+		pass
+
+	def text():
+		
+		textgroup = precursor.add(dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+		
+
+	def polyline():
+		pass
+
+
+# some = SVGParser(open('rna2.svg'))
+some = SVGconstructor(open('rna2.svg'))
 
 print(some.box)
 print(some.sequence)
@@ -172,95 +235,94 @@ print(some.pairs)
 print(some.locations)
 print(some.transform)
 
-radius = some.radius
+# radius = some.radius
 
-print(f'this is the {radius}')
+# print(f'this is the {radius}')
 
-width, height = some.box
+# width, height = some.box
 
-method = 'lines'
+# method = 'spheres'
 
-fs = radius * 2 * 0.725
+# fs = radius * 2 * 0.725
 
-fdy = radius / 2
+# fdy = radius / 2
 
-fdx = radius / 2 * -1 * 1.13
+# fdx = radius / 2 * -1 * 1.13
 
-if method == 'spheres':
-	strokew = radius / 3
-elif method == 'lines':
-	strokew = radius * 2 * 0.725
+# if method == 'spheres':
+# 	strokew = radius / 3
+# elif method == 'lines':
+# 	strokew = radius * 2 * 0.725
 
-mirpos = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
-mir2pos = [69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91]
+# mirpos = [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+# mir2pos = [69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91]
 
 
-dwg = sw.Drawing('new.svg', viewBox=f"0, 0, {width}, {height}", preserveAspectRatio="xMidYMid meet")
 
-# Criando o grupo que vai conter todas as estruturas juntas
 
-precursor = dwg.add(dwg.g(id="precursor", transform='translate(0, 10) scale(0.95, 0.95)'))
+# # Criando o grupo que vai conter todas as estruturas juntas
 
-# Criando todos os grupos
 
-pairsgroup = precursor.add(dwg.g(id='pairs', stroke='black', stroke_width=radius / 6))
+# # Criando todos os grupos
 
-circgroup = precursor.add(dwg.g(id='circles', display='none', fill="#9494b8"))
+# pairsgroup = precursor.add(dwg.g(id='pairs', stroke='black', stroke_width=radius / 6))
 
-# Adicionando a linha que conecta todos os nucleotideos
 
-precursor.add(dwg.polyline(points=some.locations, stroke='#9494b8', fill="none", stroke_width=strokew))
 
-# Adicionando as linhas que conectam os nucleotídeos pareados
+# # Adicionando a linha que conecta todos os nucleotideos
 
-for i in range(len(some.pairs)):
-	if some.pairs[i]:
-		x1, y1 = some.locations[i]
-		x2, y2 = some.locations[int(some.pairs[i])]
-		pairsgroup.add(dwg.line(start=some.locations[i], end=some.locations[int(some.pairs[i])])) 
+# precursor.add(dwg.polyline(points=some.locations, stroke='#9494b8', fill="none", stroke_width=strokew))
 
-# Adicionando a linha do estilo de traço que destaca a linha da posição dos miRNAs
+# # Adicionando as linhas que conectam os nucleotídeos pareados
 
-linha1 = []
-linha2 = []
+# for i in range(len(some.pairs)):
+# 	if some.pairs[i]:
+# 		x1, y1 = some.locations[i]
+# 		x2, y2 = some.locations[int(some.pairs[i])]
+# 		pairsgroup.add(dwg.line(start=some.locations[i], end=some.locations[int(some.pairs[i])])) 
 
-for index, xytuple in enumerate(some.locations):
+# # Adicionando a linha do estilo de traço que destaca a linha da posição dos miRNAs
 
-	if index in mirpos:
-		x, y = some.locations[index]
-		if index == mirpos[0]:
-			y-=radius
-		elif index == mirpos[-1]:
-			y+=radius
-		linha1.append((x,y))
-	elif index in mir2pos:
-		x, y = some.locations[index]
-		if index == mir2pos[0]:
-			y+=radius
-		elif index == mir2pos[-1]:
-			y-=radius
-		linha2.append((x,y))
+# linha1 = []
+# linha2 = []
 
-precursor.add(dwg.polyline(points=linha1, fill='none', stroke='red', stroke_width=strokew))
-precursor.add(dwg.polyline(points=linha2, fill='none', stroke='orange', stroke_width=strokew))
+# for index, xytuple in enumerate(some.locations):
 
-textgroup = precursor.add(dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',font_size=fs,
-								fill='black', font_family='Helvetica', font_weight='bold'))
+# 	if index in mirpos:
+# 		x, y = some.locations[index]
+# 		if index == mirpos[0]:
+# 			y-=radius
+# 		elif index == mirpos[-1]:
+# 			y+=radius
+# 		linha1.append((x,y))
+# 	elif index in mir2pos:
+# 		x, y = some.locations[index]
+# 		if index == mir2pos[0]:
+# 			y+=radius
+# 		elif index == mir2pos[-1]:
+# 			y-=radius
+# 		linha2.append((x,y))
 
-# Adicionando cada um dos círculos do estilo de esferas
+# precursor.add(dwg.polyline(points=linha1, fill='none', stroke='red', stroke_width=strokew))
+# precursor.add(dwg.polyline(points=linha2, fill='none', stroke='orange', stroke_width=strokew))
 
-for index, xytuple in enumerate(some.locations):
+
+# # Adicionando cada um dos círculos do estilo de esferas
+
+# for index, xytuple in enumerate(some.locations):
 	
-	circ = circgroup.add(dwg.circle(center=xytuple, r=radius))
+# 	circ = circgroup.add(dwg.circle(center=xytuple, r=radius))
 
-	textgroup.add(dwg.text(some.sequence[index], insert=some.locations[index]))
+# 	textgroup.add(dwg.text(some.sequence[index], insert=some.locations[index]))
 	
-	if index in mirpos:
-		circ.fill('red')
-	elif index in mir2pos:
-		circ.fill('orange')
+# 	if index in mirpos:
+# 		circ.fill('red')
+# 		#circ.stroke('none')
+# 	elif index in mir2pos:
+# 		circ.fill('orange')
+# 		#circ.stroke('none')
+		
+# # Salvando o arquivo com identação
 
-# Salvando o arquivo com identação
-
-dwg.save(pretty=True)
+# dwg.save(pretty=True)
 
