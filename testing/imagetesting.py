@@ -39,8 +39,6 @@ class SVGParser():
 
 		self.sequence, self.pairs = self.load_data(file)
 
-		self.radius = self.__radius__()
-
 		if not self.pairs:
 			raise NoPairsAnnotations("Did not find any pairs")
 
@@ -100,27 +98,6 @@ class SVGParser():
 		return pairs
 
 
-	def __radius__(self):
-
-		x = 0
-		a = []
-
-		while x < len(self.locations) - 1:
-			x1, y1 = self.locations[x]
-			x2, y2 = self.locations[x+1]
-			x+=1
-			a.append(math.sqrt(((y2 - y1) ** 2) + ((x2 - x1) ** 2)))
-
-		n = 0
-
-		for pair in self.pairs:
-			if pair: n+=1
-
-		n = n / len(self.pairs)
-
-		return (st.mean(a) + (st.stdev(a) * n)) / 2
-
-
 	def __box__(self, root):
 
 		''' Returns the width and heigth of the SVG box'''
@@ -178,6 +155,8 @@ class SVGconstructor(SVGParser):
 
 		super().__init__(file)
 
+		self.__properties__()
+
 		width, height = self.box
 
 		self.dwg = sw.Drawing('new.svg', viewBox=f"0, 0, {width}, {height}", preserveAspectRatio="xMidYMid meet")
@@ -188,6 +167,13 @@ class SVGconstructor(SVGParser):
 
 		mirpos = [5, 25]
 		mir2pos = [69, 91]
+		
+		self.fs = self.radius * 2 * 0.725
+
+		fdy = self.radius / 2
+
+		fdx = self.radius / 2 * -1 * 1.13
+
 
 		if style == '1':
 			# Desenhar pares
@@ -195,14 +181,29 @@ class SVGconstructor(SVGParser):
 			self.polyline([0, len(self.locations) - 1], 'black', self.radius / 4)
 			# Desenhar circulos bg e colored
 			# Desenhar texto em tudo
-			self.dwg.save(pretty=True)
-			pass
+
+			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='grey'))
+			
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
+												font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+
+			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, 'red')
+			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, 'orange')
+
+			self.drawtext([0, len(self.locations)])
 		elif style == '2':
 			# Desenhar pares
 			# Desenhar única polyline média e bg
-			self.polyline([0, len(self.locations) - 1], 'grey', self.radius / 2)
+			self.polyline([0, len(self.locations) - 1], 'black', 4.5)
 			# Desenhar circulos colored
-
+			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='grey'))
+			
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
+												font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			self.drawcircles([mirpos[0], mirpos[1] + 1], mirpos, 'red')
+			self.drawcircles([mir2pos[0], mir2pos[1] + 1], mir2pos, 'orange')
+			self.drawtext([mirpos[0], mirpos[1] + 1])
+			self.drawtext([mir2pos[0], mir2pos[1] + 1])
 			# Desenhar apenas texto dos mirnas
 			pass
 		elif style == '3':
@@ -211,33 +212,46 @@ class SVGconstructor(SVGParser):
 			self.polyline([len(self.locations) - 1, 0], 'black', self.radius / 4)
 			# Desenhar circulos bg e colored com stroke
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='white', stroke='black'))
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})', font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
+												font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			
 			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, 'red')
+			
 			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, 'orange')
-			self.dwg.save(pretty=True)
+
+			self.drawtext([0, len(self.locations)])
+			
 			# Desenhar texto em tudo
 			pass
 		elif style == '4':
 			# Desenhar pares
 			# Desenhar polyline unica e media preta
-			self.polyline([0,len(self.locations) - 1], 'black', self.radius / 2)
+			self.polyline([0,len(self.locations) - 1], 'black', 4.5)
 			# Desenhar polyline duplas grossas
 			self.polyline(mirpos, 'red', 9)
 			self.polyline(mir2pos[::-1], 'orange', 9)
 			# Desenhar texto com fonte menorzinha
-			self.dwg.save(pretty=True)
-			pass
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
+												font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			self.drawtext([mirpos[0], mirpos[1] + 1])
+			self.drawtext([mir2pos[0], mir2pos[1] + 1])
 		elif style == '5':
 			# Desenhar pares
 			# Desenhar polyline unica grossa com bg
-			self.polyline([0, len(self.locations) - 1], 'black', 9)
+			self.polyline([0, len(self.locations)], 'grey', 9)
 			# Desenhar polyline duplas grossa
 			self.polyline(mirpos, 'red', 9)
-			self.polyline(mirpos, 'orange', 9)
+			self.polyline(mir2pos[::-1], 'orange', 9)
 			# Desenhar texto em tudo com fonte menorzinha
-			pass
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
+									font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			self.drawtext([0, len(self.locations)])
 		else:
 			raise Exception("Could not identify the style of the image, choose between 1-5")
+		
+		
+		self.dwg.save(pretty=True)
 
 	
 	def __properties__(self):
@@ -245,7 +259,30 @@ class SVGconstructor(SVGParser):
 		''' Setting up the properties of the image, such as width, height,
 		font size, stroke width, etc '''
 
-		pass
+		x = 0
+		a = []
+
+		while x < len(self.locations) - 1:
+			x1, y1 = self.locations[x]
+			x2, y2 = self.locations[x+1]
+			x+=1
+			a.append(math.sqrt(((y2 - y1) ** 2) + ((x2 - x1) ** 2)))
+
+		n = 0
+
+		for pair in self.pairs:
+			if pair: n+=1
+
+		n = n / len(self.pairs)
+
+		self.radius = (st.mean(a) + (st.stdev(a) * n)) / 2
+
+		if style == '1' or style == '3':
+			self.strokew = (self.radius * 2) / 6
+		elif style == '2' or style = '4':
+			self.strokew = self.fs / 2
+		elif style == '5':
+			self.strokew = self.fs
 
 
 	def drawcircles(self, poslst, spclst, color):
@@ -255,8 +292,6 @@ class SVGconstructor(SVGParser):
 		for index in range(poslst[0], poslst[1]):
 	
 			circ = self.circgroup.add(self.dwg.circle(center=self.locations[index], r=self.radius))
-
-			self.textgroup.add(dwg.text(some.sequence[index], insert=some.locations[index]))
 			
 			if index >= spclst[0] and index <= spclst[1]:
 				circ.fill(color)
@@ -273,10 +308,14 @@ class SVGconstructor(SVGParser):
 				pairsgroup.add(self.dwg.line(start=self.locations[i], end=self.locations[int(self.pairs[i])])) 
 
 
-	def text():
-		pass
-		# textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
-		
+	def drawtext(self, poslst):
+
+		''' Creates circles for the given list of positions '''
+
+		for index in range(poslst[0], poslst[1]):
+
+			self.textgroup.add(self.dwg.text(self.sequence[index], insert=self.locations[index]))
+					
 
 	def polyline(self, poslst, color, strokew):
 		
@@ -296,65 +335,20 @@ class SVGconstructor(SVGParser):
 		self.precursor.add(self.dwg.polyline(points=newpos, fill='none', stroke=color, stroke_width=strokew))
 
 
- 
 
 
-some = SVGconstructor(open('rna2.svg'), '3')
+some = SVGconstructor(open('rna2.svg'), '5')
 
 print(some.box)
-print(some.sequence.index('AGCAGUUU') - len('AGCAGUUU'))
+print(some.sequence)
 print(some.pairs)
 print(some.locations)
 print(some.transform)
 
-# radius = some.radius
 
-# print(f'this is the {radius}')
-
-# width, height = some.box
-
-# method = 'spheres'
-
-# fs = radius * 2 * 0.725
-
-# fdy = radius / 2
-
-# fdx = radius / 2 * -1 * 1.13
 
 # if method == 'spheres':
 # 	strokew = radius / 3
 # elif method == 'lines':
 # 	strokew = radius * 2 * 0.725
-
-
-
-
-
-# # Criando o grupo que vai conter todas as estruturas juntas
-
-
-# # Criando todos os grupos
-
-# pairsgroup = precursor.add(dwg.g(id='pairs', stroke='black', stroke_width=radius / 6))
-
-
-
-# # Adicionando a linha que conecta todos os nucleotideos
-
-# precursor.add(dwg.polyline(points=some.locations, stroke='#9494b8', fill="none", stroke_width=strokew))
-
-# # Adicionando as linhas que conectam os nucleotídeos pareados
-
-
-# # Adicionando a linha do estilo de traço que destaca a linha da posição dos miRNAs
-
-
-
-# # Adicionando cada um dos círculos do estilo de esferas
-
-
-		
-# # Salvando o arquivo com identação
-
-# dwg.save(pretty=True)
 
