@@ -155,7 +155,7 @@ class SVGconstructor(SVGParser):
 
 		super().__init__(file)
 
-		self.__properties__()
+		self.__properties__(style)
 
 		width, height = self.box
 
@@ -167,12 +167,6 @@ class SVGconstructor(SVGParser):
 
 		mirpos = [5, 25]
 		mir2pos = [69, 91]
-		
-		self.fs = self.radius * 2 * 0.725
-
-		fdy = self.radius / 2
-
-		fdx = self.radius / 2 * -1 * 1.13
 
 
 		if style == '1':
@@ -184,8 +178,8 @@ class SVGconstructor(SVGParser):
 
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='grey'))
 			
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
-												font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({self.fdx},{self.fdy})',
+												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
 			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, 'red')
 			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, 'orange')
@@ -198,8 +192,8 @@ class SVGconstructor(SVGParser):
 			# Desenhar circulos colored
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='grey'))
 			
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
-												font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({self.fdx},{self.fdy})',
+												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 			self.drawcircles([mirpos[0], mirpos[1] + 1], mirpos, 'red')
 			self.drawcircles([mir2pos[0], mir2pos[1] + 1], mir2pos, 'orange')
 			self.drawtext([mirpos[0], mirpos[1] + 1])
@@ -213,8 +207,8 @@ class SVGconstructor(SVGParser):
 			# Desenhar circulos bg e colored com stroke
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='white', stroke='black'))
 			
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
-												font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
+												font_size=str(self.fs) + 'px', fill='black', font_family='Helvetica', font_weight='bold'))
 			
 			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, 'red')
 			
@@ -232,8 +226,8 @@ class SVGconstructor(SVGParser):
 			self.polyline(mirpos, 'red', 9)
 			self.polyline(mir2pos[::-1], 'orange', 9)
 			# Desenhar texto com fonte menorzinha
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
-												font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({self.fdx},{self.fdy})',
+												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 			self.drawtext([mirpos[0], mirpos[1] + 1])
 			self.drawtext([mir2pos[0], mir2pos[1] + 1])
 		elif style == '5':
@@ -244,8 +238,8 @@ class SVGconstructor(SVGParser):
 			self.polyline(mirpos, 'red', 9)
 			self.polyline(mir2pos[::-1], 'orange', 9)
 			# Desenhar texto em tudo com fonte menorzinha
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({fdx},{fdy})',
-									font_size=fs, fill='black', font_family='Helvetica', font_weight='bold'))
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({self.fdx},{self.fdy})',
+									font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 			self.drawtext([0, len(self.locations)])
 		else:
 			raise Exception("Could not identify the style of the image, choose between 1-5")
@@ -254,7 +248,7 @@ class SVGconstructor(SVGParser):
 		self.dwg.save(pretty=True)
 
 	
-	def __properties__(self):
+	def __properties__(self, style):
 
 		''' Setting up the properties of the image, such as width, height,
 		font size, stroke width, etc '''
@@ -277,9 +271,21 @@ class SVGconstructor(SVGParser):
 
 		self.radius = (st.mean(a) + (st.stdev(a) * n)) / 2
 
+
+		self.fs = self.radius * 2 * 0.725
+
+		#fdy = self.radius / 2
+
+		self.fdy = self.radius / 2
+
+		self.fdx = self.fs / 2 * -1
+
+		#fdx = self.radius / 2 * -1 * 1.13		
+
+
 		if style == '1' or style == '3':
 			self.strokew = (self.radius * 2) / 6
-		elif style == '2' or style = '4':
+		elif style == '2' or style == '4':
 			self.strokew = self.fs / 2
 		elif style == '5':
 			self.strokew = self.fs
@@ -314,7 +320,7 @@ class SVGconstructor(SVGParser):
 
 		for index in range(poslst[0], poslst[1]):
 
-			self.textgroup.add(self.dwg.text(self.sequence[index], insert=self.locations[index]))
+			self.textgroup.add(self.dwg.text(self.sequence[index], insert=self.locations[index], text_anchor='middle'))
 					
 
 	def polyline(self, poslst, color, strokew):
@@ -337,7 +343,7 @@ class SVGconstructor(SVGParser):
 
 
 
-some = SVGconstructor(open('rna2.svg'), '5')
+some = SVGconstructor(open('rna2.svg'), '3')
 
 print(some.box)
 print(some.sequence)
