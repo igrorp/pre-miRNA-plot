@@ -159,8 +159,8 @@ class SVGconstructor(SVGParser):
 
 		precursor = None
 
-		if not mirpos: mirpos = (0,0)
-		if not mir2pos: mir2pos = (0,0)
+		if mirpos is None: mirpos = (0,0)
+		if mir2pos is None: mir2pos = (0,0)
 
 		super().__init__(open(filepath))
 
@@ -168,7 +168,7 @@ class SVGconstructor(SVGParser):
 
 		width, height = self.box
 
-		self.dwg = sw.Drawing(filepath, viewBox=f'0, 0, {width}, {height}', preserveAspectRatio='none', debug=False)
+		self.dwg = sw.Drawing(filepath, viewBox=f'0, 0, {width}, {height}', preserveAspectRatio='xMidYMid meet', debug=False)
 
 		self.precursor = self.dwg.add(self.dwg.g(id='precursor', transform='translate(0, 10) scale(0.95, 0.95)'))
 
@@ -184,8 +184,9 @@ class SVGconstructor(SVGParser):
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
-			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, color1)
-			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, color2)
+			self.drawcircles((0, len(self.locations)), bgcolor)
+			self.drawcircles(mirpos, color1)
+			self.drawcircles(mir2pos, color2)
 
 			self.drawtext([0, len(self.locations)])
 
@@ -198,8 +199,8 @@ class SVGconstructor(SVGParser):
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
-			self.drawcircles([mirpos[0], mirpos[1] + 1], mirpos, color1)
-			self.drawcircles([mir2pos[0], mir2pos[1] + 1], mir2pos, color2)
+			self.drawcircles(mirpos, color1)
+			self.drawcircles(mir2pos, color2)
 
 			self.drawtext([mirpos[0], mirpos[1] + 1])
 			self.drawtext([mir2pos[0], mir2pos[1] + 1])
@@ -213,9 +214,9 @@ class SVGconstructor(SVGParser):
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=str(self.fs) + 'px', fill='black', font_family='Helvetica', font_weight='bold'))
 			
-			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, color1)
-			
-			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, color2)
+			self.drawcircles((0, len(self.locations)), 'white')
+			self.drawcircles(mirpos, color1)
+			self.drawcircles(mir2pos, color2)
 
 			self.drawtext([0, len(self.locations)])
 			
@@ -308,19 +309,15 @@ class SVGconstructor(SVGParser):
 			self.strokew = self.fs * 1.15
 
 
-	def drawcircles(self, postup, spctup, color):
+	def drawcircles(self, postup, color):
 
 		''' Creates circles for the given list of positions '''
 
 		init, fin = postup
-		spinit, spfin = spctup
 
 		for index in range(init, fin):
-	
-			circ = self.circgroup.add(self.dwg.circle(center=self.locations[index], r=self.radius))
-			
-			if index >= spinit and index <= spfin:
-				circ.fill(color)
+		
+			circ = self.circgroup.add(self.dwg.circle(center=self.locations[index], r=self.radius, fill=color))
 
 
 	def drawpairs(self):

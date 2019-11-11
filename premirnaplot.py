@@ -209,8 +209,12 @@ for file in inputs:
                 rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
                 rnaplot.communicate(open('foldings/{}_fold.txt'.format(mirname)).read().split(' ')[0])
 
+                constructor('colored_structures/' + mirname + '_ss.svg', '3', pos1, pos2, 'red', 'green', 'grey', pdf=True)
+
+                mirlist.append(mirname)
+
                 #SVGconstructor('rna2.svg', '3', (5, 25), (69, 91), '#cc33ff', '#ffff00', 'grey', pdf=True)
-                constructor('colored_structures/' + mirname + '_ss.svg', '1', pos1, pos2, 'red', 'green', 'grey')
+                
 
                 if extra:
                     mfe = open('foldings/{}_fold.txt'.format(mirname)).read().split(' ')[-1][1:-2]
@@ -219,9 +223,7 @@ for file in inputs:
                     with open('precursor_data.txt', 'a') as data:
                         data.writelines([mirname, '\t', precursor, '\t', mfe, '\t', str(len(precursor)), '\n'])
 
-                mirlist.append(mirname)
-
-                print(pos1, pos2)
+                print(mirname, pos1, pos2)
 
                 if 'mirna2' in locals():
                     del mirna2
@@ -250,11 +252,16 @@ for file in inputs:
         plt.savefig('mfexlength.pdf')
 
     
-    # with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
-    #     results = executor.map(converter, mirlist)
+    with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
+        pass
+        # results = executor.map(converter, mirlist)
 
-    #     for result in results:
-    #         print(result)
+        # for mirname in mirlist:
+        #     constructor('colored_structures/' + mirname + '_ss.svg', '1', pos1, pos2, 'red', 'green', 'grey')
+        #     print('Creating ', mirname)
+
+        # for result in results:
+        #     print(result)
 
 
     os.chdir('../../')
