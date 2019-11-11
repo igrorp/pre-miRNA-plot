@@ -15,6 +15,8 @@ import math
 
 import svgwrite as sw
 
+import subprocess
+
 class NoLocationAnnotations(Exception):
 	pass
 
@@ -153,9 +155,7 @@ class SVGParser():
 class SVGconstructor(SVGParser):
 
 
-	def __init__(self, filepath, style, mirpos, mir2pos, color1, color2, bgcolor):
-		
-		''' Precisa criar o elemento dwg e todos os grupos'''
+	def __init__(self, filepath, style, mirpos, mir2pos, color1, color2, bgcolor, pdf=False):
 
 		dwg = None
 
@@ -167,7 +167,7 @@ class SVGconstructor(SVGParser):
 
 		width, height = self.box
 
-		self.dwg = sw.Drawing('new.svg', viewBox=f'0, 0, {width}, {height}', preserveAspectRatio='none')
+		self.dwg = sw.Drawing(filepath[:-3] + 'svg', viewBox=f'0, 0, {width}, {height}', preserveAspectRatio='none')
 
 		self.precursor = self.dwg.add(self.dwg.g(id='precursor', transform='translate(0, 10) scale(0.95, 0.95)'))
 
@@ -248,6 +248,11 @@ class SVGconstructor(SVGParser):
 		
 		
 		self.dwg.save(pretty=True)
+
+		if pdf:
+			drawing = svg2rlg(filepath[:-3] + 'svg')
+			renderPDF.drawToFile(drawing, filepath[:-3] + 'pdf')
+			subprocess.run(f'rm {filepath[:-3] + 'svg'}', shell=True)
 
 
 
@@ -338,6 +343,7 @@ class SVGconstructor(SVGParser):
 
 			self.textgroup.add(self.dwg.text(self.sequence[index], insert=self.locations[index], text_anchor='middle'))
 
+
 	def as_string(self):
 
 		self.dwg.tostring()
@@ -363,19 +369,22 @@ class SVGconstructor(SVGParser):
 		self.precursor.add(self.dwg.polyline(points=newpos, fill='none', stroke=color, stroke_width=strokew))
 
 
+## Example on how you would parse and create a new SVG image using the constructor
+
+# SVGconstructor('rna2.svg', '3', (5, 25), (69, 91), '#cc33ff', '#ffff00', 'grey')
+
+## Example on how you would parse and create a new SVG image and convert it to PDF
+
+# SVGconstructor('rna2.svg', '3', (5, 25), (69, 91), '#cc33ff', '#ffff00', 'grey', pdf=True)
 
 
-some = SVGconstructor('rna2.svg', '3', (5, 25), (69, 91), '#cc33ff', '#ffff00', 'grey')
 
-
-drawing = svg2rlg("new.svg")
 # xL, yL, xh, yh = drawing.getBounds()
 # print(xL, yL, xh, yh)
 # xsize = ysize = 600
 # drawing.renderScale = xsize / (xh - xL)
 # drawing.renderScale = ysize / (yh - yL)
 # drawing.scale(8.5, 8.5)
-renderPDF.drawToFile(drawing, 'newww.pdf')
 # renderPM.drawToFile(drawing, "new.jpg", fmt="JPG")
 # renderPM.drawToFile(drawing, 'newww.png', fmt='PNG', dpi=600)
 
