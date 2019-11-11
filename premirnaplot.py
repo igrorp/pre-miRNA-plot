@@ -13,6 +13,7 @@ from help import *
 
 import concurrent.futures as cf
 
+from src.imgparser import SVGconstructor as constructor 
 
 # Adding parameters and a general help message
 
@@ -29,7 +30,7 @@ parser.add_argument('-a', '--annotation', default='F', choices=['T', 'F'], metav
 
 parser.add_argument('-e', '--extra_info', default='T', choices=['T', 'F'], metavar='\b')
 
-parser.add_argument('-c', '--colors', nargs='+', default=[defcolors['red'] + defcolors['green']], type=str)
+parser.add_argument('-c', '--colors', nargs='+', default=['red', 'green'], type=str)
 
 parser.add_argument('-t', '--threads', nargs=1, default=1, type=int)
 
@@ -47,7 +48,7 @@ colors = args.colors
 
 nthreads = args.threads
 
-qty = args.quality[0]
+qty = args.quality
 
 if not inputs:
     print(desctxt)
@@ -124,20 +125,12 @@ def repetition(premirna, mirna, i):
         print('   Warning! miRNA sequence {} at line {} was found more than once in the precursor sequence, so its last occurrence will be used for the plotting, be aware!'.format(mirna, str(1+i)))
 
 
-def pos(premirna, mirna1, mirna2):
-    if mirna2 == '':
-        return [premirna.find(mirna1) + 1, premirna.find(mirna1) + len(mirna1)]
-    elif premirna.count(mirna1) == 1:
-        return [premirna.find(mirna1) + 1, premirna.find(mirna1) + len(mirna1), premirna.rfind(mirna2) + 1, premirna.rfind(mirna2) + len(mirna2)]
-    elif premirna.count(mirna2) == 1:
-        return [premirna.find(mirna2) + 1, premirna.find(mirna2) + len(mirna2), premirna.rfind(mirna1) + 1, premirna.rfind(mirna1) + len(mirna1)]
+def pos(premirna, mirna):
 
-
-def converter(mirname):
-    subprocess.run(f'gs -q -dSAFER -dBATCH -dNOPAUSE -sPAPERSIZE=a4 -r{qty} -sDEVICE=pngalpha -sOutputFile={mirname}.png {mirname}_ss.ps', shell=True, cwd="colored_structures/")
-    subprocess.run('rm {}'.format(mirname), shell=True, cwd="colored_structures/")
-    
-    return f"Image for {mirname} createad succesfully"
+    if mirna in premirna:
+        return (premirna.find(mirna) + 1, premirna.find(mirna) + len(mirna))
+    else:
+        return None
 
 
 # Starting the program
@@ -169,12 +162,12 @@ for file in inputs:
         os.chdir(f'premirnaplot/{name}/')
 
         with open('precursor_data.txt', 'a') as data:
-            data.writelines(['miRNA name', '\t', 'Sequence', '\t', 'MFE', '\t', 'Lenght', '\n'])
+            data.write('miRNA name\tSequence\tMFE\tLenght\n')
 
-        lines = arc.readlines()
-        for i in range(len(lines)):
-                line = lines[i][:-1].split('\t')
-                line = [f.upper().replace(' ', '') for f in line]
+        for index, line in enumerate(arc.readlines()):
+                
+                line = line[:-1].upper().replace(' ', '').split('\t')
+                #line = [f.upper().replace(' ', '') for f in line]
 
                 if annot:
                     annotation = line[0].lower()
@@ -192,6 +185,15 @@ for file in inputs:
 
                 mirname = annotation if annot else 'precursor_{}'.format(i)
 
+                # Determining the positions of the miRNAs inside the precursor
+
+                pos1 = pos(precursor, mirna1)
+
+                if 'mirna2' in locals():
+                    pos2 = pos(precursor, mirna2)
+
+                # Running RNAfold to predict the data in the foldings/ folder
+
                 rnafoldout = open(f'foldings/{mirname}_fold.txt', 'w')
                 
                 rnafold = subprocess.Popen('RNAfold ',  stdin=subprocess.PIPE,
@@ -202,21 +204,13 @@ for file in inputs:
 
                 rnafold.communicate('>{}\n{}'.format(mirname, precursor))
 
-                if 'mirna2' not in locals():
-                    [init1, fin1] = pos(precursor, mirna1, '')
-                else:
-                    [init1, fin1, init2, fin2] = pos(precursor, mirna1, mirna2)
+                # Running RNAplot to generate the initial SVG in the colored_structures/ folder
 
-                p1 = fc if (fin1 < (len(precursor) / 2.0)) else tc
-                p2 = '' if 'mirna2' not in locals() else '/ {} {} 10 {} omark'.format(init2, fin2, fc if (fin2 < (len(precursor) / 2.0)) else tc)
-
-                rnaplot = subprocess.Popen(['RNAplot --pre "{} {} 10 {} omark {}"'.format(init1, fin1, p1, p2)],
-                                                                                                                stdin=subprocess.PIPE,
-                                                                                                                cwd='colored_structures/',
-                                                                                                                shell=True,
-                                                                                                                universal_newlines=True)
+                rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
                 rnaplot.communicate(open('foldings/{}_fold.txt'.format(mirname)).read().split(' ')[0])
 
+                #SVGconstructor('rna2.svg', '3', (5, 25), (69, 91), '#cc33ff', '#ffff00', 'grey', pdf=True)
+                constructor('colored_structures/' + mirname + '_ss.svg', '1', pos1, pos2, 'red', 'green', 'grey')
 
                 if extra:
                     mfe = open('foldings/{}_fold.txt'.format(mirname)).read().split(' ')[-1][1:-2]
@@ -226,6 +220,8 @@ for file in inputs:
                         data.writelines([mirname, '\t', precursor, '\t', mfe, '\t', str(len(precursor)), '\n'])
 
                 mirlist.append(mirname)
+
+                print(pos1, pos2)
 
                 if 'mirna2' in locals():
                     del mirna2
@@ -254,11 +250,11 @@ for file in inputs:
         plt.savefig('mfexlength.pdf')
 
     
-    with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
-        results = executor.map(converter, mirlist)
+    # with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
+    #     results = executor.map(converter, mirlist)
 
-        for result in results:
-            print(result)
+    #     for result in results:
+    #         print(result)
 
 
     os.chdir('../../')

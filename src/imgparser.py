@@ -1,11 +1,7 @@
 
 from svglib.svglib import svg2rlg
 
-import os, sys
-
-from reportlab.graphics import renderPDF, renderPM
-
-from reportlab import rl_config
+from reportlab.graphics import renderPDF
 
 import xml.etree.ElementTree as et
 
@@ -16,7 +12,6 @@ import math
 import svgwrite as sw
 
 import subprocess
-
 
 
 
@@ -115,7 +110,7 @@ class SVGParser():
 
 		''' Returns the width and heigth of the SVG box'''
 
-		return (int(root.attrib['width']), int(root.attrib['height']))
+		return (float(root.attrib['width']), float(root.attrib['height']))
 
 	
 	def __locations__(self, root):
@@ -164,13 +159,16 @@ class SVGconstructor(SVGParser):
 
 		precursor = None
 
+		if not mirpos: mirpos = (0,0)
+		if not mir2pos: mir2pos = (0,0)
+
 		super().__init__(open(filepath))
 
 		self.__properties__(style)
 
 		width, height = self.box
 
-		self.dwg = sw.Drawing(filepath[:-3] + 'svg', viewBox=f'0, 0, {width}, {height}', preserveAspectRatio='none')
+		self.dwg = sw.Drawing(filepath, viewBox=f'0, 0, {width}, {height}', preserveAspectRatio='none', debug=False)
 
 		self.precursor = self.dwg.add(self.dwg.g(id='precursor', transform='translate(0, 10) scale(0.95, 0.95)'))
 
@@ -250,12 +248,12 @@ class SVGconstructor(SVGParser):
 			raise Exception("Could not identify the style of the image, choose between 1-5")
 		
 		
-		self.dwg.save(pretty=True)
+		self.dwg.saveas(filepath, pretty=True)
 
 		if pdf:
-			drawing = svg2rlg(filepath[:-3] + 'svg')
+			drawing = svg2rlg(filepath)
 			renderPDF.drawToFile(drawing, filepath[:-3] + 'pdf')
-			subprocess.run(f'rm {filepath[:-3] + 'svg'}', shell=True)
+			subprocess.run('rm {}'.format(filepath), shell=True)
 
 
 
