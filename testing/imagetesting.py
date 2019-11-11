@@ -1,4 +1,12 @@
 
+from svglib.svglib import svg2rlg
+
+import os, sys
+
+from reportlab.graphics import renderPDF, renderPM
+
+from reportlab import rl_config
+
 import xml.etree.ElementTree as et
 
 import statistics as st
@@ -136,7 +144,7 @@ class SVGParser():
 		for node in seq_node:
 			sequence+=node.text
 			locations.append((round((float(node.attrib['x']) + xt) * scalex, 5),
-				              round((float(node.attrib['y']) + yt) * scaley, 5)))
+							  round((float(node.attrib['y']) + yt) * scaley, 5)))
 		
 		return sequence, locations
 
@@ -145,7 +153,7 @@ class SVGParser():
 class SVGconstructor(SVGParser):
 
 
-	def __init__(self, file, style):
+	def __init__(self, filepath, style, mirpos, mir2pos, color1, color2, bgcolor):
 		
 		''' Precisa criar o elemento dwg e todos os grupos'''
 
@@ -153,101 +161,96 @@ class SVGconstructor(SVGParser):
 
 		precursor = None
 
-		super().__init__(file)
+		super().__init__(open(filepath))
 
 		self.__properties__(style)
 
 		width, height = self.box
 
-		self.dwg = sw.Drawing('new.svg', viewBox=f"0, 0, {width}, {height}", preserveAspectRatio="xMidYMid meet")
+		self.dwg = sw.Drawing('new.svg', viewBox=f'0, 0, {width}, {height}', preserveAspectRatio='none')
 
-		self.precursor = self.dwg.add(self.dwg.g(id="precursor", transform='translate(0, 10) scale(0.95, 0.95)'))
+		self.precursor = self.dwg.add(self.dwg.g(id='precursor', transform='translate(0, 10) scale(0.95, 0.95)'))
 
 		self.drawpairs()
 
-		mirpos = [5, 25]
-		mir2pos = [69, 91]
-
 
 		if style == '1':
-			# Desenhar pares
-			# Desenhar única polyline fina e preta
-			self.polyline([0, len(self.locations) - 1], 'black', self.radius / 4)
-			# Desenhar circulos bg e colored
-			# Desenhar texto em tudo
 
-			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='grey'))
+			self.polyline([0, len(self.locations) - 1], 'black', self.strokew)
+
+			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill=bgcolor))
 			
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({self.fdx},{self.fdy})',
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
-			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, 'red')
-			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, 'orange')
+			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, color1)
+			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, color2)
 
 			self.drawtext([0, len(self.locations)])
+
 		elif style == '2':
-			# Desenhar pares
-			# Desenhar única polyline média e bg
-			self.polyline([0, len(self.locations) - 1], 'black', 4.5)
-			# Desenhar circulos colored
-			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='grey'))
+
+			self.polyline([0, len(self.locations) - 1], 'black', self.strokew)
+
+			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill=bgcolor))
 			
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({self.fdx},{self.fdy})',
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
-			self.drawcircles([mirpos[0], mirpos[1] + 1], mirpos, 'red')
-			self.drawcircles([mir2pos[0], mir2pos[1] + 1], mir2pos, 'orange')
+
+			self.drawcircles([mirpos[0], mirpos[1] + 1], mirpos, color1)
+			self.drawcircles([mir2pos[0], mir2pos[1] + 1], mir2pos, color2)
+
 			self.drawtext([mirpos[0], mirpos[1] + 1])
 			self.drawtext([mir2pos[0], mir2pos[1] + 1])
-			# Desenhar apenas texto dos mirnas
-			pass
+
 		elif style == '3':
-			# Desenhar pares
-			# Desenhar unica polyline fina e preta
-			self.polyline([len(self.locations) - 1, 0], 'black', self.radius / 4)
-			# Desenhar circulos bg e colored com stroke
+
+			self.polyline([len(self.locations) - 1, 0], bgcolor, self.strokew)
+			
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='white', stroke='black'))
 			
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=str(self.fs) + 'px', fill='black', font_family='Helvetica', font_weight='bold'))
 			
-			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, 'red')
+			self.drawcircles([0, int(len(self.locations) / 2)], mirpos, color1)
 			
-			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, 'orange')
+			self.drawcircles([int(len(self.locations) / 2), len(self.locations)], mir2pos, color2)
 
 			self.drawtext([0, len(self.locations)])
 			
-			# Desenhar texto em tudo
-			pass
 		elif style == '4':
-			# Desenhar pares
-			# Desenhar polyline unica e media preta
-			self.polyline([0,len(self.locations) - 1], 'black', 4.5)
-			# Desenhar polyline duplas grossas
-			self.polyline(mirpos, 'red', 9)
-			self.polyline(mir2pos[::-1], 'orange', 9)
-			# Desenhar texto com fonte menorzinha
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({self.fdx},{self.fdy})',
+
+			self.polyline([0,len(self.locations) - 1], bgcolor, self.strokew)
+
+			self.polyline(mirpos, color1, self.strokew)
+			self.polyline(mir2pos[::-1], color2, self.strokew)
+
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
+
 			self.drawtext([mirpos[0], mirpos[1] + 1])
 			self.drawtext([mir2pos[0], mir2pos[1] + 1])
+
 		elif style == '5':
-			# Desenhar pares
-			# Desenhar polyline unica grossa com bg
-			self.polyline([0, len(self.locations)], 'grey', 9)
-			# Desenhar polyline duplas grossa
-			self.polyline(mirpos, 'red', 9)
-			self.polyline(mir2pos[::-1], 'orange', 9)
-			# Desenhar texto em tudo com fonte menorzinha
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate({self.fdx},{self.fdy})',
+
+			self.polyline([0, len(self.locations)], bgcolor, self.strokew)
+
+			self.polyline(mirpos, color1, self.strokew)
+			self.polyline(mir2pos[::-1], color2, self.strokew)
+
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 									font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
+
 			self.drawtext([0, len(self.locations)])
+
 		else:
 			raise Exception("Could not identify the style of the image, choose between 1-5")
 		
 		
 		self.dwg.save(pretty=True)
 
-	
+
+
 	def __properties__(self, style):
 
 		''' Setting up the properties of the image, such as width, height,
@@ -271,14 +274,22 @@ class SVGconstructor(SVGParser):
 
 		self.radius = (st.mean(a) + (st.stdev(a) * n)) / 2
 
+		if style == '3':
+			self.circsw = self.radius * 0.1613
+			self.radius-=self.circsw
 
 		self.fs = self.radius * 2 * 0.725
 
+		if style == '4' or style == '5':
+			self.fs = self.radius * 2 * 0.625
+
 		#fdy = self.radius / 2
 
-		self.fdy = self.radius / 2
+		# self.fdy = self.radius / 2
 
-		self.fdx = self.fs / 2 * -1
+		self.fdy = self.fs * 0.345
+
+		# self.fdx = self.fs / 2 * -1
 
 		#fdx = self.radius / 2 * -1 * 1.13		
 
@@ -288,18 +299,21 @@ class SVGconstructor(SVGParser):
 		elif style == '2' or style == '4':
 			self.strokew = self.fs / 2
 		elif style == '5':
-			self.strokew = self.fs
+			self.strokew = self.fs * 1.15
 
 
-	def drawcircles(self, poslst, spclst, color):
+	def drawcircles(self, postup, spctup, color):
 
 		''' Creates circles for the given list of positions '''
 
-		for index in range(poslst[0], poslst[1]):
+		init, fin = postup
+		spinit, spfin = spctup
+
+		for index in range(init, fin):
 	
 			circ = self.circgroup.add(self.dwg.circle(center=self.locations[index], r=self.radius))
 			
-			if index >= spclst[0] and index <= spclst[1]:
+			if index >= spinit and index <= spfin:
 				circ.fill(color)
 
 
@@ -314,26 +328,34 @@ class SVGconstructor(SVGParser):
 				pairsgroup.add(self.dwg.line(start=self.locations[i], end=self.locations[int(self.pairs[i])])) 
 
 
-	def drawtext(self, poslst):
+	def drawtext(self, postup):
 
 		''' Creates circles for the given list of positions '''
 
-		for index in range(poslst[0], poslst[1]):
+		init, fin = postup
+
+		for index in range(init, fin):
 
 			self.textgroup.add(self.dwg.text(self.sequence[index], insert=self.locations[index], text_anchor='middle'))
+
+	def as_string(self):
+
+		self.dwg.tostring()
 					
 
-	def polyline(self, poslst, color, strokew):
+	def polyline(self, postup, color, strokew):
 		
 		newpos = []
 
+		init, fin = postup
+
 		for index, xytuple in enumerate(self.locations):
 
-			if index >= min(poslst) and index <= max(poslst):
+			if index >= min(postup) and index <= max(postup):
 				x, y = self.locations[index]
-				if index == poslst[0]:
+				if index == init:
 					y-=self.radius
-				elif index == poslst[1]:
+				elif index == fin:
 					y+=self.radius
 				
 				newpos.append((x,y))
@@ -343,18 +365,27 @@ class SVGconstructor(SVGParser):
 
 
 
-some = SVGconstructor(open('rna2.svg'), '3')
-
-print(some.box)
-print(some.sequence)
-print(some.pairs)
-print(some.locations)
-print(some.transform)
+some = SVGconstructor('rna2.svg', '3', (5, 25), (69, 91), '#cc33ff', '#ffff00', 'grey')
 
 
+drawing = svg2rlg("new.svg")
+# xL, yL, xh, yh = drawing.getBounds()
+# print(xL, yL, xh, yh)
+# xsize = ysize = 600
+# drawing.renderScale = xsize / (xh - xL)
+# drawing.renderScale = ysize / (yh - yL)
+# drawing.scale(8.5, 8.5)
+renderPDF.drawToFile(drawing, 'newww.pdf')
+# renderPM.drawToFile(drawing, "new.jpg", fmt="JPG")
+# renderPM.drawToFile(drawing, 'newww.png', fmt='PNG', dpi=600)
 
-# if method == 'spheres':
-# 	strokew = radius / 3
-# elif method == 'lines':
-# 	strokew = radius * 2 * 0.725
+
+
+# print(some.box)
+# print(some.sequence)
+# print(some.pairs)
+# print(some.locations)
+# print(some.transform)
+# print(some.radius)
+# print(some.fs)
 
