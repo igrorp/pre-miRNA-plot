@@ -1,6 +1,6 @@
 
 from setuptools import setup, find_packages
-from help import desctxt
+from src.help import desctxt
 
 setup(name='premiRNAplot',
       version=0.2,
@@ -19,7 +19,9 @@ setup(name='premiRNAplot',
       install_requires=[
           'matplotlib',
           'scikit-learn',
-          'numpy'
+          'numpy',
+          'svglib',
+          'svgwrite'
       ],
       long_description=desctxt
 )

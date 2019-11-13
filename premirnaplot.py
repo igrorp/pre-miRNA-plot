@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 import os
 
-from help import *
+from src.help import *
 
 import concurrent.futures as cf
 
@@ -17,59 +17,68 @@ from src.imgparser import SVGconstructor as constructor
 
 # Adding parameters and a general help message
 
-
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter, description=desctxt, add_help=False)
 
-parser.add_argument('input', nargs='*', metavar='(INPUT)')
+parser.add_argument('input', nargs='*')
 
 parser.add_argument('-h', '--help', default=argparse.SUPPRESS)
 
 parser.add_argument('-i', '--input', nargs='+', metavar='', dest='inputopt')
 
-parser.add_argument('-a', '--annotation', default='F', choices=['T', 'F'], metavar='\b')
+parser.add_argument('-a', '--annotation', default='F', choices=['T', 'F'])
 
-parser.add_argument('-e', '--extra_info', default='T', choices=['T', 'F'], metavar='\b')
+parser.add_argument('-e', '--extra_info', default='T', choices=['T', 'F'])
 
 parser.add_argument('-c', '--colors', nargs='+', default=['red', 'green'], type=str)
 
 parser.add_argument('-t', '--threads', nargs=1, default=1, type=int)
 
-parser.add_argument('-q', '--quality', nargs=1, default=200, type=int)
+parser.add_argument('-s', '--style', nargs=1, default=1, type=int)
+
+parser.add_argument('-f', '--outfmt', nargs=1, default='svg', choices=['pdf', 'svg'], type=str)
+
+parser.add_argument('-o', '--outdir', nargs=1, default='premirnaplot', type=str)
 
 args = parser.parse_args()
 
-annot = True if args.annotation == 'T' else False
 
-extra = True if args.extra_info == 'T' else False
+# Parsing the arguments
 
 inputs = args.inputopt if args.input == [] else args.input
-
-colors = args.colors
-
-nthreads = args.threads
-
-qty = args.quality
 
 if not inputs:
     print(desctxt)
     quit()
 
-if len(colors) == 2:
+annot = True if args.annotation == 'T' else False
 
-    fc, tc = args.colors[0], args.colors[1]
+extra = True if args.extra_info == 'T' else False
 
-    if fc not in defcolors or tc not in defcolors:
-        print("\nOne of the colors you informed is not predefined, please check your spelling or use the RGB code")
-        quit()
+nthreads = args.threads
+
+pdf = True if args.outfmt[0] == 'pdf' else None
+
+outdir = args.outdir[0]
+
+if len(args.colors) == 2:
+
+    color1, color2 = args.colors
+
+    if color1 not in defcolors or color2 not in defcolors:
+        
+        raise Exception("ERROR! One of the colors you informed is incorrect, please check your spelling or review the predefined colors.")
+
     else:
-        fc, tc = ' '.join(defcolors[fc]), ' '.join(defcolors[tc])
+        color1, color2 = defcolors[color1], defcolors[color2]
 
-elif len(colors) == 6:
+elif len(args.colors) == 6:
+
+    for color in args.colors:
+        if color < 0 or color > 255:
+            raise Exception("ERROR! Please use RGB code values between 0 and 255")
     
-    for i in range(len(colors)):
-        colors[i] = str(int(colors[i]) / 255)
+    color1, color2 = ' '.join([colors[0], colors[1], colors[2]]), ' '.join([colors[3], colors[4], colors[5]])
 
-    fc, tc = ' '.join([colors[0], colors[1], colors[2]]), ' '.join([colors[3], colors[4], colors[5]])
 else:
     print("\nThere was an error checking the colors you provided, please review them")
 
@@ -78,13 +87,13 @@ else:
 
 
 def initial_check(filename):
+    
     name = filename.split('/')[-1][:-4]
     
     with open(filename) as arc:
-        lines = arc.readlines()
-        for i in range(len(lines)):
-                line = lines[i][:-1].split('\t')
-                line = [f.upper().replace(' ', '') for f in line]
+        for index, line in enumerate(arc.readlines()):
+                
+                line = line[:-1].upper().replace(' ', '').split('\t')
 
                 if annot:
                     annotation = line[0]
@@ -100,16 +109,16 @@ def initial_check(filename):
                     if len(line) > 2:
                         mirna2 = line[2]
 
-                isin(precursor, mirna1, i, name)
+                isin(precursor, mirna1, index, name)
 
-                repetition(precursor, mirna1, i)
+                repetition(precursor, mirna1, index)
 
                 if 'mirna2' in locals():
-                    isin(precursor, mirna2, i, name)
-                    repetition(precursor, mirna2, i)
+                    isin(precursor, mirna2, index, name)
+                    repetition(precursor, mirna2, index)
                     del mirna2
 
-        print('\n','######## Data check complete for {}'.format(filename.split('/')[-1]), '\n')
+        print('\n','########  Data check complete for {}'.format(filename.split('/')[-1]), '\n')
 
 
 def isin(premirna, mirna, i, filename):
@@ -133,11 +142,9 @@ def pos(premirna, mirna):
         return None
 
 
-# Starting the program
-
 valid = 1
 
-subprocess.run('mkdir premirnaplot/', shell=True)
+subprocess.run(f'mkdir {outdir}/', shell=True)
 
 for file in inputs:
     
@@ -148,6 +155,7 @@ if not valid:
     print("Plase correct the errors and run the program again.")
     quit()
 
+
 for file in inputs:
     
     mfelst = []
@@ -155,11 +163,11 @@ for file in inputs:
     mirdict = {}
     name = file.split('/')[-1][:-4]
     
-    subprocess.run(f'mkdir premirnaplot/{name} premirnaplot/{name}/foldings premirnaplot/{name}/colored_structures', shell=True)
+    subprocess.run(f'mkdir {outdir}/{name} {outdir}/{name}/foldings {outdir}/{name}/colored_structures', shell=True)
     
     with open(file) as arc:
 
-        os.chdir(f'premirnaplot/{name}/')
+        os.chdir(f'{outdir}/{name}/')
 
         with open('precursor_data.txt', 'a') as data:
             data.write('miRNA name\tSequence\tMFE\tLenght\n')
@@ -208,13 +216,8 @@ for file in inputs:
                 rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
                 rnaplot.communicate(open('foldings/{}_fold.txt'.format(mirname)).read().split(' ')[0])
 
-                #constructor('colored_structures/' + mirname + '_ss.svg', '3', pos1, pos2, 'red', 'green', 'grey', pdf=True)
-
                 mirdict[mirname] = (pos1, pos2)
-
-                #SVGconstructor('rna2.svg', '3', (5, 25), (69, 91), '#cc33ff', '#ffff00', 'grey', pdf=True)
                 
-
                 if extra:
                     mfe = open('foldings/{}_fold.txt'.format(mirname)).read().split(' ')[-1][1:-2]
                     mfelst.append(float(mfe))
@@ -222,7 +225,6 @@ for file in inputs:
                     with open('precursor_data.txt', 'a') as data:
                         data.writelines([mirname, '\t', precursor, '\t', mfe, '\t', str(len(precursor)), '\n'])
 
-                # print(mirname, pos1, pos2)
 
                 if 'mirna2' in locals():
                     del mirna2
@@ -255,8 +257,8 @@ for file in inputs:
         
         for key in mirdict:
             pos1, pos2 = mirdict[key]
-            constructor('colored_structures/' + key + '_ss.svg', '3', pos1, pos2, 'red', 'green', 'grey')
-            print(key)
+            constructor('colored_structures/' + key + '_ss.svg', 2, pos1, pos2, color1, color2, 'grey', pdf=pdf)
+            print('Image for ', key, ' created')
 
 
     os.chdir('../../')

@@ -175,7 +175,7 @@ class SVGconstructor(SVGParser):
 		self.drawpairs()
 
 
-		if style == '1':
+		if style == 1:
 
 			self.polyline([0, len(self.locations) - 1], 'black', self.strokew)
 
@@ -190,7 +190,7 @@ class SVGconstructor(SVGParser):
 
 			self.drawtext([0, len(self.locations)])
 
-		elif style == '2':
+		elif style == 2:
 
 			self.polyline([0, len(self.locations) - 1], 'black', self.strokew)
 
@@ -202,10 +202,10 @@ class SVGconstructor(SVGParser):
 			self.drawcircles(mirpos, color1)
 			self.drawcircles(mir2pos, color2)
 
-			self.drawtext([mirpos[0], mirpos[1] + 1])
-			self.drawtext([mir2pos[0], mir2pos[1] + 1])
+			self.drawtext([mirpos[0], mirpos[1]])
+			self.drawtext([mir2pos[0], mir2pos[1]])
 
-		elif style == '3':
+		elif style == 3:
 
 			self.polyline([len(self.locations) - 1, 0], bgcolor, self.strokew)
 			
@@ -220,7 +220,7 @@ class SVGconstructor(SVGParser):
 
 			self.drawtext([0, len(self.locations)])
 			
-		elif style == '4':
+		elif style == 4:
 
 			self.polyline([0,len(self.locations) - 1], bgcolor, self.strokew)
 
@@ -230,10 +230,10 @@ class SVGconstructor(SVGParser):
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
-			self.drawtext([mirpos[0], mirpos[1] + 1])
-			self.drawtext([mir2pos[0], mir2pos[1] + 1])
+			self.drawtext([mirpos[0], mirpos[1]])
+			self.drawtext([mir2pos[0], mir2pos[1]])
 
-		elif style == '5':
+		elif style == 5:
 
 			self.polyline([0, len(self.locations)], bgcolor, self.strokew)
 
@@ -255,7 +255,6 @@ class SVGconstructor(SVGParser):
 			drawing = svg2rlg(filepath)
 			renderPDF.drawToFile(drawing, filepath[:-3] + 'pdf')
 			subprocess.run('rm {}'.format(filepath), shell=True)
-
 
 
 	def __properties__(self, style):
@@ -281,31 +280,22 @@ class SVGconstructor(SVGParser):
 
 		self.radius = (st.mean(a) + (st.stdev(a) * n)) / 2
 
-		if style == '3':
+		if style == 3:
 			self.circsw = self.radius * 0.1613
 			self.radius-=self.circsw
 
 		self.fs = self.radius * 2 * 0.725
 
-		if style == '4' or style == '5':
+		if style == 4 or style == 5:
 			self.fs = self.radius * 2 * 0.625
-
-		#fdy = self.radius / 2
-
-		# self.fdy = self.radius / 2
 
 		self.fdy = self.fs * 0.345
 
-		# self.fdx = self.fs / 2 * -1
-
-		#fdx = self.radius / 2 * -1 * 1.13		
-
-
-		if style == '1' or style == '3':
+		if style == 1 or style == 3:
 			self.strokew = (self.radius * 2) / 6
-		elif style == '2' or style == '4':
+		elif style == 2 or style == 4:
 			self.strokew = self.fs / 2
-		elif style == '5':
+		elif style == 5:
 			self.strokew = self.fs * 1.15
 
 
@@ -333,7 +323,7 @@ class SVGconstructor(SVGParser):
 
 	def drawtext(self, postup):
 
-		''' Creates circles for the given list of positions '''
+		''' Creates circles for the given tuple of positions '''
 
 		init, fin = postup
 
@@ -374,25 +364,3 @@ class SVGconstructor(SVGParser):
 ## Example on how you would parse and create a new SVG image and convert it to PDF
 
 # SVGconstructor('rna2.svg', '3', (5, 25), (69, 91), '#cc33ff', '#ffff00', 'grey', pdf=True)
-
-
-
-# xL, yL, xh, yh = drawing.getBounds()
-# print(xL, yL, xh, yh)
-# xsize = ysize = 600
-# drawing.renderScale = xsize / (xh - xL)
-# drawing.renderScale = ysize / (yh - yL)
-# drawing.scale(8.5, 8.5)
-# renderPM.drawToFile(drawing, "new.jpg", fmt="JPG")
-# renderPM.drawToFile(drawing, 'newww.png', fmt='PNG', dpi=600)
-
-
-
-# print(some.box)
-# print(some.sequence)
-# print(some.pairs)
-# print(some.locations)
-# print(some.transform)
-# print(some.radius)
-# print(some.fs)
-
