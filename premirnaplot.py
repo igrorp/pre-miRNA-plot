@@ -54,9 +54,12 @@ annot = True if args.annotation == 'T' else False
 
 extra = True if args.extra_info == 'T' else False
 
-nthreads = args.threads
+nthreads = args.threads[0]
 
 pdf = True if args.outfmt[0] == 'pdf' else None
+
+print(pdf)
+print(args.outfmt)
 
 outdir = args.outdir[0]
 
@@ -245,7 +248,6 @@ for file in inputs:
         plt.savefig('mfe.png', dpi=300)
         
         plt.clf()
-
         plt.scatter(sizelst, mfelst, edgecolors='black', color='green')
         plt.rcParams.update({'font.size':8})
         plt.xlabel('Precursor length')
@@ -257,8 +259,9 @@ for file in inputs:
         
         for key in mirdict:
             pos1, pos2 = mirdict[key]
-            constructor('colored_structures/' + key + '_ss.svg', 2, pos1, pos2, color1, color2, 'grey', pdf=pdf)
-            print('Image for ', key, ' created')
+            executor.submit(constructor('colored_structures/' + key + '_ss.svg', args.style[0], pos1, pos2, color1, color2, 'grey', pdf=pdf))
+            # constructor('colored_structures/' + key + '_ss.svg', args.style[0], pos1, pos2, color1, color2, 'grey', pdf=pdf)
+            # print('Image for', key, 'created')
 
 
     os.chdir('../../')
