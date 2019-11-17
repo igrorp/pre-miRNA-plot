@@ -13,7 +13,9 @@ from src.help import *
 
 import concurrent.futures as cf
 
-from src.imgparser import SVGconstructor as constructor 
+from src.imgparser import SVGconstructor as constructor
+
+from src.help import Precursor
 
 # Adding parameters and a general help message
 
@@ -58,10 +60,7 @@ nthreads = args.threads[0]
 
 pdf = True if args.outfmt[0] == 'pdf' else None
 
-print(pdf)
-print(args.outfmt)
-
-outdir = args.outdir[0]
+outdir = args.outdir
 
 if len(args.colors) == 2:
 
@@ -85,6 +84,9 @@ elif len(args.colors) == 6:
 else:
     print("\nThere was an error checking the colors you provided, please review them")
 
+print(args.style)
+
+filedata = {}
 
 # Functions used in the program
 
@@ -94,175 +96,93 @@ def initial_check(filename):
     name = filename.split('/')[-1][:-4]
     
     with open(filename) as arc:
+
+        prelist = []
+
         for index, line in enumerate(arc.readlines()):
                 
-                line = line[:-1].upper().replace(' ', '').split('\t')
+            line = line[:-1].upper().replace(' ', '').split('\t')
 
-                if annot:
-                    annotation = line[0]
-                    precursor = line[1]
-                    if len(line) == 4:
-                        mirna1 = line[2]
-                        mirna2 = line[3]
-                    else:
-                        mirna1 = line[2]
+            if annot:
+
+                annotation = line[0].lower()
+                precursor = line[1]
+                if len(line) == 4:
+                    mirna1 = line[2]
+                    mirna2 = line[3]
                 else:
-                    precursor = line[0]
-                    mirna1 = line[1]
-                    if len(line) > 2:
-                        mirna2 = line[2]
+                    mirna1 = line[2]
+                    mirna2 = None
+            else:
+                precursor = line[0]
+                mirna1 = line[1]
+                if len(line) > 2:
+                    mirna2 = line[2]
 
-                isin(precursor, mirna1, index, name)
+            mirname = annotation if annot else 'precursor_{}'.format(index)
 
-                repetition(precursor, mirna1, index)
+            prelist.append(Precursor(mirname, mirna1, mirna2, precursor))
 
-                if 'mirna2' in locals():
-                    isin(precursor, mirna2, index, name)
-                    repetition(precursor, mirna2, index)
-                    del mirna2
-
-        print('\n','########  Data check complete for {}'.format(filename.split('/')[-1]), '\n')
+    filedata[filename] = prelist
 
 
-def isin(premirna, mirna, i, filename):
-    if mirna in premirna:
-        pass
-    else:
-        print('''   ERROR: Sequence {} at line {} in file '{}' could not be found in {}..., please correct this!'''.format(mirna, str(i+1), filename, premirna[:20]))
-        valid = 0
+def folding(prec):
 
+    rnafold = subprocess.Popen(f'RNAfold > {prec.name}_fold.txt',  stdin=subprocess.PIPE,
+                                            shell=True,
+                                            universal_newlines=True,
+                                            cwd='foldings/')
 
-def repetition(premirna, mirna, i):
-    if premirna.count(mirna) > 1:
-        print('   Warning! miRNA sequence {} at line {} was found more than once in the precursor sequence, so its last occurrence will be used for the plotting, be aware!'.format(mirna, str(1+i)))
+    rnafold.communicate('>{}\n{}'.format(prec.name, prec.premirna))
 
+    # Running RNAplot to generate the initial SVG in the colored_structures/ folder
 
-def pos(premirna, mirna):
+    with open('foldings/{}_fold.txt'.format(prec.name)) as dot:
+        stuff, mfe = dot.read().split(' ')
+        prec.premfe = float(mfe[1:-2])
 
-    if mirna in premirna:
-        return (premirna.find(mirna) + 1, premirna.find(mirna) + len(mirna))
-    else:
-        return None
+    rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
+    rnaplot.communicate(stuff)
 
+    constructor('colored_structures/' + prec.name + '_ss.svg', args.style[0], prec.pos1, prec.pos2, color1, color2, 'grey', pdf=pdf)
 
-valid = 1
+    return f'# Created {prec.name} image'
+
 
 subprocess.run(f'mkdir {outdir}/', shell=True)
 
+
 for file in inputs:
     
+    filedata[file] = []
+
     print(f"#######  Checking if {file} is ok..\n")
+    
     initial_check(file)
 
-if not valid:
-    print("Plase correct the errors and run the program again.")
-    quit()
+    print('\n#######  Data check complete for {}'.format(file))
 
 
-for file in inputs:
+for file in filedata:
     
     mfelst = []
     sizelst = []
     mirdict = {}
-    name = file.split('/')[-1][:-4]
+    name = (file.split('/')[-1][:-4] if '.' in file else name)
     
     subprocess.run(f'mkdir {outdir}/{name} {outdir}/{name}/foldings {outdir}/{name}/colored_structures', shell=True)
     
-    with open(file) as arc:
+    os.chdir(f'{outdir}/{name}/')
 
-        os.chdir(f'{outdir}/{name}/')
+    results = []
 
-        with open('precursor_data.txt', 'a') as data:
-            data.write('miRNA name\tSequence\tMFE\tLenght\n')
-
-        for index, line in enumerate(arc.readlines()):
-                
-                line = line[:-1].upper().replace(' ', '').split('\t')
-                
-                if annot:
-                    annotation = line[0].lower()
-                    precursor = line[1]
-                    if len(line) == 4:
-                        mirna1 = line[2]
-                        mirna2 = line[3]
-                    else:
-                        mirna1 = line[2]
-                else:
-                    precursor = line[0]
-                    mirna1 = line[1]
-                    if len(line) > 2:
-                        mirna2 = line[2]
-
-                mirname = annotation if annot else 'precursor_{}'.format(i)
-
-                # Determining the positions of the miRNAs inside the precursor
-
-                pos1 = pos(precursor, mirna1)
-
-                if 'mirna2' in locals():
-                    pos2 = pos(precursor, mirna2)
-
-                # Running RNAfold to predict the data in the foldings/ folder
-
-                rnafoldout = open(f'foldings/{mirname}_fold.txt', 'w')
-                
-                rnafold = subprocess.Popen('RNAfold ',  stdin=subprocess.PIPE,
-                                                        stdout=rnafoldout,
-                                                        shell=True,
-                                                        universal_newlines=True,
-                                                        cwd='foldings/')
-
-                rnafold.communicate('>{}\n{}'.format(mirname, precursor))
-
-                # Running RNAplot to generate the initial SVG in the colored_structures/ folder
-
-                rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
-                rnaplot.communicate(open('foldings/{}_fold.txt'.format(mirname)).read().split(' ')[0])
-
-                mirdict[mirname] = (pos1, pos2)
-                
-                if extra:
-                    mfe = open('foldings/{}_fold.txt'.format(mirname)).read().split(' ')[-1][1:-2]
-                    mfelst.append(float(mfe))
-                    sizelst.append(float(len(precursor)))
-                    with open('precursor_data.txt', 'a') as data:
-                        data.writelines([mirname, '\t', precursor, '\t', mfe, '\t', str(len(precursor)), '\n'])
-
-
-                if 'mirna2' in locals():
-                    del mirna2
-
-    
-    if extra:
-
-        plt.clf()
-        plt.boxplot(sizelst)
-        plt.title('Precursor length')
-        plt.ylabel('Sequence length (nt)')
-        plt.savefig('length.png', dpi=300)
-
-        plt.clf()
-        plt.boxplot(mfelst)
-        plt.title('Predicted minimum free energy')
-        plt.ylabel('Minimum free energy (kJ/mol)')
-        plt.savefig('mfe.png', dpi=300)
+    with cf.ProcessPoolExecutor(max_workers=nthreads) as executor:
         
-        plt.clf()
-        plt.scatter(sizelst, mfelst, edgecolors='black', color='green')
-        plt.rcParams.update({'font.size':8})
-        plt.xlabel('Precursor length')
-        plt.ylabel('Minimum free energy (kJ/mol)')
-        plt.savefig('mfexlength.pdf')
+        results = executor.map(folding, filedata[file])
 
+        for result in results:
+            print(result)
     
-    with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
-        
-        for key in mirdict:
-            pos1, pos2 = mirdict[key]
-            executor.submit(constructor('colored_structures/' + key + '_ss.svg', args.style[0], pos1, pos2, color1, color2, 'grey', pdf=pdf))
-            # constructor('colored_structures/' + key + '_ss.svg', args.style[0], pos1, pos2, color1, color2, 'grey', pdf=pdf)
-            # print('Image for', key, 'created')
-
 
     os.chdir('../../')
 
