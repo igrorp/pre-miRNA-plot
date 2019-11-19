@@ -1,9 +1,3 @@
----
-
-
----
-
-<hr>
 <hr>
 <hr>
 <h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
@@ -99,3 +93,6 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <p>You can set the number of allowed threads to run and speed up the general runtime of the program, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTIwMTMxMDc4MjRdfQ==
+-->
