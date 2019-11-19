@@ -1,7 +1,5 @@
-<hr>
-<hr>
 <h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
-<p>Pre-miRNA-plot is a program for generating multiple images of miRNA precursors using RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
+<p>Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors using RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
@@ -20,21 +18,6 @@ Pre-miRNA-plot has some dependencies and you need to check whether you have to i
 <p>Pre-miRNA-plot runs in Python3+. You can check which version of Python you have installed in your machine with the command bellow:</p>
 <pre><code>python --version</code></pre>
 <p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
-<h2 id="matplotlib">1.2 Matplotlib</h2>
-<p>Matplotlib is a graphing package for Python; pre-miRNA-plot uses it to generate diferente plots. You can install it using the <strong>pip</strong> Python package manager.</p>
-<pre><code>python –m pip install –U matplotlib</code></pre>
-<p>If you don’t have pip installed, you can use <strong>apt</strong> instead:</p>
-<pre><code>sudo apt install python3-matplotlib</code></pre>
-<p>If you are having trouble, please visit their <a href="https://matplotlib.org/3.1.1/users/installing.html">website</a> for more details.</p>
-<h2 id="ghostscript">1.3 Ghostscript</h2>
-<p>Ghostscript is used to convert the Postscript files (.ps) to Portable Network Graphics images (.png). If you do not have it installed, you have to download the tar ball file containing the program, decompress it and then compile it.</p>
-<pre><code>wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs927/ghostscript-9.27.tar.gz
-tar xvzf ghostscript-9.27.tar.gz
-cd ghostscript-9.27/
-./configure
-make
-sudo make install
-</code></pre>
 <h2 id="vienna-rna-package">1.4 Vienna RNA package</h2>
 <p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to “costumize” it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package.</p>
 <pre><code>wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
@@ -91,5 +74,5 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc2NzIzOTg1LC0yMDEzMTA3ODI0XX0=
+eyJoaXN0b3J5IjpbLTg5MTI0Njc5MSwtMjAxMzEwNzgyNF19
 -->
