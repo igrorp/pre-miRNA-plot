@@ -44,9 +44,6 @@ cd ViennaRNA-2.4.13/
 make
 sudo make install
 </code></pre>
-<blockquote>
-<p>If you are not familiar with command line, each one of the lines above has to be run separetly. Copy the command in each line, run it and wait to see if the process was successfull.</p>
-</blockquote>
 <h1 id="installation">2. Installation</h1>
 <p>To install pre-miRNA-plot you can download this repository as a zip file in the main page, or clone it in your machine:</p>
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git
@@ -94,5 +91,5 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTMxMDc4MjRdfQ==
+eyJoaXN0b3J5IjpbNDc2NzIzOTg1LC0yMDEzMTA3ODI0XX0=
 -->
