@@ -77,11 +77,10 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
-    
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyODI1MjgyNywxODYyNTI4MTM3LC0yMD
-M4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1
-NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX
-0=
+eyJoaXN0b3J5IjpbOTIxNzYyOTM1LDE4NjI1MjgxMzcsLTIwMz
+g2NDQyOTEsODY4MTEyMzc3LC0xMzc3MjQwOTkwLDMyMTE4MTU3
+LC0xMjQ3MTMyNDIyLDEzMjEwMDQ5MjcsLTIwMTMxMDc4MjRdfQ
+==
 -->
