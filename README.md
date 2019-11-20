@@ -54,6 +54,8 @@ If you have labels or some sort of  to your data, you can include them in the fi
 
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
 
+
+
 <h3 id="labels">Labels</h3>
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
@@ -73,14 +75,15 @@ If you have labels or some sort of  to your data, you can include them in the fi
 </p>
 
 
-<h3 id="threading">Multiprocessing</h3>
+<h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
+<h3 id="threading">Help</h3>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIxNzYyOTM1LDE4NjI1MjgxMzcsLTIwMz
-g2NDQyOTEsODY4MTEyMzc3LC0xMzc3MjQwOTkwLDMyMTE4MTU3
-LC0xMjQ3MTMyNDIyLDEzMjEwMDQ5MjcsLTIwMTMxMDc4MjRdfQ
-==
+eyJoaXN0b3J5IjpbMTM3MTEzMTQyOSwxODYyNTI4MTM3LC0yMD
+M4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1
+NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX
+0=
 -->
