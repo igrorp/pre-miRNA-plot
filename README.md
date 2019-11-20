@@ -5,7 +5,7 @@
 <li><a href="#1-configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
 1.2 <a href="#14-vienna-rna-package">Vienna RNA package</a></li>
-<li><a href="nstallation">Installation</a></li>
+<li><a href="#2-installation">Installation</a></li>
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
@@ -89,9 +89,9 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5OTk5ODkxLDY5NDExNjIwMiwtMTY4Mj
-U4Mjc0OCwtNDY3MTI1MTY3LC0xNjM3NzM3MTEyLDE4NjI1Mjgx
-MzcsLTIwMzg2NDQyOTEsODY4MTEyMzc3LC0xMzc3MjQwOTkwLD
-MyMTE4MTU3LC0xMjQ3MTMyNDIyLDEzMjEwMDQ5MjcsLTIwMTMx
-MDc4MjRdfQ==
+eyJoaXN0b3J5IjpbMTQ5MzAwMzkzNCw2OTQxMTYyMDIsLTE2OD
+I1ODI3NDgsLTQ2NzEyNTE2NywtMTYzNzczNzExMiwxODYyNTI4
+MTM3LC0yMDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MC
+wzMjExODE1NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEz
+MTA3ODI0XX0=
 -->
