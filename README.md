@@ -70,13 +70,13 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg">
 </p>
 
-<p></p><!--stackedit_data:&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;-->
+
 <h3 id="threading">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up the general runtime of the program, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE5NTAxMDIzLC0yMDM4NjQ0MjkxLDg2OD
-ExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1NywtMTI0NzEzMjQy
-MiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX0=
+eyJoaXN0b3J5IjpbLTY4NDE0NzgwOSwtMjAzODY0NDI5MSw4Nj
+gxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgxNTcsLTEyNDcxMzI0
+MjIsMTMyMTAwNDkyNywtMjAxMzEwNzgyNF19
 -->
