@@ -1,4 +1,5 @@
 <h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
+<p></p>
 <p>Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
@@ -20,7 +21,7 @@ Pre-miRNA-plot has some dependencies and you need to check whether you have to i
 <pre><code>python --version</code></pre>
 <p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
 
-<h2 id="vienna-rna-package">1.4 Vienna RNA package</h2>
+<h2 id="vienna-rna-package">1.2 Vienna RNA package</h2>
 <p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to generate an SVG image of it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package. If you don't have it installed you can download the package and compile it following the steps below:</p>
 <pre><code>wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
 tar xvzf ViennaRNA-2.4.13.tar.gz
@@ -94,8 +95,8 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NzEyNTE2NywtMTYzNzczNzExMiwxOD
-YyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0
-MDk5MCwzMjExODE1NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC
-0yMDEzMTA3ODI0XX0=
+eyJoaXN0b3J5IjpbLTE2ODI1ODI3NDgsLTQ2NzEyNTE2NywtMT
+YzNzczNzExMiwxODYyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2ODEx
+MjM3NywtMTM3NzI0MDk5MCwzMjExODE1NywtMTI0NzEzMjQyMi
+wxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX0=
 -->
