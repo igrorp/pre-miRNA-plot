@@ -80,7 +80,7 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
 <h3 id="labels">Image formats</h3>
 
-Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that the SVG is a really great format because it hardly loses quality, but not all operational systems/web browsers are compatible. PDF in the other hand is universal but it will take a little lo
+Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that the SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.
 
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
@@ -88,8 +88,8 @@ Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. No
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1MDk5ODM3NiwxODYyNTI4MTM3LC0yMD
-M4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1
-NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX
-0=
+eyJoaXN0b3J5IjpbLTE2Mzc3MzcxMTIsMTg2MjUyODEzNywtMj
+AzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgx
+NTcsLTEyNDcxMzI0MjIsMTMyMTAwNDkyNywtMjAxMzEwNzgyNF
+19
 -->
