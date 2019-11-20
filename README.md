@@ -82,14 +82,16 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
 Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that the SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.
 
+    python premirnaplot.py your_file
+
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Mzc3MzcxMTIsMTg2MjUyODEzNywtMj
-AzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgx
-NTcsLTEyNDcxMzI0MjIsMTMyMTAwNDkyNywtMjAxMzEwNzgyNF
-19
+eyJoaXN0b3J5IjpbMTYwMjExOTc3NiwtMTYzNzczNzExMiwxOD
+YyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0
+MDk5MCwzMjExODE1NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC
+0yMDEzMTA3ODI0XX0=
 -->
