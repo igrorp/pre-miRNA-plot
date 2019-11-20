@@ -60,11 +60,11 @@ If you have labels or some sort of  to your data, you can include them in the fi
 
 <h3 id="labels">Styles</h3>
 
-You
+Pre-miRNA-plot has 5 different styles for creating the image for the precursor. Below there is how the final image looks like and 
 
 <h3 id="colors">Colors</h3>
 
-<p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
+<p>You can set which colors will be used to highlight the miRNAs within the precursor. Choose between predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
 </p><blockquote> You can get RGB codes from selected colors in this <a href="[https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp)">website</a><p></p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:
 
 <pre><code>premirnaplot your_file.txt -c green blue</code></pre>
@@ -85,8 +85,8 @@ You
 <h3 id="threading">Help</h3>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMDA3MzYzNSwxODYyNTI4MTM3LC0yMD
-M4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1
-NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX
-0=
+eyJoaXN0b3J5IjpbLTE0MzA3MjkzMTksMTg2MjUyODEzNywtMj
+AzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgx
+NTcsLTEyNDcxMzI0MjIsMTMyMTAwNDkyNywtMjAxMzEwNzgyNF
+19
 -->
