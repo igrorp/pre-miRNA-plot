@@ -47,7 +47,7 @@ sudo make install
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex1.png" alt="Example 1"></p>
 <blockquote>
 <p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p></blockquote>
-If you have labels or some sort of  to your data, you can include them in the first column, like this:
+<p>If you have labels or some sort of  to your data, you can include them in the first column, like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, as it is a more efficient way of organizing your data</p></blockquote>
@@ -87,8 +87,8 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 <h3 id="threading">Help</h3>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4NjgyNDYzMCwxODYyNTI4MTM3LC0yMD
-M4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1
-NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX
-0=
+eyJoaXN0b3J5IjpbLTEzODI1OTg3OTcsMTg2MjUyODEzNywtMj
+AzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgx
+NTcsLTEyNDcxMzI0MjIsMTMyMTAwNDkyNywtMjAxMzEwNzgyNF
+19
 -->
