@@ -4,7 +4,7 @@
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
-1. <a href="#14-vienna-rna-package">Vienna RNA package</a></li>
+1.2 <a href="#14-vienna-rna-package">Vienna RNA package</a></li>
 <li><a href="nstallation">Installation</a></li>
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
@@ -33,9 +33,6 @@ sudo make install
 <p>To install pre-miRNA-plot you can download this repository as a zip file in this main page, or clone it in your machine:</p>
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
-
-<p>After decompression or cloning, you have to enter the folder and run the <a href="install.sh">install.sh</a> file to make the program executable and to move it to /usr/local/bin/ so you can access it from anywhere. You will need superuser permission for that.</p>
-<pre><code>sh install.sh</code></pre>
 
 <h1 id="how-to-use">3. How to use</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
@@ -92,9 +89,8 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjM0MDExODEsLTE2ODI1ODI3NDgsLT
-Q2NzEyNTE2NywtMTYzNzczNzExMiwxODYyNTI4MTM3LC0yMDM4
-NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1Ny
-wtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX0=
-
+eyJoaXN0b3J5IjpbNjk0MTE2MjAyLC0xNjgyNTgyNzQ4LC00Nj
+cxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2MjUyODEzNywtMjAzODY0
+NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgxNTcsLT
+EyNDcxMzI0MjIsMTMyMTAwNDkyNywtMjAxMzEwNzgyNF19
 -->
