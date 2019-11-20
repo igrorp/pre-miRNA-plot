@@ -47,7 +47,7 @@ sudo make install
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex1.png" alt="Example 1"></p>
 <blockquote>
 <p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p></blockquote>
-If you have labels or some sort of  to your data, you can include them in the first column, like this:
+<p>If you have labels or some sort of  to your data, you can include them in the first column, like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, as it is a more efficient way of organizing your data</p></blockquote>
@@ -58,25 +58,44 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
 
+<h3 id="labels">Styles</h3>
+
+Pre-miRNA-plot has 5 different styles for creating the image for the precursor. Below there is how the final images look like and how to pick the style you want. 
+
+    python premirnaplot.py your_file.txt -s 4
+
 <h3 id="colors">Colors</h3>
-<p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
-</p><blockquote> You can get RGB codes from selected colors in this <a href="schools.com/colors/colors_picker.asp&quot;">website</a><p></p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:
-<pre><code>premirnaplot your_file.txt -c green blue
-</code></pre>
+
+<p>You can set which colors will be used to highlight the miRNAs within the precursor. Choose between predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
+</p><blockquote> You can get RGB codes from selected colors in this <a href="[https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp)">website</a><p></p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:
+
+<pre><code>premirnaplot your_file.txt -c green blue</code></pre>
+
 <p>If you wanted to set the colors to a custom tone of purple and pink, you could type:
 </p><pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153</code></pre>
 
 <p></p><p align="center">
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.png" width="314" height="480">
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" height=600>
 </p>
 
-<p></p><!--stackedit_data:&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;-->
-<h3 id="threading">Threading</h3>
-<p>You can set the number of allowed threads to run and speed up the general runtime of the program, as the example below: </p>
+<h3 id="labels">Image formats</h3>
+
+Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that the SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.
+
+    python premirnaplot.py your_file.txt -f pdf
+
+Or the default:
+
+    python premirnaplot.py your_file.txt -f svg
+
+<h3 id="multiprocessing">Multiprocessing</h3>
+<p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY4MTEyMzc3LC0xMzc3MjQwOTkwLDMyMT
-E4MTU3LC0xMjQ3MTMyNDIyLDEzMjEwMDQ5MjcsLTIwMTMxMDc4
-MjRdfQ==
+eyJoaXN0b3J5IjpbLTQ2NzEyNTE2NywtMTYzNzczNzExMiwxOD
+YyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0
+MDk5MCwzMjExODE1NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC
+0yMDEzMTA3ODI0XX0=
 -->
