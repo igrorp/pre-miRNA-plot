@@ -21,7 +21,7 @@ Pre-miRNA-plot has some dependencies and you need to check whether you have to i
 <p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
 
 <h2 id="vienna-rna-package">1.4 Vienna RNA package</h2>
-<p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to generate an SVG image of it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package. If you don't have it installed you can download the programs and compile it following t</p>
+<p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to generate an SVG image of it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package. If you don't have it installed you can download the package and compile it following the steps below:</p>
 <pre><code>wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
 tar xvzf ViennaRNA-2.4.13.tar.gz
 cd ViennaRNA-2.4.13/
@@ -31,9 +31,11 @@ sudo make install
 </code></pre>
 
 <h1 id="installation">2. Installation</h1>
-<p>To install pre-miRNA-plot you can download this repository as a zip file in the main page, or clone it in your machine:</p>
+<p>To install pre-miRNA-plot you can download this repository as a zip file in this main page, or clone it in your machine:</p>
+
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git
 </code></pre>
+
 <p>After decompression or cloning, you have to enter the folder and run the <a href="install.sh">install.sh</a> file to make the program executable and to move it to /usr/local/bin/ so you can access it from anywhere. You will need superuser permission for that.</p>
 <pre><code>sh install.sh
 </code></pre>
@@ -77,5 +79,6 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUyMDY1NTA5LC0yMDEzMTA3ODI0XX0=
+eyJoaXN0b3J5IjpbLTE0ODUwNjI4MzAsLTIwMTMxMDc4MjRdfQ
+==
 -->
