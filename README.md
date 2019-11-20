@@ -4,7 +4,7 @@
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
-1.2 <a href="#14-vienna-rna-package">Vienna RNA package</a></li>
+1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a></li>
 <li><a href="#2-installation">Installation</a></li>
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
@@ -89,7 +89,7 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5MzAwMzkzNCw2OTQxMTYyMDIsLTE2OD
+eyJoaXN0b3J5IjpbMTA0MTgxNDg4MCw2OTQxMTYyMDIsLTE2OD
 I1ODI3NDgsLTQ2NzEyNTE2NywtMTYzNzczNzExMiwxODYyNTI4
 MTM3LC0yMDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MC
 wzMjExODE1NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEz
