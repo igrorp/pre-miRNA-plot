@@ -80,15 +80,16 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
 <h3 id="labels">Image formats</h3>
 
+Pre-miRNA-plot also allows you to save the final images in 
+
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
-<h3 id="threading">Help</h3>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODI1OTg3OTcsMTg2MjUyODEzNywtMj
-AzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgx
-NTcsLTEyNDcxMzI0MjIsMTMyMTAwNDkyNywtMjAxMzEwNzgyNF
-19
+eyJoaXN0b3J5IjpbMTc4NDYyNDcxMCwxODYyNTI4MTM3LC0yMD
+M4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1
+NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX
+0=
 -->
