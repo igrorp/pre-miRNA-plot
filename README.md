@@ -71,12 +71,12 @@ If you have labels or some sort of  to your data, you can include them in the fi
 </p>
 
 <p></p><!--stackedit_data:&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;-->
-<h3 id="threading">Threading</h3>
-<p>You can set the number of allowed threads to run and speed up the general runtime of the program, as the example below: </p>
+<h3 id="threading">Multiprocessing</h3>
+<p>You can set the number of allowed processors to run and speed up the general runtime of the program, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzg2NDQyOTEsODY4MTEyMzc3LC0xMz
-c3MjQwOTkwLDMyMTE4MTU3LC0xMjQ3MTMyNDIyLDEzMjEwMDQ5
-MjcsLTIwMTMxMDc4MjRdfQ==
+eyJoaXN0b3J5IjpbMzE5NTAxMDIzLC0yMDM4NjQ0MjkxLDg2OD
+ExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1NywtMTI0NzEzMjQy
+MiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX0=
 -->
