@@ -50,7 +50,7 @@ sudo make install
 If you have labels or some sort of  to your data, you can include them in the first column, like this:
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 2"></p>
 <blockquote>
-<p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p></blockquote>
+<p>The created image files will be named accordingly to the label, as it is a more efficient way of organizing your data</p></blockquote>
 
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
 
@@ -80,6 +80,6 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjUzMzYwNDYsMTMyMTAwNDkyNywtMj
-AxMzEwNzgyNF19
+eyJoaXN0b3J5IjpbMjAxOTQxMjk2OCwxMzIxMDA0OTI3LC0yMD
+EzMTA3ODI0XX0=
 -->
