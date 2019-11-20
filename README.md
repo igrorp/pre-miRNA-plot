@@ -40,7 +40,8 @@ sudo make install
 </code></pre>
 
 <h1 id="how-to-use">3. How to use</h1>
-<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot --help</code>.</p>
+<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
+
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex1.png" alt="Example 1"></p>
@@ -50,10 +51,13 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, so it is a more efficient way of organizing your data</p></blockquote>
+
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
+
 <h3 id="labels">Labels</h3>
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
+
 <h3 id="colors">Colors</h3>
 <p>You can choose which colors will be used to highlight the miRNAs within the precursor. You can choose predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
 </p><blockquote> You can get RGB codes from selected colors in this <a href="schools.com/colors/colors_picker.asp&quot;">website</a><p></p></blockquote>If you wanted to set the colors to green and e, for example, you would have to type:
@@ -76,5 +80,6 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyMTAwNDkyNywtMjAxMzEwNzgyNF19
+eyJoaXN0b3J5IjpbLTE2NjUzMzYwNDYsMTMyMTAwNDkyNywtMj
+AxMzEwNzgyNF19
 -->
