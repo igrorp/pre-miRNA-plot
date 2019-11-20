@@ -1,6 +1,8 @@
 
 # Importing necessary packages
 
+import pandas as pd
+
 import subprocess
 
 import argparse
@@ -33,13 +35,13 @@ parser.add_argument('-e', '--extra_info', default='T', choices=['T', 'F'])
 
 parser.add_argument('-c', '--colors', nargs='+', default=['red', 'green'], type=str)
 
-parser.add_argument('-t', '--threads', nargs=1, default=1, type=int)
+parser.add_argument('-t', '--threads', default=1, type=int)
 
-parser.add_argument('-s', '--style', nargs=1, default=1, type=int)
+parser.add_argument('-s', '--style', default=1, type=int)
 
-parser.add_argument('-f', '--outfmt', nargs=1, default='svg', choices=['pdf', 'svg'], type=str)
+parser.add_argument('-f', '--outfmt', default='svg', choices=['pdf', 'svg'], type=str)
 
-parser.add_argument('-o', '--outdir', nargs=1, default='premirnaplot', type=str)
+parser.add_argument('-o', '--outdir', default='premirnaplot', type=str)
 
 args = parser.parse_args()
 
@@ -56,9 +58,9 @@ annot = True if args.annotation == 'T' else False
 
 extra = True if args.extra_info == 'T' else False
 
-nthreads = args.threads[0]
+nthreads = args.threads
 
-pdf = True if args.outfmt[0] == 'pdf' else None
+pdf = True if args.outfmt == 'pdf' else None
 
 outdir = args.outdir
 
@@ -76,15 +78,15 @@ if len(args.colors) == 2:
 elif len(args.colors) == 6:
 
     for color in args.colors:
-        if color < 0 or color > 255:
+        if int(color) < 0 or int(color) > 255:
             raise Exception("ERROR! Please use RGB code values between 0 and 255")
     
-    color1, color2 = ' '.join([colors[0], colors[1], colors[2]]), ' '.join([colors[3], colors[4], colors[5]])
+    color1 = "#{:02x}{:02x}{:02x}".format(int(args.colors[0]), int(args.colors[1]), int(args.colors[2]))
+    color2 = "#{:02x}{:02x}{:02x}".format(int(args.colors[3]), int(args.colors[4]), int(args.colors[5]))
 
 else:
-    print("\nThere was an error checking the colors you provided, please review them")
+    raise Exception("\nThere was an error checking the colors you provided, please review them")
 
-print(args.style)
 
 filedata = {}
 
@@ -107,11 +109,10 @@ def initial_check(filename):
 
                 annotation = line[0].lower()
                 precursor = line[1]
+                mirna1 = line[2]
                 if len(line) == 4:
-                    mirna1 = line[2]
                     mirna2 = line[3]
                 else:
-                    mirna1 = line[2]
                     mirna2 = None
             else:
                 precursor = line[0]
@@ -139,14 +140,14 @@ def folding(prec):
 
     with open('foldings/{}_fold.txt'.format(prec.name)) as dot:
         stuff, mfe = dot.read().split(' ')
-        prec.premfe = float(mfe[1:-2])
+        mfe = float(mfe[1:-2])
 
     rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
     rnaplot.communicate(stuff)
 
-    constructor('colored_structures/' + prec.name + '_ss.svg', args.style[0], prec.pos1, prec.pos2, color1, color2, 'grey', pdf=pdf)
+    constructor('colored_structures/' + prec.name + '_ss.svg', args.style, prec.pos1, prec.pos2, color1, color2, pdf=pdf)
 
-    return f'# Created {prec.name} image'
+    return prec.name, mfe
 
 
 subprocess.run(f'mkdir {outdir}/', shell=True)
@@ -167,22 +168,45 @@ for file in filedata:
     
     mfelst = []
     sizelst = []
-    mirdict = {}
+    mirdict = {'Names':[], 'MFEs':[0 for _ in range(len(filedata[file]))], 'Lenghts':[]}
     name = (file.split('/')[-1][:-4] if '.' in file else name)
     
     subprocess.run(f'mkdir {outdir}/{name} {outdir}/{name}/foldings {outdir}/{name}/colored_structures', shell=True)
     
     os.chdir(f'{outdir}/{name}/')
 
-    results = []
+    for prec in filedata[file]:
+        mirdict['Names'].append(prec.name)
+        mirdict['Lenghts'].append(prec.prelen)
+
+    data = pd.DataFrame(mirdict)
+    data = data.set_index('Names')
 
     with cf.ProcessPoolExecutor(max_workers=nthreads) as executor:
         
-        results = executor.map(folding, filedata[file])
-
-        for result in results:
-            print(result)
+        for result in executor.map(folding, filedata[file]):
+            name, mfe = result
+            print('#Created {} image'.format(name))
+            data['MFEs'][name] = mfe
     
+    plt.clf()
+    plt.boxplot(data['Lenghts'])
+    plt.title('Precursor length')
+    plt.ylabel('Sequence length (nt)')
+    plt.savefig('length.png', dpi=500)
+
+    plt.clf()
+    plt.boxplot(data['MFEs'])
+    plt.title('Predicted minimum free energy')
+    plt.ylabel('Minimum free energy (kJ/mol)')
+    plt.savefig('mfe.png', dpi=500)
+    
+    plt.clf()
+    plt.scatter(data['Lenghts'], data['MFEs'], edgecolors='black', color='green')
+    plt.rcParams.update({'font.size':8})
+    plt.xlabel('Precursor length')
+    plt.ylabel('Minimum free energy (kJ/mol)')
+    plt.savefig('mfexlength.pdf')
 
     os.chdir('../../')
 

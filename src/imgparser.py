@@ -153,7 +153,7 @@ class SVGParser():
 class SVGconstructor(SVGParser):
 
 
-	def __init__(self, filepath, style, mirpos, mir2pos, color1, color2, bgcolor, pdf=False):
+	def __init__(self, filepath, style, mirpos, mir2pos, color1, color2, pdf=False):
 
 		dwg = None
 
@@ -179,12 +179,12 @@ class SVGconstructor(SVGParser):
 
 			self.polyline([0, len(self.locations) - 1], 'black', self.strokew)
 
-			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill=bgcolor))
+			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='#9494b8'))
 			
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
-			self.drawcircles((0, len(self.locations)), bgcolor)
+			self.drawcircles((0, len(self.locations)), '#9494b8')
 			self.drawcircles(mirpos, color1)
 			self.drawcircles(mir2pos, color2)
 
@@ -194,7 +194,7 @@ class SVGconstructor(SVGParser):
 
 			self.polyline([0, len(self.locations) - 1], 'black', self.strokew)
 
-			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill=bgcolor))
+			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='#9494b8'))
 			
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
@@ -207,7 +207,7 @@ class SVGconstructor(SVGParser):
 
 		elif style == 3:
 
-			self.polyline([len(self.locations) - 1, 0], bgcolor, self.strokew)
+			self.polyline([len(self.locations) - 1, 0], 'black', self.strokew)
 			
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='white', stroke='black'))
 			
@@ -222,7 +222,7 @@ class SVGconstructor(SVGParser):
 			
 		elif style == 4:
 
-			self.polyline([0,len(self.locations) - 1], bgcolor, self.strokew)
+			self.polyline([0,len(self.locations) - 1], 'black', self.strokew)
 
 			self.polyline(mirpos, color1, self.strokew)
 			self.polyline(mir2pos[::-1], color2, self.strokew)
@@ -235,7 +235,7 @@ class SVGconstructor(SVGParser):
 
 		elif style == 5:
 
-			self.polyline([0, len(self.locations)], bgcolor, self.strokew)
+			self.polyline([0, len(self.locations)], '#9494b8', self.strokew)
 
 			self.polyline(mirpos, color1, self.strokew)
 			self.polyline(mir2pos[::-1], color2, self.strokew)
