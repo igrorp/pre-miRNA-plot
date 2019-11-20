@@ -67,7 +67,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 </p><pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153</code></pre>
 
 <p></p><p align="center">
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" height=20>
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" height=200>
 </p>
 
 
@@ -76,7 +76,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTY3MjUzODMsLTIwMzg2NDQyOTEsOD
-Y4MTEyMzc3LC0xMzc3MjQwOTkwLDMyMTE4MTU3LC0xMjQ3MTMy
-NDIyLDEzMjEwMDQ5MjcsLTIwMTMxMDc4MjRdfQ==
+eyJoaXN0b3J5IjpbMjA1MTQ1OTgwNywtMjAzODY0NDI5MSw4Nj
+gxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgxNTcsLTEyNDcxMzI0
+MjIsMTMyMTAwNDkyNywtMjAxMzEwNzgyNF19
 -->
