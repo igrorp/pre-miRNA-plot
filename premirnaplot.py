@@ -31,8 +31,6 @@ parser.add_argument('-i', '--input', nargs='+', metavar='', dest='inputopt')
 
 parser.add_argument('-a', '--annotation', default='F', choices=['T', 'F'])
 
-parser.add_argument('-e', '--extra_info', default='T', choices=['T', 'F'])
-
 parser.add_argument('-c', '--colors', nargs='+', default=['red', 'green'], type=str)
 
 parser.add_argument('-t', '--threads', default=1, type=int)
@@ -55,8 +53,6 @@ if not inputs:
     quit()
 
 annot = True if args.annotation == 'T' else False
-
-extra = True if args.extra_info == 'T' else False
 
 nthreads = args.threads
 
@@ -139,8 +135,9 @@ def folding(prec):
     # Running RNAplot to generate the initial SVG in the colored_structures/ folder
 
     with open('foldings/{}_fold.txt'.format(prec.name)) as dot:
-        stuff, mfe = dot.read().split(' ')
-        mfe = float(mfe[1:-2])
+        alldata = dot.read().split(' ')
+        stuff = alldata[0]
+        mfe = float(alldata[-1][1:-2])
 
     rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
     rnaplot.communicate(stuff)
