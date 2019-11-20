@@ -70,17 +70,12 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/colors.png" width="314" height="480">
 </p>
 
-<h3 id="resolution">Resolution</h3>
-<p>You can also choose the <strong>resolution</strong> of the images, the default is 200 pixels. You can increase this value for better images for publications or to e abele to zoom in a particular area of the picture and not losing quality, for example, but be aware that this increases the program execution time.</p>
-<p>If you wanted to set the resolution of the images to 1200 pixels, you would have to type:</p>
-<pre><code>premirnaplot your_file.txt -q 1200
-</code></pre>
 <p></p><!--stackedit_data:&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;eyJoaXN0b3J5IjpbMTQyNDcyOTUzLC0xNjk5NjM4NzksMTA2NT&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;U5OTI3MCw4NzI5NDQzNCwxMDc0OTMwNzUwXX0=&amp;amp;amp;amp;amp;amp;amp;amp;amp;#10;-->
 <h3 id="threading">Threading</h3>
 <p>You can set the number of allowed threads to run and speed up the general runtime of the program, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDcxMzI0MjIsMTMyMTAwNDkyNywtMj
-AxMzEwNzgyNF19
+eyJoaXN0b3J5IjpbMzIxMTgxNTcsLTEyNDcxMzI0MjIsMTMyMT
+AwNDkyNywtMjAxMzEwNzgyNF19
 -->
