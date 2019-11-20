@@ -54,11 +54,13 @@ If you have labels or some sort of  to your data, you can include them in the fi
 
 <h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
 
-
-
 <h3 id="labels">Labels</h3>
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>premirnaplot your_file.txt -a T</code></pre>
+
+<h3 id="labels">Styles</h3>
+
+
 
 <h3 id="colors">Colors</h3>
 
@@ -74,6 +76,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" height=600>
 </p>
 
+<h3 id="labels">Image formats</h3>
 
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
@@ -82,7 +85,7 @@ If you have labels or some sort of  to your data, you can include them in the fi
 <h3 id="threading">Help</h3>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MTEzMTQyOSwxODYyNTI4MTM3LC0yMD
+eyJoaXN0b3J5IjpbLTQwNTEwNDMyNCwxODYyNTI4MTM3LC0yMD
 M4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1
 NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0XX
 0=
