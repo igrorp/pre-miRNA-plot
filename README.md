@@ -55,7 +55,7 @@ sudo make install
 
 <h3 id="labels">Styles</h3>
 
-Pre-miRNA-plot has 5 different styles for creating the image for the precursor. Below there is how the final images look like and how to pick the style you want. 
+Pre-miRNA-plot has 5 different styles for creating the image for the precursor. Thi is how the final images look like and how to pick the style you want. 
 
     python premirnaplot.py your_file.txt -s 4
 
@@ -89,9 +89,9 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0MTgxNDg4MCw2OTQxMTYyMDIsLTE2OD
-I1ODI3NDgsLTQ2NzEyNTE2NywtMTYzNzczNzExMiwxODYyNTI4
-MTM3LC0yMDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MC
-wzMjExODE1NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEz
-MTA3ODI0XX0=
+eyJoaXN0b3J5IjpbMTMxOTQzNDAxNiwxMDQxODE0ODgwLDY5ND
+ExNjIwMiwtMTY4MjU4Mjc0OCwtNDY3MTI1MTY3LC0xNjM3NzM3
+MTEyLDE4NjI1MjgxMzcsLTIwMzg2NDQyOTEsODY4MTEyMzc3LC
+0xMzc3MjQwOTkwLDMyMTE4MTU3LC0xMjQ3MTMyNDIyLDEzMjEw
+MDQ5MjcsLTIwMTMxMDc4MjRdfQ==
 -->
