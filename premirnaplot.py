@@ -161,7 +161,7 @@ for file in inputs:
     
     initial_check(file)
 
-    print('\n#######  Data check complete for {}'.format(file))
+    print('\n#######  Data check complete for {}\n'.format(file))
 
 
 for file in filedata:
@@ -186,7 +186,7 @@ for file in filedata:
         
         for result in executor.map(folding, filedata[file]):
             name, mfe = result
-            print('#Created {} image'.format(name))
+            print('# Created {} image'.format(name))
             data['MFEs'][name] = mfe
     
     plt.clf()

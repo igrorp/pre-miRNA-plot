@@ -212,7 +212,7 @@ class SVGconstructor(SVGParser):
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='white', stroke='black'))
 			
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
-												font_size=str(self.fs) + 'px', fill='black', font_family='Helvetica', font_weight='bold'))
+												font_size=str(self.fs), fill='black', font_family='Helvetica', font_weight='bold'))
 			
 			self.drawcircles((0, len(self.locations)), 'white')
 			self.drawcircles(mirpos, color1)
@@ -224,8 +224,8 @@ class SVGconstructor(SVGParser):
 
 			self.polyline([0,len(self.locations) - 1], 'black', self.strokew)
 
-			self.polyline(mirpos, color1, self.strokew)
-			self.polyline(mir2pos[::-1], color2, self.strokew)
+			self.polyline(mirpos, color1, self.fs * 1.15)
+			self.polyline(mir2pos[::-1], color2, self.fs * 1.15)
 
 			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))

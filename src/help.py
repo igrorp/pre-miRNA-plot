@@ -119,7 +119,7 @@ class Precursor():
                 if premirna.count(mirna) > 1:
                     print('WARNING! miRNA {} was found more than once in the precursor sequence {}..., but its last occurrence will be used!'.format(mirna, premirna[25:]))
 
-                return (premirna.find(mirna) + 1, premirna.find(mirna) + len(mirna))
+                return (premirna.find(mirna), premirna.find(mirna) + len(mirna))
             
             else:
                 
