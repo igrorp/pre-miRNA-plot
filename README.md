@@ -1,7 +1,9 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-	<style >  
+	<style>
+	img {width
+</style>  
 </head>
 <body>
 <h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
@@ -103,7 +105,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTAwNzAzMTEsLTEzNTUyNzU2OTEsLT
+eyJoaXN0b3J5IjpbLTE5NzkxOTQwNjMsLTEzNTUyNzU2OTEsLT
 E1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOTgy
 OTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgxND
 g4MCw2OTQxMTYyMDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2Nywt
