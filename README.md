@@ -68,11 +68,7 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
     python premirnaplot.py your_file.txt -s 4
 
 
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style1.svg" class="preimg"/>
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style2.svg" class="preimg"/>
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style3.svg" class="preimg"/> 
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style4.svg" class="preimg"/> 
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style5.svg" class="preimg"/>
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/all.svg" class="preimg"/>
 
 <h3 id="colors">Colors</h3>
 
