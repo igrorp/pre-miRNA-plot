@@ -1,7 +1,7 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-	<link rel="stylesheet" type="text/css" href="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/config.css">  
+	<style >  
 </head>
 <body>
 <h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
@@ -103,11 +103,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTUyNzU2OTEsLTE1Njg2NzU3NDAsLT
-E1Njg2NzU3NDAsLTM5MTk4NTczNywxOTgyOTAwMzMyLC0xNjgw
-NTk5ODA3LC04MDg5MzA2MTMsMTA0MTgxNDg4MCw2OTQxMTYyMD
-IsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2NywtMTYzNzczNzExMiwx
-ODYyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3Nz
-I0MDk5MCwzMjExODE1NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3
-LC0yMDEzMTA3ODI0XX0=
+eyJoaXN0b3J5IjpbLTE5NTAwNzAzMTEsLTEzNTUyNzU2OTEsLT
+E1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOTgy
+OTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgxND
+g4MCw2OTQxMTYyMDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2Nywt
+MTYzNzczNzExMiwxODYyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2OD
+ExMjM3NywtMTM3NzI0MDk5MCwzMjExODE1NywtMTI0NzEzMjQy
+MiwxMzIxMDA0OTI3XX0=
 -->
