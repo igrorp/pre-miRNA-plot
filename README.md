@@ -61,7 +61,8 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
 .preimg img {
 	height: 350px;
-	margin: 
+	margin: 0 100 0 100;
+}
 
 <div class="preimg">
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style1.svg"/>
@@ -101,7 +102,7 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1Mzk4NDA4NiwtMTY4MDU5OTgwNywtOD
+eyJoaXN0b3J5IjpbMTk4MjkwMDMzMiwtMTY4MDU5OTgwNywtOD
 A4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC0xNjgyNTgy
 NzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2MjUyODEzNy
 wtMjAzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIx
