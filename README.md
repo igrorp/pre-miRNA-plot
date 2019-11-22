@@ -61,7 +61,7 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
 <link rel="stylesheet" media="all" type="text/css" href="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/config.css"/>
 
-(setq markdown-css-paths  '("/Applications/Marked 2.app/Contents/Resources/Lopash.css"))
+(setq markdown-css-paths  '("https://github.com/igrorp/pre-miRNA-plot/blob/master/src/config.css"))
 
 <div class="preimg">
 	<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style1.svg"/>
@@ -101,7 +101,7 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3ODEwMjgyNCwxOTgyOTAwMzMyLC0xNj
+eyJoaXN0b3J5IjpbLTM5MTk4NTczNywxOTgyOTAwMzMyLC0xNj
 gwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgxNDg4MCw2OTQxMTYy
 MDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2NywtMTYzNzczNzExMi
 wxODYyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3
