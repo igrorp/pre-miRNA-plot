@@ -59,7 +59,7 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
     python premirnaplot.py your_file.txt -s 4
 
-<link type="text/css" href="
+<link type="text/css" href="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/config.css">
 <div class="preimg">
 	<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style1.svg"/>
 	 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style2.svg"/>
@@ -98,7 +98,7 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjk3NTI0NTgsMTk4MjkwMDMzMiwtMT
+eyJoaXN0b3J5IjpbLTE0MTQ4NzU2NjUsMTk4MjkwMDMzMiwtMT
 Y4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2
 MjAyLC0xNjgyNTgyNzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMT
 IsMTg2MjUyODEzNywtMjAzODY0NDI5MSw4NjgxMTIzNzcsLTEz
