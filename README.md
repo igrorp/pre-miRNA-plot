@@ -59,7 +59,9 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
     python premirnaplot.py your_file.txt -s 4
 
-. preimg {
+.preimg img {
+	height: 350px;
+	margin: 
 
 <div class="preimg">
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style1.svg"/>
@@ -99,10 +101,10 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTUwMDQ5MTUsLTE2ODA1OTk4MDcsLT
-gwODkzMDYxMywxMDQxODE0ODgwLDY5NDExNjIwMiwtMTY4MjU4
-Mjc0OCwtNDY3MTI1MTY3LC0xNjM3NzM3MTEyLDE4NjI1MjgxMz
-csLTIwMzg2NDQyOTEsODY4MTEyMzc3LC0xMzc3MjQwOTkwLDMy
-MTE4MTU3LC0xMjQ3MTMyNDIyLDEzMjEwMDQ5MjcsLTIwMTMxMD
-c4MjRdfQ==
+eyJoaXN0b3J5IjpbLTg1Mzk4NDA4NiwtMTY4MDU5OTgwNywtOD
+A4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC0xNjgyNTgy
+NzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2MjUyODEzNy
+wtMjAzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIx
+MTgxNTcsLTEyNDcxMzI0MjIsMTMyMTAwNDkyNywtMjAxMzEwNz
+gyNF19
 -->
