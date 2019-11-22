@@ -59,6 +59,9 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
     python premirnaplot.py your_file.txt -s 4
 
+
+
+
 <h3 id="colors">Colors</h3>
 
 <p>You can set which colors will be used to highlight the miRNAs within the precursor. Choose between predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
@@ -89,9 +92,9 @@ Or the default:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwODkzMDYxMywxMDQxODE0ODgwLDY5ND
-ExNjIwMiwtMTY4MjU4Mjc0OCwtNDY3MTI1MTY3LC0xNjM3NzM3
-MTEyLDE4NjI1MjgxMzcsLTIwMzg2NDQyOTEsODY4MTEyMzc3LC
-0xMzc3MjQwOTkwLDMyMTE4MTU3LC0xMjQ3MTMyNDIyLDEzMjEw
-MDQ5MjcsLTIwMTMxMDc4MjRdfQ==
+eyJoaXN0b3J5IjpbLTE2ODA1OTk4MDcsLTgwODkzMDYxMywxMD
+QxODE0ODgwLDY5NDExNjIwMiwtMTY4MjU4Mjc0OCwtNDY3MTI1
+MTY3LC0xNjM3NzM3MTEyLDE4NjI1MjgxMzcsLTIwMzg2NDQyOT
+EsODY4MTEyMzc3LC0xMzc3MjQwOTkwLDMyMTE4MTU3LC0xMjQ3
+MTMyNDIyLDEzMjEwMDQ5MjcsLTIwMTMxMDc4MjRdfQ==
 -->
