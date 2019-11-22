@@ -35,7 +35,7 @@ parser.add_argument('-c', '--colors', nargs='+', default=['red', 'green'], type=
 
 parser.add_argument('-t', '--threads', default=1, type=int)
 
-parser.add_argument('-s', '--style', default=1, type=int)
+parser.add_argument('-s', '--style', default=3, type=int)
 
 parser.add_argument('-f', '--outfmt', default='svg', choices=['pdf', 'svg'], type=str)
 
@@ -165,7 +165,7 @@ for file in filedata:
     
     mfelst = []
     sizelst = []
-    mirdict = {'Names':[], 'MFEs':[0 for _ in range(len(filedata[file]))], 'Lenghts':[]}
+    mirdict = {'Names':[], 'MFEs':[0 for _ in range(len(filedata[file]))], 'Lenghts':[], 'Sequences':[]}
     name = (file.split('/')[-1][:-4] if '.' in file else name)
     
     subprocess.run(f'mkdir {outdir}/{name} {outdir}/{name}/foldings {outdir}/{name}/colored_structures', shell=True)
@@ -175,6 +175,7 @@ for file in filedata:
     for prec in filedata[file]:
         mirdict['Names'].append(prec.name)
         mirdict['Lenghts'].append(prec.prelen)
+        mirdict['Sequences'].append(prec.premirna)
 
     data = pd.DataFrame(mirdict)
     data = data.set_index('Names')
@@ -185,6 +186,8 @@ for file in filedata:
             name, mfe = result
             print('# Created {} image'.format(name))
             data['MFEs'][name] = mfe
+
+    data.to_csv(path_or_buf='precursor_data.txt', sep='\t')
     
     plt.clf()
     plt.boxplot(data['Lenghts'])
