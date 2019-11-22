@@ -65,13 +65,12 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
     python premirnaplot.py your_file.txt -s 4
 
-<div class="preimg">
-	<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style1.svg"/>
-	 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style2.svg"/>
-	  <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style3.svg"/> 
-	<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style4.svg"/> 
-	<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style5.svg"/>
-</div>
+
+	<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style1.svg" class="preimg"/>
+	 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style2.svg" class="preimg"/>
+	  <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style3.svg" class="preimg"/> 
+	<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style4.svg" class="preimg"/> 
+	<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/style5.svg" class="preimg"/>
 
 <h3 id="colors">Colors</h3>
 
@@ -104,11 +103,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLT
-M5MTk4NTczNywxOTgyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5
-MzA2MTMsMTA0MTgxNDg4MCw2OTQxMTYyMDIsLTE2ODI1ODI3ND
-gsLTQ2NzEyNTE2NywtMTYzNzczNzExMiwxODYyNTI4MTM3LC0y
-MDM4NjQ0MjkxLDg2ODExMjM3NywtMTM3NzI0MDk5MCwzMjExOD
-E1NywtMTI0NzEzMjQyMiwxMzIxMDA0OTI3LC0yMDEzMTA3ODI0
-XX0=
+eyJoaXN0b3J5IjpbNTgzMjgxMDYzLC0xNTY4Njc1NzQwLC0xNT
+Y4Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5
+OTgwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC
+0xNjgyNTgyNzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2
+MjUyODEzNywtMjAzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyND
+A5OTAsMzIxMTgxNTcsLTEyNDcxMzI0MjIsMTMyMTAwNDkyNywt
+MjAxMzEwNzgyNF19
 -->
