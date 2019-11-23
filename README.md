@@ -9,7 +9,7 @@
 
 <p> <font size="5">
 1. <a href="#1-configuration"><font size="5">Configuration</font></a><br>
-%nbsp; 1.1 <a href="#11-python">Python</a><br>
+<%emsp; 1.1 <a href="#11-python">Python</a><br>
 1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a><br>
 3. <a href="#2-installation">Installation</a><br>
 4. <a href="#3-how-to-use">How to use</a><br>
@@ -99,7 +99,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjYxMDQ3ODcsODg2MzUxNDQzLDEwMT
+eyJoaXN0b3J5IjpbLTIwMDc2MDQ1NDMsODg2MzUxNDQzLDEwMT
 kyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwtMTM1NTI3NTY5
 MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMzkxOTg1NzM3LD
 E5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkzMDYxMywxMDQx
