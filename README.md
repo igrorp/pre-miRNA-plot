@@ -21,7 +21,7 @@
 <h1 id="configuration">1. Configuration</h1>
 Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.
 
-<h2 id="python"> &esbm; 1.1 Python</h2>
+<h2 id="python"> 1.1 Python</h2>
 <p>Pre-miRNA-plot runs in Python3+. You can check which version of Python you have installed in your machine with the command bellow:</p>
 <pre><code>python --version</code></pre>
 <p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
@@ -109,7 +109,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MTk4ODQzNiwtMTY5MDcxOTU4LC0zNT
+eyJoaXN0b3J5IjpbMTk3Njc2MTI2NiwtMTY5MDcxOTU4LC0zNT
 I3MjA2NjYsODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5MjkwNywt
 MzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEsLTE1Nj
 g2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOTgyOTAw
