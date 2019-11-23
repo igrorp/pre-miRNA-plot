@@ -11,6 +11,14 @@
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
 
+ 1. Configuration
+ 1.1 Python
+ 1.2 Vienna RNA package
+ 2. Installation
+ 3. How to use
+ 3.1 Input files
+ 
+
 </ol>
 <h1 id="configuration">1. Configuration</h1>
 Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.
@@ -94,7 +102,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjg4NDI5ODksLTM0NTIzMzg0MSwtND
+eyJoaXN0b3J5IjpbLTE2MjQ2NjAzOTcsLTM0NTIzMzg0MSwtND
 YxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQwLC0xNTY4
 Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5OT
 gwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC0x
