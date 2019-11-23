@@ -45,7 +45,7 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
     cd pre-miRNA-plot/
     python setup.py install
    
-   There is going to be a lot of text being displayed informing the packages downloaded and the operation status.
+   There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that you can run out test data to check if all the requirements are satisfied or if there are any problems 
 
 <h1 id="how-to-use">3. How to use</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
@@ -106,11 +106,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2Mz
-UxNDQzLDEwMTkyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwt
-MTM1NTI3NTY5MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMz
-kxOTg1NzM3LDE5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkz
-MDYxMywxMDQxODE0ODgwLDY5NDExNjIwMiwtMTY4MjU4Mjc0OC
-wtNDY3MTI1MTY3LC0xNjM3NzM3MTEyLDE4NjI1MjgxMzcsLTIw
-Mzg2NDQyOTFdfQ==
+eyJoaXN0b3J5IjpbMTc3MDkzMjczMywtMzUyNzIwNjY2LDgwMD
+YxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0NTIzMzg0MSwt
+NDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQwLC0xNT
+Y4Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5
+OTgwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC
+0xNjgyNTgyNzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2
+MjUyODEzN119
 -->
