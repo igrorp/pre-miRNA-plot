@@ -40,7 +40,7 @@ sudo make install
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
-Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot. We highly recommend
+Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot. We highly recommend that you check if you have the updated installers to avoid any conflicts. 
 
 <h1 id="how-to-use">3. How to use</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
@@ -101,11 +101,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzI5ODEyNjQsODg2MzUxNDQzLDEwMT
-kyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwtMTM1NTI3NTY5
-MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMzkxOTg1NzM3LD
-E5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkzMDYxMywxMDQx
-ODE0ODgwLDY5NDExNjIwMiwtMTY4MjU4Mjc0OCwtNDY3MTI1MT
-Y3LC0xNjM3NzM3MTEyLDE4NjI1MjgxMzcsLTIwMzg2NDQyOTEs
-ODY4MTEyMzc3XX0=
+eyJoaXN0b3J5IjpbLTc2NzgxNTYwOCw4ODYzNTE0NDMsMTAxOT
+I5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1Njkx
+LC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMT
+k4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4
+MTQ4ODAsNjk0MTE2MjAyLC0xNjgyNTgyNzQ4LC00NjcxMjUxNj
+csLTE2Mzc3MzcxMTIsMTg2MjUyODEzNywtMjAzODY0NDI5MSw4
+NjgxMTIzNzddfQ==
 -->
