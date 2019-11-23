@@ -42,12 +42,13 @@ sudo make install
 
 Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot. We highly recommend that you check if you have the updated installers to avoid any conflicts. Aditionally, you can create a virtual environment to isolate the downloaded packages and their versions used in this program.
 
+    cd pre-miRNA-plot/
     python setup.py install
    
    There is going to be a lot of text being displayed informing the packages downloaded and the operation status.
 
 <h1 id="how-to-use">3. How to use</h1>
-<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
+<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
 
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
@@ -105,11 +106,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3NTI3MTEyOCw4ODYzNTE0NDMsMTAxOT
-I5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1Njkx
-LC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMT
-k4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4
-MTQ4ODAsNjk0MTE2MjAyLC0xNjgyNTgyNzQ4LC00NjcxMjUxNj
-csLTE2Mzc3MzcxMTIsMTg2MjUyODEzNywtMjAzODY0NDI5MSw4
-NjgxMTIzNzddfQ==
+eyJoaXN0b3J5IjpbODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5Mj
+kwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEs
+LTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOT
+gyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgx
+NDg4MCw2OTQxMTYyMDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2Ny
+wtMTYzNzczNzExMiwxODYyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2
+ODExMjM3N119
 -->
