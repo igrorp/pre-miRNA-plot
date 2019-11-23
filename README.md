@@ -7,7 +7,7 @@
 
 <br>
 
-<ol align="center" style="{align:left;}">
+<ol >
 <li><a href="#1-configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
 1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a></li>
@@ -100,7 +100,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3NDgzMDI4NSw4ODYzNTE0NDMsMTAxOT
+eyJoaXN0b3J5IjpbMTAyMjk4NTYxMyw4ODYzNTE0NDMsMTAxOT
 I5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1Njkx
 LC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMT
 k4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4
