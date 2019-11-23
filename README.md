@@ -10,13 +10,6 @@
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
-
- 1. Configuration
- 1.1 Python
- 1.2 Vienna RNA package
- 2. Installation
- 3. How to use
- 3.1 Input files
  
 
 </ol>
@@ -102,11 +95,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjQ2NjAzOTcsLTM0NTIzMzg0MSwtND
-YxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQwLC0xNTY4
-Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5OT
-gwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC0x
-NjgyNTgyNzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2Mj
-UyODEzNywtMjAzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5
-OTAsMzIxMTgxNTddfQ==
+eyJoaXN0b3J5IjpbMTAxOTI5MDcsLTM0NTIzMzg0MSwtNDYxND
+Q2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQwLC0xNTY4Njc1
+NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5OTgwNy
+wtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC0xNjgy
+NTgyNzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2MjUyOD
+EzNywtMjAzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAs
+MzIxMTgxNTddfQ==
 -->
