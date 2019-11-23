@@ -7,20 +7,21 @@
 
 <br>
 
-<p> <font size="5">
-1. <a href="#1-configuration"><font size="5">Configuration</font></a><br>
+<ol>
+1. <a href="#1-configuration">Configuration</font></a><br>
 1.1 <a href="#11-python">Python</a><br>
 1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a><br>
 3. <a href="#2-installation">Installation</a><br>
 4. <a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a>
-</font></p>
 <br>
+</ol>
+
 <h1 id="configuration">1. Configuration</h1>
 Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.
 
-<h2 id="python">1.1 Python</h2>
+<h2 id="python"> &esbm; 1.1 Python</h2>
 <p>Pre-miRNA-plot runs in Python3+. You can check which version of Python you have installed in your machine with the command bellow:</p>
 <pre><code>python --version</code></pre>
 <p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
@@ -108,11 +109,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTA3MTk1OCwtMzUyNzIwNjY2LDgwMD
-YxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0NTIzMzg0MSwt
-NDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQwLC0xNT
-Y4Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5
-OTgwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC
-0xNjgyNTgyNzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2
-MjUyODEzN119
+eyJoaXN0b3J5IjpbMTc2MTk4ODQzNiwtMTY5MDcxOTU4LC0zNT
+I3MjA2NjYsODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5MjkwNywt
+MzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEsLTE1Nj
+g2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOTgyOTAw
+MzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgxNDg4MC
+w2OTQxMTYyMDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2NywtMTYz
+NzczNzExMl19
 -->
