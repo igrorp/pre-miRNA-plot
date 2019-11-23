@@ -64,7 +64,7 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
 
 <h3 id="labels">Labels</h3>
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
-<pre><code>premirnaplot your_file.txt -a T</code></pre>
+<pre><code>python premirnaplot.py your_file.txt -a T</code></pre>
 
 <h3 id="labels">Styles</h3>
 
@@ -106,11 +106,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5Mj
-kwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEs
-LTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOT
-gyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgx
-NDg4MCw2OTQxMTYyMDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2Ny
-wtMTYzNzczNzExMiwxODYyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2
-ODExMjM3N119
+eyJoaXN0b3J5IjpbMTI1MTc1NDE2NSw4MDA2MTkyOTAsODg2Mz
+UxNDQzLDEwMTkyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwt
+MTM1NTI3NTY5MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMz
+kxOTg1NzM3LDE5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkz
+MDYxMywxMDQxODE0ODgwLDY5NDExNjIwMiwtMTY4MjU4Mjc0OC
+wtNDY3MTI1MTY3LC0xNjM3NzM3MTEyLDE4NjI1MjgxMzcsLTIw
+Mzg2NDQyOTFdfQ==
 -->
