@@ -26,7 +26,7 @@ Pre-miRNA-plot has some dependencies and you need to check whether you have to i
 <p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
 
 <h2 id="vienna-rna-package">1.2 Vienna RNA package</h2>
-<p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to generate an SVG image of it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package. If you don't have it installed you can download the package and compile it following the steps below:</p>
+<p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to generate an SVG image of it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package. If you don't have it installed, you can download the package and compile it following the steps below:</p>
 <pre><code>wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
 tar xvzf ViennaRNA-2.4.13.tar.gz
 cd ViennaRNA-2.4.13/
@@ -39,6 +39,8 @@ sudo make install
 <p>To install pre-miRNA-plot you can download this repository as a zip file in this main page, or clone it in your machine:</p>
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
+
+Now you need to enter the cloned repository folder and run the ****
 
 <h1 id="how-to-use">3. How to use</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. If you’re not familiar with the files and how to set parameters, the next sessions will explore this properties more. You can see some the information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
@@ -99,11 +101,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjk0NjI4NCw4ODYzNTE0NDMsMTAxOT
-I5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1Njkx
-LC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMT
-k4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4
-MTQ4ODAsNjk0MTE2MjAyLC0xNjgyNTgyNzQ4LC00NjcxMjUxNj
-csLTE2Mzc3MzcxMTIsMTg2MjUyODEzNywtMjAzODY0NDI5MSw4
-NjgxMTIzNzddfQ==
+eyJoaXN0b3J5IjpbNTg1Nzk4NDM5LDg4NjM1MTQ0MywxMDE5Mj
+kwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEs
+LTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOT
+gyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgx
+NDg4MCw2OTQxMTYyMDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2Ny
+wtMTYzNzczNzExMiwxODYyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2
+ODExMjM3N119
 -->
