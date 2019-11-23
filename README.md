@@ -4,7 +4,10 @@
 <p></p>
 <br>
 <p>Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.</p>
-<ol>
+
+<br>
+
+<ol align="center" style="bacj">
 <li><a href="#1-configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
 1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a></li>
@@ -12,9 +15,9 @@
 <li><a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
- 
+ </ol>
+<br>
 
-</ol>
 <h1 id="configuration">1. Configuration</h1>
 Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.
 
@@ -97,11 +100,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODg2MzUxNDQzLDEwMTkyOTA3LC0zNDUyMz
-M4NDEsLTQ2MTQ0Njg0OCwtMTM1NTI3NTY5MSwtMTU2ODY3NTc0
-MCwtMTU2ODY3NTc0MCwtMzkxOTg1NzM3LDE5ODI5MDAzMzIsLT
-E2ODA1OTk4MDcsLTgwODkzMDYxMywxMDQxODE0ODgwLDY5NDEx
-NjIwMiwtMTY4MjU4Mjc0OCwtNDY3MTI1MTY3LC0xNjM3NzM3MT
-EyLDE4NjI1MjgxMzcsLTIwMzg2NDQyOTEsODY4MTEyMzc3LC0x
-Mzc3MjQwOTkwXX0=
+eyJoaXN0b3J5IjpbODc4MzE5MjEwLDg4NjM1MTQ0MywxMDE5Mj
+kwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEs
+LTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOT
+gyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgx
+NDg4MCw2OTQxMTYyMDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2Ny
+wtMTYzNzczNzExMiwxODYyNTI4MTM3LC0yMDM4NjQ0MjkxLDg2
+ODExMjM3N119
 -->
