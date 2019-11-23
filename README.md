@@ -9,12 +9,12 @@
 
 <p> <font size="5">
 1. <a href="#1-configuration"><font size="5">Configuration</font></a><br>
-1.1 <a href="#11-python">Python</a><br>
-1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a></li>
-2. <a href="#2-installation">Installation</a></li>
-3. <a href="#3-how-to-use">How to use</a><br>
+<p1.1 <a href="#11-python">Python</a><br>
+1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a><br>
+3. <a href="#2-installation">Installation</a><br>
+4. <a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
-3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
+3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a>
 </font></p>
 <br>
 <h1 id="configuration">1. Configuration</h1>
@@ -99,7 +99,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzODk1NjE4Miw4ODYzNTE0NDMsMTAxOT
+eyJoaXN0b3J5IjpbMTAyMjgyMDcwNCw4ODYzNTE0NDMsMTAxOT
 I5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1Njkx
 LC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMT
 k4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4
