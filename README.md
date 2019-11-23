@@ -1,7 +1,7 @@
 
 <h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
 <p></p>
-<p>Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications. You can see the information in this tutorial in a more visual way in the <a href="https://github.com/igrorp/pre-miRNA-plot/blob/mastee.pdf">documentation</a> file.</p>
+<p>Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.</p>
 <ol>
 <li><a href="#1-configuration">Configuration</a><br>
 1.1 <a href="#11-python">Python</a><br>
@@ -94,11 +94,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMz
-U1Mjc1NjkxLC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5
-ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNj
-EzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC0xNjgyNTgyNzQ4LC00
-NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2MjUyODEzNywtMjAzOD
-Y0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5OTAsMzIxMTgxNTcs
-LTEyNDcxMzI0MjJdfQ==
+eyJoaXN0b3J5IjpbLTEyNjg4NDI5ODksLTM0NTIzMzg0MSwtND
+YxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQwLC0xNTY4
+Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5OT
+gwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2MjAyLC0x
+NjgyNTgyNzQ4LC00NjcxMjUxNjcsLTE2Mzc3MzcxMTIsMTg2Mj
+UyODEzNywtMjAzODY0NDI5MSw4NjgxMTIzNzcsLTEzNzcyNDA5
+OTAsMzIxMTgxNTddfQ==
 -->
