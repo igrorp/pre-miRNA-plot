@@ -91,7 +91,7 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
 <h3 id="labels">Image formats</h3>
 
-Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that the SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.
+Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.
 
     python premirnaplot.py your_file.txt -f pdf
 
@@ -106,7 +106,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MTc1NDE2NSw4MDA2MTkyOTAsODg2Mz
+eyJoaXN0b3J5IjpbLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2Mz
 UxNDQzLDEwMTkyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwt
 MTM1NTI3NTY5MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMz
 kxOTg1NzM3LDE5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkz
