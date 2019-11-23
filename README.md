@@ -7,15 +7,15 @@
 
 <br>
 
-<ol >
-<li><a href="#1-configuration"><font size="5">Configuration</font></a><br>
+
+<a href="#1-configuration"><font size="5">Configuration</font></a><br>
 1.1 <a href="#11-python">Python</a><br>
 1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a></li>
-<li><a href="#2-installation">Installation</a></li>
-<li><a href="#3-how-to-use">How to use</a><br>
+2. <a href="#2-installation">Installation</a></li>
+3. <a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a></li>
- </ol>
+
 <br>
 <h1 id="configuration">1. Configuration</h1>
 Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.
@@ -99,7 +99,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwODE4ODQyMSw4ODYzNTE0NDMsMTAxOT
+eyJoaXN0b3J5IjpbMTc3NzgwMjM2MCw4ODYzNTE0NDMsMTAxOT
 I5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1Njkx
 LC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMT
 k4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4
