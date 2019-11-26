@@ -46,7 +46,7 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
     cd pre-miRNA-plot/
     python setup.py install
    
-   There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run out test data to check if all the requirements are satisfied or if there are any problems during the execution.
+   There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.
 
     python premirnaplot.py src/example.txt -a T
 
@@ -109,11 +109,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ5OTM1MzkxLDE5NzY3NjEyNjYsLTE2OT
-A3MTk1OCwtMzUyNzIwNjY2LDgwMDYxOTI5MCw4ODYzNTE0NDMs
-MTAxOTI5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mj
-c1NjkxLC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3
-MzcsMTk4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLD
-EwNDE4MTQ4ODAsNjk0MTE2MjAyLC0xNjgyNTgyNzQ4LC00Njcx
-MjUxNjddfQ==
+eyJoaXN0b3J5IjpbMTE5OTcwODk1NywxOTc2NzYxMjY2LC0xNj
+kwNzE5NTgsLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2MzUxNDQz
+LDEwMTkyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwtMTM1NT
+I3NTY5MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMzkxOTg1
+NzM3LDE5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkzMDYxMy
+wxMDQxODE0ODgwLDY5NDExNjIwMiwtMTY4MjU4Mjc0OCwtNDY3
+MTI1MTY3XX0=
 -->
