@@ -8,11 +8,11 @@
 <br>
 
 <ol>
-1. <a href="#1-configuration">Configuration</font></a><br>
+<li> <a href="#1-configuration">Configuration</font></a><br>
 1.1 <a href="#11-python">Python</a><br>
 1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a><br>
-3. <a href="#2-installation">Installation</a><br>
-4. <a href="#3-how-to-use">How to use</a><br>
+<li>  <a href="#2-installation">Installation</a><br>
+<li> <a href="#3-how-to-use">How to use</a><br>
 3.1 <a href="#31-input-files">Input files</a><br>
 3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a>
 <br>
@@ -109,11 +109,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3Njc2MTI2NiwtMTY5MDcxOTU4LC0zNT
-I3MjA2NjYsODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5MjkwNywt
-MzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEsLTE1Nj
-g2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOTgyOTAw
-MzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgxNDg4MC
-w2OTQxMTYyMDIsLTE2ODI1ODI3NDgsLTQ2NzEyNTE2NywtMTYz
-NzczNzExMl19
+eyJoaXN0b3J5IjpbMjU5MDE4NzI5LDE5NzY3NjEyNjYsLTE2OT
+A3MTk1OCwtMzUyNzIwNjY2LDgwMDYxOTI5MCw4ODYzNTE0NDMs
+MTAxOTI5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mj
+c1NjkxLC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3
+MzcsMTk4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLD
+EwNDE4MTQ4ODAsNjk0MTE2MjAyLC0xNjgyNTgyNzQ4LC00Njcx
+MjUxNjddfQ==
 -->
