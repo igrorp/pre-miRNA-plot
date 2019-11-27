@@ -15,6 +15,8 @@ from src.help import *
 
 import concurrent.futures as cf
 
+from sklearn.linear_model import LinearRegression
+
 from src.imgparser import SVGconstructor as constructor
 
 from src.help import Precursor
@@ -202,7 +204,11 @@ for file in filedata:
     plt.savefig('mfe.png', dpi=500)
     
     plt.clf()
-    plt.scatter(data['Lenghts'], data['MFEs'], edgecolors='black', color='green')
+    plt.scatter(data['Lenghts'], data['MFEs'], edgecolors='black', color=color1, zorder=2)
+    x = data['Lenghts'].values.reshape((-1, 1))
+    y = data['MFEs']
+    model = LinearRegression().fit(x, y)
+    plt.plot(x, model.predict(x), color='black', zorder=1)
     plt.rcParams.update({'font.size':8})
     plt.xlabel('Precursor length')
     plt.ylabel('Minimum free energy (kJ/mol)')
