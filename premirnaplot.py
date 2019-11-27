@@ -127,7 +127,7 @@ def initial_check(filename):
 
 def folding(prec):
 
-    rnafold = subprocess.Popen(f'RNAfold > {prec.name}_fold.txt',  stdin=subprocess.PIPE,
+    rnafold = subprocess.Popen('RNAfold > {}_fold.txt'.format(prec.name),  stdin=subprocess.PIPE,
                                             shell=True,
                                             universal_newlines=True,
                                             cwd='foldings/')
@@ -149,7 +149,7 @@ def folding(prec):
     return prec.name, mfe
 
 
-subprocess.run(f'mkdir {outdir}/', shell=True)
+subprocess.run('mkdir {}/'.format(outdir), shell=True)
 
 
 for file in inputs:
@@ -170,9 +170,9 @@ for file in filedata:
     mirdict = {'Names':[], 'MFEs':[0 for _ in range(len(filedata[file]))], 'Lenghts':[], 'Sequences':[]}
     name = (file.split('/')[-1][:-4] if '.' in file else name)
     
-    subprocess.run(f'mkdir {outdir}/{name} {outdir}/{name}/foldings {outdir}/{name}/colored_structures', shell=True)
+    subprocess.run('mkdir {}/{} {}/{}/foldings {}/{}/colored_structures'.format(outdir, name, outdir, name, outdir, name,), shell=True)
     
-    os.chdir(f'{outdir}/{name}/')
+    os.chdir('{}/{}/'.format(outdir, name))
 
     for prec in filedata[file]:
         mirdict['Names'].append(prec.name)
@@ -187,7 +187,7 @@ for file in filedata:
         for result in executor.map(folding, filedata[file]):
             name, mfe = result
             print('# Created {} image'.format(name))
-            data['MFEs'][name] = mfe
+            data.loc[name, 'MFEs'] = mfe
 
     data.to_csv(path_or_buf='precursor_data.txt', sep='\t')
     

@@ -196,7 +196,7 @@ class SVGconstructor(SVGParser):
 
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='#9494b8'))
 			
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform='translate(0,{})'.format(self.fdy),
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
 			self.drawcircles(mirpos, color1)
@@ -211,7 +211,7 @@ class SVGconstructor(SVGParser):
 			
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='white', stroke='black'))
 			
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform='translate(0, {})'.format(self.fdy),
 												font_size=str(self.fs), fill='black', font_family='Helvetica', font_weight='bold'))
 			
 			self.drawcircles((0, len(self.locations)), 'white')
@@ -227,7 +227,7 @@ class SVGconstructor(SVGParser):
 			self.polyline(mirpos, color1, self.fs * 1.15)
 			self.polyline(mir2pos[::-1], color2, self.fs * 1.15)
 
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform='translate(0, {})'.format(self.fdy),
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
 			self.drawtext([mirpos[0], mirpos[1]])
@@ -240,7 +240,7 @@ class SVGconstructor(SVGParser):
 			self.polyline(mirpos, color1, self.strokew)
 			self.polyline(mir2pos[::-1], color2, self.strokew)
 
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform='translate(0, {})'.format(self.fdy),
 									font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
 			self.drawtext([0, len(self.locations)])
