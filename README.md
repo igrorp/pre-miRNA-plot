@@ -55,11 +55,11 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
 
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
-<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex1.png" alt="Example 1"></p>
+<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 1"></p>
 <blockquote>
 <p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p></blockquote>
 <p>If you have labels or some sort of  to your data, you can include them in the first column, like this:</p>
-<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 2"></p>
+<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex1.png" alt="Example 2"></p>
 <blockquote>
 <p>The created image files will be named accordingly to the label, as it is a more efficient way of organizing your data</p></blockquote>
 
@@ -109,11 +109,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5OTcwODk1NywxOTc2NzYxMjY2LC0xNj
-kwNzE5NTgsLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2MzUxNDQz
-LDEwMTkyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwtMTM1NT
-I3NTY5MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMzkxOTg1
-NzM3LDE5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkzMDYxMy
-wxMDQxODE0ODgwLDY5NDExNjIwMiwtMTY4MjU4Mjc0OCwtNDY3
-MTI1MTY3XX0=
+eyJoaXN0b3J5IjpbMjQ0MTYwNDEzLDExOTk3MDg5NTcsMTk3Nj
+c2MTI2NiwtMTY5MDcxOTU4LC0zNTI3MjA2NjYsODAwNjE5Mjkw
+LDg4NjM1MTQ0MywxMDE5MjkwNywtMzQ1MjMzODQxLC00NjE0ND
+Y4NDgsLTEzNTUyNzU2OTEsLTE1Njg2NzU3NDAsLTE1Njg2NzU3
+NDAsLTM5MTk4NTczNywxOTgyOTAwMzMyLC0xNjgwNTk5ODA3LC
+04MDg5MzA2MTMsMTA0MTgxNDg4MCw2OTQxMTYyMDIsLTE2ODI1
+ODI3NDhdfQ==
 -->
