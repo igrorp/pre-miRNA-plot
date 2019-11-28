@@ -212,7 +212,7 @@ for file in filedata:
     plt.rcParams.update({'font.size':8})
     plt.xlabel('Precursor length')
     plt.ylabel('Minimum free energy (kJ/mol)')
-    plt.savefig('mfexlength.pdf')
+    plt.savefig('mfexlength.png', dpi=500)
 
     os.chdir('../../')
 
