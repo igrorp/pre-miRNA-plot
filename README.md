@@ -50,7 +50,7 @@ After that, check it:
 Now, install **setuptools** and **wheel**, that will help you download all the required packages:
 
       
-    sudo python -m pip install --upgrade pip setuptools wheel
+    sudo python3 -m pip install --upgrade pip setuptools wheel
 
 For the more experienced ones, it's always a good practice to isolate the downloaded programs as their versions may cause conflict. Optionally, you can create a Python virtual environment to do that.
 
@@ -73,7 +73,11 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
     python3 premirnaplot.py src/example.txt -a T
 
 <h1 id="how-to-use">3. How to use</h1>
-<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
+<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python3 premirnaplot.py -help</code>.</p>
+
+If you are inside the cloned repository,
+
+
 
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
@@ -131,11 +135,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5ODExNzIwNiw5NzEwNTA5NTUsMjQ0MT
-YwNDEzLDExOTk3MDg5NTcsMTk3Njc2MTI2NiwtMTY5MDcxOTU4
-LC0zNTI3MjA2NjYsODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5Mj
-kwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEs
-LTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOT
-gyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgx
-NDg4MF19
+eyJoaXN0b3J5IjpbLTEzNTM5Mjc3ODEsMTY5ODExNzIwNiw5Nz
+EwNTA5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcsMTk3Njc2MTI2
+NiwtMTY5MDcxOTU4LC0zNTI3MjA2NjYsODAwNjE5MjkwLDg4Nj
+M1MTQ0MywxMDE5MjkwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgs
+LTEzNTUyNzU2OTEsLTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLT
+M5MTk4NTczNywxOTgyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5
+MzA2MTNdfQ==
 -->
