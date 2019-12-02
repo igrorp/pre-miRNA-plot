@@ -38,7 +38,7 @@ sudo make install
 
 ## 1.3 Pip
 
-The program dependes on pip to install all the Python imaging packages used (matplotlib, svglib, svgwrite, scikit-learn, etc.). Without it the installation would be vary manual, time-consuming and maybe conflicting. If you don't have it already on your machine, run:
+The program dependes on **pip** to install all the Python imaging packages used (matplotlib, svglib, svgwrite, scikit-learn, etc.). Without it the installation would be vary manual, time-consuming and maybe conflicting. If you don't have it already on your machine, run:
 
     sudo apt update
     sudo apt install python3-pip
@@ -47,10 +47,12 @@ After that, check it:
 
     python3 -m pip --version
 
-Now, install setuptools and wheel, that will help you download all the required packages:
+Now, install **setuptools** and **wheel**, that will help you download all the required packages:
 
       
     sudo python -m pip install --upgrade pip setuptools wheel
+
+For the most experienced ones, it's always a good practice to 
 
 
 <h1 id="installation">2. Installation</h1>
@@ -126,11 +128,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTcxMDUwOTU1LDI0NDE2MDQxMywxMTk5Nz
-A4OTU3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNzIwNjY2
-LDgwMDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0NTIzMz
-g0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQw
-LC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMT
-Y4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2
-MjAyXX0=
+eyJoaXN0b3J5IjpbMTMyODAyMDcxMyw5NzEwNTA5NTUsMjQ0MT
+YwNDEzLDExOTk3MDg5NTcsMTk3Njc2MTI2NiwtMTY5MDcxOTU4
+LC0zNTI3MjA2NjYsODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5Mj
+kwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEs
+LTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOT
+gyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgx
+NDg4MF19
 -->
