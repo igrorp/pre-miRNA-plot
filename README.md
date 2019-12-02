@@ -79,7 +79,9 @@ If you are inside the cloned repository folder, you can run the program like thi
 
     python3 premirnaplot.py full/path/to/your/input_file.txt
 
-If you are a
+If you are outside the program repository, and you want to run the program from wherever you are, use:
+
+
 
 
 
@@ -139,11 +141,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk2ODUyNzc4LDE2OTgxMTcyMDYsOTcxMD
-UwOTU1LDI0NDE2MDQxMywxMTk5NzA4OTU3LDE5NzY3NjEyNjYs
-LTE2OTA3MTk1OCwtMzUyNzIwNjY2LDgwMDYxOTI5MCw4ODYzNT
-E0NDMsMTAxOTI5MDcsLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0x
-MzU1Mjc1NjkxLC0xNTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOT
-E5ODU3MzcsMTk4MjkwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMw
-NjEzXX0=
+eyJoaXN0b3J5IjpbMTgwMzgzMzI0NiwxNjk4MTE3MjA2LDk3MT
+A1MDk1NSwyNDQxNjA0MTMsMTE5OTcwODk1NywxOTc2NzYxMjY2
+LC0xNjkwNzE5NTgsLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2Mz
+UxNDQzLDEwMTkyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwt
+MTM1NTI3NTY5MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMz
+kxOTg1NzM3LDE5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkz
+MDYxM119
 -->
