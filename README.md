@@ -36,6 +36,11 @@ make
 sudo make install
 </code></pre>
 
+## 1.3 Pip
+
+The program dependes on pip to install all the Python imaging packages used (matplotlib, svglib, svgwrite, scikit-learn, etc.)
+
+
 <h1 id="installation">2. Installation</h1>
 <p>To install pre-miRNA-plot you can download this repository as a zip file in this main page, or clone it in your machine:</p>
 
@@ -109,11 +114,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ0MTYwNDEzLDExOTk3MDg5NTcsMTk3Nj
-c2MTI2NiwtMTY5MDcxOTU4LC0zNTI3MjA2NjYsODAwNjE5Mjkw
-LDg4NjM1MTQ0MywxMDE5MjkwNywtMzQ1MjMzODQxLC00NjE0ND
-Y4NDgsLTEzNTUyNzU2OTEsLTE1Njg2NzU3NDAsLTE1Njg2NzU3
-NDAsLTM5MTk4NTczNywxOTgyOTAwMzMyLC0xNjgwNTk5ODA3LC
-04MDg5MzA2MTMsMTA0MTgxNDg4MCw2OTQxMTYyMDIsLTE2ODI1
-ODI3NDhdfQ==
+eyJoaXN0b3J5IjpbMTQ0NjgwMDMyLDI0NDE2MDQxMywxMTk5Nz
+A4OTU3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNzIwNjY2
+LDgwMDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0NTIzMz
+g0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQw
+LC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMT
+Y4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2
+MjAyXX0=
 -->
