@@ -77,11 +77,11 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
 
 If you are inside the cloned repository folder, you can run the program like this:
 
-    python3 premirnaplot.py full/path/to/your/input_file.txt
+    python3 premirnaplot.py fpath/to/your/input_file.txt ... (parameters)
 
 If you are outside the program repository, and you want to run the program from wherever you are, use:
 
-
+    python3 path/to/where/the/program/is/premirnaplot.py input_file.txt (parameters)
 
 
 
@@ -141,11 +141,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwMzgzMzI0NiwxNjk4MTE3MjA2LDk3MT
-A1MDk1NSwyNDQxNjA0MTMsMTE5OTcwODk1NywxOTc2NzYxMjY2
-LC0xNjkwNzE5NTgsLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2Mz
-UxNDQzLDEwMTkyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwt
-MTM1NTI3NTY5MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMz
-kxOTg1NzM3LDE5ODI5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkz
-MDYxM119
+eyJoaXN0b3J5IjpbLTE3MjU5MTI5NDIsMTgwMzgzMzI0NiwxNj
+k4MTE3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMsMTE5OTcwODk1
+NywxOTc2NzYxMjY2LC0xNjkwNzE5NTgsLTM1MjcyMDY2Niw4MD
+A2MTkyOTAsODg2MzUxNDQzLDEwMTkyOTA3LC0zNDUyMzM4NDEs
+LTQ2MTQ0Njg0OCwtMTM1NTI3NTY5MSwtMTU2ODY3NTc0MCwtMT
+U2ODY3NTc0MCwtMzkxOTg1NzM3LDE5ODI5MDAzMzIsLTE2ODA1
+OTk4MDddfQ==
 -->
