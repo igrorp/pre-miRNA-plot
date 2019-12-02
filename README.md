@@ -120,8 +120,12 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 <p>If you wanted to set the colors to a custom tone of purple and yellow, you could type:
 </p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
 
-<p></p><p align="center">
+<p align="center">
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" height=600>
+</p>
+
+<p align="center">
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im4.svg" height=600>
 </p>
 
 <h3 id="labels">Image formats</h3>
@@ -139,11 +143,11 @@ Or the default:
 <pre><code>python3 premirnaplot.py your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ2Nzg3MzY2LC05NjQwMjk1MCwxODAzOD
-MzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOTU1LDI0NDE2MDQxMywx
-MTk5NzA4OTU3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNz
-IwNjY2LDgwMDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0
-NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Nj
-c1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMz
-Ml19
+eyJoaXN0b3J5IjpbNTU1NzQ1ODM3LDM0Njc4NzM2NiwtOTY0MD
+I5NTAsMTgwMzgzMzI0NiwxNjk4MTE3MjA2LDk3MTA1MDk1NSwy
+NDQxNjA0MTMsMTE5OTcwODk1NywxOTc2NzYxMjY2LC0xNjkwNz
+E5NTgsLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2MzUxNDQzLDEw
+MTkyOTA3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwtMTM1NTI3NT
+Y5MSwtMTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMzkxOTg1NzM3
+XX0=
 -->
