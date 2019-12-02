@@ -38,7 +38,7 @@ sudo make install
 
 ## 1.3 Pip
 
-The program dependes on pip to install all the Python imaging packages used (matplotlib, svglib, svgwrite, scikit-learn, etc.)
+The program dependes on pip to install all the Python imaging packages used (matplotlib, svglib, svgwrite, scikit-learn, etc.). Without it the installation would be vary manual, time-consuming and maybe conflictuous
 
 
 <h1 id="installation">2. Installation</h1>
@@ -114,7 +114,7 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0NjgwMDMyLDI0NDE2MDQxMywxMTk5Nz
+eyJoaXN0b3J5IjpbNTQyNzM3ODA0LDI0NDE2MDQxMywxMTk5Nz
 A4OTU3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNzIwNjY2
 LDgwMDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0NTIzMz
 g0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQw
