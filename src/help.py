@@ -98,7 +98,7 @@ Have a nice work and let's keep making science evolve!
 
 
 defcolors = {
-	'blue':'#0000cc',
+	'blue':'#0099ff',
 	'red':'#ff0000',
 	'green':'#33cc33',
 	'purple':'#9933ff',
