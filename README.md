@@ -52,7 +52,10 @@ Now, install **setuptools** and **wheel**, that will help you download all the r
       
     sudo python -m pip install --upgrade pip setuptools wheel
 
-For the more experienced ones, it's always a good practice to isolate the downloaded programs as theirs versions may cause conflict. Optionally, you can create a virtual environment to do that.
+For the more experienced ones, it's always a good practice to isolate the downloaded programs as theirs versions may cause conflict. Optionally, you can create a Python virtual environment to do that.
+
+    python3 -m venv <your-env-name>
+    source <your-env-name>/bin/activate/
 
 
 <h1 id="installation">2. Installation</h1>
@@ -128,11 +131,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk4MjE2MjUxLDk3MTA1MDk1NSwyNDQxNj
-A0MTMsMTE5OTcwODk1NywxOTc2NzYxMjY2LC0xNjkwNzE5NTgs
-LTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2MzUxNDQzLDEwMTkyOT
-A3LC0zNDUyMzM4NDEsLTQ2MTQ0Njg0OCwtMTM1NTI3NTY5MSwt
-MTU2ODY3NTc0MCwtMTU2ODY3NTc0MCwtMzkxOTg1NzM3LDE5OD
-I5MDAzMzIsLTE2ODA1OTk4MDcsLTgwODkzMDYxMywxMDQxODE0
-ODgwXX0=
+eyJoaXN0b3J5IjpbLTY2MDE5NDUwMSw5NzEwNTA5NTUsMjQ0MT
+YwNDEzLDExOTk3MDg5NTcsMTk3Njc2MTI2NiwtMTY5MDcxOTU4
+LC0zNTI3MjA2NjYsODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5Mj
+kwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEs
+LTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOT
+gyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgx
+NDg4MF19
 -->
