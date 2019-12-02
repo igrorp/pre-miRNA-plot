@@ -105,7 +105,7 @@ If you are outside the program repository, and you want to run the program from 
 
 Pre-miRNA-plot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want. 
 
-    python premirnaplot.py your_file.txt -s 4
+    python3 premirnaplot.py your_file.txt -s 4
 
 
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/all.svg" class="preimg"/>
@@ -115,10 +115,10 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 <p>You can set which colors will be used to highlight the miRNAs within the precursor. Choose between predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
 </p><blockquote> You can get RGB codes from selected colors in this <a href="[https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp)">website</a><p></p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:
 
-<pre><code>premirnaplot your_file.txt -c green blue</code></pre>
+<pre><code>python3 premirnaplot your_file.txt -c green blue</code></pre>
 
-<p>If you wanted to set the colors to a custom tone of purple and pink, you could type:
-</p><pre><code>premirnaplot your_file.txt -c 204 0 205 255 51 153</code></pre>
+<p>If you wanted to set the colors to a custom tone of purple and yellow, you could type:
+</p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
 
 <p></p><p align="center">
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" height=600>
@@ -128,24 +128,22 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 
 Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.
 
-    python premirnaplot.py your_file.txt -f pdf
+    python3 premirnaplot.py your_file.txt -f pdf
 
 Or the default:
 
-    python premirnaplot.py your_file.txt -f svg
+    python3 premirnaplot.py your_file.txt -f svg
 
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
-<pre><code>premirnaplot your_file.txt -t 8</code></pre>
+<pre><code>python3 premirnaplot.py your_file.txt -t 8</code></pre>
 
-</body>
-</html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5OD
-ExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcs
-MTk3Njc2MTI2NiwtMTY5MDcxOTU4LC0zNTI3MjA2NjYsODAwNj
-E5MjkwLDg4NjM1MTQ0MywxMDE5MjkwNywtMzQ1MjMzODQxLC00
-NjE0NDY4NDgsLTEzNTUyNzU2OTEsLTE1Njg2NzU3NDAsLTE1Nj
-g2NzU3NDAsLTM5MTk4NTczNywxOTgyOTAwMzMyLC0xNjgwNTk5
-ODA3XX0=
+eyJoaXN0b3J5IjpbMzQ2Nzg3MzY2LC05NjQwMjk1MCwxODAzOD
+MzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOTU1LDI0NDE2MDQxMywx
+MTk5NzA4OTU3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNz
+IwNjY2LDgwMDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0
+NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Nj
+c1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMz
+Ml19
 -->
