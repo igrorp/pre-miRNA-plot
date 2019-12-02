@@ -121,7 +121,7 @@ Pre-miRNA-plot has 5 different styles for creating the image for the precursor. 
 </p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
 
 
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" style="float:right;" width=50%>
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" style="float:right;" width=48%>
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im4.svg" width=50%>
 
 
@@ -140,11 +140,11 @@ Or the default:
 <pre><code>python3 premirnaplot.py your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyNjAzOTI5MCw2OTc3NTEwNjQsMTAwNT
-M3MDg3MSwzNDY3ODczNjYsLTk2NDAyOTUwLDE4MDM4MzMyNDYs
-MTY5ODExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwNDEzLDExOTk3MD
-g5NTcsMTk3Njc2MTI2NiwtMTY5MDcxOTU4LC0zNTI3MjA2NjYs
-ODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5MjkwNywtMzQ1MjMzOD
-QxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEsLTE1Njg2NzU3NDBd
-fQ==
+eyJoaXN0b3J5IjpbLTc5NzIzMDMsNjk3NzUxMDY0LDEwMDUzNz
+A4NzEsMzQ2Nzg3MzY2LC05NjQwMjk1MCwxODAzODMzMjQ2LDE2
+OTgxMTcyMDYsOTcxMDUwOTU1LDI0NDE2MDQxMywxMTk5NzA4OT
+U3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNzIwNjY2LDgw
+MDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0NTIzMzg0MS
+wtNDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQwXX0=
+
 -->
