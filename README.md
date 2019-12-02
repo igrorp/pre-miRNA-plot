@@ -63,14 +63,14 @@ For the more experienced ones, it's always a good practice to isolate the downlo
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
-Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot. We highly recommend that you check if you have the updated installers to avoid any conflicts. Aditionally, you can create a virtual environment to isolate the downloaded packages and their versions used in this program.
+Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot.
 
     cd pre-miRNA-plot/
-    python setup.py install
+    python3 setup.py install
    
    There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.
 
-    python premirnaplot.py src/example.txt -a T
+    python3 premirnaplot.py src/example.txt -a T
 
 <h1 id="how-to-use">3. How to use</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>premirnaplot -help</code>.</p>
@@ -131,11 +131,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MDE5NDUwMSw5NzEwNTA5NTUsMjQ0MT
-YwNDEzLDExOTk3MDg5NTcsMTk3Njc2MTI2NiwtMTY5MDcxOTU4
-LC0zNTI3MjA2NjYsODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5Mj
-kwNywtMzQ1MjMzODQxLC00NjE0NDY4NDgsLTEzNTUyNzU2OTEs
-LTE1Njg2NzU3NDAsLTE1Njg2NzU3NDAsLTM5MTk4NTczNywxOT
-gyOTAwMzMyLC0xNjgwNTk5ODA3LC04MDg5MzA2MTMsMTA0MTgx
-NDg4MF19
+eyJoaXN0b3J5IjpbODc2Njk1MDUsOTcxMDUwOTU1LDI0NDE2MD
+QxMywxMTk5NzA4OTU3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwt
+MzUyNzIwNjY2LDgwMDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MD
+csLTM0NTIzMzg0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0x
+NTY4Njc1NzQwLC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMTk4Mj
+kwMDMzMiwtMTY4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4MTQ4
+ODBdfQ==
 -->
