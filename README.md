@@ -49,7 +49,8 @@ After that, check it:
 
 Now, install setuptools and wheel, that will help you download all the required packages:
 
-    enter code here
+      
+    sudo python -m pip install --upgrade pip setuptools wheel
 
 
 <h1 id="installation">2. Installation</h1>
@@ -125,11 +126,11 @@ Or the default:
 </body>
 </html>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMTY5NTQ1NSwyNDQxNjA0MTMsMTE5OT
-cwODk1NywxOTc2NzYxMjY2LC0xNjkwNzE5NTgsLTM1MjcyMDY2
-Niw4MDA2MTkyOTAsODg2MzUxNDQzLDEwMTkyOTA3LC0zNDUyMz
-M4NDEsLTQ2MTQ0Njg0OCwtMTM1NTI3NTY5MSwtMTU2ODY3NTc0
-MCwtMTU2ODY3NTc0MCwtMzkxOTg1NzM3LDE5ODI5MDAzMzIsLT
-E2ODA1OTk4MDcsLTgwODkzMDYxMywxMDQxODE0ODgwLDY5NDEx
-NjIwMl19
+eyJoaXN0b3J5IjpbOTcxMDUwOTU1LDI0NDE2MDQxMywxMTk5Nz
+A4OTU3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNzIwNjY2
+LDgwMDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0NTIzMz
+g0MSwtNDYxNDQ2ODQ4LC0xMzU1Mjc1NjkxLC0xNTY4Njc1NzQw
+LC0xNTY4Njc1NzQwLC0zOTE5ODU3MzcsMTk4MjkwMDMzMiwtMT
+Y4MDU5OTgwNywtODA4OTMwNjEzLDEwNDE4MTQ4ODAsNjk0MTE2
+MjAyXX0=
 -->
