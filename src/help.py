@@ -132,6 +132,8 @@ class Precursor():
         # The Minimum Free Energy for the precursor as predicted by RNAfold
         self.premfe = 0
 
+        self.secpred = ''
+
 
     def pos(self, premirna, mirna):
 

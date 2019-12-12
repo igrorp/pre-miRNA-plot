@@ -127,26 +127,41 @@ def initial_check(filename):
 
 def folding(prec):
 
-    rnafold = subprocess.Popen('RNAfold > {}_fold.txt'.format(prec.name),  stdin=subprocess.PIPE,
+    rnafold = subprocess.Popen('RNAfold ',  stdin=subprocess.PIPE,
+                                            stdout=subprocess.PIPE,
                                             shell=True,
                                             universal_newlines=True,
                                             cwd='foldings/')
 
-    rnafold.communicate('>{}\n{}'.format(prec.name, prec.premirna))
+    alldata, _ = rnafold.communicate('>{}\n{}'.format(prec.name, prec.premirna))
 
     # Running RNAplot to generate the initial SVG in the colored_structures/ folder
 
-    with open('foldings/{}_fold.txt'.format(prec.name)) as dot:
-        alldata = dot.read().split(' ')
-        stuff = alldata[0]
-        mfe = float(alldata[-1][1:-2])
+    with open('foldings/{}_fold.txt'.format(prec.name), 'w') as dot:
+        # alldata = dot.read().split(' ')
+        # stuff = alldata[0]
+        dot.write(alldata)
+        mfe = float(alldata.split(' ')[-1][1:-2])
+
+
+    # print(prec.secpred)
+    # prec.secpred = alldata
+    # print(prec.secpred)
+
+    secpred = alldata.split('\n')[2].split(' ')[0]
+
+    posa, posb = prec.pos1
+
+    posc, posd = prec.pos2
+
+    mm = secpred[posa:posb].count('.') + secpred[posc:posd].count('.')
 
     rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
-    rnaplot.communicate(stuff)
+    rnaplot.communicate(alldata)
 
     constructor('colored_structures/' + prec.name + '_ss.svg', args.style, prec.pos1, prec.pos2, color1, color2, pdf=pdf)
 
-    return prec.name, mfe
+    return prec.name, mfe, mm, secpred
 
 
 subprocess.run('mkdir {}/'.format(outdir), shell=True)
@@ -167,7 +182,13 @@ for file in filedata:
     
     mfelst = []
     sizelst = []
-    mirdict = {'Names':[], 'MFEs':[0 for _ in range(len(filedata[file]))], 'Lenghts':[], 'Sequences':[]}
+    mirdict = {'Names':[], 
+    'MFEs':[0 for _ in range(len(filedata[file]))], 
+    'Lenghts':[], 
+    'Sequences':[], 
+    'Mismatches':[0 for _ in range(len(filedata[file]))],
+    'Secondary structure':[0 for _ in range(len(filedata[file]))]}
+
     name = (file.split('/')[-1][:-4] if '.' in file else name)
     
     subprocess.run('mkdir {}/{} {}/{}/foldings {}/{}/colored_structures'.format(outdir, name, outdir, name, outdir, name,), shell=True)
@@ -185,9 +206,13 @@ for file in filedata:
     with cf.ProcessPoolExecutor(max_workers=nthreads) as executor:
         
         for result in executor.map(folding, filedata[file]):
-            name, mfe = result
+            name, mfe, mm, secpred = result
             print('# Created {} image'.format(name))
             data.loc[name, 'MFEs'] = mfe
+            data.loc[name, 'Mismatches'] = mm
+            data.loc[name, 'Secondary structure'] = secpred
+
+    print(data)
 
     data.to_csv(path_or_buf='precursor_data.txt', sep='\t')
     
