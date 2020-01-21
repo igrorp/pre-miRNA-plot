@@ -93,8 +93,6 @@ filedata = {}
 
 def initial_check(filename):
     
-    name = filename.split('/')[-1][:-4]
-    
     with open(filename) as arc:
 
         prelist = []
@@ -138,28 +136,35 @@ def folding(prec):
     # Running RNAplot to generate the initial SVG in the colored_structures/ folder
 
     with open('foldings/{}_fold.txt'.format(prec.name), 'w') as dot:
-        # alldata = dot.read().split(' ')
-        # stuff = alldata[0]
+
         dot.write(alldata)
         mfe = float(alldata.split(' ')[-1][1:-2])
 
-
-    # print(prec.secpred)
-    # prec.secpred = alldata
-    # print(prec.secpred)
-
     secpred = alldata.split('\n')[2].split(' ')[0]
 
-    posa, posb = prec.pos1
+    if prec.pos1 and prec.pos2:
 
-    posc, posd = prec.pos2
+        posa, posb = prec.pos1
 
-    mm = secpred[posa:posb].count('.') + secpred[posc:posd].count('.')
+        posc, posd = prec.pos2
 
-    rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'], stdin=subprocess.PIPE, cwd='colored_structures/', shell=True, universal_newlines=True)
+        mm = secpred[posa:posb].count('.') + secpred[posc:posd].count('.')
+
+    else:
+
+        mm = 'N.A.'
+
+    rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'],
+                                                                stdin=subprocess.PIPE,
+                                                                cwd='colored_structures/',
+                                                                shell=True,
+                                                                universal_newlines=True)
+    
     rnaplot.communicate(alldata)
 
     constructor('colored_structures/' + prec.name + '_ss.svg', args.style, prec.pos1, prec.pos2, color1, color2, pdf=pdf)
+
+    print(prec.name, mfe, mm, secpred)
 
     return prec.name, mfe, mm, secpred
 
@@ -182,12 +187,13 @@ for file in filedata:
     
     mfelst = []
     sizelst = []
-    mirdict = {'Names':[], 
-    'MFEs':[0 for _ in range(len(filedata[file]))], 
-    'Lenghts':[], 
-    'Sequences':[], 
-    'Mismatches':[0 for _ in range(len(filedata[file]))],
-    'Secondary structure':[0 for _ in range(len(filedata[file]))]}
+
+    # mirdict = {'Names':[], 
+    # 'MFEs':[0 for _ in range(len(filedata[file]))], 
+    # 'Lenghts':[], 
+    # 'Sequences':[], 
+    # 'Mismatches':[0 for _ in range(len(filedata[file]))],
+    # 'Secondary structure':[0 for _ in range(len(filedata[file]))]}
 
     name = (file.split('/')[-1][:-4] if '.' in file else name)
     
@@ -203,9 +209,12 @@ for file in filedata:
     data = pd.DataFrame(mirdict)
     data = data.set_index('Names')
 
-    with cf.ProcessPoolExecutor(max_workers=nthreads) as executor:
+    with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
         
         for result in executor.map(folding, filedata[file]):
+
+            print(result)
+
             name, mfe, mm, secpred = result
             print('# Created {} image'.format(name))
             data.loc[name, 'MFEs'] = mfe

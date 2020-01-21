@@ -117,14 +117,14 @@ class Precursor():
         # The prefix of the filename for the pre-miRNA
         self.name = name
 
-        # The precursor sequence
+        # The precursor nucleotide sequence
         self.premirna = precursor
         
-        # The tuple containing the positions of the miRNA within the pre-miRNA
-        self.pos1 = self.pos(precursor, mirna1)
+        # The tuple containing the positions of the miRNA within the pre-miRNA or None
+        self.pos1 = self.__pos(precursor, mirna1)
 
-        # The tuple containing the positions of the other miRNA within the pre-miRNA
-        self.pos2 = self.pos(precursor, mirna2)
+        # The tuple containing the positions of the other miRNA within the pre-miRNA or None
+        self.pos2 = self.__pos(precursor, mirna2)
 
         # The length of the pre-miRNA
         self.prelen = len(precursor)
@@ -132,10 +132,12 @@ class Precursor():
         # The Minimum Free Energy for the precursor as predicted by RNAfold
         self.premfe = 0
 
-        self.secpred = ''
+        # The GC content of the precursor
+
+		# The MFEdensity of the precursor
 
 
-    def pos(self, premirna, mirna):
+    def __pos(self, premirna, mirna):
 
         if mirna:
 

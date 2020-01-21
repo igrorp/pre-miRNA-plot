@@ -23,7 +23,6 @@ setup(name='premiRNAplot',
           'svglib',
           'svgwrite',
           'pandas',
-          'scikit-learn'
       ],
       long_description=desctxt
 )
