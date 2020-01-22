@@ -167,7 +167,7 @@ class SVGconstructor(SVGParser):
 
 		width, height = self.box
 
-		self.dwg = sw.Drawing(filepath, viewBox=f'0, 0, {width}, {height}', preserveAspectRatio='xMidYMid meet', debug=False)
+		self.dwg = sw.Drawing(filepath, viewBox='0, 0, {}, {}'.format(width, height), preserveAspectRatio='xMidYMid meet', debug=False)
 
 		self.precursor = self.dwg.add(self.dwg.g(id='precursor', transform='translate(0, 10) scale(0.95, 0.95)'))
 
@@ -180,7 +180,7 @@ class SVGconstructor(SVGParser):
 
 			self.circgroup = self.precursor.add(self.dwg.g(id='circles', fill='#9494b8'))
 			
-			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform=f'translate(0,{self.fdy})',
+			self.textgroup = self.precursor.add(self.dwg.g(id='nucleotides', transform='translate(0,{})'.format(self.fdy),
 												font_size=self.fs, fill='black', font_family='Helvetica', font_weight='bold'))
 
 			self.drawcircles((0, len(self.locations)), '#9494b8')
@@ -322,7 +322,7 @@ class SVGconstructor(SVGParser):
 
 	def drawtext(self, postup):
 
-		''' Creates circles for the given tuple of positions '''
+		''' Creates the nucletotides letters for the given tuple of positions '''
 
 		init, fin = postup
 
