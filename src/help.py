@@ -759,10 +759,6 @@ class Precursor():
 
 		if self.prelen >= 40 and self.prelen <= 600:
 
-			if self.prelen == 100: 
-				print(self.premfe - refmfe[self.prelen])
-				print(self.premfe)
-
 			return round(100 * (self.premfe - refmfe[self.prelen]) / (self.prelen - SHIFT_CONST), 2)
 
 		else:
