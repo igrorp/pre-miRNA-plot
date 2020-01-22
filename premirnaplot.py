@@ -138,7 +138,7 @@ def folding(prec):
 	with open('foldings/{}_fold.txt'.format(prec.name), 'w') as dot:
 
 		dot.write(alldata)
-		prec.mfe = float(alldata.split(' ')[-1][1:-2])
+		prec.setpremfe(float(alldata.split(' ')[-1][1:-2]))
 
 	prec.predsec = alldata.split('\n')[2].split(' ')[0]
 
@@ -207,7 +207,7 @@ for file in filedata:
 			data.loc[idx, 'Secondary structure'] = precursor.predsec
 			data.loc[idx, 'miRNAs'] = ','.join(list(precursor.mirnas)) if len(list(precursor.mirnas)) == 2 else list(precursor.mirnas)[0]
 			data.loc[idx, 'Precursor length'] = precursor.prelen
-			data.loc[idx, 'MFE'] = precursor.mfe
+			data.loc[idx, 'MFE'] = precursor.premfe
 			data.loc[idx, 'MFEden'] = precursor.mfeden
 			data.loc[idx, 'Mismatches'] = precursor.mm
 			data.loc[idx, 'GC content'] = precursor.gccontent
