@@ -205,7 +205,7 @@ for file in filedata:
 			data.loc[idx, 'Names'] = precursor.name
 			data.loc[idx, 'Precursor sequence'] = precursor.premirna
 			data.loc[idx, 'Secondary structure'] = precursor.predsec
-			data.loc[idx, 'miRNAs'] = ','.join(list(precursor.mirnas))
+			data.loc[idx, 'miRNAs'] = ','.join(list(precursor.mirnas)) if len(list(precursor.mirnas)) == 2 else list(precursor.mirnas)[0]
 			data.loc[idx, 'Precursor length'] = precursor.prelen
 			data.loc[idx, 'MFE'] = precursor.mfe
 			data.loc[idx, 'MFEden'] = precursor.mfeden

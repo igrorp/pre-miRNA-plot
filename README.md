@@ -52,11 +52,6 @@ Now, install **setuptools** and **wheel**, that will help you download all the r
       
     sudo python3 -m pip install --upgrade pip setuptools wheel
 
-For the more experienced ones, it's always a good practice to isolate the downloaded programs as their versions may cause conflict. Optionally, you can create a Python virtual environment to do that.
-
-    python3 -m venv <your-env-name>
-    source <your-env-name>/bin/activate/
-
 
 <h1 id="installation">2. Installation</h1>
 <p>To install pre-miRNA-plot you can download this repository as a zip file in this main page, or clone it in your machine:</p>

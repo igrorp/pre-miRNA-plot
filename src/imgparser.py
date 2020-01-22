@@ -119,7 +119,6 @@ class SVGParser():
 		and the group transform value '''
 
 		seq_node = None
-		width, height = self.box
 		transform = self.transform
 		
 		for child in root:
@@ -307,7 +306,7 @@ class SVGconstructor(SVGParser):
 
 		for index in range(init, fin):
 		
-			circ = self.circgroup.add(self.dwg.circle(center=self.locations[index], r=self.radius, fill=color))
+			self.circgroup.add(self.dwg.circle(center=self.locations[index], r=self.radius, fill=color))
 
 
 	def drawpairs(self):
@@ -315,9 +314,9 @@ class SVGconstructor(SVGParser):
 		pairsgroup = self.precursor.add(self.dwg.g(id='pairs', stroke='black', stroke_width=self.radius / 6))
 
 		for i in range(len(self.pairs)):
+			
 			if self.pairs[i]:
-				x1, y1 = self.locations[i]
-				x2, y2 = self.locations[int(self.pairs[i])]
+				
 				pairsgroup.add(self.dwg.line(start=self.locations[i], end=self.locations[int(self.pairs[i])])) 
 
 
@@ -343,7 +342,7 @@ class SVGconstructor(SVGParser):
 
 		init, fin = postup
 
-		for index, xytuple in enumerate(self.locations):
+		for index, _ in enumerate(self.locations):
 
 			if index >= min(postup) and index <= max(postup):
 				x, y = self.locations[index]
