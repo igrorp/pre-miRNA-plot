@@ -92,6 +92,8 @@ filedata = {}
 
 # Functions used in the program
 
+    
+
 
 def initial_check(filename):
 	
@@ -140,7 +142,7 @@ def folding(prec):
 		dot.write(alldata)
 		prec.setpremfe(float(alldata.split(' ')[-1][1:-2]))
 
-	prec.predsec = alldata.split('\n')[2].split(' ')[0]
+	prec.setpredsec(alldata.split('\n')[2].split(' ')[0])
 
 	prec.mismatches()
 
@@ -184,8 +186,12 @@ for file in filedata:
 		('Precursor length', int),
 		('MFE', float),
 		('MFEden', float),
-		('Mismatches', int),
-		('GC content', float),
+		('Duplex mm', int),
+		('Mirna1 mm', int),
+		('Mirna2 mm', int),
+		('GC duplex', float),
+		('GC mirna1', float),
+		('GC mirna2', float)
 	]))
 
 	name = (file.split('/')[-1][:-4] if '.' in file else name)
@@ -209,8 +215,12 @@ for file in filedata:
 			data.loc[idx, 'Precursor length'] = precursor.prelen
 			data.loc[idx, 'MFE'] = precursor.premfe
 			data.loc[idx, 'MFEden'] = precursor.mfeden
-			data.loc[idx, 'Mismatches'] = precursor.mm
-			data.loc[idx, 'GC content'] = precursor.gccontent
+			data.loc[idx, 'Duplex mm'] = precursor.duplexmm
+			data.loc[idx, 'Mirna1 mm'] = precursor.mirna1mm
+			data.loc[idx, 'Mirna2 mm'] = precursor.mirna2mm
+			data.loc[idx, 'GC duplex'] = precursor.gccontent
+			data.loc[idx, 'GC mirna1'] = precursor.mirna1gc
+			data.loc[idx, 'GC mirna2'] = precursor.mirna2gc
 			
 
 	data = data.set_index('Names')

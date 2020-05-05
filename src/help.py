@@ -6,8 +6,8 @@ desctxt = '''
 -----------------------------------------------------------------------------------------
 
 Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based
-on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor 
-and obtain general and practical information about your data, so you can filter it or use 
+on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor
+and obtain general and practical information about your data, so you can filter it or use
 it in publications.
 
 -----------------------------------------------------------------------------------------
@@ -19,17 +19,17 @@ The program accepts tab-separated text files containing possibly 4 columns:
 	2) Precursor sequence: The pre-miRNA sequence.
 	3) miRNA1 sequence: One of the miRNAs sequences.
 	4) miRNA2 sequence (optional): The other miRNA sequence.
-	
+
 	File format examples:
-	
+
 	| pre-miRNA |   miRNA1   |  miRNA2  |
-	
+
 	>>>>>>>>>>>>>>>>>>>>>> OR <<<<<<<<<<<<<<<<<<<<<<<
-	
+
 	|     ID    |  pre-miRNA |  miRNA1  |   miRNA2  |
 
-There is no problem if you don't have both miRNAs sequences; 
-you can inform just one and the program will work just fine. 
+There is no problem if you don't have both miRNAs sequences;
+you can inform just one and the program will work just fine.
 
 Checkout our github repository for more details on how to use
 the program: https://github.com/igrorp/pre-miRNA-plot
@@ -37,14 +37,14 @@ the program: https://github.com/igrorp/pre-miRNA-plot
 Parameters:
 
 -i, --input       (str ...)
-	 
+
 	Inform the names of/paths to the files that you want to use.
 
 -a, --annot       (str) --> (T or F)
-	
+
 	Informs if you have some sort of sequence ID, such as a miRNA
-	family annotation (e.g.'ath-miRNA-171', 'seq1'), necessarily 
-	on the first column, so that the generated image files can be 
+	family annotation (e.g.'ath-miRNA-171', 'seq1'), necessarily
+	on the first column, so that the generated image files can be
 	named according to that ID.
 
 	Default = F (False)
@@ -57,11 +57,11 @@ Parameters:
 	Default = 3
 
 -c, --color       (str str) OR (int int int int int int)
-	
+
 	You can choose which colors to paint the miRNA sequence within
 	the precursor. Always provide the 5p and 3p colors, respectively.
 	You can choose the predefined color names blue, red, green, purple,
-	pink, yellow, cyan, white, black and orange; or you can inform the 
+	pink, yellow, cyan, white, black and orange; or you can inform the
 	RGB codes of the colors you want.
 
 	Ex: '-c blue green' for blue 5p and green 3p
@@ -69,9 +69,9 @@ Parameters:
 	Default = green and red
 
 -t, --threads     (int)
-	
+
 	Choose the number of allowed processors (CPUs) to be used.
-	
+
 	Default = 1
 
 -f, --formats     (str) --> (svg or pdf)
@@ -112,7 +112,7 @@ defcolors = {
 	'orange':'#ff9933'
 }
 
-# RNAfold precalculated values of MFE expected for RNA sequences with L nucleotides and equimolar ratios of A, C, G and U 
+# RNAfold precalculated values of MFE expected for RNA sequences with L nucleotides and equimolar ratios of A, C, G and U
 
 refmfe = {
 	40:	-6.9620,
@@ -688,40 +688,44 @@ class Precursor():
 	def __init__(self, name, mirna1, mirna2, precursor):
 
 		# The pre,fix of the filename for the pre-miRNA
-		
+
 		self.name = name
 
 		# The precursor nucleotide sequence
-		
+
 		self.premirna = precursor
 
 		# A tuple containing the miRNAs
-		
+
 		self.mirnas = (mirna1 if mirna1 else '', mirna2 if mirna2 else '')
-		
+
 		# The tuple containing the positions of the miRNA within the pre-miRNA or None
-		
+
 		self.pos1 = self.__pos(mirna1)
 
 		# The tuple containing the positions of the other miRNA within the pre-miRNA or None
-		
+
 		self.pos2 = self.__pos(mirna2)
 
 		# The length of the pre-miRNA
-		
+
 		self.prelen = len(precursor)
 
 		# The Minimum Free Energy for the precursor as predicted by RNAfold
-		
+
 		self.premfe = 0
 
 		# The precursor's predict secondary structure in dot bracket notation
-		
+
 		self.predsec = ''
 
 		# The GC content of the precursor
 
-		self.gccontent = self.__gc()
+		self.gccontent = self.gc(self.premirna)
+
+		self.mirna1gc = self.gc(mirna1) if self.pos1 else 'N.A.'
+
+		self.mirna2gc = self.gc(mirna2) if self.pos2 else 'N.A.'
 
 		# The MFEdensity of the precursor
 
@@ -729,9 +733,8 @@ class Precursor():
 
 		# The number of mismatches in the region of the miRNA duplex
 
-		self.mm = 'N.A.'
+		self.mismatches()
 
-		# The number of bulges from the precursor
 
 
 	def __pos(self, mirna):
@@ -741,20 +744,20 @@ class Precursor():
 			if mirna in self.premirna:
 
 				if self.premirna.count(mirna) > 1:
-					
+
 					print('WARNING! miRNA {} was found more than once in the precursor sequence {}..., but its last occurrence will be used!'.format(mirna, self.premirna[25:]))
 
 				return (self.premirna.find(mirna), self.premirna.find(mirna) + len(mirna))
-			
+
 			else:
-				
+
 				raise Exception('ERROR! Could not find sequence {} inside {}, please correct this'.format(mirna, self.premirna))
 
 		else:
 
 			return None
 
-	
+
 	def __mfeden(self):
 
 		if self.prelen >= 40 and self.prelen <= 600:
@@ -766,24 +769,41 @@ class Precursor():
 			return 'N.A.'
 
 
-	def __gc(self):
+	def gc(self, seq):
 
-		return round((self.premirna.count('G') + self.premirna.count('C')) / self.prelen , 2)
+		return round((seq.count('G') + seq.count('C')) / len(seq) , 2)
 
 
 	def mismatches(self):
 
-		if self.pos1 and self.pos2:
+		if self.pos1:
 
 			posa, posb = self.pos1
 
-			posc, posd = self.pos2
-
-			self.mm = self.predsec[posa:posb].count('.') + self.predsec[posc:posd].count('.')
+			self.mirna1mm = self.predsec[posa:posb].count('.')
 
 		else:
 
-			return 'N.A.'
+			self.mirna1mm = 'N.A.'
+
+		if self.pos2:
+
+			posc, posd = self.pos2
+
+			self.mirna2mm = self.predsec[posc:posd].count('.')
+
+		else:
+
+			self.mirna2mm = 'N.A.'
+
+		if self.pos1 and self.pos2:
+
+			self.duplexmm =  self.mirna1mm + self.mirna2mm
+
+		else:
+
+			self.duplexmm = 'N.A.'
+
 
 	def setpremfe(self, mfe):
 
@@ -792,8 +812,45 @@ class Precursor():
 		self.mfeden = self.__mfeden()
 
 
+	def setpredsec(self, secstruct):
 
-		
+		if self.prelen != len(secstruct):
+      
+			raise Exception('Predicted secondary structure and precursor sequence have different lengths')
+
+		else:
+
+			self.predsec = secstruct
+
+	def triplets(self):
+
+		triplets = {
+			'A.((':0, 'A(..':0, 'A..(':0, 'A((.':0, 'A(((':0, 'A...':0, 'A(.(':0, 'A.(.':0,
+			'C.((':0, 'C(..':0, 'C..(':0, 'C((.':0, 'C(((':0, 'C...':0, 'C(.(':0, 'C.(.':0,
+			'T.((':0, 'T(..':0, 'T..(':0, 'T((.':0, 'T(((':0, 'T...':0, 'T(.(':0, 'T.(.':0,
+			'G.((':0, 'G(..':0, 'G..(':0, 'G((.':0, 'G(((':0, 'G...':0, 'G(.(':0, 'G.(.':0,
+		}
+
+		if self.predsec == '':
+
+			raise Exception('No secondary structure was informed')
+
+		else:
+
+			new = self.predsec.replace(')', '(')
+
+		for n in range(1, self.prelen - 1):
+
+			triplets[self.premirna[n] + new[n-1:n+1]]+=1
 
 
-		
+
+
+
+
+
+
+
+
+
+
