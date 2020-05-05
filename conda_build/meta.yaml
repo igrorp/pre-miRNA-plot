@@ -1,0 +1,58 @@
+package:
+  
+  name: premirnaplot
+  version: 1.0.1
+
+source:
+
+  path: ../src/
+
+build:
+
+  ignore_prefix_files:
+
+    - premirnaplot.spec
+    - premirnaplot.cpython-37.pyc
+    - reqs.txt
+    - requirements.txt
+    - cgattii_genome.fasta
+    - cgattii_genome.fasta.fai
+    - R265_2020-01-30.bed
+    - R265_2020-01-30.gff3
+    - R265_2020-01-30.gtf
+    - WT_YNB1_namesorted.bam
+    - covcolor.py
+    - all.png
+    - all.svg
+    - ex1.png
+    - ex2.png
+    - im3.svg
+    - im4.svg
+    - style1.svg
+    - style2.svg
+    - style3.svg
+    - style4.svg
+    - style5.svg
+    - help.cpython-37.pyc
+    - help.cpython-38.pyc
+    - imgparser.cpython-36.pyc
+    - imgparser.cpython-37.pyc
+    - test
+
+
+requirements:
+  
+  build:
+    - python>=3.6|<=3.7
+    - setuptools
+
+  run:
+    - python>=3.6|<=3.7
+    - argparse
+    - numpy
+    - matplotlib
+    - scikit-learn
+    - svglib
+    - svgwrite
+    - viennarna
+    - pandas

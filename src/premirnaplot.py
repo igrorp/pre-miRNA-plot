@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 
 # Importing necessary packages
 
@@ -13,15 +15,13 @@ import matplotlib.pyplot as plt
 
 import os
 
-from src.help import *
+from help import *
 
 import concurrent.futures as cf
 
 from sklearn.linear_model import LinearRegression
 
-from src.imgparser import SVGconstructor as constructor
-
-from src.help import Precursor
+from imgparser import SVGconstructor as constructor
 
 # Adding parameters and a general help message
 
