@@ -685,7 +685,7 @@ SHIFT_CONST = 8
 
 class Precursor():
 
-	def __init__(self, name, mirna1, mirna2, precursor):
+	def __init__(self, name, precursor, mirna1, mirna2):
 
 		# The pre,fix of the filename for the pre-miRNA
 
@@ -693,19 +693,47 @@ class Precursor():
 
 		# The precursor nucleotide sequence
 
-		self.premirna = precursor
+		self.premirna = precursor.replace('U', 'T')
 
 		# A tuple containing the miRNAs
+  
+		if mirna1 and mirna2:
+  
+			mirna1 = mirna1.replace('U', 'T')
+			mirna2 = mirna2.replace('U', 'T')
 
-		self.mirnas = (mirna1 if mirna1 else '', mirna2 if mirna2 else '')
+			# self.mirnas = (mirna1 if mirna1 else '', mirna2 if mirna2 else '')
 
-		# The tuple containing the positions of the miRNA within the pre-miRNA or None
+			# The tuple containing the positions of the miRNA within the pre-miRNA or None
 
-		self.pos1 = self.__pos(mirna1)
+			posa, posb = self.__pos(mirna1)
 
-		# The tuple containing the positions of the other miRNA within the pre-miRNA or None
+			posc, posd = self.__pos(mirna2)
 
-		self.pos2 = self.__pos(mirna2)
+			if posa < posc:
+				self.mirna1 = mirna1
+				self.mirna2 = mirna2
+				self.pos1 = (posa, posb)
+				self.pos2 = (posc, posd)
+			else:
+				self.mirna1 = mirna2
+				self.mirna2 = mirna1
+				self.pos1 = (posc, posd)
+				self.pos2 = (posa, posb)
+
+		elif mirna1 and not mirna2:
+      
+			self.mirna1 = mirna1
+			self.mirna2 = ''
+
+		elif mirna2 and not mirna1:
+      
+			self.mirna1 = ''
+			self.mirna2 = mirna2
+	
+			
+			
+			
 
 		# The length of the pre-miRNA
 
@@ -723,9 +751,9 @@ class Precursor():
 
 		self.gccontent = self.gc(self.premirna)
 
-		self.mirna1gc = self.gc(mirna1) if self.pos1 else 'N.A.'
+		self.mirna1gc = self.gc(mirna1) if self.mirna1 else 'N.A.'
 
-		self.mirna2gc = self.gc(mirna2) if self.pos2 else 'N.A.'
+		self.mirna2gc = self.gc(mirna2) if self.mirna2 else 'N.A.'
 
 		# The MFEdensity of the precursor
 
@@ -755,7 +783,7 @@ class Precursor():
 
 		else:
 
-			return None
+			return None, None
 
 
 	def __mfeden(self):
@@ -776,7 +804,7 @@ class Precursor():
 
 	def mismatches(self):
 
-		if self.pos1:
+		if self.mirna1:
 
 			posa, posb = self.pos1
 
@@ -786,7 +814,7 @@ class Precursor():
 
 			self.mirna1mm = 'N.A.'
 
-		if self.pos2:
+		if self.mirna2:
 
 			posc, posd = self.pos2
 
@@ -796,7 +824,7 @@ class Precursor():
 
 			self.mirna2mm = 'N.A.'
 
-		if self.pos1 and self.pos2:
+		if self.mirna1 and self.mirna2:
 
 			self.duplexmm =  self.mirna1mm + self.mirna2mm
 
@@ -815,12 +843,32 @@ class Precursor():
 	def setpredsec(self, secstruct):
 
 		if self.prelen != len(secstruct):
-      
+
 			raise Exception('Predicted secondary structure and precursor sequence have different lengths')
 
 		else:
 
 			self.predsec = secstruct
+
+
+	def loop(self):
+     
+		lastopen, firstclose = 0, len(self.premirna)
+
+		for idx, nt in enumerate(self.predsec):
+
+			if nt == '(':
+
+				lastopen = idx
+
+			elif nt == ')':
+
+				firstclose = idx
+
+				break
+
+		return lastopen, firstclose
+
 
 	def triplets(self):
 
@@ -833,24 +881,32 @@ class Precursor():
 
 		if self.predsec == '':
 
-			raise Exception('No secondary structure was informed')
+			raise Exception('Its necessary to have a secondary structure')
 
 		else:
 
 			new = self.predsec.replace(')', '(')
 
-		for n in range(1, self.prelen - 1):
 
-			triplets[self.premirna[n] + new[n-1:n+1]]+=1
+		loopinit, loopend = self.loop()
+  
+		# fivepstem = self.predsec[self.predsec.find('(') : loopinit + 1]
+		# threepstem = self.predsec[loopend : self.predsec.rfind(')') + 1]
 
+		for n in range(self.predsec.find('(') + 1, loopinit):
+			
+			triplets[self.premirna[n] + new[n-1:n+2]]+=1
 
+		for n in range(loopend, self.predsec.rfind(')') - 1):
+			
+			triplets[self.premirna[n] + new[n-1:n+2]]+=1
 
+		soma = sum(triplets.values())
 
+		triplets = {triplet : round(freq / soma, 5) for triplet, freq in triplets.items()}
 
+		return triplets
 
-
-
-
-
-
-
+	def porcents(self):
+     
+		return {nt : round(self.premirna.count(nt) / self.prelen, 2) for nt in ['A', 'T', 'C', 'G']}

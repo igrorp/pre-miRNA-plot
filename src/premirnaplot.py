@@ -69,7 +69,7 @@ if len(args.colors) == 2:
 	color1, color2 = args.colors
 
 	if color1 not in defcolors or color2 not in defcolors:
-		
+
 		raise Exception("ERROR! One of the colors you informed is incorrect, please check your spelling or review the predefined colors.")
 
 	else:
@@ -80,7 +80,7 @@ elif len(args.colors) == 6:
 	for color in args.colors:
 		if int(color) < 0 or int(color) > 255:
 			raise Exception("ERROR! Please use RGB code values between 0 and 255")
-	
+
 	color1 = "#{:02x}{:02x}{:02x}".format(int(args.colors[0]), int(args.colors[1]), int(args.colors[2]))
 	color2 = "#{:02x}{:02x}{:02x}".format(int(args.colors[3]), int(args.colors[4]), int(args.colors[5]))
 
@@ -92,37 +92,37 @@ filedata = {}
 
 # Functions used in the program
 
-    
+
 
 
 def initial_check(filename):
-	
+
 	with open(filename) as arc:
 
 		prelist = []
 
 		for index, line in enumerate(arc.readlines()):
-				
+
 			line = line[:-1].upper().replace(' ', '').split('\t')
 
 			if annot:
 
 				annotation = line[0].lower()
-				precursor = line[1]
-				mirna1 = line[2]
+				precursor = line[1].replace('N', '')
+				mirna1 = line[2].replace('N', '')
 				if len(line) == 4:
-					mirna2 = line[3]
+					mirna2 = line[3].replace('N', '')
 				else:
 					mirna2 = None
 			else:
-				precursor = line[0]
-				mirna1 = line[1]
+				precursor = line[0].replace('N', '')
+				mirna1 = line[1].replace('N', '')
 				if len(line) > 2:
-					mirna2 = line[2]
+					mirna2 = line[2].replace('N', '')
 
 			mirname = annotation if annot else 'precursor_{}'.format(index)
 
-			prelist.append(Precursor(mirname, mirna1, mirna2, precursor))
+			prelist.append(Precursor(mirname, precursor, mirna1, mirna2))
 
 	filedata[filename] = prelist
 
@@ -151,7 +151,7 @@ def folding(prec):
 																cwd='colored_structures/',
 																shell=True,
 																universal_newlines=True)
-	
+
 	rnaplot.communicate(alldata)
 
 	constructor('colored_structures/' + prec.name + '_ss.svg', args.style, prec.pos1, prec.pos2, color1, color2, pdf=pdf)
@@ -163,69 +163,70 @@ subprocess.run('mkdir {}/'.format(outdir), shell=True)
 
 
 for file in inputs:
-	
+
 	filedata[file] = []
 
 	print(f"#######  Checking if {file} is ok..\n")
-	
+
 	initial_check(file)
 
 	print('\n#######  Data check complete for {}\n'.format(file))
 
 
 for file in filedata:
-	
+
 	mfelst = []
 	sizelst = []
 
-	init_array = np.zeros(len(filedata[file]), dtype=([
-		('Names', str),
-		('Precursor sequence', str),
-		('Secondary structure', str),
-		('miRNAs', str),
-		('Precursor length', int),
-		('MFE', float),
-		('MFEden', float),
-		('Duplex mm', int),
-		('Mirna1 mm', int),
-		('Mirna2 mm', int),
-		('GC duplex', float),
-		('GC mirna1', float),
-		('GC mirna2', float)
-	]))
-
 	name = (file.split('/')[-1][:-4] if '.' in file else name)
-	
+
 	subprocess.run('mkdir {}/{} {}/{}/foldings {}/{}/colored_structures'.format(outdir, name, outdir, name, outdir, name), shell=True)
-	
+
 	os.chdir('{}/{}/'.format(outdir, name))
 
-	data = pd.DataFrame(init_array)
+	data = pd.DataFrame({'Names':[]})
 
 	with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
-		
+
 		for idx, precursor in enumerate(executor.map(folding, filedata[file])):
 
 			print('# Created {} image'.format(precursor.name))
 
-			data.loc[idx, 'Names'] = precursor.name
-			data.loc[idx, 'Precursor sequence'] = precursor.premirna
-			data.loc[idx, 'Secondary structure'] = precursor.predsec
-			data.loc[idx, 'miRNAs'] = ','.join(list(precursor.mirnas)) if len(list(precursor.mirnas)) == 2 else list(precursor.mirnas)[0]
-			data.loc[idx, 'Precursor length'] = precursor.prelen
-			data.loc[idx, 'MFE'] = precursor.premfe
-			data.loc[idx, 'MFEden'] = precursor.mfeden
-			data.loc[idx, 'Duplex mm'] = precursor.duplexmm
-			data.loc[idx, 'Mirna1 mm'] = precursor.mirna1mm
-			data.loc[idx, 'Mirna2 mm'] = precursor.mirna2mm
-			data.loc[idx, 'GC duplex'] = precursor.gccontent
-			data.loc[idx, 'GC mirna1'] = precursor.mirna1gc
-			data.loc[idx, 'GC mirna2'] = precursor.mirna2gc
-			
+			fields = vars(precursor)
+
+			params = {'name':'Names', 'premirna':'Precursor sequence', 'predsec':'Secondary structure', 'mirna1':'miRNA5p', 'mirna2':'miRNA3p', 'prelen':'Precursor length', 'premfe':'MFE', 'mfeden':'MFEden',
+            			'duplexmm':'Duplex MM', 'mirna1mm':'miRNA5p mm', 'mirna2mm':'miRNA3p mm', 'gccontent':'''%GC''',  'mirna1gc':'''%GC miRNA5p''', 'mirna2gc':'''%GC miRNA3p''',}
+
+			# data.loc[idx, 'Names'] = precursor.name
+			# data.loc[idx, 'Precursor sequence'] = precursor.premirna
+			# data.loc[idx, 'Secondary structure'] = precursor.predsec
+			# data.loc[idx, 'miRNAs'] = ','.join(list(precursor.mirnas)) if len(list(precursor.mirnas)) == 2 else list(precursor.mirnas)[0]
+			# data.loc[idx, 'Precursor length'] = precursor.prelen
+			# data.loc[idx, 'MFE'] = precursor.premfe
+			# data.loc[idx, 'MFEden'] = precursor.mfeden
+			# data.loc[idx, 'Duplex mm'] = precursor.duplexmm
+			# data.loc[idx, 'Mirna1 mm'] = precursor.mirna1mm
+			# data.loc[idx, 'Mirna2 mm'] = precursor.mirna2mm
+			# data.loc[idx, 'GC duplex'] = precursor.gccontent
+			# data.loc[idx, 'GC mirna1'] = precursor.mirna1gc
+			# data.loc[idx, 'GC mirna2'] = precursor.mirna2gc
+
+			for param in params:
+				
+    				data.loc[idx, params[param]] = fields[param]
+    
+			for nt, freq in precursor.porcents().items():
+				
+				data.loc[idx, '%{}'.format(nt)] = freq
+
+			for triplet, freq in precursor.triplets().items():
+				
+    				data.loc[idx, triplet] = freq
 
 	data = data.set_index('Names')
-	data.to_csv(path_or_buf='precursor_data.txt', sep='\t')
 	
+	data.to_csv(path_or_buf='precursor_data.txt', sep='\t')
+
 	plt.clf()
 	plt.boxplot(data['Precursor length'])
 	plt.title('Precursor length')
@@ -237,7 +238,7 @@ for file in filedata:
 	plt.title('Predicted minimum free energy')
 	plt.ylabel('Minimum free energy (kJ/mol)')
 	plt.savefig('mfe.png', dpi=500)
-	
+
 	plt.clf()
 	plt.scatter(data['Precursor length'], data['MFE'], edgecolors='black', color=color1, zorder=2)
 	x = data['Precursor length'].values.reshape((-1, 1))
