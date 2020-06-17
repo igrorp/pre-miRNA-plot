@@ -213,7 +213,7 @@ for file in filedata:
 
 			for param in params:
 				
-    				data.loc[idx, params[param]] = fields[param]
+    			data.loc[idx, params[param]] = fields[param]
     
 			for nt, freq in precursor.porcents().items():
 				
@@ -221,7 +221,7 @@ for file in filedata:
 
 			for triplet, freq in precursor.triplets().items():
 				
-    				data.loc[idx, triplet] = freq
+    			data.loc[idx, triplet] = freq
 
 	data = data.set_index('Names')
 	
