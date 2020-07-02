@@ -14,26 +14,9 @@ import svgwrite as sw
 import subprocess
 
 
-
-class NoLocationAnnotations(Exception):
-	pass
-
-class NoPairsAnnotations(Exception):
-	pass
-
-class NoSequenceAnnotation(Exception):
-	pass
-
-class UnimplementedParser(Exception):
-	pass
-
-class UnparsableSVG(Exception):
-	pass
-
-
 class SVGParser():
 
-	"""This is a class to parse the SVG files produced by RNAplot. """
+	""" Parses the SVG files produced by RNAplot """
 
 	def __init__(self, file):
 
@@ -48,13 +31,13 @@ class SVGParser():
 		self.sequence, self.pairs = self.load_data(file)
 
 		if not self.pairs:
-			raise NoPairsAnnotations("Did not find any pairs")
+			raise Exception("Did not find any pairs")
 
-		if self.sequence is None:
-			raise NoSequenceAnnotation("Did not find the sequence")
+		if not self.sequence:
+			raise Exception("Did not find the sequence")
 
 		if not self.locations:
-			raise NoLocationAnnotations("Did not find drawing coordinates")
+			raise Exception("Did not find drawing coordinates (locations)")
 
 	
 	def load_data(self, file):
@@ -65,15 +48,20 @@ class SVGParser():
 			self.transform = child.attrib.get('transform', None)
 
 		container = None
+		
 		for child in root:
+			
 			if child.tag == '{http://www.w3.org/2000/svg}g':
+				
 				container = child
 				break
 
 		if container is None:
-			raise UnparsableSVG("Cannot find container")
+			
+			raise Exception("Could not parse SVG: Cannot find container")
 
 		self.box = self.__box__(root)
+		
 		sequence, self.locations = self.__locations__(container)
 		
 		return sequence, self.__pairs__(container)
@@ -91,10 +79,10 @@ class SVGParser():
 				size = len(child)
 
 		if pair_node is None:
-			raise NoPairsAnnotations("Couldn't find the pairs")
+			raise Exception("Couldn't find the pairs")
 
 		if size is None:
-			raise NoSequenceAnnotation("Couldn't find the sequence")
+			raise Exception("Couldn't find the sequence")
 
 		pairs = [None] * size
 		
@@ -127,7 +115,7 @@ class SVGParser():
 				break
 
 		if seq_node is None:
-			raise NoSequenceAnnotation("Could not find sequence")
+			raise Exception("Could not find sequence")
 
 		xyt = transform[transform.find('translate') + len('translate'):]
 		xt = round(float(xyt.split(',')[0][1:]), 5)
@@ -245,6 +233,7 @@ class SVGconstructor(SVGParser):
 			self.drawtext([0, len(self.locations)])
 
 		else:
+
 			raise Exception("Could not identify the style of the image, choose between 1-5")
 		
 		

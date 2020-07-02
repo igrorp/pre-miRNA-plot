@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 # Importing necessary packages
 
 import pandas as pd
@@ -22,6 +21,8 @@ import concurrent.futures as cf
 from sklearn.linear_model import LinearRegression
 
 from imgparser import SVGconstructor as constructor
+
+from precursor import Precursor
 
 # Adding parameters and a general help message
 
@@ -85,6 +86,7 @@ elif len(args.colors) == 6:
 	color2 = "#{:02x}{:02x}{:02x}".format(int(args.colors[3]), int(args.colors[4]), int(args.colors[5]))
 
 else:
+
 	raise Exception("\nThere was an error checking the colors you provided, please review them")
 
 
@@ -95,82 +97,39 @@ filedata = {}
 
 
 
-def initial_check(filename):
 
-	with open(filename) as arc:
-
-		prelist = []
-
-		for index, line in enumerate(arc.readlines()):
-
-			line = line[:-1].upper().replace(' ', '').split('\t')
-
-			if annot:
-
-				annotation = line[0].lower()
-				precursor = line[1].replace('N', '')
-				mirna1 = line[2].replace('N', '')
-				if len(line) == 4:
-					mirna2 = line[3].replace('N', '')
-				else:
-					mirna2 = None
-			else:
-				precursor = line[0].replace('N', '')
-				mirna1 = line[1].replace('N', '')
-				if len(line) > 2:
-					mirna2 = line[2].replace('N', '')
-
-			mirname = annotation if annot else 'precursor_{}'.format(index)
-
-			prelist.append(Precursor(mirname, precursor, mirna1, mirna2))
-
-	filedata[filename] = prelist
+#! Criar arquivo _fold.txt ???
 
 
 def folding(prec):
 
-	rnafold = subprocess.Popen('RNAfold ',  stdin=subprocess.PIPE,
-											stdout=subprocess.PIPE,
-											shell=True,
-											universal_newlines=True,
-											cwd='foldings/')
+	# with open('foldings/{}_fold.txt'.format(prec.name), 'w') as dot:
 
-	alldata, _ = rnafold.communicate('>{}\n{}'.format(prec.name, prec.premirna))
-
-	with open('foldings/{}_fold.txt'.format(prec.name), 'w') as dot:
-
-		dot.write(alldata)
-		prec.setpremfe(float(alldata.split(' ')[-1][1:-2]))
-
-	prec.setpredsec(alldata.split('\n')[2].split(' ')[0])
-
-	prec.mismatches()
-
-	rnaplot = subprocess.Popen(['RNAplot -o svg --filename-full'],
-																stdin=subprocess.PIPE,
-																cwd='colored_structures/',
-																shell=True,
-																universal_newlines=True)
-
-	rnaplot.communicate(alldata)
-
-	constructor('colored_structures/' + prec.name + '_ss.svg', args.style, prec.pos1, prec.pos2, color1, color2, pdf=pdf)
+	#constructor('colored_structures/' + prec.name + '_ss.svg', args.style, prec.pos1, prec.pos2, color1, color2, pdf=pdf)
 
 	return prec
 
 
-subprocess.run('mkdir {}/'.format(outdir), shell=True)
+# Creating the output directory
 
+subprocess.run('rm -r {}'.format(outdir), shell=True)
+
+sp = subprocess.run('mkdir {}/'.format(outdir), shell=True, capture_output=True, universal_newlines=True)
+
+if sp.stderr:
+
+	raise Exception('Could not create the output directory')
+
+
+# Creating the folder for each file
+# Instantiating each one of the precursors from the given files
+
+precs = []
 
 for file in inputs:
 
-	filedata[file] = []
+	prec += [Precursor.from_file(file)]
 
-	print(f"#######  Checking if {file} is ok..\n")
-
-	initial_check(file)
-
-	print('\n#######  Data check complete for {}\n'.format(file))
 
 
 for file in filedata:
@@ -180,69 +139,51 @@ for file in filedata:
 
 	name = (file.split('/')[-1][:-4] if '.' in file else name)
 
-	subprocess.run('mkdir {}/{} {}/{}/foldings {}/{}/colored_structures'.format(outdir, name, outdir, name, outdir, name), shell=True)
+	subprocess.run('mkdir {}/{}'.format(outdir, name), shell=True)
 
 	os.chdir('{}/{}/'.format(outdir, name))
 
-	data = pd.DataFrame({'Names':[]})
+	#data = pd.DataFrame({'Names':[]})
+
+	data = []
 
 	with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
 
 		for idx, precursor in enumerate(executor.map(folding, filedata[file])):
 
-			print('# Created {} image'.format(precursor.name))
+			#print('# Created {} image'.format(precursor.name))
 
 			fields = vars(precursor)
 
-			params = {'name':'Names', 'premirna':'Precursor sequence', 'predsec':'Secondary structure', 'mirna1':'miRNA5p', 'mirna2':'miRNA3p', 'prelen':'Precursor length', 'premfe':'MFE', 'mfeden':'MFEden',
-            			'duplexmm':'Duplex MM', 'mirna1mm':'miRNA5p mm', 'mirna2mm':'miRNA3p mm', 'gccontent':'''%GC''',  'mirna1gc':'''%GC miRNA5p''', 'mirna2gc':'''%GC miRNA3p''',}
+			#params = {'name':'Names', 'premirna':'Precursor sequence', 'predsec':'Secondary structure', 'mirna1':'miRNA5p', 'mirna2':'miRNA3p', 'prelen':'Precursor length', 'premfe':'MFE', 'mfeden':'MFEden',
+            #			'duplexmm':'Duplex MM', 'mirna1mm':'miRNA5p mm', 'mirna2mm':'miRNA3p mm', 'gccontent':'''%GC''',  'mirna1gc':'''%GC miRNA5p''', 'mirna2gc':'''%GC miRNA3p''',}
+			print(len(precursor.features()))
+			#print(precursor.features())
 
-			# data.loc[idx, 'Names'] = precursor.name
-			# data.loc[idx, 'Precursor sequence'] = precursor.premirna
-			# data.loc[idx, 'Secondary structure'] = precursor.predsec
-			# data.loc[idx, 'miRNAs'] = ','.join(list(precursor.mirnas)) if len(list(precursor.mirnas)) == 2 else list(precursor.mirnas)[0]
-			# data.loc[idx, 'Precursor length'] = precursor.prelen
-			# data.loc[idx, 'MFE'] = precursor.premfe
-			# data.loc[idx, 'MFEden'] = precursor.mfeden
-			# data.loc[idx, 'Duplex mm'] = precursor.duplexmm
-			# data.loc[idx, 'Mirna1 mm'] = precursor.mirna1mm
-			# data.loc[idx, 'Mirna2 mm'] = precursor.mirna2mm
-			# data.loc[idx, 'GC duplex'] = precursor.gccontent
-			# data.loc[idx, 'GC mirna1'] = precursor.mirna1gc
-			# data.loc[idx, 'GC mirna2'] = precursor.mirna2gc
+			data.append(list(precursor.features().values()))
 
-			for param in params:
-				
-    			data.loc[idx, params[param]] = fields[param]
-    
-			for nt, freq in precursor.porcents().items():
-				
-				data.loc[idx, '%{}'.format(nt)] = freq
+	#data = data.set_index('Names')
 
-			for triplet, freq in precursor.triplets().items():
-				
-    			data.loc[idx, triplet] = freq
-
-	data = data.set_index('Names')
+	data = pd.DataFrame(data, columns=list(precursor.features().keys()))
 	
 	data.to_csv(path_or_buf='precursor_data.txt', sep='\t')
 
 	plt.clf()
-	plt.boxplot(data['Precursor length'])
+	plt.boxplot(data['seqlen'])
 	plt.title('Precursor length')
 	plt.ylabel('Sequence length (nt)')
 	plt.savefig('length.png', dpi=500)
 
 	plt.clf()
-	plt.boxplot(data['MFE'])
+	plt.boxplot(data['mfe'])
 	plt.title('Predicted minimum free energy')
 	plt.ylabel('Minimum free energy (kJ/mol)')
 	plt.savefig('mfe.png', dpi=500)
 
 	plt.clf()
-	plt.scatter(data['Precursor length'], data['MFE'], edgecolors='black', color=color1, zorder=2)
-	x = data['Precursor length'].values.reshape((-1, 1))
-	y = data['MFE']
+	plt.scatter(data['seqlen'], data['mfe'], edgecolors='black', color=color1, zorder=2)
+	x = data['seqlen'].values.reshape((-1, 1))
+	y = data['mfe']
 	model = LinearRegression().fit(x, y)
 	plt.plot(x, model.predict(x), color='black', zorder=1)
 	plt.rcParams.update({'font.size':8})
