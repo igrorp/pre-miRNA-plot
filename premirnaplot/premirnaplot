@@ -14,15 +14,13 @@ import matplotlib.pyplot as plt
 
 import os
 
-from help import *
-
 import concurrent.futures as cf
 
 from sklearn.linear_model import LinearRegression
 
-from imgparser import SVGconstructor as constructor
+from premirnaplot.precursor import Precursor
 
-from precursor import Precursor
+from premirnaplot.extra import desctxt, defcolors
 
 # Adding parameters and a general help message
 
@@ -90,24 +88,17 @@ else:
 	raise Exception("\nThere was an error checking the colors you provided, please review them")
 
 
-filedata = {}
-
-# Functions used in the program
 
 
+def imaging(prec):
 
+	# Dummy function that calls the image creation for the precursor during the multithreading
 
+	prec.createSVG(style=args.style, color1=color1, color2=color2, folder='images/', pdf=pdf)
 
-#! Criar arquivo _fold.txt ???
-
-
-def folding(prec):
-
-	# with open('foldings/{}_fold.txt'.format(prec.name), 'w') as dot:
+	return prec.name
 
 	#constructor('colored_structures/' + prec.name + '_ss.svg', args.style, prec.pos1, prec.pos2, color1, color2, pdf=pdf)
-
-	return prec
 
 
 # Creating the output directory
@@ -124,47 +115,35 @@ if sp.stderr:
 # Creating the folder for each file
 # Instantiating each one of the precursors from the given files
 
-precs = []
 
 for file in inputs:
-
-	prec += [Precursor.from_file(file)]
-
-
-
-for file in filedata:
 
 	mfelst = []
 	sizelst = []
 
 	name = (file.split('/')[-1][:-4] if '.' in file else name)
 
-	subprocess.run('mkdir {}/{}'.format(outdir, name), shell=True)
+	subprocess.run('mkdir {}/{}/ {}/{}/images'.format(outdir, name, outdir, name), shell=True)
+
+	precs = Precursor.from_file(file)
 
 	os.chdir('{}/{}/'.format(outdir, name))
 
-	#data = pd.DataFrame({'Names':[]})
-
 	data = []
+
+	# Creating the images for each of the precursors using multithreading
 
 	with cf.ThreadPoolExecutor(max_workers=nthreads) as executor:
 
-		for idx, precursor in enumerate(executor.map(folding, filedata[file])):
+		for idx, name in enumerate(executor.map(imaging, precs)):
 
-			#print('# Created {} image'.format(precursor.name))
+			print('# Created {} image'.format(name))
+	
+	data = [list(precursor.features().values()) for precursor in precs]
 
-			fields = vars(precursor)
+	data = pd.DataFrame(data, columns=list(precs[0].features().keys()))
 
-			#params = {'name':'Names', 'premirna':'Precursor sequence', 'predsec':'Secondary structure', 'mirna1':'miRNA5p', 'mirna2':'miRNA3p', 'prelen':'Precursor length', 'premfe':'MFE', 'mfeden':'MFEden',
-            #			'duplexmm':'Duplex MM', 'mirna1mm':'miRNA5p mm', 'mirna2mm':'miRNA3p mm', 'gccontent':'''%GC''',  'mirna1gc':'''%GC miRNA5p''', 'mirna2gc':'''%GC miRNA3p''',}
-			print(len(precursor.features()))
-			#print(precursor.features())
-
-			data.append(list(precursor.features().values()))
-
-	#data = data.set_index('Names')
-
-	data = pd.DataFrame(data, columns=list(precursor.features().keys()))
+	data = data.set_index('name')
 	
 	data.to_csv(path_or_buf='precursor_data.txt', sep='\t')
 

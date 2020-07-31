@@ -3,7 +3,7 @@ from itertools import product
 
 import subprocess
 
-from help import refmfe, SHIFT_CONST
+import svgwrite as sw
 
 from svglib.svglib import svg2rlg
 
@@ -11,13 +11,18 @@ from reportlab.graphics import renderPDF
 
 import xml.etree.ElementTree as et
 
-import svgwrite as sw
-
 import statistics as st
 
 import math
 
-from imgparser import SVGconstructor
+from copy import copy
+
+from . import extra
+
+#import extra
+
+from . import imgparser
+#import imgparser
 
 
 class Precursor():
@@ -101,11 +106,15 @@ class Precursor():
   
 		# Minimum free energy index 2 (MFEI2)
 
-		#! self.mfei2 = self.dg / self.n_stems
+		if not self.n_stems:
+
+			self.createSVG()
+
+		self.mfei2 = self.dg / self.n_stems
   
 		# Normalized base pair propensity (dP)
   
-		#! self.dp = self.tot_bases / self.seqlen
+		self.dp = self.bp_number / self.seqlen
   
 		# Normalized Shannon entropy (dQ)
 
@@ -129,7 +138,7 @@ class Precursor():
   
 		# Minimum free energy index 4 (MFEI4)
   
-		#! self.mfei4 = self.mfe / self.tot_bases
+		self.mfei4 = self.mfe / self.bp_number
   
 		# Normalized ensemble free energy (NEFE)
   
@@ -150,13 +159,13 @@ class Precursor():
 
 			for index, line in enumerate(arc.readlines()):
 
-				info = line[:-1].upper().replace(' ', '').replace('N', '').split('\t')
+				info = line[:-1].upper().replace(' ', '').replace('N', '').replace('T', 'U').split('\t')
 
 				if len(info) < 2 or len(info) > 4:
 
 					raise Exception("There was an error parsing your file {} at line {}".format(filename, index+1))
 
-				annot = set(info[1]) - set('ACTG')
+				annot = set(info[0]) - set('ACUG')
 
 				if annot:
 
@@ -168,18 +177,205 @@ class Precursor():
 					precursor, *mirnas = info
 					mirna1, mirna2 = mirnas +  (2 - len(mirnas)) * [None]
 
-				mirname = annotation if annot else 'precursor_{}'.format(index)
+				mirname = annotation.lower() if annot else 'precursor_{}'.format(index)
 
-				prelist.append(cls(mirname, precursor, mirna1, mirna2))
+				try:
+					prelist.append(cls(mirname, precursor, mirna1, mirna2))
+				except:
+					pass
 
 		return prelist
 
 	@property
 
-	def tot_bases(self):
+	def bp_number(self):
 
-		return self.sequence.count('(') + self.sequence.count(')')
+		''' The total number of base pairs '''
+
+		return (self.secondary.count('(') + self.secondary.count(')')) / 2.0
 	
+	@property
+
+	def n_stems(self):
+
+		''' The number of stems in the secondary stucture. A stem is considered a motif with more than 3 consecutive base pairings '''
+
+		return len(self.stem_positions())
+
+
+	def pairs(self):
+
+		''' Returns a list of tuples containing the indexes (positions) of paired bases '''
+
+		buff, pairs = [], []
+
+		for idx, symb in enumerate(self.secondary):
+
+			if symb == '(':
+
+				buff.append(idx)
+
+			elif symb == ')':
+
+				pairs.append((buff.pop(), idx))
+
+			else:	# The base in unpaired so it's not registered or there's a unexpected symbol
+
+				pass
+
+		if self.bp_number != len(pairs):
+
+			raise Warning('There was an error calculating the number of base pairings')
+
+		return sorted(pairs)
+
+
+	def bp_counts(self):
+
+		''' Counts the number of each type of base pair '''
+
+		freqs = {'AU':0,'GC':0,'GU':0}
+
+		for init, end in self.pairs():
+
+			try:
+				
+				freqs[self.sequence[init] + self.sequence[end]]+=1
+
+			except:
+
+				try:
+
+					freqs[self.sequence[end] + self.sequence[init]]+=1
+
+				except:
+
+					raise Exception('Could not account for this base pair: {}'.format(self.sequence[init] + self.sequence[end]))
+
+		return freqs
+
+
+	def bp_props(self):
+
+		''' The proportion of each type of base pairing divide by the total number of base pairs '''
+
+		freqs = self.bp_counts()
+
+		nfreqs = {}
+
+		for base_pair in freqs:
+
+			nfreqs[base_pair + '\\bp_number'] = freqs[base_pair] / self.bp_number
+
+		return nfreqs
+
+	
+	def bp_per_stems(self):
+
+		''' The proportion of each type of base pairing divide by the total number of stems '''
+
+		freqs = self.bp_counts()
+
+		nfreqs = {}
+
+		for base_pair in freqs:
+
+			nfreqs[base_pair + '\\n_stems'] = freqs[base_pair] / self.n_stems
+
+		return nfreqs
+
+
+	def stem_positions(self):
+
+		''' Returns a list of 4 indexes (positions of the stem): beggining and end of strand 1 and 2 '''
+
+		stems = []
+
+		pairs = self.pairs() + [(0,0)]
+
+		i1, e2 = pairs[0]
+
+		for i in range(1, len(pairs) - 1):
+
+			e1, i2 = pairs[i]
+
+			pos1, pos2 = pairs[i+1]
+
+			if e1 + 1 == pos1 and i2 - 1 == pos2:
+
+				pass
+
+			else:
+
+				if e1 - i1 > 2:
+
+					stems.append((i1, e1, i2, e2))
+
+				i1 = pos1
+				e2 = pos2
+
+		#return stems
+
+
+
+	def avg_bp_stems(self):
+
+		''' The average base pair proportion in the stems '''
+
+		n = self.n_stems
+
+		freqs = {'AU':0,'GC':0,'GU':0}
+
+		for init1, end1, init2, end2 in self.stem_positions():
+
+			for nt1, nt2 in zip(self.sequence[init1:end1+1], self.sequence[init2:end2+1][::-1]):
+
+				try:
+					
+					freqs[nt1 + nt2]+=1
+
+				except KeyError:
+
+					try:
+
+						freqs[nt2 + nt1]+=1
+
+					except KeyError:
+
+						raise Exception('Could not account for this base pair: {}'.format(nt1 + nt2))
+
+
+		return {'avg_' + base_pair + '\\n_stems':freqs[base_pair] / n for base_pair in freqs}
+
+
+	def longest_stem(self):
+
+		''' The size of the longest stem '''
+
+		return max([
+			end1 - init1 for init1, end1, *_ in self.stem_positions()
+		])
+
+
+	def nt_props(self):
+
+		''' The proportion of each nucleotide in the precursor sequence '''
+
+		props = {'A':0,'C':0,'U':0,'G':0}
+
+		for nt in self.sequence:
+
+			props[nt]+=1
+
+		return {'%' + nt : round(props[nt] / self.seqlen * 100, 2) for nt in props}
+
+
+	@property
+
+	def avg_stem_length(self):
+
+		return sum([end - init for init, end, *_ in self.stem_positions()]) / len(self.n_stems)
+
 
 	def __rnafold(self, folder='./'):
 
@@ -285,7 +481,7 @@ class Precursor():
 
 		if self.seqlen >= 40 and self.seqlen <= 600:
 
-			return round(100 * (self.mfe - refmfe[self.seqlen]) / (self.seqlen - SHIFT_CONST), 2)
+			return round(100 * (self.mfe - extra.refmfe[self.seqlen]) / (self.seqlen - extra.SHIFT_CONST), 2)
 
 		else:
 
@@ -327,17 +523,6 @@ class Precursor():
 		else:
 
 			self.duplexmm = 'N.A.'
-
-
-	def setpredsec(self, secstruct):
-
-		if self.seqlen != len(secstruct):
-
-			raise Exception('Predicted secondary structure and precursor sequence have different lengths')
-
-		else:
-
-			self.secondary = secstruct
 
 
 	def loop(self):
@@ -397,23 +582,39 @@ class Precursor():
 		return triplets
 
 
-	def porcents(self):
+	def dint_props(self):
 
-		return {nt1 + nt2 : round(self.sequence.count(nt1 + nt2) / (self.seqlen - 1) * 100, 2) for nt1, nt2 in product(['A', 'T', 'C', 'G'], repeat=2)}
+		''' The dinucleotide frequencies in the precursor sequence '''
+
+		return {'%' + nt1 + nt2 : round(self.sequence.count(nt1 + nt2) / (self.seqlen - 1) * 100, 2) for nt1, nt2 in product(['A', 'U', 'C', 'G'], repeat=2)}
 
 
 	def features(self):
 
-		features = vars(self)
+		features = copy(vars(self))
+		
+		for nonfeature in ['name', 'sequence', 'mirna1', 'mirna2', 'pos1', 'pos2', 'secondary', 'pseudo', 'centroid']:
 
-		features.update(self.porcents())
+			features.pop(nonfeature)
+
+		features.update(self.nt_props())
+
+		features.update(self.dint_props())
 
 		features.update(self.triplets())
+		
+		features.update(self.bp_props())
+
+		features.update(self.bp_per_stems())
+
+		features.update(self.avg_bp_stems())
+
 
 		return features
 
 	
 	#? Image definitions
+
 
 	def __rna_plot(self, folder='./'):
 
@@ -434,12 +635,57 @@ class Precursor():
 			raise Exception('There was an error running RNAplot for precursor {} with the following message:\n{}'.format(self.name, errormsg))
 
 
-	def createSVG(self, style, color1, color2, folder='./', pdf=False):
+	def __rnaplot_svg_parser(self, filepath):
+
+		sequence = None
+		locations = []
+		pairs = []
+		transform = None
+		seqtransform = None
+		radius = 0
+
+		tree = et.parse(filepath)
+		root = tree.getroot()
+
+		for child in root:
+			
+			self.transform = child.attrib.get('transform', None)
+
+		for child in root:
+			
+			if child.tag == '{http://www.w3.org/2000/svg}g':
+				
+				container = child
+				break
+
+		if container is None:
+			
+			raise Exception("Could not parse SVG: Cannot find container")
+
+		box = (float(root.attrib['width']), float(root.attrib['height']))
+		
+		locations = __locations__(container)
+		
+		pairs = __pairs__(container)
+
+		if not pairs:
+			
+			raise Exception("Did not find any pairs")
+
+		if not locations:
+			
+			raise Exception("Did not find drawing coordinates (locations)")
+
+		return box, locations, pairs
+
+
+	def createSVG(self, style=3, color1='red', color2='green', folder='./', pdf=False):
 
 		self.__rna_plot(folder=folder)
 
-		SVGconstructor(folder + self.name + '_ss.svg', style, self.pos1, self.pos2, color1, color2, pdf=pdf)
+		imgparser.SVGconstructor(folder + self.name + '_ss.svg', style, self.pos1, self.pos2, color1, color2, pdf=pdf)
 
 
 prec = Precursor('let7-1', 'UGGGAUGAGGUAGUAGGUUGUAUAGUUUUAGGGUCACACCCACCACUGGGAGAUAACUAUACAAUCUACUGUCUUUCCUA', 'UGGGAUGAGGUAGUAGGUUGU', 'AUCUACUGUCUUUCCUA')
 
+prec.stem_positions()
