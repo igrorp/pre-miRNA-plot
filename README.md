@@ -110,8 +110,8 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
    There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.
 
 
+# 3. Command line interface usage
 
-<h1 id="how-to-use">3. Program usage</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python3 premirnaplot.py -help</code>.</p>
 
 If you are inside the cloned repository folder, you can run the program like this:
@@ -178,12 +178,18 @@ Or the default:
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
+# 4. Library usage
+
+## 4.1 Features
+
+These are the current features implemented in premiRNAplot. They are divide in Structure, Thermodynamics, Thermo
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTI5MzUxNTgsMTAxNTAyMTA1LC05Mj
-cwMzQzNzcsNTcyMTQyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYs
-MTQ2MzU2MDA1Nyw3NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4Mz
-I4NDgxLC02NDAyNDMwNzksMTE4MzY0NTQ2MCw2NDk3ODM0Nzcs
-Njk3NzUxMDY0LDEwMDUzNzA4NzEsMzQ2Nzg3MzY2LC05NjQwMj
-k1MCwxODAzODMzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOTU1XX0=
+eyJoaXN0b3J5IjpbMTQyNzY5MjYyMiwxMDE1MDIxMDUsLTkyNz
+AzNDM3Nyw1NzIxNDI0NDEsMjE2NTU0ODc2LC03NDk0NzI2Niwx
+NDYzNTYwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEyLDE1NDgzMj
+g0ODEsLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2
+OTc3NTEwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYsLTk2NDAyOT
+UwLDE4MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNTA5NTVdfQ==
 
 -->
