@@ -28,7 +28,8 @@ Pre-miRNA-plot has some dependencies and you need to check whether you have to i
 
 <h2 id="vienna-rna-package">1.2 Vienna RNA package</h2>
 <p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to generate an SVG image of it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package. If you don't have it installed, you can download the package and compile it following the steps below:</p>
-<pre><code>wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
+<pre><code>
+wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
 tar xvzf ViennaRNA-2.4.13.tar.gz
 cd ViennaRNA-2.4.13/
 ./configure
@@ -88,6 +89,12 @@ To install the Vienna RNA package from Conda:
 
 To compile the Vienna RNA pacakge from source:
 
+    wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
+    tar xvzf ViennaRNA-2.4.13.tar.gz
+    cd ViennaRNA-2.4.13/
+    ./configure
+    make
+    sudo make install
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
@@ -168,11 +175,11 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0OTQ3MjY2LDE0NjM1NjAwNTcsNzUwMT
-Y3NzcsLTE5NTExNTY3MTIsMTU0ODMyODQ4MSwtNjQwMjQzMDc5
-LDExODM2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2NCwxMDA1Mz
-cwODcxLDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMzgzMzI0Niwx
-Njk4MTE3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMsMTE5OTcwOD
-k1NywxOTc2NzYxMjY2LC0xNjkwNzE5NTgsLTM1MjcyMDY2Nl19
+eyJoaXN0b3J5IjpbMjE2NTU0ODc2LC03NDk0NzI2NiwxNDYzNT
+YwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEyLDE1NDgzMjg0ODEs
+LTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2OTc3NT
+EwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYsLTk2NDAyOTUwLDE4
+MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwND
+EzLDExOTk3MDg5NTcsMTk3Njc2MTI2NiwtMTY5MDcxOTU4XX0=
 
 -->
