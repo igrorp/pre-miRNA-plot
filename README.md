@@ -40,7 +40,9 @@ sudo apt install python3-pip
 <pre><code>sudo python3 -m pip install --upgrade pip setuptools wheel
 </code></pre>
 <h1 id="installation">2. Installation</h1>
-<p>There are multiple ways of downloading premiRNAplot,.We highly suggest that you use the Docker container or the Conda package, as they would remove the need to manually install packages (ViennaRNA in specific) or having conflicts. Make sure that you have your platform updated and that</p>
+
+<p>There are multiple ways of downloading premiRNAplot. We highly suggest that you use the Docker container or the Conda package, as they would remove the need to manually install packages (ViennaRNA in specific) or having conflicts. Make sure that you have your platform updated and that you are using Python 3.</p>
+
 <h2 id="using-conda">Using Conda</h2>
 <p>It’s always a good pratice to create virtual environments to isolate your programs and avoid version conflicts, for example. To create a virtual environment for premiRNAplot, run (this step is optional):</p>
 <pre><code>conda create -n premirnaplot python=3.7 -y
@@ -158,5 +160,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNDgyNzk1NCwxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbNTY5ODUyOTMyLDEyMzkwNjc5NDFdfQ==
 -->
