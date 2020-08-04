@@ -7,7 +7,7 @@ PremiRNAplot is a Python 3.5+ library with a command line interface for extracti
 It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtention and calculation. It also allows you to produce beautiful, costumizable and publication-ready images of the secondary structure of these precursors, highlighting the position of the miRNAs sequences within them.
 
 <ol>
-<li> <a href="#">Configuration</a><br>
+<li> <a href="#">Installation</a><br>
 1.1 <a href="#11">Python</a><br>
 1.2 <a href="#12">Vienna RNA package</a><br>
 </li><li>  <a href="#2">Installation</a><br>
@@ -17,7 +17,7 @@ It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtenti
 <br>
 </li></ol>
 
-<h1 id="installation">2. Installation</h1>
+<h1 id="installation">1. Installation</h1>
 
 <p>There are multiple ways of downloading premiRNAplot. We highly suggest that you use the Docker container or the Conda package, as they would remove the need to manually install packages (ViennaRNA in specific) or having conflicts. Make sure that you have your platform updated and that you are using Python 3.5 or higher.</p>
 
@@ -140,5 +140,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4OTUyNDAyNywxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbMTgwMTIwNTMxMiwxMjM5MDY3OTQxXX0=
 -->
