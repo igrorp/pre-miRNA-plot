@@ -1,6 +1,6 @@
 
 <br>
-<h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot manual!</h1>
+<h1 align="center" id="welcome-to-pre-mirna-plot-manual">Welcome to pre-miRNA-plot!</h1>
 <p></p>
 <br>
 <p>Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.</p>
@@ -135,11 +135,11 @@ Or the default:
 <pre><code>python3 premirnaplot.py your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OT
-c4MzQ3Nyw2OTc3NTEwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYs
-LTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNT
-A5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcsMTk3Njc2MTI2Niwt
-MTY5MDcxOTU4LC0zNTI3MjA2NjYsODAwNjE5MjkwLDg4NjM1MT
-Q0MywxMDE5MjkwNywtMzQ1MjMzODQxLC00NjE0NDY4NDhdfQ==
+eyJoaXN0b3J5IjpbLTEyOTM0MDM4OTUsLTY0MDI0MzA3OSwxMT
+gzNjQ1NDYwLDY0OTc4MzQ3Nyw2OTc3NTEwNjQsMTAwNTM3MDg3
+MSwzNDY3ODczNjYsLTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5OD
+ExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcs
+MTk3Njc2MTI2NiwtMTY5MDcxOTU4LC0zNTI3MjA2NjYsODAwNj
+E5MjkwLDg4NjM1MTQ0MywxMDE5MjkwNywtMzQ1MjMzODQxXX0=
 
 -->
