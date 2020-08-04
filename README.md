@@ -56,7 +56,7 @@ Now, install **setuptools** and **wheel**, that will help you download all the r
 
 <h1 id="installation">2. Installation</h1>
 
-There are multiple ways of downloading premiRNAplot,.We highly suggest that you use the Docker container or the Conda package, as they would remove the need to manually install packages (Vienna RNA) or having conflicts.
+There are multiple ways of downloading premiRNAplot,.We highly suggest that you use the Docker container or the Conda package, as they would remove the need to manually install packages (ViennaRNA in specific) or having conflicts. Make sure that you have your platform updated and that 
 
 ## Using Conda
 
@@ -179,10 +179,11 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNTAyMTA1LC05MjcwMzQzNzcsNTcyMT
-QyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYsMTQ2MzU2MDA1Nyw3
-NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4MzI4NDgxLC02NDAyND
-MwNzksMTE4MzY0NTQ2MCw2NDk3ODM0NzcsNjk3NzUxMDY0LDEw
-MDUzNzA4NzEsMzQ2Nzg3MzY2LC05NjQwMjk1MCwxODAzODMzMj
-Q2LDE2OTgxMTcyMDYsOTcxMDUwOTU1LDI0NDE2MDQxM119
+eyJoaXN0b3J5IjpbLTE2MTI5MzUxNTgsMTAxNTAyMTA1LC05Mj
+cwMzQzNzcsNTcyMTQyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYs
+MTQ2MzU2MDA1Nyw3NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4Mz
+I4NDgxLC02NDAyNDMwNzksMTE4MzY0NTQ2MCw2NDk3ODM0Nzcs
+Njk3NzUxMDY0LDEwMDUzNzA4NzEsMzQ2Nzg3MzY2LC05NjQwMj
+k1MCwxODAzODMzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOTU1XX0=
+
 -->
