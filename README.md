@@ -195,14 +195,15 @@ These are the current features implemented in premiRNAplot. They are divide in S
 Feature name | Class property | Data type | Description | Reference
 |:-:|:-:|:-:|:-:|:-:|
 |Length | prec.seqlen | int | The length of the sequence | - |
-|Triplets| The triplet elements frequencies | dict
+|Triplets| The triplet elements frequencies | dict (size 32)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUyNjY3MjIsMTAxNTAyMTA1LC05MjcwMz
-QzNzcsNTcyMTQyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYsMTQ2
-MzU2MDA1Nyw3NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4MzI4ND
-gxLC02NDAyNDMwNzksMTE4MzY0NTQ2MCw2NDk3ODM0NzcsNjk3
-NzUxMDY0LDEwMDUzNzA4NzEsMzQ2Nzg3MzY2LC05NjQwMjk1MC
-wxODAzODMzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOTU1XX0=
+eyJoaXN0b3J5IjpbLTY2MzgzNzMyOSwxMDE1MDIxMDUsLTkyNz
+AzNDM3Nyw1NzIxNDI0NDEsMjE2NTU0ODc2LC03NDk0NzI2Niwx
+NDYzNTYwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEyLDE1NDgzMj
+g0ODEsLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2
+OTc3NTEwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYsLTk2NDAyOT
+UwLDE4MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNTA5NTVdfQ==
+
 -->
