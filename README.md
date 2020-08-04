@@ -75,11 +75,12 @@ sudo make install
 <p>To use this repository for the installation, clone it using:</p>
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git
 </code></pre>
-<p>Now you need to enter the cloned repository folder and run the <strong><a href="http://setup.py">setup.py</a></strong> configuration file, which will download all the necessary Python packages used in pre-miRNA-plot.</p>
+<p>Now you need to enter the cloned repository folder and run the <strong><a href="http://setup.py">setup.py</a></strong> configuration file, which will download all the necessary Python packages used in premiRNAplot.</p>
 <pre><code>cd pre-miRNA-plot/
 python3 setup.py install
 </code></pre>
 <p>There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.</p>
+
 <h1 id="command-line-interface-usage">3. Command line interface usage</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python3 premirnaplot.py -help</code>.</p>
 <p>If you are inside the cloned repository folder, you can run the program like this:</p>
@@ -161,5 +162,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzgwODY2NzIsMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbMTYxOTEwMzgzNCwxMjM5MDY3OTQxXX0=
 -->
