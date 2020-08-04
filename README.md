@@ -185,7 +185,7 @@ After succesfully installing premiRNAplot, you can use the library inside a scri
    ```python 
    from premirnalot.precursor import Precursor
    ```
-
+And that's all there is to it. All the methods available for creating the images, extracting and using features or loading an input file are described in the sections below.
 ## 4.1 Basic properties and methods
 
 ## 4.2 Features
@@ -195,11 +195,11 @@ These are the current features implemented in premiRNAplot. They are divide in S
 Feature name | Class property | Description | Reference
 |:-:|:-:|:-:|:-:|
 |Length | prec.seqlen | The length of the sequence | - |
-|Triplets|
+|Triplets| The triplet elements
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5NjMzNDIyNCwxMDE1MDIxMDUsLTkyNz
+eyJoaXN0b3J5IjpbLTEwNTU1MTM4MCwxMDE1MDIxMDUsLTkyNz
 AzNDM3Nyw1NzIxNDI0NDEsMjE2NTU0ODc2LC03NDk0NzI2Niwx
 NDYzNTYwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEyLDE1NDgzMj
 g0ODEsLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2
