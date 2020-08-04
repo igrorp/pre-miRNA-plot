@@ -8,8 +8,9 @@ It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtenti
 
 <ol>
 <li> <a href="#">Installation</a><br>
-1.1 <a href="#11">Python</a><br>
-1.2 <a href="#12">Vienna RNA package</a><br>
+1.1 <a href="#11">Using Conda</a><br>
+1.2 <a href="#12">Using Docker</a><br>
+1.3 <a href="using-pip">Using pip</a><br>
 </li><li>  <a href="#2">Installation</a><br>
 </li><li> <a href="#3">How to use</a><br>
 3.1 <a href="#31">Input files</a><br>
@@ -140,5 +141,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwMTIwNTMxMiwxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbLTIwNjgzNDk5MTksMTIzOTA2Nzk0MV19
 -->
