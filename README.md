@@ -185,16 +185,16 @@ Or the default:
 These are the current features implemented in premiRNAplot. They are divide in Structure, Thermodynamics, Structural-Thermodynamics and miRNA related features.
 
 Feature name | Class property | Description | Reference
--|-|-|-
-|Length | ```python prec.len``` ||
+|:-:|:-:|:-:|:-:|
+|Length | prec.len | The length of the sequence | - |
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2MzI1Njg5MiwxMDE1MDIxMDUsLTkyNz
-AzNDM3Nyw1NzIxNDI0NDEsMjE2NTU0ODc2LC03NDk0NzI2Niwx
-NDYzNTYwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEyLDE1NDgzMj
-g0ODEsLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2
-OTc3NTEwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYsLTk2NDAyOT
-UwLDE4MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNTA5NTVdfQ==
+eyJoaXN0b3J5IjpbLTE4NjgwNjk0NzUsMTAxNTAyMTA1LC05Mj
+cwMzQzNzcsNTcyMTQyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYs
+MTQ2MzU2MDA1Nyw3NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4Mz
+I4NDgxLC02NDAyNDMwNzksMTE4MzY0NTQ2MCw2NDk3ODM0Nzcs
+Njk3NzUxMDY0LDEwMDUzNzA4NzEsMzQ2Nzg3MzY2LC05NjQwMj
+k1MCwxODAzODMzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOTU1XX0=
 
 -->
