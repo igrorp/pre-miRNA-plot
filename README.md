@@ -18,12 +18,6 @@ It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtenti
 <br>
 </li></ol>
 
-<h1 id="configuration">1. Configuration</h1>
-Pre-miRNA-plot has some dependencies and you need to check whether you have to install or update them.
-<h2 id="python"> 1.1 Python</h2>
-<p>Pre-miRNA-plot runs in Python3+. You can check which version of Python you have installed in your machine with the command bellow:</p>
-<pre><code>python --version</code></pre>
-<p>Anything higher than 3.0 should work just fine. In  case you have an older version, you can go to the <a href="https://www.python.org/downloads/"> Python website</a> and follow their tutorial to update the platform to a more recent release.</p>
 <h2 id="vienna-rna-package">1.2 Vienna RNA package</h2>
 <p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to generate an SVG image of it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package. If you don't have it installed, you can download the package and compile it following the steps below:</p>
 <pre><code>
@@ -164,5 +158,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzYyNjIzOTMsMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbLTYyNDgyNzk1NCwxMjM5MDY3OTQxXX0=
 -->
