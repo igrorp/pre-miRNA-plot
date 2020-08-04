@@ -59,7 +59,9 @@ There are multiple ways of downloading premiRNAplot, and we highly suggest that 
 
 ## Using Conda
 
-It's always a good pratice to create virtual environments to isolate your programas and avoid version conflicts, for
+It's always a good pratice to create virtual environments to isolate your programs and avoid version conflicts, for example. To create a virtual environment for premiRNAplot, run: 
+
+    conda create -n premirnaplot python=
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
@@ -140,11 +142,10 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTc5OTk1MTIsLTY0MDI0MzA3OSwxMT
-gzNjQ1NDYwLDY0OTc4MzQ3Nyw2OTc3NTEwNjQsMTAwNTM3MDg3
-MSwzNDY3ODczNjYsLTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5OD
-ExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcs
-MTk3Njc2MTI2NiwtMTY5MDcxOTU4LC0zNTI3MjA2NjYsODAwNj
-E5MjkwLDg4NjM1MTQ0MywxMDE5MjkwNywtMzQ1MjMzODQxXX0=
-
+eyJoaXN0b3J5IjpbNTEzOTQ5NDAwLC02NDAyNDMwNzksMTE4Mz
+Y0NTQ2MCw2NDk3ODM0NzcsNjk3NzUxMDY0LDEwMDUzNzA4NzEs
+MzQ2Nzg3MzY2LC05NjQwMjk1MCwxODAzODMzMjQ2LDE2OTgxMT
+cyMDYsOTcxMDUwOTU1LDI0NDE2MDQxMywxMTk5NzA4OTU3LDE5
+NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNzIwNjY2LDgwMDYxOT
+I5MCw4ODYzNTE0NDMsMTAxOTI5MDcsLTM0NTIzMzg0MV19
 -->
