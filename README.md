@@ -57,6 +57,10 @@ Now, install **setuptools** and **wheel**, that will help you download all the r
 
 There are multiple ways of downloading premiRNAplot, and we highly suggest that you use the Docker container or the Conda package, as they would remove the need to manually install packages (Vienna RNA) or having conflicts.
 
+## Using Conda
+
+It's always a good pratice to create virtual environments to isolate your programas and avoid version conflicts, for
+
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
 Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot.
@@ -136,7 +140,7 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTYzMzc5NzQsLTY0MDI0MzA3OSwxMT
+eyJoaXN0b3J5IjpbLTExMTc5OTk1MTIsLTY0MDI0MzA3OSwxMT
 gzNjQ1NDYwLDY0OTc4MzQ3Nyw2OTc3NTEwNjQsMTAwNTM3MDg3
 MSwzNDY3ODczNjYsLTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5OD
 ExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcs
