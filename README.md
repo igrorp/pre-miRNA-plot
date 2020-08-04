@@ -6,39 +6,17 @@ PremiRNAplot is a Python 3.5+ library with a command line interface for extracti
 
 It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtention and calculation. It also allows you to produce beautiful, costumizable and publication-ready images of the secondary structure of these precursors, highlighting the position of the miRNAs sequences within them.
 
-<br>
 <ol>
-<li> <a href="#1-configuration">Configuration</a><br>
-1.1 <a href="#11-python">Python</a><br>
-1.2 <a href="#12-vienna-rna-package">Vienna RNA package</a><br>
-</li><li>  <a href="#2-installation">Installation</a><br>
-</li><li> <a href="#3-how-to-use">How to use</a><br>
-3.1 <a href="#31-input-files">Input files</a><br>
-3.2 <a href="#32-exploring-the-parameters">Exploring the parameters</a>
+<li> <a href="#">Configuration</a><br>
+1.1 <a href="#11">Python</a><br>
+1.2 <a href="#12">Vienna RNA package</a><br>
+</li><li>  <a href="#2">Installation</a><br>
+</li><li> <a href="#3">How to use</a><br>
+3.1 <a href="#31">Input files</a><br>
+3.2 <a href="#32">Exploring the parameters</a>
 <br>
 </li></ol>
 
-<h2 id="vienna-rna-package">1.2 Vienna RNA package</h2>
-<p>Vienna RNA package contains <strong>RNAfold</strong> and <strong>RNAplot</strong>, used to predict the secondary structure of the pre-miRNA and to generate an SVG image of it, respectively. You can visit their <a href="https://www.tbi.univie.ac.at/RNA/documentation.html">website</a> to have more details and get to know more about this amazing package. If you don't have it installed, you can download the package and compile it following the steps below:</p>
-<pre><code>
-wget https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.13.tar.gz
-tar xvzf ViennaRNA-2.4.13.tar.gz
-cd ViennaRNA-2.4.13/
-./configure
-make
-sudo make install
-</code></pre>
-<h2 id="pip">1.3 Pip</h2>
-<p>The program dependes on <strong>pip</strong> to install all the Python imaging packages used (matplotlib, svglib, svgwrite, scikit-learn, etc.). Without it the installation would be vary manual, time-consuming and maybe conflicting. If you don’t have it already on your machine, run:</p>
-<pre><code>sudo apt update
-sudo apt install python3-pip
-</code></pre>
-<p>After that, check it:</p>
-<pre><code>python3 -m pip --version
-</code></pre>
-<p>Now, install <strong>setuptools</strong> and <strong>wheel</strong>, that will help you download all the required packages:</p>
-<pre><code>sudo python3 -m pip install --upgrade pip setuptools wheel
-</code></pre>
 <h1 id="installation">2. Installation</h1>
 
 <p>There are multiple ways of downloading premiRNAplot. We highly suggest that you use the Docker container or the Conda package, as they would remove the need to manually install packages (ViennaRNA in specific) or having conflicts. Make sure that you have your platform updated and that you are using Python 3.5 or higher.</p>
@@ -162,5 +140,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxOTEwMzgzNCwxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbMTQ4OTUyNDAyNywxMjM5MDY3OTQxXX0=
 -->
