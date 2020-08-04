@@ -64,13 +64,8 @@ python setup.py install
 <p>There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.</p>
 
 <h1 id="command-line-interface-usage">3. Command line interface usage</h1>
-<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python3 premirnaplot.py -help</code>.</p>
-<p>If you are inside the cloned repository folder, you can run the program like this:</p>
-<pre><code>python3 premirnaplot.py path/to/your/input_file.txt ... (parameters)
-</code></pre>
-<p>If you are outside the program repository, and you want to run the program from wherever you are, use:</p>
-<pre><code>python3 path/to/where/the/program/is/premirnaplot.py input_file.txt ... (parameters)
-</code></pre>
+<p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python premirnaplot -help</code>.</p>
+
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 1"></p>
@@ -144,6 +139,6 @@ python setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgyMjI0NTA0LC02NTg0NjI0MjksMTIzOT
-A2Nzk0MV19
+eyJoaXN0b3J5IjpbMjEzNTc1MDI1MywtNjU4NDYyNDI5LDEyMz
+kwNjc5NDFdfQ==
 -->
