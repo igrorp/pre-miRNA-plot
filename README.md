@@ -76,6 +76,8 @@ Future instructions on how to use a Docker container.
 
 ## Using pip
 
+
+
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
 Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot.
@@ -155,11 +157,10 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0ODMyODQ4MSwtNjQwMjQzMDc5LDExOD
-M2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2NCwxMDA1MzcwODcx
-LDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMzgzMzI0NiwxNjk4MT
-E3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMsMTE5OTcwODk1Nywx
-OTc2NzYxMjY2LC0xNjkwNzE5NTgsLTM1MjcyMDY2Niw4MDA2MT
-kyOTAsODg2MzUxNDQzLDEwMTkyOTA3LC0zNDUyMzM4NDFdfQ==
-
+eyJoaXN0b3J5IjpbMTI1NDg5ODYxLDE1NDgzMjg0ODEsLTY0MD
+I0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2OTc3NTEwNjQs
+MTAwNTM3MDg3MSwzNDY3ODczNjYsLTk2NDAyOTUwLDE4MDM4Mz
+MyNDYsMTY5ODExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwNDEzLDEx
+OTk3MDg5NTcsMTk3Njc2MTI2NiwtMTY5MDcxOTU4LC0zNTI3Mj
+A2NjYsODAwNjE5MjkwLDg4NjM1MTQ0MywxMDE5MjkwN119
 -->
