@@ -2,7 +2,7 @@
 <p></p>
 <br>
 
-Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.
+PremiRNAplot is a Python library with a command line interface for extracting features from miRNA precursor and generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.
 
 <br>
 <ol>
@@ -161,5 +161,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyNTE3NTg4NF19
+eyJoaXN0b3J5IjpbMTIzOTA2Nzk0MV19
 -->
