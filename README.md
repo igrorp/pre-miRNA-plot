@@ -7,16 +7,18 @@ PremiRNAplot is a Python 3.5+ library with a command line interface for extracti
 It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtention and calculation. It also allows you to produce beautiful, costumizable and publication-ready images of the secondary structure of these precursors, highlighting the position of the miRNAs sequences within them.
 
 <ol>
-<li> <a href="#">Installation</a><br>
-1.1 <a href="#11">Using Conda</a><br>
-1.2 <a href="#12">Using Docker</a><br>
-1.3 <a href="using-pip">Using pip</a><br>
-</li><li>  <a href="#2">Installation</a><br>
-</li><li> <a href="#3">How to use</a><br>
-3.1 <a href="#31">Input files</a><br>
-3.2 <a href="#32">Exploring the parameters</a>
-<br>
-</li></ol>
+	<li> <a href="#installation">Installation</a><br>
+	1.1 <a href="#using-conda">Using Conda</a><br>
+	1.2 <a href="#using-docker">Using Docker</a><br>
+	1.3 <a href="#using-pip">Using pip</a><br>
+	1.4 <a href="#using-this-repository">Using this repository</a><br>
+	</li><li>  <a href="#2">Installation</a><br>
+	</li><li> <a href="#3">How to use</a><br>
+	3.1 <a href="#31">Input files</a><br>
+	3.2 <a href="#32">Exploring the parameters</a>
+	<br>
+	</li>
+</ol>
 
 <h1 id="installation">1. Installation</h1>
 
@@ -141,5 +143,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjgzNDk5MTksMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbMTQ0MTY4MTg5OSwxMjM5MDY3OTQxXX0=
 -->
