@@ -86,6 +86,9 @@ To install the Vienna RNA package from Conda:
 
     conda install -c bioconda viennarna
 
+To compile the Vienna RNA pacakge from source:
+
+
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
 Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot.
@@ -165,11 +168,11 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzUwMTY3NzcsLTE5NTExNTY3MTIsMTU0OD
-MyODQ4MSwtNjQwMjQzMDc5LDExODM2NDU0NjAsNjQ5NzgzNDc3
-LDY5Nzc1MTA2NCwxMDA1MzcwODcxLDM0Njc4NzM2NiwtOTY0MD
-I5NTAsMTgwMzgzMzI0NiwxNjk4MTE3MjA2LDk3MTA1MDk1NSwy
-NDQxNjA0MTMsMTE5OTcwODk1NywxOTc2NzYxMjY2LC0xNjkwNz
-E5NTgsLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2MzUxNDQzXX0=
+eyJoaXN0b3J5IjpbMTQ2MzU2MDA1Nyw3NTAxNjc3NywtMTk1MT
+E1NjcxMiwxNTQ4MzI4NDgxLC02NDAyNDMwNzksMTE4MzY0NTQ2
+MCw2NDk3ODM0NzcsNjk3NzUxMDY0LDEwMDUzNzA4NzEsMzQ2Nz
+g3MzY2LC05NjQwMjk1MCwxODAzODMzMjQ2LDE2OTgxMTcyMDYs
+OTcxMDUwOTU1LDI0NDE2MDQxMywxMTk5NzA4OTU3LDE5NzY3Nj
+EyNjYsLTE2OTA3MTk1OCwtMzUyNzIwNjY2LDgwMDYxOTI5MF19
 
 -->
