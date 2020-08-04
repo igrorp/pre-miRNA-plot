@@ -15,9 +15,9 @@ It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtenti
 	</li>
 	<li>  <a href="#command-line-interface">Command line interface</a><br>
 	</li>
-	<li> <a href="#3">How to use</a><br>
-	3.1 <a href="#31">Input files</a><br>
-	3.2 <a href="#32">Exploring the parameters</a><br>
+	<li> <a href="#3">Library usage</a><br>
+		3.1 <a href="#31">Input files</a><br>
+		3.2 <a href="#32">Exploring the parameters</a><br>
 	</li>
 </ol>
 
@@ -144,5 +144,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc3NzkzMjUsMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
 -->
