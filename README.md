@@ -70,6 +70,12 @@ To install, simply run:
 
 Soon the program will be available through the Bioconda channel.
 
+## Using Docker
+
+Future instructions on how to use a Docker container.
+
+## Using pip
+
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
 Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot.
@@ -149,7 +155,7 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODQzODE4MSwtNjQwMjQzMDc5LDExOD
+eyJoaXN0b3J5IjpbMTU0ODMyODQ4MSwtNjQwMjQzMDc5LDExOD
 M2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2NCwxMDA1MzcwODcx
 LDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMzgzMzI0NiwxNjk4MT
 E3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMsMTE5OTcwODk1Nywx
