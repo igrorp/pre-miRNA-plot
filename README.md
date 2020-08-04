@@ -180,7 +180,9 @@ Or the default:
 
 # 4. Library usage
 
-After succesfully installing premiRNAplot, you can use the library inside a script or 
+After succesfully installing premiRNAplot, you can use the library inside a script or application. The fundamental class you'll need to use is **Precursor**. You can import it using:
+
+
 
 ## 4.1 Basic properties and methods
 
@@ -195,7 +197,7 @@ Feature name | Class property | Description | Reference
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjk4ODQ5MjgsMTAxNTAyMTA1LC05Mj
+eyJoaXN0b3J5IjpbLTEyNzY3NTY3NTAsMTAxNTAyMTA1LC05Mj
 cwMzQzNzcsNTcyMTQyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYs
 MTQ2MzU2MDA1Nyw3NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4Mz
 I4NDgxLC02NDAyNDMwNzksMTE4MzY0NTQ2MCw2NDk3ODM0Nzcs
