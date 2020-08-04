@@ -1,9 +1,9 @@
-<p align='center'>
-# Welcome to premiRNAplot!
-</p>
+<h1 align='center'> Welcome to premiRNAplot! </h1>
 <p></p>
 <br>
-<p>Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.</p>
+
+Pre-miRNA-plot is a program for generating multiple custom images of miRNA precursors based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.
+
 <br>
 <ol>
 <li> <a href="#1-configuration">Configuration</a><br>
@@ -161,5 +161,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2ODM3MjYzMF19
+eyJoaXN0b3J5IjpbMTcyNTE3NTg4NF19
 -->
