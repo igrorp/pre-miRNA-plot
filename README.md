@@ -132,14 +132,14 @@ Or the default:
 
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
-<pre><code>python3 premirnaplot.py your_file.txt -t 8</code></pre>
+<pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTM0MDM4OTUsLTY0MDI0MzA3OSwxMT
-gzNjQ1NDYwLDY0OTc4MzQ3Nyw2OTc3NTEwNjQsMTAwNTM3MDg3
-MSwzNDY3ODczNjYsLTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5OD
-ExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcs
-MTk3Njc2MTI2NiwtMTY5MDcxOTU4LC0zNTI3MjA2NjYsODAwNj
-E5MjkwLDg4NjM1MTQ0MywxMDE5MjkwNywtMzQ1MjMzODQxXX0=
+eyJoaXN0b3J5IjpbLTgzMjMzODM1NywtNjQwMjQzMDc5LDExOD
+M2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2NCwxMDA1MzcwODcx
+LDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMzgzMzI0NiwxNjk4MT
+E3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMsMTE5OTcwODk1Nywx
+OTc2NzYxMjY2LC0xNjkwNzE5NTgsLTM1MjcyMDY2Niw4MDA2MT
+kyOTAsODg2MzUxNDQzLDEwMTkyOTA3LC0zNDUyMzM4NDFdfQ==
 
 -->
