@@ -76,7 +76,7 @@ Future instructions on how to use a Docker container.
 
 ## Using pip
 
-You can install the program from pip as well, and it will automatically install all the Python packages  but you need to have the Vienna RNA package alrea
+You can install the program from pip as well, and it will automatically install all the Python packages listed as dependecies, but you need to have the Vienna RNA packages minstalled to run. You can compile Vienna RNA from source or 
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
@@ -157,11 +157,11 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMDQ0OTY2NSwxNTQ4MzI4NDgxLC02ND
-AyNDMwNzksMTE4MzY0NTQ2MCw2NDk3ODM0NzcsNjk3NzUxMDY0
-LDEwMDUzNzA4NzEsMzQ2Nzg3MzY2LC05NjQwMjk1MCwxODAzOD
-MzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOTU1LDI0NDE2MDQxMywx
-MTk5NzA4OTU3LDE5NzY3NjEyNjYsLTE2OTA3MTk1OCwtMzUyNz
-IwNjY2LDgwMDYxOTI5MCw4ODYzNTE0NDMsMTAxOTI5MDddfQ==
+eyJoaXN0b3J5IjpbLTE0ODA0MDA0MjQsMTU0ODMyODQ4MSwtNj
+QwMjQzMDc5LDExODM2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2
+NCwxMDA1MzcwODcxLDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMz
+gzMzI0NiwxNjk4MTE3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMs
+MTE5OTcwODk1NywxOTc2NzYxMjY2LC0xNjkwNzE5NTgsLTM1Mj
+cyMDY2Niw4MDA2MTkyOTAsODg2MzUxNDQzLDEwMTkyOTA3XX0=
 
 -->
