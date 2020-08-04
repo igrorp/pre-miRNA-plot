@@ -64,7 +64,11 @@ It's always a good pratice to create virtual environments to isolate your progra
     conda create -n premirnaplot python=3.7 -y
     conda activate premirnaplot
 
-To install 
+To install, simply run:
+
+    conda install -c igror premirnaplot
+
+Soon the program will be available through the Bioconda channel.
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
@@ -145,7 +149,7 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NzczMTczOCwtNjQwMjQzMDc5LDExOD
+eyJoaXN0b3J5IjpbLTE4ODQzODE4MSwtNjQwMjQzMDc5LDExOD
 M2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2NCwxMDA1MzcwODcx
 LDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMzgzMzI0NiwxNjk4MT
 E3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMsMTE5OTcwODk1Nywx
