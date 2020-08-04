@@ -182,7 +182,9 @@ Or the default:
 
 After succesfully installing premiRNAplot, you can use the library inside a script or application. The fundamental class you'll need to use is **Precursor**. You can import it using:
 
-
+   ```python 
+   from premirnalot.precursor import Precursor
+   ```
 
 ## 4.1 Basic properties and methods
 
@@ -197,11 +199,11 @@ Feature name | Class property | Description | Reference
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzY3NTY3NTAsMTAxNTAyMTA1LC05Mj
-cwMzQzNzcsNTcyMTQyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYs
-MTQ2MzU2MDA1Nyw3NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4Mz
-I4NDgxLC02NDAyNDMwNzksMTE4MzY0NTQ2MCw2NDk3ODM0Nzcs
-Njk3NzUxMDY0LDEwMDUzNzA4NzEsMzQ2Nzg3MzY2LC05NjQwMj
-k1MCwxODAzODMzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOTU1XX0=
+eyJoaXN0b3J5IjpbMTU5NjMzNDIyNCwxMDE1MDIxMDUsLTkyNz
+AzNDM3Nyw1NzIxNDI0NDEsMjE2NTU0ODc2LC03NDk0NzI2Niwx
+NDYzNTYwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEyLDE1NDgzMj
+g0ODEsLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2
+OTc3NTEwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYsLTk2NDAyOT
+UwLDE4MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNTA5NTVdfQ==
 
 -->
