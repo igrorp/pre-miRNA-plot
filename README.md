@@ -84,7 +84,7 @@ To install premirnaplot from pip (you can create a virtual environment using ven
 
 To install the Vienna RNA package from Conda:
 
-    enter code here
+    pip install 
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
@@ -165,7 +165,7 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDkxNjUyMjksMTU0ODMyODQ4MSwtNj
+eyJoaXN0b3J5IjpbLTE5NTExNTY3MTIsMTU0ODMyODQ4MSwtNj
 QwMjQzMDc5LDExODM2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2
 NCwxMDA1MzcwODcxLDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMz
 gzMzI0NiwxNjk4MTE3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMs
