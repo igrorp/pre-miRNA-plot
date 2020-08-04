@@ -180,17 +180,22 @@ Or the default:
 
 # 4. Library usage
 
-## 4.1 Features
+After succesfully installing premiRNAplot, you can use the library inside a script or 
+
+## 4.1 Basic properties and methods
+
+## 4.2 Features
 
 These are the current features implemented in premiRNAplot. They are divide in Structure, Thermodynamics, Structural-Thermodynamics and miRNA related features.
 
 Feature name | Class property | Description | Reference
 |:-:|:-:|:-:|:-:|
-|Length | prec.len | The length of the sequence | - |
+|Length | prec.seqlen | The length of the sequence | - |
+|Triplets|
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjgwNjk0NzUsMTAxNTAyMTA1LC05Mj
+eyJoaXN0b3J5IjpbLTExNjk4ODQ5MjgsMTAxNTAyMTA1LC05Mj
 cwMzQzNzcsNTcyMTQyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYs
 MTQ2MzU2MDA1Nyw3NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4Mz
 I4NDgxLC02NDAyNDMwNzksMTE4MzY0NTQ2MCw2NDk3ODM0Nzcs
