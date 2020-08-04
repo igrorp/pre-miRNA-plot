@@ -1,10 +1,10 @@
 <h1 align='center'> Welcome to premiRNAplot! </h1>
 <p></p>
-<br>
+
 
 PremiRNAplot is a Python library with a command line interface for extracting features  and generating multiple custom images of miRNA precursors. It provides over a 100 different features that can be used to train and test machine learning alogirthms for the correct prediction and classification of pre-miRNAs.
 
-It's based on RNAfold and RNAplot. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.
+It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obt. It allows you to highlight the miRNA location within the precursor and obtain general and practical information about your data, so you can filter it or use it in publications.
 
 <br>
 <ol>
@@ -164,5 +164,5 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3NTc2ODIyLDEyMzkwNjc5NDFdfQ==
+eyJoaXN0b3J5IjpbMTEyOTQ5MzYzLDEyMzkwNjc5NDFdfQ==
 -->
