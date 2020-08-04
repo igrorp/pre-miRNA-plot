@@ -182,14 +182,18 @@ Or the default:
 
 ## 4.1 Features
 
-These are the current features implemented in premiRNAplot. They are divide in Structure, Thermodynamics, Thermo
+These are the current features implemented in premiRNAplot. They are divide in Structure, Thermodynamics, Structural-Thermodynamics and miRNA related features.
+
+Feature name | Class property | Description | Reference
+-|-|-|-
+|Length |
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNzY5MjYyMiwxMDE1MDIxMDUsLTkyNz
-AzNDM3Nyw1NzIxNDI0NDEsMjE2NTU0ODc2LC03NDk0NzI2Niwx
-NDYzNTYwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEyLDE1NDgzMj
-g0ODEsLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2
-OTc3NTEwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYsLTk2NDAyOT
-UwLDE4MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNTA5NTVdfQ==
-
+eyJoaXN0b3J5IjpbMjkxOTQ2MjM3LDEwMTUwMjEwNSwtOTI3MD
+M0Mzc3LDU3MjE0MjQ0MSwyMTY1NTQ4NzYsLTc0OTQ3MjY2LDE0
+NjM1NjAwNTcsNzUwMTY3NzcsLTE5NTExNTY3MTIsMTU0ODMyOD
+Q4MSwtNjQwMjQzMDc5LDExODM2NDU0NjAsNjQ5NzgzNDc3LDY5
+Nzc1MTA2NCwxMDA1MzcwODcxLDM0Njc4NzM2NiwtOTY0MDI5NT
+AsMTgwMzgzMzI0NiwxNjk4MTE3MjA2LDk3MTA1MDk1NV19
 -->
