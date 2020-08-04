@@ -59,7 +59,7 @@ sudo make install
 </code></pre>
 <p>Now you need to enter the cloned repository folder and run the <strong><a href="http://setup.py">setup.py</a></strong> configuration file, which will download all the necessary Python packages used in premiRNAplot.</p>
 <pre><code>cd pre-miRNA-plot/
-python3 setup.py install
+python setup.py install
 </code></pre>
 <p>There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.</p>
 
@@ -144,5 +144,6 @@ python3 setup.py install
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbNDgyMjI0NTA0LC02NTg0NjI0MjksMTIzOT
+A2Nzk0MV19
 -->
