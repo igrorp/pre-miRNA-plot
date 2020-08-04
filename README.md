@@ -96,7 +96,11 @@ To compile the Vienna RNA pacakge from source:
     make
     sudo make install
 
-<pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
+## Using this repository
+
+To use this repository for the installation, clone it using:
+
+    git clone https://github.com/igrorp/pre-miRNA-plot.git
 
 Now you need to enter the cloned repository folder and run the **setup.py** configuration file, which will download all the necessary Python packages used in pre-miRNA-plot.
 
@@ -175,11 +179,11 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE2NTU0ODc2LC03NDk0NzI2NiwxNDYzNT
-YwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEyLDE1NDgzMjg0ODEs
-LTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OTc4MzQ3Nyw2OTc3NT
-EwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYsLTk2NDAyOTUwLDE4
-MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNTA5NTUsMjQ0MTYwND
-EzLDExOTk3MDg5NTcsMTk3Njc2MTI2NiwtMTY5MDcxOTU4XX0=
+eyJoaXN0b3J5IjpbLTEzMTcwMzk0MzQsMjE2NTU0ODc2LC03ND
+k0NzI2NiwxNDYzNTYwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEy
+LDE1NDgzMjg0ODEsLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OT
+c4MzQ3Nyw2OTc3NTEwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYs
+LTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNT
+A5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcsMTk3Njc2MTI2Nl19
 
 -->
