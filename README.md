@@ -84,7 +84,7 @@ To install premirnaplot from pip (you can create a virtual environment using ven
 
 To install the Vienna RNA package from Conda:
 
-    pip install 
+    conda install -c bioconda viennarna
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
 
@@ -165,11 +165,11 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTExNTY3MTIsMTU0ODMyODQ4MSwtNj
-QwMjQzMDc5LDExODM2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2
-NCwxMDA1MzcwODcxLDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMz
-gzMzI0NiwxNjk4MTE3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMs
-MTE5OTcwODk1NywxOTc2NzYxMjY2LC0xNjkwNzE5NTgsLTM1Mj
-cyMDY2Niw4MDA2MTkyOTAsODg2MzUxNDQzLDEwMTkyOTA3XX0=
+eyJoaXN0b3J5IjpbNzUwMTY3NzcsLTE5NTExNTY3MTIsMTU0OD
+MyODQ4MSwtNjQwMjQzMDc5LDExODM2NDU0NjAsNjQ5NzgzNDc3
+LDY5Nzc1MTA2NCwxMDA1MzcwODcxLDM0Njc4NzM2NiwtOTY0MD
+I5NTAsMTgwMzgzMzI0NiwxNjk4MTE3MjA2LDk3MTA1MDk1NSwy
+NDQxNjA0MTMsMTE5OTcwODk1NywxOTc2NzYxMjY2LC0xNjkwNz
+E5NTgsLTM1MjcyMDY2Niw4MDA2MTkyOTAsODg2MzUxNDQzXX0=
 
 -->
