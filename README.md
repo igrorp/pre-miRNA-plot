@@ -77,7 +77,7 @@ Future instructions on how to use the Docker container.
 
 ## Using pip
 
-You can install the program from pip as well, and it will automatically install all the Python dependecies, but you need to have the Vienna RNA package manually installed to run, since it's not a Python package. You can compile Vienna RNA from source or install it from Conda.
+You can install the program from pip as well, and it will automatically install all the Python dependecies, but you need to have the Vienna RNA package manually installed to run, since it's not a Python package. You can compile Vienna RNA from source or install it using Conda.
 
 To install premirnaplot from pip (you can create a virtual environment using venv):
 
@@ -111,7 +111,7 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
 
 
 
-<h1 id="how-to-use">3. Usage</h1>
+<h1 id="how-to-use">3. Program usage</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python3 premirnaplot.py -help</code>.</p>
 
 If you are inside the cloned repository folder, you can run the program like this:
@@ -179,11 +179,10 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyNzAzNDM3Nyw1NzIxNDI0NDEsMjE2NT
-U0ODc2LC03NDk0NzI2NiwxNDYzNTYwMDU3LDc1MDE2Nzc3LC0x
-OTUxMTU2NzEyLDE1NDgzMjg0ODEsLTY0MDI0MzA3OSwxMTgzNj
-Q1NDYwLDY0OTc4MzQ3Nyw2OTc3NTEwNjQsMTAwNTM3MDg3MSwz
-NDY3ODczNjYsLTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5ODExNz
-IwNiw5NzEwNTA5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTddfQ==
-
+eyJoaXN0b3J5IjpbMTAxNTAyMTA1LC05MjcwMzQzNzcsNTcyMT
+QyNDQxLDIxNjU1NDg3NiwtNzQ5NDcyNjYsMTQ2MzU2MDA1Nyw3
+NTAxNjc3NywtMTk1MTE1NjcxMiwxNTQ4MzI4NDgxLC02NDAyND
+MwNzksMTE4MzY0NTQ2MCw2NDk3ODM0NzcsNjk3NzUxMDY0LDEw
+MDUzNzA4NzEsMzQ2Nzg3MzY2LC05NjQwMjk1MCwxODAzODMzMj
+Q2LDE2OTgxMTcyMDYsOTcxMDUwOTU1LDI0NDE2MDQxM119
 -->
