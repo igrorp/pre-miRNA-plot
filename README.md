@@ -112,7 +112,6 @@ Now you need to enter the cloned repository folder and run the **setup.py** conf
     python3 premirnaplot.py src/example.txt -a T
 
 
-
 <h1 id="how-to-use">3. Usage</h1>
 <p>Pre-miRNA-plot usage is very simple. The file input has to be a TSV (tab-separeted values) text file containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python3 premirnaplot.py -help</code>.</p>
 
@@ -181,11 +180,11 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDc5MTI3NzMsMjE2NTU0ODc2LC03ND
-k0NzI2NiwxNDYzNTYwMDU3LDc1MDE2Nzc3LC0xOTUxMTU2NzEy
-LDE1NDgzMjg0ODEsLTY0MDI0MzA3OSwxMTgzNjQ1NDYwLDY0OT
-c4MzQ3Nyw2OTc3NTEwNjQsMTAwNTM3MDg3MSwzNDY3ODczNjYs
-LTk2NDAyOTUwLDE4MDM4MzMyNDYsMTY5ODExNzIwNiw5NzEwNT
-A5NTUsMjQ0MTYwNDEzLDExOTk3MDg5NTcsMTk3Njc2MTI2Nl19
+eyJoaXN0b3J5IjpbNTcyMTQyNDQxLDIxNjU1NDg3NiwtNzQ5ND
+cyNjYsMTQ2MzU2MDA1Nyw3NTAxNjc3NywtMTk1MTE1NjcxMiwx
+NTQ4MzI4NDgxLC02NDAyNDMwNzksMTE4MzY0NTQ2MCw2NDk3OD
+M0NzcsNjk3NzUxMDY0LDEwMDUzNzA4NzEsMzQ2Nzg3MzY2LC05
+NjQwMjk1MCwxODAzODMzMjQ2LDE2OTgxMTcyMDYsOTcxMDUwOT
+U1LDI0NDE2MDQxMywxMTk5NzA4OTU3LDE5NzY3NjEyNjZdfQ==
 
 -->
