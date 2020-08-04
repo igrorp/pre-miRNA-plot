@@ -54,6 +54,7 @@ Now, install **setuptools** and **wheel**, that will help you download all the r
 
 
 <h1 id="installation">2. Installation</h1>
+
 <p>To install pre-miRNA-plot you can download this repository as a zip file in this main page, or clone it in your machine:</p>
 
 <pre><code>git clone https://github.com/igrorp/pre-miRNA-plot.git</code></pre>
@@ -96,7 +97,7 @@ If you are outside the program repository, and you want to run the program from 
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>python premirnaplot.py your_file.txt -a T</code></pre>
 
-<h3 id="labels">Styles</h3>
+<h3 id="styles">Styles</h3>
 
 Pre-miRNA-plot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want. 
 
@@ -135,7 +136,7 @@ Or the default:
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMjMzODM1NywtNjQwMjQzMDc5LDExOD
+eyJoaXN0b3J5IjpbMjA0MDkwODUzNCwtNjQwMjQzMDc5LDExOD
 M2NDU0NjAsNjQ5NzgzNDc3LDY5Nzc1MTA2NCwxMDA1MzcwODcx
 LDM0Njc4NzM2NiwtOTY0MDI5NTAsMTgwMzgzMzI0NiwxNjk4MT
 E3MjA2LDk3MTA1MDk1NSwyNDQxNjA0MTMsMTE5OTcwODk1Nywx
