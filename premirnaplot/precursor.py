@@ -106,12 +106,8 @@ class Precursor():
   
 		# Minimum free energy index 2 (MFEI2)
 
-		if not self.n_stems:
+		self.mfei2 = self.dg / (self.n_stems if self.n_stems else 1)
 
-			self.createSVG()
-
-		self.mfei2 = self.dg / self.n_stems
-  
 		# Normalized base pair propensity (dP)
   
 		self.dp = self.bp_number / self.seqlen
@@ -134,7 +130,7 @@ class Precursor():
 
 		# Minimum free energy index 3 (MFEI3)
   
-		#! self.mfei3 = self.dg / self.n_loops
+		self.mfei3 = self.dg / self.loop_number
   
 		# Minimum free energy index 4 (MFEI4)
   
@@ -179,10 +175,9 @@ class Precursor():
 
 				mirname = annotation.lower() if annot else 'precursor_{}'.format(index)
 
-				try:
-					prelist.append(cls(mirname, precursor, mirna1, mirna2))
-				except:
-					pass
+				
+				prelist.append(cls(mirname, precursor, mirna1, mirna2))
+				
 
 		return prelist
 
@@ -225,7 +220,7 @@ class Precursor():
 
 		if self.bp_number != len(pairs):
 
-			raise Warning('There was an error calculating the number of base pairings')
+			raise Exception('There was an error calculating the number of base pairings')
 
 		return sorted(pairs)
 
@@ -289,33 +284,40 @@ class Precursor():
 
 		''' Returns a list of 4 indexes (positions of the stem): beggining and end of strand 1 and 2 '''
 
+		buff = []
+		cons = False
 		stems = []
-
-		pairs = self.pairs() + [(0,0)]
-
-		i1, e2 = pairs[0]
-
-		for i in range(1, len(pairs) - 1):
-
-			e1, i2 = pairs[i]
-
-			pos1, pos2 = pairs[i+1]
-
-			if e1 + 1 == pos1 and i2 - 1 == pos2:
-
-				pass
-
+		pos = self.pairs()
+		pos.append((-1,-1))
+		# Estou chegando o pareamento de só uma das fitas, assumindo que estão perfeitamente pareadas
+		
+		while len(pos) > 1:
+			
+			i1, e2 = pos.pop(0)
+			i2, e1 = pos[0]
+			
+			if i1 + 1 == i2 and e2 - 1 == e1:
+				
+				if not cons:
+					buff.append((i1,e2))
+				
+				cons = True
+			
 			else:
+				
+				if cons:
+					
+					buff.append((i1,e2))
+					cons = False
+					
+					if buff[1][0] - buff[0][0] > 2:
+						
+						(i1, e2),(e1, i2) = buff
+						stems.append((i1, e1, i2, e2))
+				
+				buff = []
 
-				if e1 - i1 > 2:
-
-					stems.append((i1, e1, i2, e2))
-
-				i1 = pos1
-				e2 = pos2
-
-		#return stems
-
+		return stems
 
 
 	def avg_bp_stems(self):
@@ -328,7 +330,12 @@ class Precursor():
 
 		for init1, end1, init2, end2 in self.stem_positions():
 
+			print(init1, end1, init2, end2)
+			print(self.sequence[init1:end1+1], self.sequence[init2:end2+1][::-1])
+
 			for nt1, nt2 in zip(self.sequence[init1:end1+1], self.sequence[init2:end2+1][::-1]):
+
+				print(nt1, nt2)
 
 				try:
 					
@@ -345,7 +352,7 @@ class Precursor():
 						raise Exception('Could not account for this base pair: {}'.format(nt1 + nt2))
 
 
-		return {'avg_' + base_pair + '\\n_stems':freqs[base_pair] / n for base_pair in freqs}
+		return {'avg_' + base_pair + r'\n_stems':freqs[base_pair] / n for base_pair in freqs}
 
 
 	def longest_stem(self):
@@ -588,6 +595,104 @@ class Precursor():
 
 		return {'%' + nt1 + nt2 : round(self.sequence.count(nt1 + nt2) / (self.seqlen - 1) * 100, 2) for nt1, nt2 in product(['A', 'U', 'C', 'G'], repeat=2)}
 
+	@property
+
+	def bulge_number(self):
+
+		''' Determines the number of bulges inside the secondary structure '''
+
+		return len(self.bulges_pos())
+
+	
+	def bulges_pos(self):
+
+		bulges = []
+
+		stems = self.stem_positions()
+
+		for n in range(len(stems) - 1):
+
+			# Getting the positions from the first stem
+			fi1, fe1, fi2, fe2 = stems[n]
+			
+			# Getting the positions from the second stem
+			si1, se1, si2, se2 = stems[n+1]
+
+			# Checking if the first strand is consecutive
+			strand1 = fe1 + 1 == si1
+
+			# Checking if the second strand is consecutive
+			strand2 = se2 + 1 == fi2
+
+			# If the first strand is consec. and the second is not, there is a bulge in the second one
+			if strand1 and not strand2:
+
+				bulges.append((se2, fi2))
+
+			# If the second strand is consec. and the first one is not, there is a bulge in the second one
+			elif not strand1 and strand2:
+
+				bulges.append((fe1, si1))
+
+			# If both conditions are False, that means it's a loop
+
+			elif not strand1 and not strand2:
+
+				pass
+
+			# If both conditions are True, that means the two stems are actually connected and should have been joined
+
+			else:
+
+				raise Exception('There is an incompatibility between the stem joining and stem number')
+
+		return bulges
+
+	@property
+
+	def loop_number(self):
+
+		''' Determines the number of loops inside the secondary structure '''
+
+		return len(self.loops_pos())
+
+	
+	def loops_pos(self):
+
+		loops = []
+
+		stems = self.stem_positions()
+
+		for n in range(len(stems) - 1):
+
+			# Getting the positions from the first stem
+			fi1, fe1, fi2, fe2 = stems[n]
+			
+			# Getting the positions from the second stem
+			si1, se1, si2, se2 = stems[n+1]
+
+			# Checking if the first strand is consecutive
+			strand1 = fe1 + 1 == si1
+
+			# Checking if the second strand is consecutive
+			strand2 = se2 + 1 == fi2
+
+			# If both conditions are False, that means it's a loop
+
+			if strand1 and strand2:
+
+				raise Exception('There is an incompatibility between the stem joining and stem number')
+
+			elif not strand1 and not strand2:
+
+				loops.append((fe1, si1, se2, fi2))
+
+			else:
+
+				pass
+
+		return loops
+
 
 	def features(self):
 
@@ -602,6 +707,8 @@ class Precursor():
 		features.update(self.dint_props())
 
 		features.update(self.triplets())
+
+		#if self.n_stems:
 		
 		features.update(self.bp_props())
 
