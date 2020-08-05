@@ -1,11 +1,11 @@
 ---
 
+<h1 align="center"> Welcome to premiRNAplot!</h1>
+<p></p>
 
 ---
 
-<h1 align="center> Welcome to premiRNAplot! </h1>
-<p></p>
-<p>PremiRNAplot is a Python 3.5+ library with a command line interface for extracting features  and generating multiple custom images of miRNA precursors. It provides over a 100 different features that can be used to train and test machine learning algorithms for the correct prediction and classification of pre-miRNAs.</p>
+<p>PremiRNAplot is a Python 3.5+ library with a command line interface for extracting features and generating multiple custom images of miRNA precursors. It provides over a 100 different features that can be used to train and test machine learning algorithms for the correct prediction and classification of pre-miRNAs.</p>
 <p>It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtention and calculation. It also allows you to produce beautiful, costumizable and publication-ready images of the secondary structure of these precursors, highlighting the position of the miRNAs sequences within them.</p>
 <ol>
 	<li> <a href="#installation">Installation</a><br>
@@ -14,7 +14,12 @@
 		1.3 <a href="#using-pip">Using pip</a><br>
 		1.4 <a href="#using-this-repository">Using this repository</a><br>
 	</li>
-	<li>  <a href="#command-line-interface">Command line interface</a><br>
+	<li>  <a href="#command-line-interface-usage">Command line interface</a><br>
+		2.1 <a href="#input-files">Input files</a><br>
+		2.2 <a href="#image-styles">Using Conda</a><br>
+		2.3 <a href="#colors">Colors</a><br>
+		2.4 <a href="#image-formats">Image formats</a><br>
+		2.5 <a href="#multiprocessing">Multiprocessing</a><br>
 	</li>
 	<li> <a href="#3">Library usage</a><br>
 		3.1 <a href="#31">Basic properties and modules</a><br>
@@ -22,7 +27,7 @@
 	</li>
 </ol>
 <h1 id="installation">1. Installation</h1>
-<p>There are multiple ways of downloading premiRNAplot. We highly suggest that you use the Docker container or the Conda package, as they would remove the need to manually install packages (ViennaRNA in specific) or having conflicts. Make sure that you have your platform updated and that you are using Python 3.5 or higher.</p>
+<p>There are multiple ways of downloading premiRNAplot. We highly suggest that you use the Conda package, as it would remove the need to manually install packages (ViennaRNA in specific) or having conflicts. Make sure that you have your platform updated and that you are using Python 3.5 or higher.</p>
 <h2 id="using-conda">Using Conda</h2>
 <p>It’s always a good pratice to create virtual environments to isolate your programs and avoid version conflicts, for example. To create a Conda virtual environment for premiRNAplot, run:</p>
 (this step is optional)
@@ -62,7 +67,7 @@ python setup.py install
 <p>There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.</p>
 <h1 id="command-line-interface-usage">3. Command line interface usage</h1>
 <p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the terminal. Using the CLI, you'll automatically generate a folder containing the images of the secondary structure of the precursors and a file called 'precursor_data.txt' with all the features and their values.
-</p><h3 id="input-files">Input files:</h3>
+</p><h3 id="input-files">Input files</h3>
 <p>
 
 The input files are text files with the sequences separated by <strong>tabs</strong> ‘\t' (TSVs), containing:</p>
@@ -73,11 +78,9 @@ The input files are text files with the sequences separated by <strong>tabs</str
 <p>
 
 One example input file with labels is:</p>
-<p><img src="
-
-![enter image description here](https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex1.png?raw=true" alt="enter image description here"></p>
+<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex1.png?raw=true" alt="enter image description here"></p>
 <p>One example input with no labels:</p>
-<p><img src=")One example input with no labels:https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex2.png?raw=true" alt="enter image description here"></p>
+<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex2.png?raw=true" alt="enter image description here"></p>
 <p>Then, you can run premirnaplot by typing:</p>
 <pre><code>premirnaplot file1.txt
 </code></pre>
@@ -95,7 +98,7 @@ One example input file with labels is:</p>
 <pre><code>python3 premirnaplot your_file.txt -c green blue</code></pre>
 <p>If you wanted to set the colors to a custom tone of purple and yellow, you could type:
 </p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" align="left" width="400px">
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/im3.svg" align="left" width="400px">
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/im4.svg" width="400px">
 
 <h3 id="labels">Image formats</h3>
