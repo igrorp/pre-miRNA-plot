@@ -68,8 +68,8 @@ python setup.py install
 
 ### Input files:
 
-The input files are TSV (tab-separeted values) text files containing: 
-**1)** A label to the pre-miRNA (optional, if not provided they will be labeled "precursor_0" onward)
+The input files are TSV (tab-separated values) text files containing: 
+**1)** A label to the pre-miRNA (**optional**, if not provided they will be labeled "precursor_0" onward)
 **2)** The pre-miRNA sequence
 **3)** One of the miRNAs sequence
 **4)** The other miRNA sequence (optional)
@@ -149,6 +149,6 @@ first the pre-miRNA and then the miRNA sequences. You can specify the colors (in
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUxMjQwOTQ2LDQzMjU3NDc5NSwyMTM1Nz
-UwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbLTE3OTU4ODQwNDIsNDMyNTc0Nzk1LDIxMz
+U3NTAyNTMsLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
 -->
