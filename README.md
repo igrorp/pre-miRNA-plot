@@ -68,7 +68,7 @@ python setup.py install
 
 ### Input files:
 
-The input files are text files with the sequences separated by **tabs (\t** containing: 
+The input files are text files with the sequences separated by **tabs** '\t' (TSVs), containing: 
 
 **1)** A label to the pre-miRNA (**optional**, if not provided they will be labeled "precursor_0" onward)
 **2)** The pre-miRNA sequence
@@ -152,7 +152,7 @@ One example input file with labels is:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg4NDg1NzIwLC0xNzk1ODg0MDQyLDQzMj
-U3NDc5NSwyMTM1NzUwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0
-MV19
+eyJoaXN0b3J5IjpbLTMyNzY3ODcxMywtMTc5NTg4NDA0Miw0Mz
+I1NzQ3OTUsMjEzNTc1MDI1MywtNjU4NDYyNDI5LDEyMzkwNjc5
+NDFdfQ==
 -->
