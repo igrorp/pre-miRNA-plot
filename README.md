@@ -96,7 +96,7 @@ Or with multiple files:
 <p>Pre-miRNA-plot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want:</p>
 <pre><code>premirnaplot your_file.txt -s 4
 </code></pre>
-<img src="https://raw.githubusercontent.com/igrorp/pre-miRNA-plot/6f6ea139fd5d2d29cb5e950293e4feca3e231d70/premirnaplot/imgs/all.svg" class="preimg">
+
 <h3 id="colors">Colors</h3>
 <p>You can set which colors will be used to highlight the miRNAs within the precursor. Choose between predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
 </p><blockquote> You can get RGB codes from selected colors in this <a href="[https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp)">website</a><p></p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:
@@ -153,8 +153,8 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTU5NjkyMzcsMTE2OTcyODI0OCwtMT
-IxMDk0MDQzOCw0NzI5OTc4NDgsLTEyMjkzODc0NjYsLTMyNzY3
-ODcxMywtMTc5NTg4NDA0Miw0MzI1NzQ3OTUsMjEzNTc1MDI1My
-wtNjU4NDYyNDI5LDEyMzkwNjc5NDFdfQ==
+eyJoaXN0b3J5IjpbLTUxMDY5NzY3MiwtMTMxNTk2OTIzNywxMT
+Y5NzI4MjQ4LC0xMjEwOTQwNDM4LDQ3Mjk5Nzg0OCwtMTIyOTM4
+NzQ2NiwtMzI3Njc4NzEzLC0xNzk1ODg0MDQyLDQzMjU3NDc5NS
+wyMTM1NzUwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
 -->
