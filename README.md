@@ -115,6 +115,7 @@ Or with multiple files:
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
+
 <h1 id="library-usage">4. Library usage</h1>
 <p>After succesfully installing premiRNAplot, you can use the library inside a script or application. The fundamental class you’ll need to use is <strong>Precursor</strong>. You can import it using:</p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> premirnalot<span class="token punctuation">.</span>precursor <span class="token keyword">import</span> Precursor
@@ -152,8 +153,8 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIzNjg2MjY5LDExNjk3MjgyNDgsLTEyMT
-A5NDA0MzgsNDcyOTk3ODQ4LC0xMjI5Mzg3NDY2LC0zMjc2Nzg3
-MTMsLTE3OTU4ODQwNDIsNDMyNTc0Nzk1LDIxMzU3NTAyNTMsLT
-Y1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbLTEzMTU5NjkyMzcsMTE2OTcyODI0OCwtMT
+IxMDk0MDQzOCw0NzI5OTc4NDgsLTEyMjkzODc0NjYsLTMyNzY3
+ODcxMywtMTc5NTg4NDA0Miw0MzI1NzQ3OTUsMjEzNTc1MDI1My
+wtNjU4NDYyNDI5LDEyMzkwNjc5NDFdfQ==
 -->
