@@ -105,6 +105,7 @@ Or with multiple files (also defining the output directory name with the -o para
 </p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" align="left" width="400px">
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/im4.svg" width="400px">
+![](imgs/)
 <h3 id="labels">Image formats</h3>
 <p>Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.</p>
 <pre><code>premirnaplot your_file.txt -f pdf
@@ -152,7 +153,7 @@ Or with multiple files (also defining the output directory name with the -o para
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5MTAzMDA1NSwtMzc4ODExNzQsMTE0OD
+eyJoaXN0b3J5IjpbMTMxMzAwNzcyMCwtMzc4ODExNzQsMTE0OD
 gzMTg3MSwtMTMxNTk2OTIzNywxMTY5NzI4MjQ4LC0xMjEwOTQw
 NDM4LDQ3Mjk5Nzg0OCwtMTIyOTM4NzQ2NiwtMzI3Njc4NzEzLC
 0xNzk1ODg0MDQyLDQzMjU3NDc5NSwyMTM1NzUwMjUzLC02NTg0
