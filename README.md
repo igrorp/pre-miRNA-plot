@@ -93,17 +93,6 @@ Or with multiple files:
 
 
 
-<h2 id="input-files">3.1 Input files</h2>
-<p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
-<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 1"></p>
-<blockquote>
-<p>Note that you don’t need to have necessarly both miRNA sequences, you can have just one of them.</p></blockquote>
-<p>If you have labels or some sort of  to your data, you can include them in the first column, like this:</p>
-<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex1.png" alt="Example 2"></p>
-<blockquote>
-<p>The created image files will be named accordingly to the label, as it is a more efficient way of organizing your data</p></blockquote>
-<h2 id="exploring-the-parameters">3.2 Exploring the parameters</h2>
-<h3 id="labels">Labels</h3>
 <p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
 <pre><code>python premirnaplot.py your_file.txt -a T</code></pre>
 <h3 id="styles">Styles</h3>
@@ -166,7 +155,7 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjkzODc0NjYsLTMyNzY3ODcxMywtMT
-c5NTg4NDA0Miw0MzI1NzQ3OTUsMjEzNTc1MDI1MywtNjU4NDYy
-NDI5LDEyMzkwNjc5NDFdfQ==
+eyJoaXN0b3J5IjpbMTYzMTg1NjkwOSwtMTIyOTM4NzQ2NiwtMz
+I3Njc4NzEzLC0xNzk1ODg0MDQyLDQzMjU3NDc5NSwyMTM1NzUw
+MjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
 -->
