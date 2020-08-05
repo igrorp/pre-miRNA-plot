@@ -3,10 +3,10 @@
 
 ---
 
-<h1 align="center"> Welcome to premiRNAplot! </h1>
+<h1 align="center> Welcome to premiRNAplot! </h1>
 <p></p>
 <p>PremiRNAplot is a Python 3.5+ library with a command line interface for extracting features  and generating multiple custom images of miRNA precursors. It provides over a 100 different features that can be used to train and test machine learning algorithms for the correct prediction and classification of pre-miRNAs.</p>
-<p>It’s based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtention and calculation. It also allows you to produce beautiful, costumizable and publication-ready images of the secondary structure of these precursors, highlighting the position of the miRNAs sequences within them.</p>
+<p>It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtention and calculation. It also allows you to produce beautiful, costumizable and publication-ready images of the secondary structure of these precursors, highlighting the position of the miRNAs sequences within them.</p>
 <ol>
 	<li> <a href="#installation">Installation</a><br>
 		1.1 <a href="#using-conda">Using Conda</a><br>
@@ -63,15 +63,21 @@ python setup.py install
 <h1 id="command-line-interface-usage">3. Command line interface usage</h1>
 <p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the terminal. Using the CLI, you'll automatically generate a folder containing the images of the secondary structure of the precursors and a file called 'precursor_data.txt' with all the features and their values.
 </p><h3 id="input-files">Input files:</h3>
-<p>The input files are text files with the sequences separated by <strong>tabs</strong> ‘\t’ (TSVs), containing:</p>
+<p>
+
+The input files are text files with the sequences separated by <strong>tabs</strong> ‘\t' (TSVs), containing:</p>
 <p><strong>1)</strong> A label to the pre-miRNA (<strong>optional</strong>, if not provided they will be labeled “precursor_0” onward);<br>
 <strong>2)</strong> The pre-miRNA sequence;<br>
 <strong>3)</strong> One of the miRNAs sequence;<br>
 <strong>4)</strong> The other miRNA sequence (optional);</p>
-<p>One example input file with labels is:</p>
-<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex1.png?raw=true" alt="enter image description here"></p>
+<p>
+
+One example input file with labels is:</p>
+<p><img src="
+
+![enter image description here](https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex1.png?raw=true" alt="enter image description here"></p>
 <p>One example input with no labels:</p>
-<p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex2.png?raw=true" alt="enter image description here"></p>
+<p><img src=")One example input with no labels:https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex2.png?raw=true" alt="enter image description here"></p>
 <p>Then, you can run premirnaplot by typing:</p>
 <pre><code>premirnaplot file1.txt
 </code></pre>
@@ -91,6 +97,7 @@ python setup.py install
 </p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" align="left" width="400px">
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/im4.svg" width="400px">
+
 <h3 id="labels">Image formats</h3>
 <p>Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.</p>
 <pre><code>premirnaplot your_file.txt -f pdf
@@ -137,3 +144,6 @@ python setup.py install
 </tbody>
 </table>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE4NTQ5MDY3NzFdfQ==
+-->
