@@ -96,15 +96,15 @@ Or with multiple files:
 <p>Pre-miRNA-plot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want:</p>
 <pre><code>premirnaplot your_file.txt -s 4
 </code></pre>
-
+<img src="https://raw.githubusercontent.com/igrorp/pre-miRNA-plot/6f6ea139fd5d2d29cb5e950293e4feca3e231d70/premirnaplot/imgs/all.svg" class="preimg">
 <h3 id="colors">Colors</h3>
 <p>You can set which colors will be used to highlight the miRNAs within the precursor. Choose between predefined colors (blue, red, green, purple, pink, yellow, cyan, white, black and orange) or select a particular color tone informing its RGB code.
-</p><blockquote> You can get RGB codes from selected colors in this <a href="[https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp)">website</a><p></p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:
+</p><blockquote> You can get RGB codes from selected colors in this <a href="[Color picker](https://www.w3schools.com/colors/colors_picker.asp)">website</a><p></p></blockquote>If you wanted to set the colors to green and blue, for example, you would have to type:
 <pre><code>python3 premirnaplot your_file.txt -c green blue</code></pre>
 <p>If you wanted to set the colors to a custom tone of purple and yellow, you could type:
 </p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" align="left" width="400px">
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im4.svg" width="400px">
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/p/im4.svg" width="400px">
 <h3 id="labels">Image formats</h3>
 <p>Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.</p>
 <pre><code>python3 premirnaplot.py your_file.txt -f pdf
@@ -115,7 +115,6 @@ Or with multiple files:
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
-
 <h1 id="library-usage">4. Library usage</h1>
 <p>After succesfully installing premiRNAplot, you can use the library inside a script or application. The fundamental class you’ll need to use is <strong>Precursor</strong>. You can import it using:</p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> premirnalot<span class="token punctuation">.</span>precursor <span class="token keyword">import</span> Precursor
@@ -153,8 +152,8 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxMDY5NzY3MiwtMTMxNTk2OTIzNywxMT
-Y5NzI4MjQ4LC0xMjEwOTQwNDM4LDQ3Mjk5Nzg0OCwtMTIyOTM4
-NzQ2NiwtMzI3Njc4NzEzLC0xNzk1ODg0MDQyLDQzMjU3NDc5NS
-wyMTM1NzUwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbNzc2NDE3NjE5LC0xMzE1OTY5MjM3LDExNj
+k3MjgyNDgsLTEyMTA5NDA0MzgsNDcyOTk3ODQ4LC0xMjI5Mzg3
+NDY2LC0zMjc2Nzg3MTMsLTE3OTU4ODQwNDIsNDMyNTc0Nzk1LD
+IxMzU3NTAyNTMsLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
 -->
