@@ -94,7 +94,7 @@ Or with multiple files:
 
 <h3 id="styles">Styles</h3>
 <p>Pre-miRNA-plot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want:</p>
-<pre><code>premirnaplot.py your_file.txt -s 4
+<pre><code>premirnaplot your_file.txt -s 4
 </code></pre>
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/all.svg" class="preimg">
 <h3 id="colors">Colors</h3>
@@ -152,8 +152,8 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4OTgzNDk2NywxMTY5NzI4MjQ4LC0xMj
-EwOTQwNDM4LDQ3Mjk5Nzg0OCwtMTIyOTM4NzQ2NiwtMzI3Njc4
-NzEzLC0xNzk1ODg0MDQyLDQzMjU3NDc5NSwyMTM1NzUwMjUzLC
-02NTg0NjI0MjksMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbMTk2NDg1MTUyLDExNjk3MjgyNDgsLTEyMT
+A5NDA0MzgsNDcyOTk3ODQ4LC0xMjI5Mzg3NDY2LC0zMjc2Nzg3
+MTMsLTE3OTU4ODQwNDIsNDMyNTc0Nzk1LDIxMzU3NTAyNTMsLT
+Y1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
 -->
