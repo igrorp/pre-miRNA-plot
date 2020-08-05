@@ -92,7 +92,7 @@ Or with multiple files (also defining the output directory name with the -o para
     premirnaplot file1.txt file2.txt -o analysis
 
 
-<h3 id="styles">Styles</h3>
+<h3 id="styles">Image styles</h3>
 <p>PremiRNAplot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want:</p>
 <pre><code>premirnaplot your_file.txt -s 4
 </code></pre>
@@ -107,10 +107,10 @@ Or with multiple files (also defining the output directory name with the -o para
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/im4.svg" width="400px">
 <h3 id="labels">Image formats</h3>
 <p>Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.</p>
-<pre><code>python3 premirnaplot.py your_file.txt -f pdf
+<pre><code>premirnaplot your_file.txt -f pdf
 </code></pre>
 <p>Or the default:</p>
-<pre><code>python3 premirnaplot.py your_file.txt -f svg
+<pre><code>premirnaplot your_file.txt -f svg
 </code></pre>
 <h3 id="multiprocessing">Multiprocessing</h3>
 <p>You can set the number of threads to run and speed up a lot the image generation, as the example below: </p>
@@ -152,9 +152,9 @@ Or with multiple files (also defining the output directory name with the -o para
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3ODgxMTc0LDExNDg4MzE4NzEsLTEzMT
-U5NjkyMzcsMTE2OTcyODI0OCwtMTIxMDk0MDQzOCw0NzI5OTc4
-NDgsLTEyMjkzODc0NjYsLTMyNzY3ODcxMywtMTc5NTg4NDA0Mi
-w0MzI1NzQ3OTUsMjEzNTc1MDI1MywtNjU4NDYyNDI5LDEyMzkw
-Njc5NDFdfQ==
+eyJoaXN0b3J5IjpbMTA5MTAzMDA1NSwtMzc4ODExNzQsMTE0OD
+gzMTg3MSwtMTMxNTk2OTIzNywxMTY5NzI4MjQ4LC0xMjEwOTQw
+NDM4LDQ3Mjk5Nzg0OCwtMTIyOTM4NzQ2NiwtMzI3Njc4NzEzLC
+0xNzk1ODg0MDQyLDQzMjU3NDc5NSwyMTM1NzUwMjUzLC02NTg0
+NjI0MjksMTIzOTA2Nzk0MV19
 -->
