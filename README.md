@@ -87,9 +87,9 @@ Then, you can run premirnaplot by typing:
 
     premirnaplot file1.txt
 
-Or with multiple files:
+Or with multiple files (also defining the output directory name with the -o parameter):
 
-    premirnaplot file1.txt file2.txt
+    premirnaplot file1.txt file2.txt -o analysis
 
 
 <h3 id="styles">Styles</h3>
@@ -104,7 +104,7 @@ Or with multiple files:
 <p>If you wanted to set the colors to a custom tone of purple and yellow, you could type:
 </p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/im3.svg" align="left" width="400px">
-<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/p/im4.svg" width="400px">
+<img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/im4.svg" width="400px">
 <h3 id="labels">Image formats</h3>
 <p>Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.</p>
 <pre><code>python3 premirnaplot.py your_file.txt -f pdf
@@ -152,8 +152,8 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc2NDE3NjE5LC0xMzE1OTY5MjM3LDExNj
-k3MjgyNDgsLTEyMTA5NDA0MzgsNDcyOTk3ODQ4LC0xMjI5Mzg3
-NDY2LC0zMjc2Nzg3MTMsLTE3OTU4ODQwNDIsNDMyNTc0Nzk1LD
-IxMzU3NTAyNTMsLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbMTY5NTk0MDUxOSwtMTMxNTk2OTIzNywxMT
+Y5NzI4MjQ4LC0xMjEwOTQwNDM4LDQ3Mjk5Nzg0OCwtMTIyOTM4
+NzQ2NiwtMzI3Njc4NzEzLC0xNzk1ODg0MDQyLDQzMjU3NDc5NS
+wyMTM1NzUwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
 -->
