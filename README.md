@@ -64,7 +64,7 @@ python setup.py install
 <p>There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.</p>
 
 <h1 id="command-line-interface-usage">3. Command line interface usage</h1>
-<p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the terminal.
+<p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the terminal. Using the CLI, you'll automatically generate a folder containing the images of the secondary 
 
 ### Input files:
 
@@ -93,8 +93,6 @@ Or with multiple files:
 
 
 
-<p>If you included labels in your input files, as described above, make sure you set the <code>-a</code> parameter to True, like this:</p>
-<pre><code>python premirnaplot.py your_file.txt -a T</code></pre>
 <h3 id="styles">Styles</h3>
 <p>Pre-miRNA-plot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want.</p>
 <pre><code>python3 premirnaplot.py your_file.txt -s 4
@@ -155,7 +153,7 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMTg1NjkwOSwtMTIyOTM4NzQ2NiwtMz
-I3Njc4NzEzLC0xNzk1ODg0MDQyLDQzMjU3NDc5NSwyMTM1NzUw
-MjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbNDcyOTk3ODQ4LC0xMjI5Mzg3NDY2LC0zMj
+c2Nzg3MTMsLTE3OTU4ODQwNDIsNDMyNTc0Nzk1LDIxMzU3NTAy
+NTMsLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
 -->
