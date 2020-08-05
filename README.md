@@ -93,7 +93,7 @@ Or with multiple files (also defining the output directory name with the -o para
 
 
 <h3 id="styles">Styles</h3>
-<p>Pre-miRNA-plot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want:</p>
+<p>PremiRNAplot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want:</p>
 <pre><code>premirnaplot your_file.txt -s 4
 </code></pre>
 <img src="https://raw.githubusercontent.com/igrorp/pre-miRNA-plot/6f6ea139fd5d2d29cb5e950293e4feca3e231d70/premirnaplot/imgs/all.svg" class="preimg">
@@ -152,7 +152,7 @@ Or with multiple files (also defining the output directory name with the -o para
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NTk0MDUxOSwtMTMxNTk2OTIzNywxMT
+eyJoaXN0b3J5IjpbMTE0ODgzMTg3MSwtMTMxNTk2OTIzNywxMT
 Y5NzI4MjQ4LC0xMjEwOTQwNDM4LDQ3Mjk5Nzg0OCwtMTIyOTM4
 NzQ2NiwtMzI3Njc4NzEzLC0xNzk1ODg0MDQyLDQzMjU3NDc5NS
 wyMTM1NzUwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
