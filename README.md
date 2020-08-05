@@ -86,7 +86,12 @@ One example input with no labels:
 Then, you can run premirnaplot by typing:
 
     premirnaplot file1.txt
-    
+
+Or with multiple files:
+
+    premirnaplot file1.txt file2.txt
+
+
 
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
@@ -161,7 +166,7 @@ Then, you can run premirnaplot by typing:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2OTU5NzMzMiwtMzI3Njc4NzEzLC0xNz
-k1ODg0MDQyLDQzMjU3NDc5NSwyMTM1NzUwMjUzLC02NTg0NjI0
-MjksMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbLTEyMjkzODc0NjYsLTMyNzY3ODcxMywtMT
+c5NTg4NDA0Miw0MzI1NzQ3OTUsMjEzNTc1MDI1MywtNjU4NDYy
+NDI5LDEyMzkwNjc5NDFdfQ==
 -->
