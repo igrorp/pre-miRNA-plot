@@ -113,7 +113,7 @@ Or with multiple files (also defining the output directory name with the -o para
 <pre><code>python3 premirnaplot.py your_file.txt -f svg
 </code></pre>
 <h3 id="multiprocessing">Multiprocessing</h3>
-<p>You can set the number of allowed processors to run and speed up a lot the program execution, as the example below: </p>
+<p>You can set the number of threads to run and speed up a lot the image generation, as the example below: </p>
 <pre><code>premirnaplot your_file.txt -t 8</code></pre>
 <h1 id="library-usage">4. Library usage</h1>
 <p>After succesfully installing premiRNAplot, you can use the library inside a script or application. The fundamental class you’ll need to use is <strong>Precursor</strong>. You can import it using:</p>
@@ -152,8 +152,9 @@ Or with multiple files (also defining the output directory name with the -o para
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0ODgzMTg3MSwtMTMxNTk2OTIzNywxMT
-Y5NzI4MjQ4LC0xMjEwOTQwNDM4LDQ3Mjk5Nzg0OCwtMTIyOTM4
-NzQ2NiwtMzI3Njc4NzEzLC0xNzk1ODg0MDQyLDQzMjU3NDc5NS
-wyMTM1NzUwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbLTM3ODgxMTc0LDExNDg4MzE4NzEsLTEzMT
+U5NjkyMzcsMTE2OTcyODI0OCwtMTIxMDk0MDQzOCw0NzI5OTc4
+NDgsLTEyMjkzODc0NjYsLTMyNzY3ODcxMywtMTc5NTg4NDA0Mi
+w0MzI1NzQ3OTUsMjEzNTc1MDI1MywtNjU4NDYyNDI5LDEyMzkw
+Njc5NDFdfQ==
 -->
