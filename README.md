@@ -74,7 +74,11 @@ The input files are TSV (tab-separated values) text files containing:
 **3)** One of the miRNAs sequence
 **4)** The other miRNA sequence (optional)
 
-first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python premirnaplot -help</code>.</p>
+
+
+One example input file with:
+
+![enter image description here](https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex1.png?raw=true)
 
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
@@ -149,6 +153,7 @@ first the pre-miRNA and then the miRNA sequences. You can specify the colors (in
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTU4ODQwNDIsNDMyNTc0Nzk1LDIxMz
-U3NTAyNTMsLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbNTMzNjE3MDg5LC0xNzk1ODg0MDQyLDQzMj
+U3NDc5NSwyMTM1NzUwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0
+MV19
 -->
