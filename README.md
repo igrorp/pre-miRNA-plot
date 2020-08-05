@@ -92,7 +92,6 @@ Or with multiple files:
     premirnaplot file1.txt file2.txt
 
 
-
 <h3 id="styles">Styles</h3>
 <p>Pre-miRNA-plot has 5 different styles for creating the image for the precursor. This is how the final images look like and how to pick the style you want.</p>
 <pre><code>python3 premirnaplot.py your_file.txt -s 4
@@ -153,7 +152,8 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcyOTk3ODQ4LC0xMjI5Mzg3NDY2LC0zMj
-c2Nzg3MTMsLTE3OTU4ODQwNDIsNDMyNTc0Nzk1LDIxMzU3NTAy
-NTMsLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
+eyJoaXN0b3J5IjpbLTEyMTA5NDA0MzgsNDcyOTk3ODQ4LC0xMj
+I5Mzg3NDY2LC0zMjc2Nzg3MTMsLTE3OTU4ODQwNDIsNDMyNTc0
+Nzk1LDIxMzU3NTAyNTMsLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX
+0=
 -->
