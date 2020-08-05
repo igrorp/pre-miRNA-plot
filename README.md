@@ -68,15 +68,14 @@ python setup.py install
 
 ### Input files:
 
-The input files are TSV (tab-separated values) text files containing: 
+The input files are text files with the sequences separated by **tabs (\t** containing: 
+
 **1)** A label to the pre-miRNA (**optional**, if not provided they will be labeled "precursor_0" onward)
 **2)** The pre-miRNA sequence
 **3)** One of the miRNAs sequence
 **4)** The other miRNA sequence (optional)
 
-
-
-One example input file with:
+One example input file with labels is:
 
 ![enter image description here](https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex1.png?raw=true)
 
@@ -153,7 +152,7 @@ One example input file with:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTMzNjE3MDg5LC0xNzk1ODg0MDQyLDQzMj
+eyJoaXN0b3J5IjpbNTg4NDg1NzIwLC0xNzk1ODg0MDQyLDQzMj
 U3NDc5NSwyMTM1NzUwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0
 MV19
 -->
