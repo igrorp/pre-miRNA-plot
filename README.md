@@ -83,6 +83,11 @@ One example input with no labels:
 
 ![enter image description here](https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex2.png?raw=true)
 
+Then, you can run premirnaplot by typing:
+
+    premirnaplot file1.txt
+    
+
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/src/ex2.png" alt="Example 1"></p>
@@ -156,7 +161,7 @@ One example input with no labels:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTgyOTAzNTYsLTMyNzY3ODcxMywtMT
-c5NTg4NDA0Miw0MzI1NzQ3OTUsMjEzNTc1MDI1MywtNjU4NDYy
-NDI5LDEyMzkwNjc5NDFdfQ==
+eyJoaXN0b3J5IjpbMTY2OTU5NzMzMiwtMzI3Njc4NzEzLC0xNz
+k1ODg0MDQyLDQzMjU3NDc5NSwyMTM1NzUwMjUzLC02NTg0NjI0
+MjksMTIzOTA2Nzk0MV19
 -->
