@@ -64,9 +64,9 @@ python setup.py install
 <p>There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.</p>
 
 <h1 id="command-line-interface-usage">3. Command line interface usage</h1>
-<p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the therminal.
+<p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the terminal.
 
-The input files are TSV (tab-separeted values) text files containing first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python premirnaplot -help</code>.</p>
+The input files are TSV (tab-separeted values) text files containing: first the pre-miRNA and then the miRNA sequences. You can specify the colors (in RGB code) to highlight the miRNAs, quality values and other parameters. You can also see this information about the parameters of the program by typing <code>python premirnaplot -help</code>.</p>
 
 <h2 id="input-files">3.1 Input files</h2>
 <p>The input files are text files containing the pre-miRNA sequence and the miRNA sequences, separated by <strong>tabs</strong>. They should look something like this:</p>
@@ -141,6 +141,6 @@ The input files are TSV (tab-separeted values) text files containing first the p
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk2MjQ5MTgzLDQzMjU3NDc5NSwyMTM1Nz
-UwMjUzLC02NTg0NjI0MjksMTIzOTA2Nzk0MV19
+eyJoaXN0b3J5IjpbLTEwNTIzODEzOTcsNDMyNTc0Nzk1LDIxMz
+U3NTAyNTMsLTY1ODQ2MjQyOSwxMjM5MDY3OTQxXX0=
 -->
