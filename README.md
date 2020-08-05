@@ -64,7 +64,7 @@ python setup.py install
 <p>There is going to be a lot of text being displayed informing the packages downloaded and the operation status. After that, you can run our test data to check if all the requirements are satisfied or if there are any problems during the execution.</p>
 
 <h1 id="command-line-interface-usage">3. Command line interface usage</h1>
-<p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the terminal. Using the CLI, you'll automatically generate a folder containing the images of the secondary str
+<p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the terminal. Using the CLI, you'll automatically generate a folder containing the images of the secondary structure of the precursors and a file called 'precursor_data.txt' with all the features and their values.
 
 ### Input files:
 
@@ -152,7 +152,7 @@ Or with multiple files:
 </tbody>
 </table>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE0MzE5NDI5NywtMTIxMDk0MDQzOCw0Nz
+eyJoaXN0b3J5IjpbMTE2OTcyODI0OCwtMTIxMDk0MDQzOCw0Nz
 I5OTc4NDgsLTEyMjkzODc0NjYsLTMyNzY3ODcxMywtMTc5NTg4
 NDA0Miw0MzI1NzQ3OTUsMjEzNTc1MDI1MywtNjU4NDYyNDI5LD
 EyMzkwNjc5NDFdfQ==
