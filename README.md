@@ -119,11 +119,11 @@ One example input file with labels is:</p>
 <h2 id="features">4.2 Features</h2>
 <p>These are the current features implemented in premiRNAplot. They are divide in Structure, Thermodynamics, Structural-Thermodynamics and miRNA related features.</p>
 
-|    **Sequence related features**       |
-|:-:|
-|||||||
-|:---------------------------------------:|:----------------:|:---------:|:---------:|:----------------------------------------------------:|:---------:|
+### Sequence related features
+
+
 |               **Feature name**              | **Attribute/method** | **Data type** | **Data size** |                      **Description**                     | **Reference** |
+|:---------------------------------------:|:----------------:|:---------:|:---------:|:----------------------------------------------------:|:---------:|
 |             Sequence length             |    prec.seqlen   |   float   |     1     |                Length of the sequence                |           |
 |          Nucleotide frequencies         |   prec.freqs()   |    dict   |     4     |       Frequency of nucleotides (%A, %T, %C, %G)      |           |
 |         Dinucleotide frequencies        |  prec.difreqs()  |    dict   |     16    | Frequency of dinucleotides (%AA, %AT, %AC, %AG, ...) |           |
@@ -155,5 +155,5 @@ One example input file with labels is:</p>
 |       Normalized base pair number       |                  |           |           |                                                      |           |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5NDIyMTE0LC0xODU0OTA2NzcxXX0=
+eyJoaXN0b3J5IjpbNDI4MTQzMCwtMTg1NDkwNjc3MV19
 -->
