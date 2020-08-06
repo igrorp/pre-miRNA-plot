@@ -122,14 +122,14 @@ One example input file with labels is:</p>
 ### Sequence related features
 
 
-|               **Feature name**              | **Attribute/method** | **Data type** | **Data size** |                      **Description**                     | **Reference** |
+| **Feature name** | **Attribute/method** | **Data type** | **Data size** |                     **Description** | **Reference** |
 |:---------------------------------------:|:----------------:|:---------:|:---------:|:----------------------------------------------------:|:---------:|
 |             Sequence length             |    prec.seqlen   |   float   |     1     |                Length of the sequence                |           |
 |          Nucleotide frequencies         |   prec.freqs()   |    dict   |     4     |       Frequency of nucleotides (%A, %T, %C, %G)      |           |
 |         Dinucleotide frequencies        |  prec.difreqs()  |    dict   |     16    | Frequency of dinucleotides (%AA, %AT, %AC, %AG, ...) |           |
 |               G+C content               |                  |           |           |                                                      |           |
 |                G/C ratio                |                  |           |           |                                                      |           |
-|     Thermodynamics related features     |                  |           |           |                                                      |           |
+        |
 |               Feature name              | Attribute/method | Data type | Data size |                      Description                     | Reference |
 |                 Triplets                |    prec.seqlen   |   float   |     1     |                Length of the sequence                |           |
 |             Huang's elements            |   prec.freqs()   |    dict   |     4     |       Frequency of nucleotides (%A, %T, %C, %G)      |           |
@@ -155,5 +155,6 @@ One example input file with labels is:</p>
 |       Normalized base pair number       |                  |           |           |                                                      |           |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI4MTQzMCwtMTg1NDkwNjc3MV19
+eyJoaXN0b3J5IjpbLTEyMjkwNjkyOTEsLTE4NTQ5MDY3NzFdfQ
+==
 -->
