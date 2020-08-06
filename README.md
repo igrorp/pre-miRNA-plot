@@ -119,33 +119,40 @@ One example input file with labels is:</p>
 <h2 id="basic-properties-and-methods">4.1 Basic properties and methods</h2>
 <h2 id="features">4.2 Features</h2>
 <p>These are the current features implemented in premiRNAplot. They are divide in Structure, Thermodynamics, Structural-Thermodynamics and miRNA related features.</p>
-<table>
-<thead>
-<tr>
-<th align="center">Feature name</th>
-<th align="center">Class property</th>
-<th align="center">Data type</th>
-<th align="center">Description</th>
-<th align="center">Reference</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Length</td>
-<td align="center">prec.seqlen</td>
-<td align="center">int</td>
-<td align="center">The length of the sequence</td>
-<td align="center">-</td>
-</tr>
-<tr>
-<td align="center">Triplets</td>
-<td align="center">The triplet elements frequencies</td>
-<td align="center">dict (size 32)</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
+
+|:-:|
+|        Sequence related features       |
+|:---------------------------------------:|:----------------:|:---------:|:---------:|:----------------------------------------------------:|:---------:|
+|               Feature name              | Attribute/method | Data type | Data size |                      Description                     | Reference |
+|             Sequence length             |    prec.seqlen   |   float   |     1     |                Length of the sequence                |           |
+|          Nucleotide frequencies         |   prec.freqs()   |    dict   |     4     |       Frequency of nucleotides (%A, %T, %C, %G)      |           |
+|         Dinucleotide frequencies        |  prec.difreqs()  |    dict   |     16    | Frequency of dinucleotides (%AA, %AT, %AC, %AG, ...) |           |
+|               G+C content               |                  |           |           |                                                      |           |
+|                G/C ratio                |                  |           |           |                                                      |           |
+|     Thermodynamics related features     |                  |           |           |                                                      |           |
+|               Feature name              | Attribute/method | Data type | Data size |                      Description                     | Reference |
+|                 Triplets                |    prec.seqlen   |   float   |     1     |                Length of the sequence                |           |
+|             Huang's elements            |   prec.freqs()   |    dict   |     4     |       Frequency of nucleotides (%A, %T, %C, %G)      |           |
+|               Stem number               |  prec.difreqs()  |    dict   |     16    | Frequency of dinucleotides (%AA, %AT, %AC, %AG, ...) |           |
+|         Base pair type frequency        |                  |           |           |                                                      |           |
+|    Base pair type frequency per stem    |                  |           |           |                                                      |           |
+|     Average base pair type per stem     |                  |           |           |                                                      |           |
+|           Average stem length           |                  |           |           |                                                      |           |
+|        Total nucleotides in stem        |                  |           |           |                                                      |           |
+|               Longest stem              |                  |           |           |                                                      |           |
+|           Terminal loop length          |                  |           |           |                                                      |           |
+|         Terminal loop GC content        |                  |           |           |                                                      |           |
+|              Bulges number              |                  |           |           |                                                      |           |
+|               Loops number              |                  |           |           |                                                      |           |
+|               Longest loop              |                  |           |           |                                                      |           |
+|         Asymmetric loops number         |                  |           |           |                                                      |           |
+|          Symmetric loops number         |                  |           |           |                                                      |           |
+|  Average nucleotides in symmetric loops |                  |           |           |                                                      |           |
+| Average nucleotides in asymmetric loops |                  |           |           |                                                      |           |
+|      Average nucleotides in bulges      |                  |           |           |                                                      |           |
+|            Average bulge size           |                  |           |           |                                                      |           |
+|           Number of base pairs          |                  |           |           |                                                      |           |
+|       Normalized base pair number       |                  |           |           |                                                      |           |
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbOTk2NjI3MTc4LC0xODU0OTA2NzcxXX0=
