@@ -1,9 +1,8 @@
 ---
 
 <h1 align="center"> Welcome to premiRNAplot!</h1>
-<p></p>
 
----
+
 
 <p>PremiRNAplot is a Python 3.5+ library with a command line interface for extracting features and generating multiple custom images of miRNA precursors. It provides over a 100 different features that can be used to train and test machine learning algorithms for the correct prediction and classification of pre-miRNAs.</p>
 <p>It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtention and calculation. It also allows you to produce beautiful, costumizable and publication-ready images of the secondary structure of these precursors, highlighting the position of the miRNAs sequences within them.</p>
@@ -122,6 +121,7 @@ One example input file with labels is:</p>
 
 |:-:|
 |        Sequence related features       |
+|||||||
 |:---------------------------------------:|:----------------:|:---------:|:---------:|:----------------------------------------------------:|:---------:|
 |               Feature name              | Attribute/method | Data type | Data size |                      Description                     | Reference |
 |             Sequence length             |    prec.seqlen   |   float   |     1     |                Length of the sequence                |           |
@@ -155,5 +155,5 @@ One example input file with labels is:</p>
 |       Normalized base pair number       |                  |           |           |                                                      |           |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDYyMDczNTgwLC0xODU0OTA2NzcxXX0=
+eyJoaXN0b3J5IjpbNDA1MTc2MTI0LC0xODU0OTA2NzcxXX0=
 -->
