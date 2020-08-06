@@ -1,9 +1,10 @@
 ---
 
+
+---
+
+<hr>
 <h1 align="center"> Welcome to premiRNAplot!</h1>
-
-
-
 <p>PremiRNAplot is a Python 3.5+ library with a command line interface for extracting features and generating multiple custom images of miRNA precursors. It provides over a 100 different features that can be used to train and test machine learning algorithms for the correct prediction and classification of pre-miRNAs.</p>
 <p>It's based on RNAfold and RNAplot from Vienna RNA and simplifies feature obtention and calculation. It also allows you to produce beautiful, costumizable and publication-ready images of the secondary structure of these precursors, highlighting the position of the miRNAs sequences within them.</p>
 <ol>
@@ -68,15 +69,13 @@ python setup.py install
 <p>PremiRNAplot provides a very easy and straight-forward command line interface (CLI). You can call it using <code>premirnaplot -help</code> from the terminal. Using the CLI, you'll automatically generate a folder containing the images of the secondary structure of the precursors and a file called 'precursor_data.txt' with all the features and their values.
 </p><h3 id="input-files">Input files</h3>
 <p>
-
-The input files are text files with the sequences separated by <strong>tabs</strong> ‘\t' (TSVs), containing:</p>
+</p><p>The input files are text files with the sequences separated by <strong>tabs</strong> ‘\t’ (TSVs), containing:</p>
 <p><strong>1)</strong> A label to the pre-miRNA (<strong>optional</strong>, if not provided they will be labeled “precursor_0” onward);<br>
 <strong>2)</strong> The pre-miRNA sequence;<br>
 <strong>3)</strong> One of the miRNAs sequence;<br>
 <strong>4)</strong> The other miRNA sequence (optional);</p>
 <p>
-
-One example input file with labels is:</p>
+</p><p>One example input file with labels is:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex1.png?raw=true" alt="enter image description here"></p>
 <p>One example input with no labels:</p>
 <p><img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/ex2.png?raw=true" alt="enter image description here"></p>
@@ -99,7 +98,6 @@ One example input file with labels is:</p>
 </p><pre><code>python3 premirnaplot your_file.txt -c 204 0 205 255 255 102</code></pre>
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/im3.svg" align="left" width="400px">
 <img src="https://github.com/igrorp/pre-miRNA-plot/blob/master/premirnaplot/imgs/im4.svg" width="400px">
-
 <h3 id="labels">Image formats</h3>
 <p>Pre-miRNA-plot also allows you to save the final images in SVG or PDF format. Note that SVG is a really great format because it hardly loses quality, although some operational systems/web browsers are not compatible. PDF in the other hand is  pretty much universal but it will take a little longer to generate the images.</p>
 <pre><code>premirnaplot your_file.txt -f pdf
@@ -118,46 +116,250 @@ One example input file with labels is:</p>
 <h2 id="basic-properties-and-methods">4.1 Basic properties and methods</h2>
 <h2 id="features">4.2 Features</h2>
 <p>These are the current features implemented in premiRNAplot. They are divide in Structure, Thermodynamics, Structural-Thermodynamics and miRNA related features.</p>
+<h3 id="sequence-related-features">Sequence related features</h3>
 
-### Sequence related features
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Feature name</strong></th>
+<th align="center"><strong>Attribute/method</strong></th>
+<th align="center"><strong>Data type</strong></th>
+<th align="center"><strong>Data size</strong></th>
+<th align="center"><strong>Description</strong></th>
+<th align="center"><strong>Reference</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Sequence length</td>
+<td align="center">prec.seqlen</td>
+<td align="center">float</td>
+<td align="center">1</td>
+<td align="center">Length of the sequence</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Nucleotide frequencies</td>
+<td align="center">prec.freqs()</td>
+<td align="center">dict</td>
+<td align="center">4</td>
+<td align="center">Frequency of nucleotides (%A, %T, %C, %G)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Dinucleotide frequencies</td>
+<td align="center">prec.difreqs()</td>
+<td align="center">dict</td>
+<td align="center">16</td>
+<td align="center">Frequency of dinucleotides (%AA, %AT, %AC, %AG, …)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">G+C content</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">G/C ratio</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table><h3 id="thermodynamics-related-features">Thermodynamics related features</h3>
 
-
-| **Feature name** | **Attribute/method** | **Data type** | **Data size** |                     **Description** | **Reference** |
-|:---------------------------------------:|:----------------:|:---------:|:---------:|:----------------------------------------------------:|:---------:|
-|             Sequence length             |    prec.seqlen   |   float   |     1     |                Length of the sequence                |           |
-|          Nucleotide frequencies         |   prec.freqs()   |    dict   |     4     |       Frequency of nucleotides (%A, %T, %C, %G)      |           |
-|         Dinucleotide frequencies        |  prec.difreqs()  |    dict   |     16    | Frequency of dinucleotides (%AA, %AT, %AC, %AG, ...) |           |
-|               G+C content               |                  |           |           |                                                      |           |
-|                G/C ratio                |                  |           |           |                                                      |           |
-
-### Thermodynamics related features
-
-| **Feature name** | **Attribute/method** | **Data type** | **Data size** |                     **Description** | **Reference** |
-|:---------------------------------------:|:----------------:|:---------:|:---------:|:----------------------------------------------------:|:---------:|
-|                 Triplets                |    prec.seqlen   |   float   |     1     |                Length of the sequence                |           |
-|             Huang's elements            |   prec.freqs()   |    dict   |     4     |       Frequency of nucleotides (%A, %T, %C, %G)      |           |
-|               Stem number               |  prec.difreqs()  |    dict   |     16    | Frequency of dinucleotides (%AA, %AT, %AC, %AG, ...) |           |
-|         Base pair type frequency        |                  |           |           |                                                      |           |
-|    Base pair type frequency per stem    |                  |           |           |                                                      |           |
-|     Average base pair type per stem     |                  |           |           |                                                      |           |
-|           Average stem length           |                  |           |           |                                                      |           |
-|        Total nucleotides in stem        |                  |           |           |                                                      |           |
-|               Longest stem              |                  |           |           |                                                      |           |
-|           Terminal loop length          |                  |           |           |                                                      |           |
-|         Terminal loop GC content        |                  |           |           |                                                      |           |
-|              Bulges number              |                  |           |           |                                                      |           |
-|               Loops number              |                  |           |           |                                                      |           |
-|               Longest loop              |                  |           |           |                                                      |           |
-|         Asymmetric loops number         |                  |           |           |                                                      |           |
-|          Symmetric loops number         |                  |           |           |                                                      |           |
-|  Average nucleotides in symmetric loops |                  |           |           |                                                      |           |
-| Average nucleotides in asymmetric loops |                  |           |           |                                                      |           |
-|      Average nucleotides in bulges      |                  |           |           |                                                      |           |
-|            Average bulge size           |                  |           |           |                                                      |           |
-|           Number of base pairs          |                  |           |           |                                                      |           |
-|       Normalized base pair number       |                  |           |           |                                                      |           |
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTYxMTEyNDksLTE4NTQ5MDY3NzFdfQ
-==
--->
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Feature name</strong></th>
+<th align="center"><strong>Attribute/method</strong></th>
+<th align="center"><strong>Data type</strong></th>
+<th align="center"><strong>Data size</strong></th>
+<th align="center"><strong>Description</strong></th>
+<th align="center"><strong>Reference</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Triplets</td>
+<td align="center">prec.seqlen</td>
+<td align="center">float</td>
+<td align="center">1</td>
+<td align="center">Length of the sequence</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Huang’s elements</td>
+<td align="center">prec.freqs()</td>
+<td align="center">dict</td>
+<td align="center">4</td>
+<td align="center">Frequency of nucleotides (%A, %T, %C, %G)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Stem number</td>
+<td align="center">prec.difreqs()</td>
+<td align="center">dict</td>
+<td align="center">16</td>
+<td align="center">Frequency of dinucleotides (%AA, %AT, %AC, %AG, …)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Base pair type frequency</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Base pair type frequency per stem</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Average base pair type per stem</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Average stem length</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Total nucleotides in stem</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Longest stem</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Terminal loop length</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Terminal loop GC content</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Bulges number</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Loops number</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Longest loop</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Asymmetric loops number</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Symmetric loops number</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Average nucleotides in symmetric loops</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Average nucleotides in asymmetric loops</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Average nucleotides in bulges</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Average bulge size</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Number of base pairs</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Normalized base pair number</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
