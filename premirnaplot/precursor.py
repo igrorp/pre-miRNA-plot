@@ -1,6 +1,8 @@
 
 from itertools import product
 
+from collections import defaultdict as dfd
+
 import subprocess
 
 import svgwrite as sw
@@ -17,6 +19,8 @@ import math
 
 from copy import copy
 
+import re
+
 from . import extra
 
 #import extra
@@ -31,12 +35,26 @@ class Precursor():
 
 		self.name = name
 
-		# The precursor nucleotide sequence
-
 		#todo Maybe add some validation to the initial given parameters, i.e. make sure that it's nucleotides and it's not empty
 
-		self.sequence = precursor.replace('T', 'U')
+		
+		######! -----> Sequence related features
 
+		self.sequence = precursor.upper().replace('T', 'U')
+		
+		self.seqlen = len(self.sequence)
+
+		# self.nt_freqs()
+
+		# self.dint_freqs()
+
+		self.gccontent = self.gc(self.sequence)
+
+		self.gcratio = self.sequence.count('G') / self.sequence.count('C')
+
+		
+		######! ----> miRNA related features
+		
 		if mirna1 and mirna2:
 
 			mirna1 = mirna1.replace('T', 'U')
@@ -68,32 +86,26 @@ class Precursor():
 
 			self.mirna1 = ''
 			self.mirna2 = mirna2
-
-		# The length of the pre-miRNA
-
-		self.seqlen = len(self.sequence)
-
-		self.__rnafold()
-
-		# The GC content of the precursor
-
-		self.gccontent = self.gc(self.sequence)
-
+	
 		self.mirna1gc = self.gc(mirna1) if self.mirna1 else 'N.A.'
 
 		self.mirna2gc = self.gc(mirna2) if self.mirna2 else 'N.A.'
 
-		# The MFEdensity of the precursor
-
-		self.mfeden
+		self.__rnafold()
 
 		# The number of mismatches in the region of the miRNA duplex
 
 		self.mismatches()
+
+		
+		#####! ----> Thermodinamics realated features
+		
+		# The MFEdensity of the precursor
+
+		self.mfeden
+
+
   
-		#todo Calculate number of stems and number of loops
-
-
 		####* Calculating the features
   
 		# Normalized minimum free energy of folding (dG)
@@ -130,7 +142,7 @@ class Precursor():
 
 		# Minimum free energy index 3 (MFEI3)
   
-		self.mfei3 = self.dg / self.loop_number
+		self.mfei3 = self.dg / (self.n_loops if self.n_loops else 1) 
   
 		# Minimum free energy index 4 (MFEI4)
   
@@ -144,6 +156,36 @@ class Precursor():
   
 		self.diff = abs(self.mfe - self.efe) / self.seqlen
 
+		# The stem triplets
+
+		ignoreidx = []
+
+		stems = self.stem_positions()
+
+		for n in range(len(stems) - 1):
+
+			# Getting the positions from the first stem
+			fi1, fe1, fi2, fe2 = stems[n]
+			
+			# Getting the positions from the second stem
+			si1, se1, si2, se2 = stems[n+1]
+
+			# If both conditions are False, that means it's a loop
+
+			if si1 - fe1 > 3:
+
+				ignoreidx.extend([n for n in range(fe1, si1+1)])
+
+			elif fi2 - se2 > 3:
+
+				ignoreidx.extend([n for n in range(se2, fi2+1)])
+
+		print(ignoreidx)
+		
+		self.stem_triplets = self.triplets(ignore=ignoreidx)
+
+
+	#! Class methods
 
 	@classmethod
 
@@ -181,13 +223,132 @@ class Precursor():
 
 		return prelist
 
-	@property
 
-	def bp_number(self):
+	#! Sequence related features
 
-		''' The total number of base pairs '''
+	@staticmethod
 
-		return (self.secondary.count('(') + self.secondary.count(')')) / 2.0
+	def gc(seq):
+
+		return round((seq.count('G') + seq.count('C')) / len(seq) , 2)
+
+
+	def nt_freqs(self):
+
+		''' The proportion of each nucleotide in the precursor sequence '''
+
+		props = {'A':0,'C':0,'U':0,'G':0}
+
+		for nt in self.sequence:
+
+			props[nt]+=1
+
+		return {'%' + nt : round(props[nt] / self.seqlen * 100, 2) for nt in props}
+
+
+	def dint_freqs(self):
+
+		''' The dinucleotide frequencies in the precursor sequence (%AA, %AT, %AC...) '''
+
+		return {'%' + nt1 + nt2 : round(self.sequence.count(nt1 + nt2) / (self.seqlen - 1) * 100, 2) for nt1, nt2 in product(['A', 'U', 'C', 'G'], repeat=2)}
+
+
+
+	#! Secondary structure related features
+
+
+	def triplets(self, ignore=None):
+
+		triplets = {
+			'A.((':0, 'A(..':0, 'A..(':0, 'A((.':0, 'A(((':0, 'A...':0, 'A(.(':0, 'A.(.':0,
+			'C.((':0, 'C(..':0, 'C..(':0, 'C((.':0, 'C(((':0, 'C...':0, 'C(.(':0, 'C.(.':0,
+			'U.((':0, 'U(..':0, 'U..(':0, 'U((.':0, 'U(((':0, 'U...':0, 'U(.(':0, 'U.(.':0,
+			'G.((':0, 'G(..':0, 'G..(':0, 'G((.':0, 'G(((':0, 'G...':0, 'G(.(':0, 'G.(.':0,
+		}
+
+
+		if self.secondary == '':
+
+			raise Exception('Its necessary to have a secondary structure')
+
+		else:
+
+			new = self.secondary.replace(')', '(')
+
+
+		init1, loopinit, loopend, end2 = self.stem_positions()[-1]	# Getting the last stem (where the terminal loop starts)
+
+
+		idxs = [n for n in range(self.secondary.find('(') + 1, loopinit)] + [n for n in range(loopend, self.secondary.rfind(')') - 1)]
+
+		# Removing unwanted index positions
+		
+		if ignore:
+
+			for idx in ignore:
+
+				try:
+
+					idxs.remove(idx)
+
+				except:
+
+					pass
+
+		for idx in idxs:
+
+			triplets[self.sequence[idx] + new[idx-1:idx+2]]+=1
+
+		soma = sum(triplets.values())
+
+		for triplet, freq in triplets.items():
+
+			triplets[triplet] = round(freq / soma, 5)
+
+		return triplets
+
+
+	#? Stems
+
+	def stem_positions(self):
+
+		''' Returns a list of 4 indexes (positions of the stem): beggining and end of strand 1 and 2 '''
+
+		buff = []
+		cons = False
+		stems = []
+		pos = self.pairs()
+		pos.append((-1,-1))
+		
+		while len(pos) > 1:
+			
+			i1, e2 = pos.pop(0)
+			i2, e1 = pos[0]
+			
+			if i1 + 1 == i2 and e2 - 1 == e1:
+				
+				if not cons:
+
+					buff.append((i1, e2))
+				
+				cons = True
+			
+			else:
+				
+				if cons:
+					
+					buff.append((i1, e2))
+					cons = False
+					
+					if buff[1][0] - buff[0][0] > 2:
+						
+						(i1, e2), (e1, i2) = buff
+						stems.append((i1, e1, i2, e2))
+				
+				buff = []
+
+		return stems
+
 	
 	@property
 
@@ -197,6 +358,33 @@ class Precursor():
 
 		return len(self.stem_positions())
 
+
+	def longest_stem(self):
+
+		''' The size of the longest stem '''
+
+		return max([
+			end1 - init1 for init1, end1, *_ in self.stem_positions()
+		])
+
+
+	@property
+
+	def avg_stem_length(self):
+
+		return sum([end - init for init, end, *_ in self.stem_positions()]) / len(self.n_stems)
+
+
+	#? Base pairs
+
+	@property
+
+	def bp_number(self):
+
+		''' The total number of base pairs '''
+
+		return (self.secondary.count('(') + self.secondary.count(')')) / 2.0
+	
 
 	def pairs(self):
 
@@ -250,7 +438,7 @@ class Precursor():
 		return freqs
 
 
-	def bp_props(self):
+	def bp_freqs(self):
 
 		''' The proportion of each type of base pairing divide by the total number of base pairs '''
 
@@ -265,7 +453,7 @@ class Precursor():
 		return nfreqs
 
 	
-	def bp_per_stems(self):
+	def bp_stems(self):
 
 		''' The proportion of each type of base pairing divide by the total number of stems '''
 
@@ -280,46 +468,6 @@ class Precursor():
 		return nfreqs
 
 
-	def stem_positions(self):
-
-		''' Returns a list of 4 indexes (positions of the stem): beggining and end of strand 1 and 2 '''
-
-		buff = []
-		cons = False
-		stems = []
-		pos = self.pairs()
-		pos.append((-1,-1))
-		# Estou chegando o pareamento de só uma das fitas, assumindo que estão perfeitamente pareadas
-		
-		while len(pos) > 1:
-			
-			i1, e2 = pos.pop(0)
-			i2, e1 = pos[0]
-			
-			if i1 + 1 == i2 and e2 - 1 == e1:
-				
-				if not cons:
-					buff.append((i1,e2))
-				
-				cons = True
-			
-			else:
-				
-				if cons:
-					
-					buff.append((i1,e2))
-					cons = False
-					
-					if buff[1][0] - buff[0][0] > 2:
-						
-						(i1, e2),(e1, i2) = buff
-						stems.append((i1, e1, i2, e2))
-				
-				buff = []
-
-		return stems
-
-
 	def avg_bp_stems(self):
 
 		''' The average base pair proportion in the stems '''
@@ -330,12 +478,7 @@ class Precursor():
 
 		for init1, end1, init2, end2 in self.stem_positions():
 
-			print(init1, end1, init2, end2)
-			print(self.sequence[init1:end1+1], self.sequence[init2:end2+1][::-1])
-
 			for nt1, nt2 in zip(self.sequence[init1:end1+1], self.sequence[init2:end2+1][::-1]):
-
-				print(nt1, nt2)
 
 				try:
 					
@@ -355,249 +498,11 @@ class Precursor():
 		return {'avg_' + base_pair + r'\n_stems':freqs[base_pair] / n for base_pair in freqs}
 
 
-	def longest_stem(self):
-
-		''' The size of the longest stem '''
-
-		return max([
-			end1 - init1 for init1, end1, *_ in self.stem_positions()
-		])
-
-
-	def nt_props(self):
-
-		''' The proportion of each nucleotide in the precursor sequence '''
-
-		props = {'A':0,'C':0,'U':0,'G':0}
-
-		for nt in self.sequence:
-
-			props[nt]+=1
-
-		return {'%' + nt : round(props[nt] / self.seqlen * 100, 2) for nt in props}
-
+	#? Bulges
 
 	@property
 
-	def avg_stem_length(self):
-
-		return sum([end - init for init, end, *_ in self.stem_positions()]) / len(self.n_stems)
-
-
-	def __rnafold(self, folder='./'):
-
-		''' Runs the RNAfold secondary structure prediction with the partition function and
-		pairing probability matrix calculation. Also, parses the output and can direct the
-		generated PS image file to a specific path. '''
-
-		rnafold = subprocess.Popen(['RNAfold -p --noPS --noDP'],
-										stdin=subprocess.PIPE,
-										stdout=subprocess.PIPE,
-										stderr=subprocess.PIPE,
-										shell=True,
-										universal_newlines=True,
-										cwd=folder)
-
-		data, errormsg = rnafold.communicate('>{}\n{}'.format(self.name, self.sequence))
-
-		if rnafold.returncode:
-
-			raise Exception('There was an error running RNAfold for precursor {} with the following message:\n{}'.format(self.name, errormsg))
-
-		elif data == '':
-
-			raise Exception('There was an error running RNAfold for precursor {}: the output was empty')
-
-		else:
-
-			self.__rnafold_parser(data)
-
-
-	def __rnafold_parser(self, data):
-
-		''' Parses the output from RNAfold -p and sets the Precursor properties'''
-
-		try:
-
-			*_, mfedata, pseudo, centroid, ensemble, _ = data.split('\n')
-
-		except ValueError:
-
-			raise Exception('Could not parse the RNAfold output')
-
-		#print(centroid)
-
-		# The predicted secondary strucuture with the lowest energy in dot-bracket notation and its MFE value
-
-		secondary, *mfe = mfedata.split(' ')
-
-		self.secondary = secondary
-
-		self.mfe = float(''.join(mfe)[1:-1])
-
-		# Pseudo bracket notation of pair probabilities and ensemble free energy (EFE)
-
-		pseudo, *efe = pseudo.split(' ')
-
-		self.pseudo = pseudo
-
-		self.efe = float(''.join(efe)[1:-1])
-
-		# Centroid ensemble structure dot bracket notation, its free energy and distance from the ensemble
-
-		*notation, energy, dist = centroid.split(' ')
-
-		self.centroid = notation
-
-		self.ctdenergy = float(energy.replace(' ', '')[1:])
-
-		self.ctddist = float(dist.replace(' ', '')[2:-1])
-
-		# The frequency of the MFE structure and the ensemble strucutral diversity (mean base pair distance)
-
-		separated = ensemble.split(';')
-
-		self.freq = float(separated[0].split(' ')[-1])
-
-		self.diversity = float(separated[1].split(' ')[3])
-
-
-	def __pos(self, mirna):
-
-		if mirna:
-
-			if mirna in self.sequence:
-
-				if self.sequence.count(mirna) > 1:
-
-					print('WARNING! miRNA {} was found more than once in the precursor sequence {}..., but its last occurrence will be used!'.format(mirna, self.sequence[25:]))
-
-				return (self.sequence.find(mirna), self.sequence.find(mirna) + len(mirna))
-
-			else:
-
-				raise Exception('ERROR! Could not find sequence {} inside {}, please correct this'.format(mirna, self.sequence))
-
-		else:
-
-			return None, None
-
-	@property
-
-	def mfeden(self):
-
-		if self.seqlen >= 40 and self.seqlen <= 600:
-
-			return round(100 * (self.mfe - extra.refmfe[self.seqlen]) / (self.seqlen - extra.SHIFT_CONST), 2)
-
-		else:
-
-			return 'N.A.'
-
-	@staticmethod
-
-	def gc(seq):
-
-		return round((seq.count('G') + seq.count('C')) / len(seq) , 2)
-
-
-	def mismatches(self):
-
-		if self.mirna1:
-
-			posa, posb = self.pos1
-
-			self.mirna1mm = self.secondary[posa:posb].count('.')
-
-		else:
-
-			self.mirna1mm = 'N.A.'
-
-		if self.mirna2:
-
-			posc, posd = self.pos2
-
-			self.mirna2mm = self.secondary[posc:posd].count('.')
-
-		else:
-
-			self.mirna2mm = 'N.A.'
-
-		if self.mirna1 and self.mirna2:
-
-			self.duplexmm =  self.mirna1mm + self.mirna2mm
-
-		else:
-
-			self.duplexmm = 'N.A.'
-
-
-	def loop(self):
-
-		lastopen, firstclose = 0, len(self.sequence)
-
-		for idx, nt in enumerate(self.secondary):
-
-			if nt == '(':
-
-				lastopen = idx
-
-			elif nt == ')':
-
-				firstclose = idx
-
-				break
-
-		return lastopen, firstclose
-
-
-	def triplets(self):
-
-		triplets = {
-			'A.((':0, 'A(..':0, 'A..(':0, 'A((.':0, 'A(((':0, 'A...':0, 'A(.(':0, 'A.(.':0,
-			'C.((':0, 'C(..':0, 'C..(':0, 'C((.':0, 'C(((':0, 'C...':0, 'C(.(':0, 'C.(.':0,
-			'U.((':0, 'U(..':0, 'U..(':0, 'U((.':0, 'U(((':0, 'U...':0, 'U(.(':0, 'U.(.':0,
-			'G.((':0, 'G(..':0, 'G..(':0, 'G((.':0, 'G(((':0, 'G...':0, 'G(.(':0, 'G.(.':0,
-		}
-
-		if self.secondary == '':
-
-			raise Exception('Its necessary to have a secondary structure')
-
-		else:
-
-			new = self.secondary.replace(')', '(')
-
-
-		loopinit, loopend = self.loop()
-
-		# fivepstem = self.secondary[self.secondary.find('(') : loopinit + 1]
-		# threepstem = self.secondary[loopend : self.secondary.rfind(')') + 1]
-
-		for n in range(self.secondary.find('(') + 1, loopinit):
-
-			triplets[self.sequence[n] + new[n-1:n+2]]+=1
-
-		for n in range(loopend, self.secondary.rfind(')') - 1):
-
-			triplets[self.sequence[n] + new[n-1:n+2]]+=1
-
-		soma = sum(triplets.values())
-
-		triplets = {triplet : round(freq / soma, 5) for triplet, freq in triplets.items()}
-
-		return triplets
-
-
-	def dint_props(self):
-
-		''' The dinucleotide frequencies in the precursor sequence '''
-
-		return {'%' + nt1 + nt2 : round(self.sequence.count(nt1 + nt2) / (self.seqlen - 1) * 100, 2) for nt1, nt2 in product(['A', 'U', 'C', 'G'], repeat=2)}
-
-	@property
-
-	def bulge_number(self):
+	def n_bulges(self):
 
 		''' Determines the number of bulges inside the secondary structure '''
 
@@ -648,9 +553,22 @@ class Precursor():
 
 		return bulges
 
+	
+	def total_nt_bulges(self):
+
+		return sum([end - init for init, end in self.bulges_pos()])
+
+
+	def avg_bulge_size(self):
+
+		return self.total_nt_bulges() / self.seqlen
+
+
+	#? Loops
+
 	@property
 
-	def loop_number(self):
+	def n_loops(self):
 
 		''' Determines the number of loops inside the secondary structure '''
 
@@ -694,6 +612,258 @@ class Precursor():
 		return loops
 
 
+	def longest_loop(self):
+
+		return max([(end1 - init1) + (end2 - init2) for init1, end1, init2, end2 in self.loops_pos()])
+
+
+	def asym_loops(self):
+
+		c = 0
+
+		for init1, end1, init2, end2 in self.loops_pos():
+
+			if end1 - init1 != end2 - init2:
+
+				c+=1
+		
+		return c
+
+
+	def sym_loops(self):
+
+		c = 0
+
+		for init1, end1, init2, end2 in self.loops_pos():
+
+			if end1 - init1 == end2 - init2:
+
+				c+=1
+		
+		return c
+
+
+	def nt_asym_loops(self):
+
+		sizes = []
+
+		for init1, end1, init2, end2 in self.loops_pos():
+
+			if end1 - init1 != end2 - init2:
+
+				sizes.append((end1 - init1) + (end2 - init2))
+		
+		return sum(sizes) / len(sizes)
+
+
+	def nt_sym_loops(self):
+
+		sizes = []
+
+		for init1, end1, init2, end2 in self.loops_pos():
+
+			if end1 - init1 == end2 - init2:
+
+				sizes.append((end1 - init1) + (end2 - init2))
+		
+		return sum(sizes) / len(sizes)
+
+
+	#! miRNA related features
+
+	def __pos(self, mirna):
+
+		if mirna:
+
+			if mirna in self.sequence:
+
+				if self.sequence.count(mirna) > 1:
+
+					print('WARNING! miRNA {} was found more than once in the precursor sequence {}..., but its last occurrence will be used!'.format(mirna, self.sequence[25:]))
+
+				return (self.sequence.find(mirna), self.sequence.find(mirna) + len(mirna))
+
+			else:
+
+				raise Exception('ERROR! Could not find sequence {} inside {}, please correct this'.format(mirna, self.sequence))
+
+		else:
+
+			return None, None
+
+
+
+	#! Thermodinamics related features
+
+	@property
+
+	def dq(self):
+
+		soma = 0
+
+		for i in self.bpp:
+
+			for j in self.bpp[i]:
+
+				if i < j:
+
+					pb = self.bpp[i][j]
+
+					soma += pb * math.log(pb, 2)
+
+		return -1 * soma / self.seqlen
+
+
+	#! Image functions
+
+
+	def __rnafold(self, folder='./'):
+
+		''' Runs the RNAfold secondary structure prediction with the partition function and
+		pairing probability matrix calculation. Also, parses the output and can direct the
+		generated PS image file to a specific path. '''
+
+		rnafold = subprocess.Popen(['RNAfold -p --noPS'],
+										stdin=subprocess.PIPE,
+										stdout=subprocess.PIPE,
+										stderr=subprocess.PIPE,
+										shell=True,
+										universal_newlines=True,
+										cwd=folder)
+
+		data, errormsg = rnafold.communicate('>{}\n{}'.format(self.name, self.sequence))
+
+		if rnafold.returncode:
+
+			raise Exception('There was an error running RNAfold for precursor {} with the following message:\n{}'.format(self.name, errormsg))
+
+		elif data == '':
+
+			raise Exception('There was an error running RNAfold for precursor {}: the output was empty')
+
+		else:
+
+			self.__rnafold_parser(data)
+
+
+	def __rnafold_parser(self, data):
+
+		''' Parses the output from RNAfold -p and sets the Precursor properties'''
+
+		pattern = re.compile(r'[.()}{|,]+(?=\s\W[\s|-])|-?\d+\.\d+')
+
+		matches = pattern.findall(data)
+
+		if len(matches) != 9:
+
+			print(f'ERROR!\n{data}')
+
+			raise Exception('Could not parse the RNAfold output')
+
+		secondary, mfe, ppnotation, efe, ctd, ctdenergy, ctddist, freq, div = matches
+
+
+		# The predicted secondary strucuture with the lowest energy in dot-bracket notation and its MFE value
+
+		self.secondary = secondary
+
+		self.mfe = float(mfe)
+
+		# Pseudo bracket notation of pair probabilities and ensemble free energy (EFE)
+
+		self.pseudo = ppnotation
+
+		self.efe = float(efe)
+
+		# Centroid ensemble structure dot bracket notation, its free energy and distance from the ensemble
+
+		self.centroid = ctd
+
+		self.ctdenergy = float(ctdenergy)
+
+		self.ctddist = float(ctddist)
+
+		# The frequency of the MFE structure and the ensemble strucutral diversity (mean base pair distance)
+
+		self.freq = float(freq)
+
+		self.diversity = float(div)
+
+		# Parsing the RNAfold name_dp.ps for the base pairing probabilites
+
+		self.bpp = dfd(dict)
+
+		with open(f'{self.name}_dp.ps') as dp:
+
+			for line in dp:
+
+				if line == '%start of base pair probability data\n':
+
+					break
+
+			for line in dp:
+									
+				try:
+					
+					i, j, pb, ubox = line[:-1].split(' ')
+
+					if ubox == 'lbox':
+
+						break
+
+				except ValueError:
+
+					print(line)
+
+					raise Exception('Could not parse the base pair probability file from RNAfold')
+				
+				self.bpp[int(i)][int(j)] = float(pb) ** 2  
+
+
+	@property
+
+	def mfeden(self):
+
+		if self.seqlen >= 40 and self.seqlen <= 600:
+
+			return round(100 * (self.mfe - extra.refmfe[self.seqlen]) / (self.seqlen - extra.SHIFT_CONST), 2)
+
+		else:
+
+			return 'N.A.' 
+
+
+	def mismatches(self):
+
+		if self.mirna1:
+
+			posa, posb = self.pos1
+
+			self.mirna1mm = self.secondary[posa:posb].count('.')
+
+		else:
+
+			self.mirna1mm = 'N.A.'
+
+		if self.mirna2:
+
+			posc, posd = self.pos2
+
+			self.mirna2mm = self.secondary[posc:posd].count('.')
+
+		else:
+
+			self.mirna2mm = 'N.A.'
+
+		if self.mirna1 and self.mirna2:
+
+			self.duplexmm =  self.mirna1mm + self.mirna2mm
+
+		else:
+
+			self.duplexmm = 'N.A.'
+
+
 	def features(self):
 
 		features = copy(vars(self))
@@ -702,17 +872,17 @@ class Precursor():
 
 			features.pop(nonfeature)
 
-		features.update(self.nt_props())
+		features.update(self.nt_freqs())
 
-		features.update(self.dint_props())
+		features.update(self.dint_freqs())
 
 		features.update(self.triplets())
 
 		#if self.n_stems:
 		
-		features.update(self.bp_props())
+		features.update(self.bp_freqs())
 
-		features.update(self.bp_per_stems())
+		features.update(self.bp_stems())
 
 		features.update(self.avg_bp_stems())
 
@@ -720,7 +890,7 @@ class Precursor():
 		return features
 
 	
-	#? Image definitions
+	#! Image functions
 
 
 	def __rna_plot(self, folder='./'):
@@ -795,4 +965,5 @@ class Precursor():
 
 prec = Precursor('let7-1', 'UGGGAUGAGGUAGUAGGUUGUAUAGUUUUAGGGUCACACCCACCACUGGGAGAUAACUAUACAAUCUACUGUCUUUCCUA', 'UGGGAUGAGGUAGUAGGUUGU', 'AUCUACUGUCUUUCCUA')
 
-prec.stem_positions()
+
+
